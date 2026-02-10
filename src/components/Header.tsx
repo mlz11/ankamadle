@@ -7,7 +7,7 @@ export default function Header() {
 	useEffect(() => {
 		if (!showRules) return;
 		const handleKey = (e: KeyboardEvent) => {
-			if (e.key === "Escape") {
+			if (e.key === "Escape" || e.key === "Enter") {
 				setShowRules(false);
 				rulesBtnRef.current?.blur();
 			}
