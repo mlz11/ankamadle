@@ -1,11 +1,13 @@
 export interface Monster {
 	id: number;
 	name: string;
-	type: string;
-	zone: string;
-	niveau: number;
+	ecosystem: string;
+	race: string;
+	niveau_min: number;
+	niveau_max: number;
+	pv_min: number;
+	pv_max: number;
 	couleur: string;
-	pv: number;
 	image?: string;
 }
 
@@ -21,8 +23,8 @@ export interface AttributeFeedback {
 export interface GuessResult {
 	monster: Monster;
 	feedback: {
-		type: AttributeFeedback;
-		zone: AttributeFeedback;
+		ecosystem: AttributeFeedback;
+		race: AttributeFeedback;
 		niveau: AttributeFeedback;
 		couleur: AttributeFeedback;
 		pv: AttributeFeedback;
