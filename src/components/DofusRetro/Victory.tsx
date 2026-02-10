@@ -1,0 +1,72 @@
+import type { GuessResult, GameStats } from '../../types';
+import { useState } from 'react';
+
+interface Props {
+  results: GuessResult[];
+  stats: GameStats;
+  targetName: string;
+}
+
+function buildShareText(results: GuessResult[], targetName: string): string {
+  const header = `Ankamadle - ${targetName} en ${results.length} essai${results.length > 1 ? 's' : ''}`;
+  const grid = results.map(r => {
+    const cells = [r.feedback.type, r.feedback.zone, r.feedback.niveau, r.feedback.couleur, r.feedback.pv];
+    return cells.map(c => {
+      if (c.status === 'correct') return '🟩';
+      if (c.status === 'partial') return '🟧';
+      return '🟥';
+    }).join('');
+  }).join('\n');
+  return `${header}\n${grid}`;
+}
+
+export default function Victory({ results, stats, targetName }: Props) {
+  const [copied, setCopied] = useState(false);
+
+  function handleShare() {
+    const text = buildShareText(results, targetName);
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
+  const winPct = stats.gamesPlayed > 0
+    ? Math.round((stats.gamesWon / stats.gamesPlayed) * 100)
+    : 0;
+
+  return (
+    <div className="victory-overlay">
+      <div className="victory-modal">
+        <h2>Bravo !</h2>
+        <p>
+          Tu as trouvé <strong>{targetName}</strong> en{' '}
+          <strong>{results.length}</strong> essai{results.length > 1 ? 's' : ''}.
+        </p>
+
+        <div className="stats-grid">
+          <div className="stat">
+            <span className="stat-value">{stats.gamesPlayed}</span>
+            <span className="stat-label">Parties</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">{winPct}%</span>
+            <span className="stat-label">Victoires</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">{stats.currentStreak}</span>
+            <span className="stat-label">Série</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">{stats.maxStreak}</span>
+            <span className="stat-label">Max série</span>
+          </div>
+        </div>
+
+        <button className="share-btn" onClick={handleShare}>
+          {copied ? 'Copié !' : 'Partager'}
+        </button>
+      </div>
+    </div>
+  );
+}
