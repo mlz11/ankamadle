@@ -244,8 +244,9 @@ body {
 	margin-bottom: 6px;
 }
 
-.guess-row-new {
-	animation: slideIn 0.35s ease;
+/* ===== Cell Flip Animation ===== */
+.cell-flip {
+	animation: cellFlip 0.5s ease both;
 }
 
 .guess-monster-name {
@@ -392,14 +393,17 @@ body {
 	}
 }
 
-@keyframes slideIn {
-	from {
+@keyframes cellFlip {
+	0% {
+		transform: perspective(800px) rotateY(90deg);
 		opacity: 0;
-		transform: translateY(-12px);
 	}
-	to {
+	50% {
 		opacity: 1;
-		transform: translateY(0);
+	}
+	100% {
+		transform: perspective(800px) rotateY(0deg);
+		opacity: 1;
 	}
 }
 

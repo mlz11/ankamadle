@@ -8,14 +8,44 @@ interface Props {
 
 export default function GuessRow({ result, isNew }: Props) {
 	return (
-		<div className={`guess-row ${isNew ? "guess-row-new" : ""}`}>
-			<div className="guess-monster-name">{result.monster.name}</div>
+		<div className="guess-row">
+			<div
+				className={`guess-monster-name ${isNew ? "cell-flip" : ""}`}
+				style={isNew ? { animationDelay: "0ms" } : undefined}
+			>
+				{result.monster.name}
+			</div>
 			<div className="guess-cells">
-				<AttributeCell label="Type" feedback={result.feedback.type} />
-				<AttributeCell label="Zone" feedback={result.feedback.zone} />
-				<AttributeCell label="Niveau" feedback={result.feedback.niveau} />
-				<AttributeCell label="Couleur" feedback={result.feedback.couleur} />
-				<AttributeCell label="PV" feedback={result.feedback.pv} />
+				<AttributeCell
+					label="Type"
+					feedback={result.feedback.type}
+					isNew={isNew}
+					index={1}
+				/>
+				<AttributeCell
+					label="Zone"
+					feedback={result.feedback.zone}
+					isNew={isNew}
+					index={2}
+				/>
+				<AttributeCell
+					label="Niveau"
+					feedback={result.feedback.niveau}
+					isNew={isNew}
+					index={3}
+				/>
+				<AttributeCell
+					label="Couleur"
+					feedback={result.feedback.couleur}
+					isNew={isNew}
+					index={4}
+				/>
+				<AttributeCell
+					label="PV"
+					feedback={result.feedback.pv}
+					isNew={isNew}
+					index={5}
+				/>
 			</div>
 		</div>
 	);

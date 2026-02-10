@@ -21,6 +21,7 @@ export default function Game() {
 	const [results, setResults] = useState<GuessResult[]>([]);
 	const [won, setWon] = useState(false);
 	const [stats, setStats] = useState<GameStats>(loadStats());
+	const [newGuessIndex, setNewGuessIndex] = useState(-1);
 
 	// Restore progress on mount
 	useEffect(() => {
@@ -48,6 +49,7 @@ export default function Game() {
 		const result = compareMonsters(monster, target);
 		const newResults = [...results, result];
 		setResults(newResults);
+		setNewGuessIndex(newResults.length - 1);
 
 		const isWin = monster.id === target.id;
 		if (isWin) {
@@ -73,7 +75,7 @@ export default function Game() {
 				onSelect={handleGuess}
 				disabled={won}
 			/>
-			<GuessGrid results={results} />
+			<GuessGrid results={results} newGuessIndex={newGuessIndex} />
 			{won && (
 				<Victory results={results} stats={stats} targetName={target.name} />
 			)}
