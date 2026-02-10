@@ -25,7 +25,6 @@ export default function Game() {
 	const [won, setWon] = useState(false);
 	const [stats, setStats] = useState<GameStats>(loadStats());
 	const [newGuessIndex, setNewGuessIndex] = useState(-1);
-	const [showLegend, setShowLegend] = useState(true);
 
 	// Restore progress on mount (skip in dev mode)
 	useEffect(() => {
@@ -49,7 +48,6 @@ export default function Game() {
 		setResults([]);
 		setWon(false);
 		setNewGuessIndex(-1);
-		setShowLegend(true);
 	}
 
 	const usedIds = useMemo(
@@ -120,9 +118,7 @@ export default function Game() {
 				disabled={won}
 			/>
 			<GuessGrid results={results} newGuessIndex={newGuessIndex} />
-			{results.length > 0 && showLegend && !won && (
-				<ColorLegend onClose={() => setShowLegend(false)} />
-			)}
+			{results.length > 0 && !won && <ColorLegend />}
 			{won && (
 				<Victory results={results} stats={stats} targetName={target.name} />
 			)}
