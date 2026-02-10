@@ -78,7 +78,7 @@ export default function SearchBar({
 	function handleSubmit() {
 		if (showDropdown && filtered[highlightIndex]) {
 			handleSelect(filtered[highlightIndex]);
-		} else if (filtered.length > 0) {
+		} else if (query.length > 0 && filtered.length === 1) {
 			handleSelect(filtered[0]);
 		} else {
 			triggerShake();
