@@ -286,16 +286,37 @@ body::before {
 	max-height: 240px;
 	overflow-y: auto;
 	z-index: 50;
+	padding: 4px;
+	scrollbar-width: thin;
+	scrollbar-color: var(--border) transparent;
+}
+
+.search-dropdown::-webkit-scrollbar {
+	width: 6px;
+}
+
+.search-dropdown::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.search-dropdown::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 3px;
+}
+
+.search-dropdown::-webkit-scrollbar-thumb:hover {
+	background: var(--text-secondary);
 }
 
 .search-dropdown li {
-	padding: 10px 16px;
+	padding: 10px 12px;
 	cursor: pointer;
 	text-align: left;
 	transition: background 0.15s;
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	border-radius: 6px;
 }
 
 .search-dropdown-img {
