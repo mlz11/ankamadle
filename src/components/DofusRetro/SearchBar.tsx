@@ -17,6 +17,7 @@ export default function SearchBar({
 	const [query, setQuery] = useState("");
 	const [showDropdown, setShowDropdown] = useState(false);
 	const [highlightIndex, setHighlightIndex] = useState(0);
+	const [shaking, setShaking] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	const filtered =
@@ -39,11 +40,20 @@ export default function SearchBar({
 		inputRef.current?.focus();
 	}
 
+	function triggerShake() {
+		setShaking(true);
+		setTimeout(() => setShaking(false), 400);
+	}
+
 	function handleKeyDown(e: React.KeyboardEvent) {
 		if (!showDropdown || filtered.length === 0) {
-			if (e.key === "Enter" && filtered.length === 1) {
-				handleSelect(filtered[0]);
+			if (e.key === "Enter") {
 				e.preventDefault();
+				if (filtered.length === 1) {
+					handleSelect(filtered[0]);
+				} else {
+					triggerShake();
+				}
 			}
 			return;
 		}
@@ -64,7 +74,7 @@ export default function SearchBar({
 	}
 
 	return (
-		<div className="search-bar">
+		<div className={`search-bar ${shaking ? "shake" : ""}`}>
 			<input
 				ref={inputRef}
 				type="text"
