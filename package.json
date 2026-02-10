@@ -1,30 +1,32 @@
 {
-  "name": "ankamadle",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.1",
-    "@types/react": "^19.2.13",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.3",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "globals": "^16.5.0",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.48.0",
-    "vite": "^7.3.1"
-  }
+	"name": "ankamadle",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write .",
+		"preview": "vite preview",
+		"commitlint": "commitlint --edit",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.14",
+		"@commitlint/cli": "^20.4.1",
+		"@commitlint/config-conventional": "^20.4.1",
+		"@types/node": "^24.10.1",
+		"@types/react": "^19.2.13",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^5.1.3",
+		"husky": "^9.1.7",
+		"typescript": "~5.9.3",
+		"vite": "^7.3.1"
+	}
 }

@@ -1,92 +1,92 @@
 [
-  {
-    "id": 1,
-    "name": "Bouftou",
-    "type": "Créatures des plaines",
-    "zone": "Plaines de Cania",
-    "niveau": 20,
-    "couleur": "Blanc",
-    "pv": 60
-  },
-  {
-    "id": 2,
-    "name": "Tofu",
-    "type": "Volatiles",
-    "zone": "Incarnam",
-    "niveau": 2,
-    "couleur": "Jaune",
-    "pv": 15
-  },
-  {
-    "id": 3,
-    "name": "Arakne",
-    "type": "Insectes",
-    "zone": "Forêt d'Amakna",
-    "niveau": 5,
-    "couleur": "Noir",
-    "pv": 25
-  },
-  {
-    "id": 4,
-    "name": "Crabe",
-    "type": "Créatures marines",
-    "zone": "Rivage sufokien",
-    "niveau": 8,
-    "couleur": "Rouge",
-    "pv": 40
-  },
-  {
-    "id": 5,
-    "name": "Chafer",
-    "type": "Morts-vivants",
-    "zone": "Cimetière d'Amakna",
-    "niveau": 25,
-    "couleur": "Gris",
-    "pv": 80
-  },
-  {
-    "id": 6,
-    "name": "Bwork Mage",
-    "type": "Bworks",
-    "zone": "Camp des Bworks",
-    "niveau": 50,
-    "couleur": "Vert",
-    "pv": 200
-  },
-  {
-    "id": 7,
-    "name": "Prespic",
-    "type": "Créatures des plaines",
-    "zone": "Plaines de Cania",
-    "niveau": 10,
-    "couleur": "Marron",
-    "pv": 35
-  },
-  {
-    "id": 8,
-    "name": "Scarafeuille Vert",
-    "type": "Insectes",
-    "zone": "Forêt d'Amakna",
-    "niveau": 3,
-    "couleur": "Vert",
-    "pv": 20
-  },
-  {
-    "id": 9,
-    "name": "Bandit du Coin",
-    "type": "Bandits",
-    "zone": "Coin des Bouftous",
-    "niveau": 30,
-    "couleur": "Noir",
-    "pv": 100
-  },
-  {
-    "id": 10,
-    "name": "Larve Bleue",
-    "type": "Larves",
-    "zone": "Souterrains d'Amakna",
-    "niveau": 12,
-    "couleur": "Bleu",
-    "pv": 45
-  }
+	{
+		"id": 1,
+		"name": "Bouftou",
+		"type": "Créatures des plaines",
+		"zone": "Plaines de Cania",
+		"niveau": 20,
+		"couleur": "Blanc",
+		"pv": 60
+	},
+	{
+		"id": 2,
+		"name": "Tofu",
+		"type": "Volatiles",
+		"zone": "Incarnam",
+		"niveau": 2,
+		"couleur": "Jaune",
+		"pv": 15
+	},
+	{
+		"id": 3,
+		"name": "Arakne",
+		"type": "Insectes",
+		"zone": "Forêt d'Amakna",
+		"niveau": 5,
+		"couleur": "Noir",
+		"pv": 25
+	},
+	{
+		"id": 4,
+		"name": "Crabe",
+		"type": "Créatures marines",
+		"zone": "Rivage sufokien",
+		"niveau": 8,
+		"couleur": "Rouge",
+		"pv": 40
+	},
+	{
+		"id": 5,
+		"name": "Chafer",
+		"type": "Morts-vivants",
+		"zone": "Cimetière d'Amakna",
+		"niveau": 25,
+		"couleur": "Gris",
+		"pv": 80
+	},
+	{
+		"id": 6,
+		"name": "Bwork Mage",
+		"type": "Bworks",
+		"zone": "Camp des Bworks",
+		"niveau": 50,
+		"couleur": "Vert",
+		"pv": 200
+	},
+	{
+		"id": 7,
+		"name": "Prespic",
+		"type": "Créatures des plaines",
+		"zone": "Plaines de Cania",
+		"niveau": 10,
+		"couleur": "Marron",
+		"pv": 35
+	},
+	{
+		"id": 8,
+		"name": "Scarafeuille Vert",
+		"type": "Insectes",
+		"zone": "Forêt d'Amakna",
+		"niveau": 3,
+		"couleur": "Vert",
+		"pv": 20
+	},
+	{
+		"id": 9,
+		"name": "Bandit du Coin",
+		"type": "Bandits",
+		"zone": "Coin des Bouftous",
+		"niveau": 30,
+		"couleur": "Noir",
+		"pv": 100
+	},
+	{
+		"id": 10,
+		"name": "Larve Bleue",
+		"type": "Larves",
+		"zone": "Souterrains d'Amakna",
+		"niveau": 12,
+		"couleur": "Bleu",
+		"pv": 45
+	}
 ]

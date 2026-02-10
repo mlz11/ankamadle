@@ -1,91 +1,101 @@
-import { useState, useRef, useEffect } from 'react';
-import type { Monster } from '../../types';
+import { useEffect, useRef, useState } from "react";
+import type { Monster } from "../../types";
 
 interface Props {
-  monsters: Monster[];
-  usedIds: Set<number>;
-  onSelect: (monster: Monster) => void;
-  disabled: boolean;
+	monsters: Monster[];
+	usedIds: Set<number>;
+	onSelect: (monster: Monster) => void;
+	disabled: boolean;
 }
 
-export default function SearchBar({ monsters, usedIds, onSelect, disabled }: Props) {
-  const [query, setQuery] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [highlightIndex, setHighlightIndex] = useState(0);
-  const inputRef = useRef<HTMLInputElement>(null);
+export default function SearchBar({
+	monsters,
+	usedIds,
+	onSelect,
+	disabled,
+}: Props) {
+	const [query, setQuery] = useState("");
+	const [showDropdown, setShowDropdown] = useState(false);
+	const [highlightIndex, setHighlightIndex] = useState(0);
+	const inputRef = useRef<HTMLInputElement>(null);
 
-  const filtered = query.length > 0
-    ? monsters.filter(
-        m => !usedIds.has(m.id) && m.name.toLowerCase().includes(query.toLowerCase())
-      )
-    : [];
+	const filtered =
+		query.length > 0
+			? monsters.filter(
+					(m) =>
+						!usedIds.has(m.id) &&
+						m.name.toLowerCase().includes(query.toLowerCase()),
+				)
+			: [];
 
-  useEffect(() => {
-    setHighlightIndex(0);
-  }, [query]);
+	useEffect(() => {
+		setHighlightIndex(0);
+	}, []);
 
-  function handleSelect(monster: Monster) {
-    onSelect(monster);
-    setQuery('');
-    setShowDropdown(false);
-    inputRef.current?.focus();
-  }
+	function handleSelect(monster: Monster) {
+		onSelect(monster);
+		setQuery("");
+		setShowDropdown(false);
+		inputRef.current?.focus();
+	}
 
-  function handleKeyDown(e: React.KeyboardEvent) {
-    if (!showDropdown || filtered.length === 0) {
-      if (e.key === 'Enter' && filtered.length === 1) {
-        handleSelect(filtered[0]);
-        e.preventDefault();
-      }
-      return;
-    }
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      setHighlightIndex(i => Math.min(i + 1, filtered.length - 1));
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      setHighlightIndex(i => Math.max(i - 1, 0));
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      if (filtered[highlightIndex]) {
-        handleSelect(filtered[highlightIndex]);
-      }
-    } else if (e.key === 'Escape') {
-      setShowDropdown(false);
-    }
-  }
+	function handleKeyDown(e: React.KeyboardEvent) {
+		if (!showDropdown || filtered.length === 0) {
+			if (e.key === "Enter" && filtered.length === 1) {
+				handleSelect(filtered[0]);
+				e.preventDefault();
+			}
+			return;
+		}
+		if (e.key === "ArrowDown") {
+			e.preventDefault();
+			setHighlightIndex((i) => Math.min(i + 1, filtered.length - 1));
+		} else if (e.key === "ArrowUp") {
+			e.preventDefault();
+			setHighlightIndex((i) => Math.max(i - 1, 0));
+		} else if (e.key === "Enter") {
+			e.preventDefault();
+			if (filtered[highlightIndex]) {
+				handleSelect(filtered[highlightIndex]);
+			}
+		} else if (e.key === "Escape") {
+			setShowDropdown(false);
+		}
+	}
 
-  return (
-    <div className="search-bar">
-      <input
-        ref={inputRef}
-        type="text"
-        placeholder={disabled ? 'Bravo ! Reviens demain.' : 'Devine le monstre...'}
-        value={query}
-        disabled={disabled}
-        onChange={e => {
-          setQuery(e.target.value);
-          setShowDropdown(true);
-        }}
-        onFocus={() => setShowDropdown(true)}
-        onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
-        onKeyDown={handleKeyDown}
-        autoComplete="off"
-      />
-      {showDropdown && filtered.length > 0 && (
-        <ul className="search-dropdown">
-          {filtered.slice(0, 8).map((m, i) => (
-            <li
-              key={m.id}
-              className={i === highlightIndex ? 'highlighted' : ''}
-              onMouseDown={() => handleSelect(m)}
-              onMouseEnter={() => setHighlightIndex(i)}
-            >
-              {m.name}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+	return (
+		<div className="search-bar">
+			<input
+				ref={inputRef}
+				type="text"
+				placeholder={
+					disabled ? "Bravo ! Reviens demain." : "Devine le monstre..."
+				}
+				value={query}
+				disabled={disabled}
+				onChange={(e) => {
+					setQuery(e.target.value);
+					setShowDropdown(true);
+				}}
+				onFocus={() => setShowDropdown(true)}
+				onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
+				onKeyDown={handleKeyDown}
+				autoComplete="off"
+			/>
+			{showDropdown && filtered.length > 0 && (
+				<ul className="search-dropdown">
+					{filtered.slice(0, 8).map((m, i) => (
+						<li
+							key={m.id}
+							className={i === highlightIndex ? "highlighted" : ""}
+							onMouseDown={() => handleSelect(m)}
+							onMouseEnter={() => setHighlightIndex(i)}
+						>
+							{m.name}
+						</li>
+					))}
+				</ul>
+			)}
+		</div>
+	);
 }
