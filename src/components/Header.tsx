@@ -1,7 +1,20 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
 	const [showRules, setShowRules] = useState(false);
+	const rulesBtnRef = useRef<HTMLButtonElement>(null);
+
+	useEffect(() => {
+		if (!showRules) return;
+		const handleKey = (e: KeyboardEvent) => {
+			if (e.key === "Escape") {
+				setShowRules(false);
+				rulesBtnRef.current?.blur();
+			}
+		};
+		document.addEventListener("keydown", handleKey);
+		return () => document.removeEventListener("keydown", handleKey);
+	}, [showRules]);
 
 	return (
 		<header className="app-header">
@@ -14,6 +27,7 @@ export default function Header() {
 					/>
 				</h1>
 				<button
+					ref={rulesBtnRef}
 					type="button"
 					className="rules-btn"
 					onClick={() => setShowRules((v) => !v)}
