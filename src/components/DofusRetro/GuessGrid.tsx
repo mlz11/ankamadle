@@ -21,11 +21,11 @@ export default function GuessGrid({ results, newGuessIndex = -1 }: Props) {
 					<div className="header-cell">PV</div>
 				</div>
 			</div>
-			{results.map((r, i) => (
+			{[...results].reverse().map((r, i) => (
 				<GuessRow
 					key={`${r.monster.id}-${i}`}
 					result={r}
-					isNew={i === newGuessIndex}
+					isNew={results.length - 1 - i === newGuessIndex}
 				/>
 			))}
 		</div>
