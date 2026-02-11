@@ -973,6 +973,17 @@
 		"couleur": "Blanc"
 	},
 	{
+		"id": 173,
+		"name": "Abraknyde Ancestral",
+		"ecosystem": "Créatures de la forêt",
+		"race": "Abraknydien",
+		"niveau_min": 200,
+		"niveau_max": 240,
+		"pv_min": 4200,
+		"pv_max": 5000,
+		"image": "/img/monsters/1458.svg"
+	},
+	{
 		"id": 178,
 		"name": "Gobelin",
 		"ecosystem": "Créatures de la montagne",
@@ -1485,6 +1496,17 @@
 		"pv_max": 400,
 		"image": "/img/monsters/1160.svg",
 		"couleur": "Marron"
+	},
+	{
+		"id": 257,
+		"name": "Chêne Mou",
+		"ecosystem": "Créatures de la forêt",
+		"race": "Abraknydien",
+		"niveau_min": 800,
+		"niveau_max": 920,
+		"pv_min": 10000,
+		"pv_max": 12000,
+		"image": "/img/monsters/1157.svg"
 	},
 	{
 		"id": 259,
@@ -6710,6 +6732,39 @@
 		"pv_max": 5200,
 		"image": "/img/monsters/1616.svg",
 		"couleur": "Marron"
+	},
+	{
+		"id": 1085,
+		"name": "Tynril Déconcerté",
+		"ecosystem": "Créatures de l'île d'Otomaï",
+		"race": "Monstres de la Jungle Sombre",
+		"niveau_min": 200,
+		"niveau_max": 240,
+		"pv_min": 4000,
+		"pv_max": 5200,
+		"image": "/img/monsters/1617.svg"
+	},
+	{
+		"id": 1086,
+		"name": "Tynril Perfide",
+		"ecosystem": "Créatures de l'île d'Otomaï",
+		"race": "Monstres de la Jungle Sombre",
+		"niveau_min": 200,
+		"niveau_max": 240,
+		"pv_min": 4000,
+		"pv_max": 5200,
+		"image": "/img/monsters/1618.svg"
+	},
+	{
+		"id": 1087,
+		"name": "Tynril Ahuri",
+		"ecosystem": "Créatures de l'île d'Otomaï",
+		"race": "Monstres de la Jungle Sombre",
+		"niveau_min": 200,
+		"niveau_max": 240,
+		"pv_min": 4000,
+		"pv_max": 5200,
+		"image": "/img/monsters/1619.svg"
 	},
 	{
 		"id": 1073,
