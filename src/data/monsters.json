@@ -6909,28 +6909,6 @@
 		"couleur": "Noir / Marron"
 	},
 	{
-		"id": 1111,
-		"name": "Prisme bontarien",
-		"ecosystem": "Créatures humanoïdes",
-		"race": "Gardes",
-		"niveau_min": 1,
-		"niveau_max": 5,
-		"pv_min": 1000,
-		"pv_max": 5000,
-		"image": "/img/monsters/8101.svg"
-	},
-	{
-		"id": 1112,
-		"name": "Prisme brâkmarien",
-		"ecosystem": "Créatures humanoïdes",
-		"race": "Gardes",
-		"niveau_min": 1,
-		"niveau_max": 5,
-		"pv_min": 1000,
-		"pv_max": 5000,
-		"image": "/img/monsters/8100.svg"
-	},
-	{
 		"id": 1119,
 		"name": "Bandit des plaines",
 		"ecosystem": "Créatures humanoïdes",
