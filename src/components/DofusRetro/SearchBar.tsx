@@ -20,6 +20,21 @@ export default function SearchBar({
 	const [highlightIndex, setHighlightIndex] = useState(0);
 	const [shaking, setShaking] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);
+	const wrapperRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		if (!showDropdown) return;
+		function handleClickOutside(e: MouseEvent) {
+			if (
+				wrapperRef.current &&
+				!wrapperRef.current.contains(e.target as Node)
+			) {
+				setShowDropdown(false);
+			}
+		}
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
+	}, [showDropdown]);
 
 	const available = monsters
 		.filter((m) => !usedIds.has(m.id))
@@ -90,7 +105,7 @@ export default function SearchBar({
 	const canSubmit = !disabled && filtered.length > 0;
 
 	return (
-		<div className={`search-bar ${shaking ? "shake" : ""}`}>
+		<div ref={wrapperRef} className={`search-bar ${shaking ? "shake" : ""}`}>
 			<div className="search-input-wrapper">
 				<input
 					ref={inputRef}
@@ -105,7 +120,6 @@ export default function SearchBar({
 						setShowDropdown(true);
 					}}
 					onFocus={() => setShowDropdown(true)}
-					onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
 					onKeyDown={handleKeyDown}
 					autoComplete="off"
 				/>
