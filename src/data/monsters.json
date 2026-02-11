@@ -9,8 +9,7 @@
 		"pv_min": 10,
 		"pv_max": 30,
 		"image": "/img/monsters/1563.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 34,
@@ -22,8 +21,7 @@
 		"pv_min": 20,
 		"pv_max": 80,
 		"image": "/img/monsters/1568.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 46,
@@ -35,8 +33,7 @@
 		"pv_min": 40,
 		"pv_max": 60,
 		"image": "/img/monsters/1567.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 47,
@@ -48,8 +45,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1001.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 48,
@@ -61,8 +57,7 @@
 		"pv_min": 80,
 		"pv_max": 140,
 		"image": "/img/monsters/1569.svg",
-		"couleur": "Marron / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Jaune"
 	},
 	{
 		"id": 52,
@@ -74,8 +69,7 @@
 		"pv_min": 10,
 		"pv_max": 40,
 		"image": "/img/monsters/1564.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 53,
@@ -87,8 +81,7 @@
 		"pv_min": 150,
 		"pv_max": 250,
 		"image": "/img/monsters/1012.svg",
-		"couleur": "Vert / Violet",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Violet"
 	},
 	{
 		"id": 54,
@@ -100,8 +93,7 @@
 		"pv_min": 200,
 		"pv_max": 320,
 		"image": "/img/monsters/1014.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 55,
@@ -113,8 +105,7 @@
 		"pv_min": 15,
 		"pv_max": 60,
 		"image": "/img/monsters/1062.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 56,
@@ -126,8 +117,7 @@
 		"pv_min": 60,
 		"pv_max": 140,
 		"image": "/img/monsters/1064.svg",
-		"couleur": "Menthe",
-		"availableFrom": "2025-1-1"
+		"couleur": "Menthe"
 	},
 	{
 		"id": 57,
@@ -139,8 +129,7 @@
 		"pv_min": 180,
 		"pv_max": 300,
 		"image": "/img/monsters/1066.svg",
-		"couleur": "Fraise",
-		"availableFrom": "2025-1-1"
+		"couleur": "Fraise"
 	},
 	{
 		"id": 58,
@@ -152,8 +141,7 @@
 		"pv_min": 1000,
 		"pv_max": 1400,
 		"image": "/img/monsters/1061.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 59,
@@ -165,8 +153,7 @@
 		"pv_min": 30,
 		"pv_max": 60,
 		"image": "/img/monsters/1565.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 61,
@@ -178,8 +165,7 @@
 		"pv_min": 10,
 		"pv_max": 42,
 		"image": "/img/monsters/1572.svg",
-		"couleur": "Orange / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange / Bleu"
 	},
 	{
 		"id": 62,
@@ -191,8 +177,7 @@
 		"pv_min": 70,
 		"pv_max": 110,
 		"image": "/img/monsters/1007.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 64,
@@ -204,8 +189,7 @@
 		"pv_min": 120,
 		"pv_max": 160,
 		"image": "/img/monsters/1050.svg",
-		"couleur": "Beige / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Blanc"
 	},
 	{
 		"id": 65,
@@ -217,8 +201,7 @@
 		"pv_min": 120,
 		"pv_max": 140,
 		"image": "/img/monsters/1051.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 68,
@@ -230,8 +213,7 @@
 		"pv_min": 75,
 		"pv_max": 95,
 		"image": "/img/monsters/1054.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 70,
@@ -242,8 +224,7 @@
 		"niveau_max": 43,
 		"pv_min": 170,
 		"pv_max": 490,
-		"image": "/img/monsters/1509.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1509.svg"
 	},
 	{
 		"id": 72,
@@ -255,8 +236,7 @@
 		"pv_min": 55,
 		"pv_max": 75,
 		"image": "/img/monsters/1055.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 74,
@@ -268,8 +248,7 @@
 		"pv_min": 120,
 		"pv_max": 220,
 		"image": "/img/monsters/1004.svg",
-		"couleur": "Vert / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Marron"
 	},
 	{
 		"id": 75,
@@ -281,8 +260,7 @@
 		"pv_min": 400,
 		"pv_max": 800,
 		"image": "/img/monsters/1025.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 76,
@@ -294,8 +272,7 @@
 		"pv_min": 400,
 		"pv_max": 600,
 		"image": "/img/monsters/1032.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 78,
@@ -307,8 +284,7 @@
 		"pv_min": 20,
 		"pv_max": 60,
 		"image": "/img/monsters/1561.svg",
-		"couleur": "Blanc / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Rouge"
 	},
 	{
 		"id": 79,
@@ -320,8 +296,7 @@
 		"pv_min": 25,
 		"pv_max": 55,
 		"image": "/img/monsters/1560.svg",
-		"couleur": "Jaune / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune / Blanc"
 	},
 	{
 		"id": 81,
@@ -333,8 +308,7 @@
 		"pv_min": 120,
 		"pv_max": 240,
 		"image": "/img/monsters/1041.svg",
-		"couleur": "Blanc / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Jaune"
 	},
 	{
 		"id": 82,
@@ -346,8 +320,7 @@
 		"pv_min": 400,
 		"pv_max": 800,
 		"image": "/img/monsters/1026.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 83,
@@ -359,8 +332,7 @@
 		"pv_min": 120,
 		"pv_max": 240,
 		"image": "/img/monsters/1042.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 84,
@@ -372,8 +344,7 @@
 		"pv_min": 120,
 		"pv_max": 240,
 		"image": "/img/monsters/1043.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 85,
@@ -385,8 +356,7 @@
 		"pv_min": 1250,
 		"pv_max": 1650,
 		"image": "/img/monsters/1063.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 86,
@@ -398,8 +368,7 @@
 		"pv_min": 1500,
 		"pv_max": 1900,
 		"image": "/img/monsters/1065.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 87,
@@ -411,8 +380,7 @@
 		"pv_min": 400,
 		"pv_max": 600,
 		"image": "/img/monsters/1029.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 88,
@@ -424,8 +392,7 @@
 		"pv_min": 400,
 		"pv_max": 600,
 		"image": "/img/monsters/1031.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 89,
@@ -437,8 +404,7 @@
 		"pv_min": 400,
 		"pv_max": 600,
 		"image": "/img/monsters/1030.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 90,
@@ -450,8 +416,7 @@
 		"pv_min": 400,
 		"pv_max": 800,
 		"image": "/img/monsters/1028.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 91,
@@ -463,8 +428,7 @@
 		"pv_min": 800,
 		"pv_max": 1000,
 		"image": "/img/monsters/1034.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 93,
@@ -476,8 +440,7 @@
 		"pv_min": 800,
 		"pv_max": 1000,
 		"image": "/img/monsters/1036.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 94,
@@ -489,8 +452,7 @@
 		"pv_min": 800,
 		"pv_max": 1000,
 		"image": "/img/monsters/1033.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 95,
@@ -502,8 +464,7 @@
 		"pv_min": 800,
 		"pv_max": 1000,
 		"image": "/img/monsters/1035.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 96,
@@ -515,8 +476,7 @@
 		"pv_min": 100,
 		"pv_max": 120,
 		"image": "/img/monsters/1053.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 97,
@@ -528,8 +488,7 @@
 		"pv_min": 300,
 		"pv_max": 500,
 		"image": "/img/monsters/1052.svg",
-		"couleur": "Beige / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Blanc"
 	},
 	{
 		"id": 98,
@@ -541,8 +500,7 @@
 		"pv_min": 8,
 		"pv_max": 24,
 		"image": "/img/monsters/1558.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 99,
@@ -554,8 +512,7 @@
 		"pv_min": 700,
 		"pv_max": 780,
 		"image": "/img/monsters/1056.svg",
-		"couleur": "Blanc / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Bleu"
 	},
 	{
 		"id": 101,
@@ -567,8 +524,7 @@
 		"pv_min": 60,
 		"pv_max": 120,
 		"image": "/img/monsters/1566.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 102,
@@ -580,8 +536,7 @@
 		"pv_min": 700,
 		"pv_max": 1200,
 		"image": "/img/monsters/1069.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 103,
@@ -593,8 +548,7 @@
 		"pv_min": 60,
 		"pv_max": 120,
 		"image": "/img/monsters/1020.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 104,
@@ -606,8 +560,7 @@
 		"pv_min": 120,
 		"pv_max": 200,
 		"image": "/img/monsters/1562.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 106,
@@ -619,8 +572,7 @@
 		"pv_min": 300,
 		"pv_max": 500,
 		"image": "/img/monsters/1008.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 107,
@@ -632,8 +584,7 @@
 		"pv_min": 5000,
 		"pv_max": 7000,
 		"image": "/img/monsters/1071.svg",
-		"couleur": "Blanc / Violet",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Violet"
 	},
 	{
 		"id": 108,
@@ -645,8 +596,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1068.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 110,
@@ -658,8 +608,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1047.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 111,
@@ -671,8 +620,7 @@
 		"pv_min": 35,
 		"pv_max": 55,
 		"image": "/img/monsters/1072.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 112,
@@ -684,8 +632,7 @@
 		"pv_min": 99,
 		"pv_max": 177,
 		"image": "/img/monsters/1067.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 113,
@@ -697,8 +644,7 @@
 		"pv_min": 2250,
 		"pv_max": 2650,
 		"image": "/img/monsters/1037.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 118,
@@ -710,8 +656,7 @@
 		"pv_min": 100,
 		"pv_max": 180,
 		"image": "/img/monsters/1073.svg",
-		"couleur": "Marron / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Blanc"
 	},
 	{
 		"id": 119,
@@ -723,8 +668,7 @@
 		"pv_min": 120,
 		"pv_max": 300,
 		"image": "/img/monsters/1074.svg",
-		"couleur": "Marron / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Bleu"
 	},
 	{
 		"id": 121,
@@ -736,8 +680,7 @@
 		"pv_min": 6400,
 		"pv_max": 6800,
 		"image": "/img/monsters/1088.svg",
-		"couleur": "Marron / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Orange"
 	},
 	{
 		"id": 123,
@@ -749,8 +692,7 @@
 		"pv_min": 110,
 		"pv_max": 190,
 		"image": "/img/monsters/1060.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 124,
@@ -762,8 +704,7 @@
 		"pv_min": 100,
 		"pv_max": 180,
 		"image": "/img/monsters/1078.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 126,
@@ -775,8 +716,7 @@
 		"pv_min": 5,
 		"pv_max": 17,
 		"image": "/img/monsters/1084.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 127,
@@ -788,8 +728,7 @@
 		"pv_min": 70,
 		"pv_max": 150,
 		"image": "/img/monsters/1077.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 134,
@@ -801,8 +740,7 @@
 		"pv_min": 15,
 		"pv_max": 27,
 		"image": "/img/monsters/1570.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 147,
@@ -814,8 +752,7 @@
 		"pv_min": 500,
 		"pv_max": 700,
 		"image": "/img/monsters/1574.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 148,
@@ -827,8 +764,7 @@
 		"pv_min": 150,
 		"pv_max": 270,
 		"image": "/img/monsters/1573.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 149,
@@ -840,8 +776,7 @@
 		"pv_min": 15,
 		"pv_max": 27,
 		"image": "/img/monsters/1571.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 153,
@@ -853,8 +788,7 @@
 		"pv_min": 50,
 		"pv_max": 150,
 		"image": "/img/monsters/1075.svg",
-		"couleur": "Blanc / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Bleu"
 	},
 	{
 		"id": 154,
@@ -866,8 +800,7 @@
 		"pv_min": 40,
 		"pv_max": 90,
 		"image": "/img/monsters/1081.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 155,
@@ -879,8 +812,7 @@
 		"pv_min": 60,
 		"pv_max": 100,
 		"image": "/img/monsters/1095.svg",
-		"couleur": "Marron / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Blanc"
 	},
 	{
 		"id": 158,
@@ -892,8 +824,7 @@
 		"pv_min": 1000,
 		"pv_max": 1000,
 		"image": "/img/monsters/1096.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 159,
@@ -905,8 +836,7 @@
 		"pv_min": 130,
 		"pv_max": 250,
 		"image": "/img/monsters/1107.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 160,
@@ -917,8 +847,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1097.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1097.svg"
 	},
 	{
 		"id": 161,
@@ -929,8 +858,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1098.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1098.svg"
 	},
 	{
 		"id": 162,
@@ -941,8 +869,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1099.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1099.svg"
 	},
 	{
 		"id": 163,
@@ -953,8 +880,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1100.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1100.svg"
 	},
 	{
 		"id": 164,
@@ -965,8 +891,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1101.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1101.svg"
 	},
 	{
 		"id": 165,
@@ -977,8 +902,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1102.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1102.svg"
 	},
 	{
 		"id": 166,
@@ -989,8 +913,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1103.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1103.svg"
 	},
 	{
 		"id": 167,
@@ -1001,8 +924,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1104.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1104.svg"
 	},
 	{
 		"id": 168,
@@ -1013,8 +935,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1105.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1105.svg"
 	},
 	{
 		"id": 169,
@@ -1025,8 +946,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1106.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1106.svg"
 	},
 	{
 		"id": 170,
@@ -1038,8 +958,7 @@
 		"pv_min": 400,
 		"pv_max": 800,
 		"image": "/img/monsters/1027.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 171,
@@ -1051,8 +970,7 @@
 		"pv_min": 55,
 		"pv_max": 75,
 		"image": "/img/monsters/1108.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 173,
@@ -1063,8 +981,7 @@
 		"niveau_max": 240,
 		"pv_min": 4200,
 		"pv_max": 5000,
-		"image": "/img/monsters/1458.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1458.svg"
 	},
 	{
 		"id": 178,
@@ -1076,8 +993,7 @@
 		"pv_min": 70,
 		"pv_max": 90,
 		"image": "/img/monsters/1076.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 179,
@@ -1089,8 +1005,7 @@
 		"pv_min": 190,
 		"pv_max": 230,
 		"image": "/img/monsters/1057.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 180,
@@ -1102,8 +1017,7 @@
 		"pv_min": 5000,
 		"pv_max": 5800,
 		"image": "/img/monsters/1109.svg",
-		"couleur": "Orange / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange / Blanc"
 	},
 	{
 		"id": 181,
@@ -1115,8 +1029,7 @@
 		"pv_min": 1600,
 		"pv_max": 2000,
 		"image": "/img/monsters/1058.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 182,
@@ -1128,8 +1041,7 @@
 		"pv_min": 700,
 		"pv_max": 1100,
 		"image": "/img/monsters/1059.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 194,
@@ -1141,8 +1053,7 @@
 		"pv_min": 250,
 		"pv_max": 410,
 		"image": "/img/monsters/1136.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 198,
@@ -1154,8 +1065,7 @@
 		"pv_min": 250,
 		"pv_max": 410,
 		"image": "/img/monsters/1135.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 200,
@@ -1167,8 +1077,7 @@
 		"pv_min": 80,
 		"pv_max": 100,
 		"image": "/img/monsters/1108.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 208,
@@ -1180,8 +1089,7 @@
 		"pv_min": 70,
 		"pv_max": 90,
 		"image": "/img/monsters/1118.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 209,
@@ -1193,8 +1101,7 @@
 		"pv_min": 300,
 		"pv_max": 380,
 		"image": "/img/monsters/1116.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 211,
@@ -1206,8 +1113,7 @@
 		"pv_min": 500,
 		"pv_max": 580,
 		"image": "/img/monsters/1115.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 212,
@@ -1219,8 +1125,7 @@
 		"pv_min": 500,
 		"pv_max": 580,
 		"image": "/img/monsters/1113.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 213,
@@ -1232,8 +1137,7 @@
 		"pv_min": 500,
 		"pv_max": 580,
 		"image": "/img/monsters/1114.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 214,
@@ -1245,8 +1149,7 @@
 		"pv_min": 700,
 		"pv_max": 780,
 		"image": "/img/monsters/1112.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 215,
@@ -1258,8 +1161,7 @@
 		"pv_min": 100,
 		"pv_max": 140,
 		"image": "/img/monsters/1121.svg",
-		"couleur": "Rose / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rose / Vert"
 	},
 	{
 		"id": 216,
@@ -1271,8 +1173,7 @@
 		"pv_min": 1100,
 		"pv_max": 1500,
 		"image": "/img/monsters/1122.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 217,
@@ -1284,8 +1185,7 @@
 		"pv_min": 150,
 		"pv_max": 250,
 		"image": "/img/monsters/1119.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 218,
@@ -1297,8 +1197,7 @@
 		"pv_min": 100,
 		"pv_max": 180,
 		"image": "/img/monsters/1120.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 220,
@@ -1310,8 +1209,7 @@
 		"pv_min": 140,
 		"pv_max": 180,
 		"image": "/img/monsters/1125.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 221,
@@ -1323,8 +1221,7 @@
 		"pv_min": 130,
 		"pv_max": 170,
 		"image": "/img/monsters/1126.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 222,
@@ -1336,8 +1233,7 @@
 		"pv_min": 160,
 		"pv_max": 200,
 		"image": "/img/monsters/1127.svg",
-		"couleur": "Verte",
-		"availableFrom": "2025-1-1"
+		"couleur": "Verte"
 	},
 	{
 		"id": 223,
@@ -1349,8 +1245,7 @@
 		"pv_min": 120,
 		"pv_max": 160,
 		"image": "/img/monsters/1128.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 225,
@@ -1362,8 +1257,7 @@
 		"pv_min": 8000,
 		"pv_max": 10000,
 		"image": "/img/monsters/1130.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 226,
@@ -1375,8 +1269,7 @@
 		"pv_min": 9000,
 		"pv_max": 9000,
 		"image": "/img/monsters/1129.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 228,
@@ -1388,8 +1281,7 @@
 		"pv_min": 500,
 		"pv_max": 700,
 		"image": "/img/monsters/1133.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 229,
@@ -1401,8 +1293,7 @@
 		"pv_min": 500,
 		"pv_max": 980,
 		"image": "/img/monsters/1132.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 230,
@@ -1414,8 +1305,7 @@
 		"pv_min": 5000,
 		"pv_max": 7000,
 		"image": "/img/monsters/1124.svg",
-		"couleur": "Rouge / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge / Blanc"
 	},
 	{
 		"id": 231,
@@ -1427,8 +1317,7 @@
 		"pv_min": 500,
 		"pv_max": 940,
 		"image": "/img/monsters/1123.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 232,
@@ -1440,8 +1329,7 @@
 		"pv_min": 10000,
 		"pv_max": 12000,
 		"image": "/img/monsters/1134.svg",
-		"couleur": "Blanc / Violet",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Violet"
 	},
 	{
 		"id": 233,
@@ -1453,8 +1341,7 @@
 		"pv_min": 6000,
 		"pv_max": 10000,
 		"image": "/img/monsters/1131.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 235,
@@ -1466,8 +1353,7 @@
 		"pv_min": 120,
 		"pv_max": 200,
 		"image": "/img/monsters/1149.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 236,
@@ -1479,8 +1365,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/9206.svg",
-		"couleur": "Violet",
-		"availableFrom": "2025-1-1"
+		"couleur": "Violet"
 	},
 	{
 		"id": 240,
@@ -1492,8 +1377,7 @@
 		"pv_min": 250,
 		"pv_max": 410,
 		"image": "/img/monsters/1137.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 241,
@@ -1505,8 +1389,7 @@
 		"pv_min": 250,
 		"pv_max": 410,
 		"image": "/img/monsters/1138.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 242,
@@ -1518,8 +1401,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1145.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 243,
@@ -1531,8 +1413,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1146.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 244,
@@ -1544,8 +1425,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1147.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 245,
@@ -1557,8 +1437,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1148.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 248,
@@ -1569,8 +1448,7 @@
 		"niveau_max": 48,
 		"pv_min": 200,
 		"pv_max": 400,
-		"image": "/img/monsters/1150.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1150.svg"
 	},
 	{
 		"id": 251,
@@ -1581,8 +1459,7 @@
 		"niveau_max": 200,
 		"pv_min": 10000,
 		"pv_max": 10000,
-		"image": "/img/monsters/8003.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/8003.svg"
 	},
 	{
 		"id": 254,
@@ -1594,8 +1471,7 @@
 		"pv_min": 450,
 		"pv_max": 570,
 		"image": "/img/monsters/1001.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 255,
@@ -1607,8 +1483,7 @@
 		"pv_min": 50,
 		"pv_max": 90,
 		"image": "/img/monsters/1564.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 256,
@@ -1620,8 +1495,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1160.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 257,
@@ -1632,8 +1506,7 @@
 		"niveau_max": 920,
 		"pv_min": 10000,
 		"pv_max": 12000,
-		"image": "/img/monsters/1157.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1157.svg"
 	},
 	{
 		"id": 259,
@@ -1645,8 +1518,7 @@
 		"pv_min": 250,
 		"pv_max": 350,
 		"image": "/img/monsters/1161.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 261,
@@ -1658,8 +1530,7 @@
 		"pv_min": 200,
 		"pv_max": 320,
 		"image": "/img/monsters/1159.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 263,
@@ -1671,8 +1542,7 @@
 		"pv_min": 900,
 		"pv_max": 1100,
 		"image": "/img/monsters/1162.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 265,
@@ -1684,8 +1554,7 @@
 		"pv_min": 100,
 		"pv_max": 100,
 		"image": "/img/monsters/1166.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 266,
@@ -1697,8 +1566,7 @@
 		"pv_min": 100,
 		"pv_max": 100,
 		"image": "/img/monsters/1168.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 267,
@@ -1710,8 +1578,7 @@
 		"pv_min": 100,
 		"pv_max": 100,
 		"image": "/img/monsters/1169.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 268,
@@ -1723,8 +1590,7 @@
 		"pv_min": 100,
 		"pv_max": 100,
 		"image": "/img/monsters/1167.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 269,
@@ -1736,8 +1602,7 @@
 		"pv_min": 350,
 		"pv_max": 350,
 		"image": "/img/monsters/1042.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 270,
@@ -1749,8 +1614,7 @@
 		"pv_min": 350,
 		"pv_max": 350,
 		"image": "/img/monsters/1149.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 271,
@@ -1762,8 +1626,7 @@
 		"pv_min": 350,
 		"pv_max": 350,
 		"image": "/img/monsters/1043.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 272,
@@ -1775,8 +1638,7 @@
 		"pv_min": 350,
 		"pv_max": 350,
 		"image": "/img/monsters/1041.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 273,
@@ -1788,8 +1650,7 @@
 		"pv_min": 330,
 		"pv_max": 338,
 		"image": "/img/monsters/1174.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 274,
@@ -1801,8 +1662,7 @@
 		"pv_min": 330,
 		"pv_max": 338,
 		"image": "/img/monsters/1171.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 275,
@@ -1814,8 +1674,7 @@
 		"pv_min": 330,
 		"pv_max": 338,
 		"image": "/img/monsters/1172.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 276,
@@ -1827,8 +1686,7 @@
 		"pv_min": 330,
 		"pv_max": 338,
 		"image": "/img/monsters/1173.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 277,
@@ -1840,8 +1698,7 @@
 		"pv_min": 84,
 		"pv_max": 128,
 		"image": "/img/monsters/1175.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 278,
@@ -1853,8 +1710,7 @@
 		"pv_min": 84,
 		"pv_max": 128,
 		"image": "/img/monsters/1178.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 279,
@@ -1866,8 +1722,7 @@
 		"pv_min": 84,
 		"pv_max": 128,
 		"image": "/img/monsters/1176.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 280,
@@ -1879,8 +1734,7 @@
 		"pv_min": 84,
 		"pv_max": 128,
 		"image": "/img/monsters/1177.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 281,
@@ -1892,8 +1746,7 @@
 		"pv_min": 80,
 		"pv_max": 200,
 		"image": "/img/monsters/1179.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 287,
@@ -1905,8 +1758,7 @@
 		"pv_min": 700,
 		"pv_max": 1100,
 		"image": "/img/monsters/1039.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 288,
@@ -1918,8 +1770,7 @@
 		"pv_min": 25,
 		"pv_max": 45,
 		"image": "/img/monsters/1013.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 289,
@@ -1931,8 +1782,7 @@
 		"pv_min": 4500,
 		"pv_max": 6500,
 		"image": "/img/monsters/1186.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 290,
@@ -1944,8 +1794,7 @@
 		"pv_min": 390,
 		"pv_max": 470,
 		"image": "/img/monsters/1189.svg",
-		"couleur": "Blanc / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Orange"
 	},
 	{
 		"id": 291,
@@ -1957,8 +1806,7 @@
 		"pv_min": 300,
 		"pv_max": 360,
 		"image": "/img/monsters/1190.svg",
-		"couleur": "Blanc / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Marron"
 	},
 	{
 		"id": 292,
@@ -1970,8 +1818,7 @@
 		"pv_min": 400,
 		"pv_max": 600,
 		"image": "/img/monsters/1048.svg",
-		"couleur": "Blanc / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Rouge"
 	},
 	{
 		"id": 293,
@@ -1983,8 +1830,7 @@
 		"pv_min": 360,
 		"pv_max": 540,
 		"image": "/img/monsters/1049.svg",
-		"couleur": "Beige / Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Gris"
 	},
 	{
 		"id": 294,
@@ -1996,8 +1842,7 @@
 		"pv_min": 50,
 		"pv_max": 50,
 		"image": "/img/monsters/1086.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 295,
@@ -2008,8 +1853,7 @@
 		"niveau_max": 140,
 		"pv_min": 4000,
 		"pv_max": 8000,
-		"image": "/img/monsters/1152.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1152.svg"
 	},
 	{
 		"id": 296,
@@ -2020,8 +1864,7 @@
 		"niveau_max": 100,
 		"pv_min": 300,
 		"pv_max": 1200,
-		"image": "/img/monsters/1192.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1192.svg"
 	},
 	{
 		"id": 297,
@@ -2033,8 +1876,7 @@
 		"pv_min": 500,
 		"pv_max": 580,
 		"image": "/img/monsters/1070.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 298,
@@ -2046,8 +1888,7 @@
 		"pv_min": 250,
 		"pv_max": 330,
 		"image": "/img/monsters/1198.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 299,
@@ -2059,8 +1900,7 @@
 		"pv_min": 150,
 		"pv_max": 230,
 		"image": "/img/monsters/1201.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 300,
@@ -2072,8 +1912,7 @@
 		"pv_min": 50,
 		"pv_max": 90,
 		"image": "/img/monsters/1085.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 301,
@@ -2085,8 +1924,7 @@
 		"pv_min": 350,
 		"pv_max": 550,
 		"image": "/img/monsters/1196.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 303,
@@ -2097,8 +1935,7 @@
 		"niveau_max": 47,
 		"pv_min": 300,
 		"pv_max": 480,
-		"image": "/img/monsters/1105.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1105.svg"
 	},
 	{
 		"id": 304,
@@ -2109,8 +1946,7 @@
 		"niveau_max": 47,
 		"pv_min": 300,
 		"pv_max": 480,
-		"image": "/img/monsters/1105.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1105.svg"
 	},
 	{
 		"id": 305,
@@ -2121,8 +1957,7 @@
 		"niveau_max": 47,
 		"pv_min": 350,
 		"pv_max": 550,
-		"image": "/img/monsters/1104.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1104.svg"
 	},
 	{
 		"id": 306,
@@ -2133,8 +1968,7 @@
 		"niveau_max": 47,
 		"pv_min": 350,
 		"pv_max": 550,
-		"image": "/img/monsters/1104.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1104.svg"
 	},
 	{
 		"id": 308,
@@ -2145,8 +1979,7 @@
 		"niveau_max": 47,
 		"pv_min": 280,
 		"pv_max": 480,
-		"image": "/img/monsters/1099.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1099.svg"
 	},
 	{
 		"id": 310,
@@ -2157,8 +1990,7 @@
 		"niveau_max": 47,
 		"pv_min": 280,
 		"pv_max": 480,
-		"image": "/img/monsters/1099.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1099.svg"
 	},
 	{
 		"id": 337,
@@ -2169,8 +2001,7 @@
 		"niveau_max": 47,
 		"pv_min": 190,
 		"pv_max": 350,
-		"image": "/img/monsters/1100.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1100.svg"
 	},
 	{
 		"id": 343,
@@ -2181,8 +2012,7 @@
 		"niveau_max": 50,
 		"pv_min": 250,
 		"pv_max": 570,
-		"image": "/img/monsters/1038.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1038.svg"
 	},
 	{
 		"id": 344,
@@ -2193,8 +2023,7 @@
 		"niveau_max": 25,
 		"pv_min": 150,
 		"pv_max": 270,
-		"image": "/img/monsters/1040.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1040.svg"
 	},
 	{
 		"id": 345,
@@ -2205,8 +2034,7 @@
 		"niveau_max": 47,
 		"pv_min": 270,
 		"pv_max": 470,
-		"image": "/img/monsters/1102.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1102.svg"
 	},
 	{
 		"id": 346,
@@ -2217,8 +2045,7 @@
 		"niveau_max": 47,
 		"pv_min": 270,
 		"pv_max": 470,
-		"image": "/img/monsters/1102.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1102.svg"
 	},
 	{
 		"id": 347,
@@ -2229,8 +2056,7 @@
 		"niveau_max": 47,
 		"pv_min": 180,
 		"pv_max": 420,
-		"image": "/img/monsters/1097.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1097.svg"
 	},
 	{
 		"id": 348,
@@ -2241,8 +2067,7 @@
 		"niveau_max": 47,
 		"pv_min": 180,
 		"pv_max": 420,
-		"image": "/img/monsters/1097.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1097.svg"
 	},
 	{
 		"id": 349,
@@ -2253,8 +2078,7 @@
 		"niveau_max": 47,
 		"pv_min": 230,
 		"pv_max": 390,
-		"image": "/img/monsters/1101.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1101.svg"
 	},
 	{
 		"id": 350,
@@ -2265,8 +2089,7 @@
 		"niveau_max": 47,
 		"pv_min": 230,
 		"pv_max": 390,
-		"image": "/img/monsters/1101.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1101.svg"
 	},
 	{
 		"id": 351,
@@ -2277,8 +2100,7 @@
 		"niveau_max": 47,
 		"pv_min": 190,
 		"pv_max": 350,
-		"image": "/img/monsters/1100.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1100.svg"
 	},
 	{
 		"id": 353,
@@ -2289,8 +2111,7 @@
 		"niveau_max": 47,
 		"pv_min": 200,
 		"pv_max": 360,
-		"image": "/img/monsters/1098.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1098.svg"
 	},
 	{
 		"id": 355,
@@ -2301,8 +2122,7 @@
 		"niveau_max": 47,
 		"pv_min": 200,
 		"pv_max": 360,
-		"image": "/img/monsters/1098.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1098.svg"
 	},
 	{
 		"id": 356,
@@ -2313,8 +2133,7 @@
 		"niveau_max": 47,
 		"pv_min": 250,
 		"pv_max": 410,
-		"image": "/img/monsters/1106.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1106.svg"
 	},
 	{
 		"id": 357,
@@ -2325,8 +2144,7 @@
 		"niveau_max": 47,
 		"pv_min": 250,
 		"pv_max": 410,
-		"image": "/img/monsters/1106.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1106.svg"
 	},
 	{
 		"id": 359,
@@ -2337,8 +2155,7 @@
 		"niveau_max": 47,
 		"pv_min": 200,
 		"pv_max": 400,
-		"image": "/img/monsters/1103.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1103.svg"
 	},
 	{
 		"id": 360,
@@ -2349,8 +2166,7 @@
 		"niveau_max": 47,
 		"pv_min": 200,
 		"pv_max": 400,
-		"image": "/img/monsters/1103.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1103.svg"
 	},
 	{
 		"id": 369,
@@ -2361,8 +2177,7 @@
 		"niveau_max": 12,
 		"pv_min": 100,
 		"pv_max": 100,
-		"image": "/img/monsters/1014.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1014.svg"
 	},
 	{
 		"id": 371,
@@ -2374,8 +2189,7 @@
 		"pv_min": 180,
 		"pv_max": 280,
 		"image": "/img/monsters/1209.svg",
-		"couleur": "Blanc / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Marron"
 	},
 	{
 		"id": 372,
@@ -2386,8 +2200,7 @@
 		"niveau_max": 100,
 		"pv_min": 300,
 		"pv_max": 1200,
-		"image": "/img/monsters/1205.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1205.svg"
 	},
 	{
 		"id": 373,
@@ -2398,8 +2211,7 @@
 		"niveau_max": 160,
 		"pv_min": 36525,
 		"pv_max": 36525,
-		"image": "/img/monsters/1046.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1046.svg"
 	},
 	{
 		"id": 374,
@@ -2410,8 +2222,7 @@
 		"niveau_max": 120,
 		"pv_min": 7200,
 		"pv_max": 8000,
-		"image": "/img/monsters/1202.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1202.svg"
 	},
 	{
 		"id": 375,
@@ -2422,8 +2233,7 @@
 		"niveau_max": 120,
 		"pv_min": 5000,
 		"pv_max": 5400,
-		"image": "/img/monsters/1204.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1204.svg"
 	},
 	{
 		"id": 377,
@@ -2434,8 +2244,7 @@
 		"niveau_max": 120,
 		"pv_min": 18000,
 		"pv_max": 22000,
-		"image": "/img/monsters/1203.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1203.svg"
 	},
 	{
 		"id": 378,
@@ -2447,8 +2256,7 @@
 		"pv_min": 350,
 		"pv_max": 750,
 		"image": "/img/monsters/1193.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 379,
@@ -2459,8 +2267,7 @@
 		"niveau_max": 73,
 		"pv_min": 350,
 		"pv_max": 550,
-		"image": "/img/monsters/1195.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1195.svg"
 	},
 	{
 		"id": 380,
@@ -2471,8 +2278,7 @@
 		"niveau_max": 73,
 		"pv_min": 290,
 		"pv_max": 490,
-		"image": "/img/monsters/1194.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1194.svg"
 	},
 	{
 		"id": 382,
@@ -2484,8 +2290,7 @@
 		"pv_min": 4600,
 		"pv_max": 5000,
 		"image": "/img/monsters/1151.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 384,
@@ -2496,8 +2301,7 @@
 		"niveau_max": 47,
 		"pv_min": 200,
 		"pv_max": 360,
-		"image": "/img/monsters/1098.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1098.svg"
 	},
 	{
 		"id": 385,
@@ -2508,8 +2312,7 @@
 		"niveau_max": 47,
 		"pv_min": 180,
 		"pv_max": 420,
-		"image": "/img/monsters/1097.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1097.svg"
 	},
 	{
 		"id": 386,
@@ -2520,8 +2323,7 @@
 		"niveau_max": 47,
 		"pv_min": 200,
 		"pv_max": 400,
-		"image": "/img/monsters/1103.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1103.svg"
 	},
 	{
 		"id": 387,
@@ -2532,8 +2334,7 @@
 		"niveau_max": 47,
 		"pv_min": 250,
 		"pv_max": 410,
-		"image": "/img/monsters/1106.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1106.svg"
 	},
 	{
 		"id": 388,
@@ -2544,8 +2345,7 @@
 		"niveau_max": 47,
 		"pv_min": 270,
 		"pv_max": 470,
-		"image": "/img/monsters/1102.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1102.svg"
 	},
 	{
 		"id": 389,
@@ -2556,8 +2356,7 @@
 		"niveau_max": 47,
 		"pv_min": 300,
 		"pv_max": 480,
-		"image": "/img/monsters/1105.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1105.svg"
 	},
 	{
 		"id": 390,
@@ -2568,8 +2367,7 @@
 		"niveau_max": 47,
 		"pv_min": 230,
 		"pv_max": 390,
-		"image": "/img/monsters/1101.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1101.svg"
 	},
 	{
 		"id": 391,
@@ -2580,8 +2378,7 @@
 		"niveau_max": 47,
 		"pv_min": 190,
 		"pv_max": 350,
-		"image": "/img/monsters/1100.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1100.svg"
 	},
 	{
 		"id": 392,
@@ -2592,8 +2389,7 @@
 		"niveau_max": 47,
 		"pv_min": 280,
 		"pv_max": 480,
-		"image": "/img/monsters/1099.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1099.svg"
 	},
 	{
 		"id": 393,
@@ -2604,8 +2400,7 @@
 		"niveau_max": 47,
 		"pv_min": 350,
 		"pv_max": 550,
-		"image": "/img/monsters/1104.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1104.svg"
 	},
 	{
 		"id": 394,
@@ -2616,8 +2411,7 @@
 		"niveau_max": 170,
 		"pv_min": 500,
 		"pv_max": 1200,
-		"image": "/img/monsters/9019.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/9019.svg"
 	},
 	{
 		"id": 396,
@@ -2629,8 +2423,7 @@
 		"pv_min": 280,
 		"pv_max": 400,
 		"image": "/img/monsters/1188.svg",
-		"couleur": "Blanc / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Bleu"
 	},
 	{
 		"id": 397,
@@ -2641,8 +2434,7 @@
 		"niveau_max": 23,
 		"pv_min": 230,
 		"pv_max": 230,
-		"image": "/img/monsters/1201.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1201.svg"
 	},
 	{
 		"id": 404,
@@ -2653,8 +2445,7 @@
 		"niveau_max": 145,
 		"pv_min": 18000,
 		"pv_max": 26000,
-		"image": "/img/monsters/1199.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1199.svg"
 	},
 	{
 		"id": 408,
@@ -2665,8 +2456,7 @@
 		"niveau_max": 10,
 		"pv_min": 1000,
 		"pv_max": 1000,
-		"image": "/img/monsters/1096.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1096.svg"
 	},
 	{
 		"id": 412,
@@ -2678,8 +2468,7 @@
 		"pv_min": 120,
 		"pv_max": 160,
 		"image": "/img/monsters/1580.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 413,
@@ -2691,8 +2480,7 @@
 		"pv_min": 300,
 		"pv_max": 500,
 		"image": "/img/monsters/1579.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 414,
@@ -2704,8 +2492,7 @@
 		"pv_min": 200,
 		"pv_max": 320,
 		"image": "/img/monsters/1578.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 415,
@@ -2716,8 +2503,7 @@
 		"niveau_max": 100,
 		"pv_min": 150,
 		"pv_max": 300,
-		"image": "/img/monsters/1190.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1190.svg"
 	},
 	{
 		"id": 423,
@@ -2729,8 +2515,7 @@
 		"pv_min": 4600,
 		"pv_max": 5000,
 		"image": "/img/monsters/1635.svg",
-		"couleur": "Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige"
 	},
 	{
 		"id": 424,
@@ -2742,8 +2527,7 @@
 		"pv_min": 200,
 		"pv_max": 240,
 		"image": "/img/monsters/1632.svg",
-		"couleur": "Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige"
 	},
 	{
 		"id": 425,
@@ -2754,8 +2538,7 @@
 		"niveau_max": 10,
 		"pv_min": 250,
 		"pv_max": 250,
-		"image": "/img/monsters/1217.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1217.svg"
 	},
 	{
 		"id": 429,
@@ -2767,8 +2550,7 @@
 		"pv_min": 310,
 		"pv_max": 410,
 		"image": "/img/monsters/1221.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 430,
@@ -2780,8 +2562,7 @@
 		"pv_min": 2500,
 		"pv_max": 3300,
 		"image": "/img/monsters/1222.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 438,
@@ -2792,8 +2573,7 @@
 		"niveau_max": 48,
 		"pv_min": 200,
 		"pv_max": 400,
-		"image": "/img/monsters/1155.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1155.svg"
 	},
 	{
 		"id": 439,
@@ -2804,8 +2584,7 @@
 		"niveau_max": 20,
 		"pv_min": 1000,
 		"pv_max": 1000,
-		"image": "/img/monsters/1223.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1223.svg"
 	},
 	{
 		"id": 440,
@@ -2816,8 +2595,7 @@
 		"niveau_max": 30,
 		"pv_min": 1000,
 		"pv_max": 1000,
-		"image": "/img/monsters/1220.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1220.svg"
 	},
 	{
 		"id": 441,
@@ -2828,8 +2606,7 @@
 		"niveau_max": 20,
 		"pv_min": 100,
 		"pv_max": 140,
-		"image": "/img/monsters/1155.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1155.svg"
 	},
 	{
 		"id": 442,
@@ -2841,8 +2618,7 @@
 		"pv_min": 300,
 		"pv_max": 380,
 		"image": "/img/monsters/1226.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 446,
@@ -2854,8 +2630,7 @@
 		"pv_min": 2000,
 		"pv_max": 2000,
 		"image": "/img/monsters/1228.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 447,
@@ -2867,8 +2642,7 @@
 		"pv_min": 270,
 		"pv_max": 310,
 		"image": "/img/monsters/1227.svg",
-		"couleur": "Marron / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Blanc"
 	},
 	{
 		"id": 449,
@@ -2880,8 +2654,7 @@
 		"pv_min": 750,
 		"pv_max": 950,
 		"image": "/img/monsters/1226.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 450,
@@ -2893,8 +2666,7 @@
 		"pv_min": 6000,
 		"pv_max": 8000,
 		"image": "/img/monsters/1232.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 453,
@@ -2906,8 +2678,7 @@
 		"pv_min": 250,
 		"pv_max": 350,
 		"image": "/img/monsters/9003.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 454,
@@ -2919,8 +2690,7 @@
 		"pv_min": 70,
 		"pv_max": 86,
 		"image": "/img/monsters/1239.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 455,
@@ -2931,8 +2701,7 @@
 		"niveau_max": 100,
 		"pv_min": 400,
 		"pv_max": 1600,
-		"image": "/img/monsters/1240.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1240.svg"
 	},
 	{
 		"id": 456,
@@ -2944,8 +2713,7 @@
 		"pv_min": 120,
 		"pv_max": 200,
 		"image": "/img/monsters/1577.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 457,
@@ -2957,8 +2725,7 @@
 		"pv_min": 2000,
 		"pv_max": 2400,
 		"image": "/img/monsters/1231.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 459,
@@ -2970,8 +2737,7 @@
 		"pv_min": 3000,
 		"pv_max": 3000,
 		"image": "/img/monsters/1246.svg",
-		"couleur": "Jaune / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune / Marron"
 	},
 	{
 		"id": 460,
@@ -2983,8 +2749,7 @@
 		"pv_min": 140,
 		"pv_max": 140,
 		"image": "/img/monsters/1247.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 461,
@@ -2995,8 +2760,7 @@
 		"niveau_max": 50,
 		"pv_min": 250,
 		"pv_max": 250,
-		"image": "/img/monsters/50.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/50.svg"
 	},
 	{
 		"id": 462,
@@ -3008,8 +2772,7 @@
 		"pv_min": 300,
 		"pv_max": 300,
 		"image": "/img/monsters/1245.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 463,
@@ -3021,8 +2784,7 @@
 		"pv_min": 50,
 		"pv_max": 50,
 		"image": "/img/monsters/1249.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 465,
@@ -3034,8 +2796,7 @@
 		"pv_min": 300,
 		"pv_max": 300,
 		"image": "/img/monsters/1226.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 466,
@@ -3047,8 +2808,7 @@
 		"pv_min": 25,
 		"pv_max": 53,
 		"image": "/img/monsters/1095.svg",
-		"couleur": "Marron / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Blanc"
 	},
 	{
 		"id": 467,
@@ -3060,8 +2820,7 @@
 		"pv_min": 190,
 		"pv_max": 270,
 		"image": "/img/monsters/1044.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 473,
@@ -3073,8 +2832,7 @@
 		"pv_min": 8,
 		"pv_max": 24,
 		"image": "/img/monsters/1019.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 474,
@@ -3086,8 +2844,7 @@
 		"pv_min": 10,
 		"pv_max": 40,
 		"image": "/img/monsters/1564.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 475,
@@ -3098,8 +2855,7 @@
 		"niveau_max": 22,
 		"pv_min": 100,
 		"pv_max": 220,
-		"image": "/img/monsters/1226.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1226.svg"
 	},
 	{
 		"id": 478,
@@ -3111,8 +2867,7 @@
 		"pv_min": 11000,
 		"pv_max": 15000,
 		"image": "/img/monsters/1242.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 479,
@@ -3124,8 +2879,7 @@
 		"pv_min": 1500,
 		"pv_max": 1900,
 		"image": "/img/monsters/1241.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 480,
@@ -3137,8 +2891,7 @@
 		"pv_min": 25,
 		"pv_max": 25,
 		"image": "/img/monsters/1085.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 481,
@@ -3150,8 +2903,7 @@
 		"pv_min": 660,
 		"pv_max": 660,
 		"image": "/img/monsters/1250.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 483,
@@ -3163,8 +2915,7 @@
 		"pv_min": 190,
 		"pv_max": 270,
 		"image": "/img/monsters/1248.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 484,
@@ -3176,8 +2927,7 @@
 		"pv_min": 3000,
 		"pv_max": 3400,
 		"image": "/img/monsters/1244.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 485,
@@ -3189,8 +2939,7 @@
 		"pv_min": 3000,
 		"pv_max": 3400,
 		"image": "/img/monsters/1244.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 486,
@@ -3202,8 +2951,7 @@
 		"pv_min": 3000,
 		"pv_max": 3400,
 		"image": "/img/monsters/1244.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 487,
@@ -3215,8 +2963,7 @@
 		"pv_min": 3000,
 		"pv_max": 3400,
 		"image": "/img/monsters/1244.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 488,
@@ -3228,8 +2975,7 @@
 		"pv_min": 4500,
 		"pv_max": 5300,
 		"image": "/img/monsters/1243.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 489,
@@ -3241,8 +2987,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/9204.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 490,
@@ -3254,8 +2999,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/9205.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 491,
@@ -3267,8 +3011,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1212.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 492,
@@ -3280,8 +3023,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/9203.svg",
-		"couleur": "Rose",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rose"
 	},
 	{
 		"id": 493,
@@ -3293,8 +3035,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/9202.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 495,
@@ -3305,8 +3046,7 @@
 		"niveau_max": 48,
 		"pv_min": 250,
 		"pv_max": 370,
-		"image": "/img/monsters/1251.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1251.svg"
 	},
 	{
 		"id": 496,
@@ -3318,8 +3058,7 @@
 		"pv_min": 250,
 		"pv_max": 370,
 		"image": "/img/monsters/1252.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 498,
@@ -3331,8 +3070,7 @@
 		"pv_min": 200,
 		"pv_max": 280,
 		"image": "/img/monsters/1253.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 499,
@@ -3344,8 +3082,7 @@
 		"pv_min": 5900,
 		"pv_max": 6800,
 		"image": "/img/monsters/1254.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 504,
@@ -3356,8 +3093,7 @@
 		"niveau_max": 25,
 		"pv_min": 100,
 		"pv_max": 100,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 508,
@@ -3368,8 +3104,7 @@
 		"niveau_max": 50,
 		"pv_min": 200,
 		"pv_max": 200,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 510,
@@ -3380,8 +3115,7 @@
 		"niveau_max": 75,
 		"pv_min": 400,
 		"pv_max": 400,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 512,
@@ -3392,8 +3126,7 @@
 		"niveau_max": 100,
 		"pv_min": 800,
 		"pv_max": 800,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 514,
@@ -3404,8 +3137,7 @@
 		"niveau_max": 200,
 		"pv_min": 2000,
 		"pv_max": 2000,
-		"image": "/img/monsters/1264.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1264.svg"
 	},
 	{
 		"id": 515,
@@ -3417,8 +3149,7 @@
 		"pv_min": 90,
 		"pv_max": 110,
 		"image": "/img/monsters/1265.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 517,
@@ -3430,8 +3161,7 @@
 		"pv_min": 375,
 		"pv_max": 675,
 		"image": "/img/monsters/1260.svg",
-		"couleur": "Blanc / Gris / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris / Rouge"
 	},
 	{
 		"id": 518,
@@ -3443,8 +3173,7 @@
 		"pv_min": 250,
 		"pv_max": 370,
 		"image": "/img/monsters/1266.svg",
-		"couleur": "Marron / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Orange"
 	},
 	{
 		"id": 519,
@@ -3456,8 +3185,7 @@
 		"pv_min": 2350,
 		"pv_max": 3150,
 		"image": "/img/monsters/1273.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 520,
@@ -3469,8 +3197,7 @@
 		"pv_min": 400,
 		"pv_max": 420,
 		"image": "/img/monsters/1002.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 521,
@@ -3481,8 +3208,7 @@
 		"niveau_max": 96,
 		"pv_min": 1305,
 		"pv_max": 1705,
-		"image": "/img/monsters/1232.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1232.svg"
 	},
 	{
 		"id": 522,
@@ -3494,8 +3220,7 @@
 		"pv_min": 1800,
 		"pv_max": 2000,
 		"image": "/img/monsters/1013.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 523,
@@ -3507,8 +3232,7 @@
 		"pv_min": 153,
 		"pv_max": 169,
 		"image": "/img/monsters/1271.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 524,
@@ -3520,8 +3244,7 @@
 		"pv_min": 85,
 		"pv_max": 105,
 		"image": "/img/monsters/1285.svg",
-		"couleur": "Beige / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Vert"
 	},
 	{
 		"id": 525,
@@ -3533,8 +3256,7 @@
 		"pv_min": 622,
 		"pv_max": 838,
 		"image": "/img/monsters/1095.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 527,
@@ -3546,8 +3268,7 @@
 		"pv_min": 4000,
 		"pv_max": 4400,
 		"image": "/img/monsters/1276.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 528,
@@ -3559,8 +3280,7 @@
 		"pv_min": 1900,
 		"pv_max": 1900,
 		"image": "/img/monsters/1275.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 529,
@@ -3572,8 +3292,7 @@
 		"pv_min": 1500,
 		"pv_max": 1500,
 		"image": "/img/monsters/1275.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 530,
@@ -3585,8 +3304,7 @@
 		"pv_min": 553,
 		"pv_max": 569,
 		"image": "/img/monsters/1270.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 531,
@@ -3598,8 +3316,7 @@
 		"pv_min": 353,
 		"pv_max": 369,
 		"image": "/img/monsters/1268.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 532,
@@ -3611,8 +3328,7 @@
 		"pv_min": 753,
 		"pv_max": 769,
 		"image": "/img/monsters/1269.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 535,
@@ -3624,8 +3340,7 @@
 		"pv_min": 650,
 		"pv_max": 730,
 		"image": "/img/monsters/1278.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 537,
@@ -3637,8 +3352,7 @@
 		"pv_min": 7000,
 		"pv_max": 9000,
 		"image": "/img/monsters/1295.svg",
-		"couleur": "Blanc / Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris"
 	},
 	{
 		"id": 546,
@@ -3650,8 +3364,7 @@
 		"pv_min": 2700,
 		"pv_max": 3700,
 		"image": "/img/monsters/1286.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 548,
@@ -3663,8 +3376,7 @@
 		"pv_min": 100,
 		"pv_max": 200,
 		"image": "/img/monsters/1267.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 549,
@@ -3676,8 +3388,7 @@
 		"pv_min": 600,
 		"pv_max": 1400,
 		"image": "/img/monsters/1274.svg",
-		"couleur": "Blanc / Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris"
 	},
 	{
 		"id": 550,
@@ -3689,8 +3400,7 @@
 		"pv_min": 190,
 		"pv_max": 270,
 		"image": "/img/monsters/1248.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 552,
@@ -3702,8 +3412,7 @@
 		"pv_min": 800,
 		"pv_max": 800,
 		"image": "/img/monsters/1153.svg",
-		"couleur": "Bleu / Violet",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu / Violet"
 	},
 	{
 		"id": 554,
@@ -3715,8 +3424,7 @@
 		"pv_min": 350,
 		"pv_max": 350,
 		"image": "/img/monsters/1076.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 555,
@@ -3728,8 +3436,7 @@
 		"pv_min": 1000,
 		"pv_max": 1000,
 		"image": "/img/monsters/1264.svg",
-		"couleur": "Gris / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris / Blanc"
 	},
 	{
 		"id": 557,
@@ -3740,8 +3447,7 @@
 		"niveau_max": 54,
 		"pv_min": 275,
 		"pv_max": 379,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 558,
@@ -3752,8 +3458,7 @@
 		"niveau_max": 33,
 		"pv_min": 125,
 		"pv_max": 145,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 559,
@@ -3764,8 +3469,7 @@
 		"niveau_max": 110,
 		"pv_min": 880,
 		"pv_max": 1320,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 560,
@@ -3776,8 +3480,7 @@
 		"niveau_max": 90,
 		"pv_min": 612,
 		"pv_max": 764,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 561,
@@ -3788,8 +3491,7 @@
 		"niveau_max": 50,
 		"pv_min": 275,
 		"pv_max": 275,
-		"image": "/img/monsters/120.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/120.svg"
 	},
 	{
 		"id": 566,
@@ -3801,8 +3503,7 @@
 		"pv_min": 380,
 		"pv_max": 640,
 		"image": "/img/monsters/1260.svg",
-		"couleur": "Blanc / Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris"
 	},
 	{
 		"id": 568,
@@ -3814,8 +3515,7 @@
 		"pv_min": 5000,
 		"pv_max": 5400,
 		"image": "/img/monsters/1283.svg",
-		"couleur": "Blanc / Gris / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris / Rouge"
 	},
 	{
 		"id": 569,
@@ -3827,8 +3527,7 @@
 		"pv_min": 300,
 		"pv_max": 340,
 		"image": "/img/monsters/1284.svg",
-		"couleur": "Blanc / Gris / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris / Rouge"
 	},
 	{
 		"id": 570,
@@ -3839,8 +3538,7 @@
 		"niveau_max": 47,
 		"pv_min": 350,
 		"pv_max": 550,
-		"image": "/img/monsters/1240.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1240.svg"
 	},
 	{
 		"id": 575,
@@ -3851,8 +3549,7 @@
 		"niveau_max": 47,
 		"pv_min": 350,
 		"pv_max": 550,
-		"image": "/img/monsters/1240.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1240.svg"
 	},
 	{
 		"id": 576,
@@ -3863,8 +3560,7 @@
 		"niveau_max": 47,
 		"pv_min": 350,
 		"pv_max": 550,
-		"image": "/img/monsters/1240.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1240.svg"
 	},
 	{
 		"id": 578,
@@ -3876,8 +3572,7 @@
 		"pv_min": 500,
 		"pv_max": 700,
 		"image": "/img/monsters/1260.svg",
-		"couleur": "Blanc / Gris / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris / Rouge"
 	},
 	{
 		"id": 579,
@@ -3889,8 +3584,7 @@
 		"pv_min": 600,
 		"pv_max": 600,
 		"image": "/img/monsters/1260.svg",
-		"couleur": "Blanc / Gris / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris / Rouge"
 	},
 	{
 		"id": 580,
@@ -3902,8 +3596,7 @@
 		"pv_min": 1000,
 		"pv_max": 1000,
 		"image": "/img/monsters/1264.svg",
-		"couleur": "Blanc / Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Noir"
 	},
 	{
 		"id": 581,
@@ -3915,8 +3608,7 @@
 		"pv_min": 1300,
 		"pv_max": 1700,
 		"image": "/img/monsters/1274.svg",
-		"couleur": "Blanc / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Rouge"
 	},
 	{
 		"id": 582,
@@ -3928,8 +3620,7 @@
 		"pv_min": 20000,
 		"pv_max": 20000,
 		"image": "/img/monsters/1232.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 583,
@@ -3941,8 +3632,7 @@
 		"pv_min": 3600,
 		"pv_max": 4000,
 		"image": "/img/monsters/1287.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 584,
@@ -3954,8 +3644,7 @@
 		"pv_min": 6000,
 		"pv_max": 8000,
 		"image": "/img/monsters/1288.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 585,
@@ -3967,8 +3656,7 @@
 		"pv_min": 4000,
 		"pv_max": 4000,
 		"image": "/img/monsters/1288.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 586,
@@ -3980,8 +3668,7 @@
 		"pv_min": 5200,
 		"pv_max": 6000,
 		"image": "/img/monsters/1290.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 587,
@@ -3993,8 +3680,7 @@
 		"pv_min": 8000,
 		"pv_max": 10000,
 		"image": "/img/monsters/1289.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 588,
@@ -4006,8 +3692,7 @@
 		"pv_min": 11000,
 		"pv_max": 15000,
 		"image": "/img/monsters/1292.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 589,
@@ -4019,8 +3704,7 @@
 		"pv_min": 6000,
 		"pv_max": 8000,
 		"image": "/img/monsters/1294.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 590,
@@ -4032,8 +3716,7 @@
 		"pv_min": 1000,
 		"pv_max": 1400,
 		"image": "/img/monsters/1293.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 597,
@@ -4045,8 +3728,7 @@
 		"pv_min": 10000,
 		"pv_max": 12000,
 		"image": "/img/monsters/1296.svg",
-		"couleur": "Transparent",
-		"availableFrom": "2025-1-1"
+		"couleur": "Transparent"
 	},
 	{
 		"id": 599,
@@ -4058,8 +3740,7 @@
 		"pv_min": 4000,
 		"pv_max": 4000,
 		"image": "/img/monsters/1145.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 600,
@@ -4071,8 +3752,7 @@
 		"pv_min": 700,
 		"pv_max": 900,
 		"image": "/img/monsters/1256.svg",
-		"couleur": "Beige / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Blanc"
 	},
 	{
 		"id": 601,
@@ -4084,8 +3764,7 @@
 		"pv_min": 700,
 		"pv_max": 900,
 		"image": "/img/monsters/1259.svg",
-		"couleur": "Beige / Blanc / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Blanc / Rouge"
 	},
 	{
 		"id": 603,
@@ -4097,8 +3776,7 @@
 		"pv_min": 300,
 		"pv_max": 420,
 		"image": "/img/monsters/1257.svg",
-		"couleur": "Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige"
 	},
 	{
 		"id": 605,
@@ -4110,8 +3788,7 @@
 		"pv_min": 10000,
 		"pv_max": 12000,
 		"image": "/img/monsters/1297.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 606,
@@ -4123,8 +3800,7 @@
 		"pv_min": 10,
 		"pv_max": 10,
 		"image": "/img/monsters/1083.svg",
-		"couleur": "Jaune / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune / Marron"
 	},
 	{
 		"id": 607,
@@ -4136,8 +3812,7 @@
 		"pv_min": 1500,
 		"pv_max": 1500,
 		"image": "/img/monsters/1264.svg",
-		"couleur": "Blanc / Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Noir"
 	},
 	{
 		"id": 609,
@@ -4149,8 +3824,7 @@
 		"pv_min": 20,
 		"pv_max": 28,
 		"image": "/img/monsters/1280.svg",
-		"couleur": "Blanc / Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Noir"
 	},
 	{
 		"id": 611,
@@ -4161,8 +3835,7 @@
 		"niveau_max": 5,
 		"pv_min": 15,
 		"pv_max": 19,
-		"image": "/img/monsters/1298.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1298.svg"
 	},
 	{
 		"id": 612,
@@ -4174,8 +3847,7 @@
 		"pv_min": 7000,
 		"pv_max": 9000,
 		"image": "/img/monsters/1295.svg",
-		"couleur": "Blanc / Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Gris"
 	},
 	{
 		"id": 615,
@@ -4186,8 +3858,7 @@
 		"niveau_max": 80,
 		"pv_min": 500,
 		"pv_max": 1100,
-		"image": "/img/monsters/9041.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/9041.svg"
 	},
 	{
 		"id": 627,
@@ -4198,8 +3869,7 @@
 		"niveau_max": 5,
 		"pv_min": 6,
 		"pv_max": 6,
-		"image": "/img/monsters/1311.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1311.svg"
 	},
 	{
 		"id": 650,
@@ -4211,8 +3881,7 @@
 		"pv_min": 220,
 		"pv_max": 340,
 		"image": "/img/monsters/1333.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 652,
@@ -4224,8 +3893,7 @@
 		"pv_min": 100,
 		"pv_max": 180,
 		"image": "/img/monsters/1335.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 653,
@@ -4237,8 +3905,7 @@
 		"pv_min": 100,
 		"pv_max": 180,
 		"image": "/img/monsters/1335.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 654,
@@ -4250,8 +3917,7 @@
 		"pv_min": 30,
 		"pv_max": 50,
 		"image": "/img/monsters/1335.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 655,
@@ -4263,8 +3929,7 @@
 		"pv_min": 150,
 		"pv_max": 230,
 		"image": "/img/monsters/1335.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 666,
@@ -4276,8 +3941,7 @@
 		"pv_min": 1500,
 		"pv_max": 1900,
 		"image": "/img/monsters/1108.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 668,
@@ -4289,8 +3953,7 @@
 		"pv_min": 300,
 		"pv_max": 420,
 		"image": "/img/monsters/1384.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 669,
@@ -4302,8 +3965,7 @@
 		"pv_min": 4600,
 		"pv_max": 5000,
 		"image": "/img/monsters/1358.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 670,
@@ -4315,8 +3977,7 @@
 		"pv_min": 7000,
 		"pv_max": 8200,
 		"image": "/img/monsters/1356.svg",
-		"couleur": "Vert / Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Gris"
 	},
 	{
 		"id": 671,
@@ -4328,8 +3989,7 @@
 		"pv_min": 250,
 		"pv_max": 290,
 		"image": "/img/monsters/1354.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 672,
@@ -4341,8 +4001,7 @@
 		"pv_min": 450,
 		"pv_max": 490,
 		"image": "/img/monsters/1355.svg",
-		"couleur": "Vert / Rouge / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Rouge / Jaune"
 	},
 	{
 		"id": 673,
@@ -4354,8 +4013,7 @@
 		"pv_min": 6200,
 		"pv_max": 7000,
 		"image": "/img/monsters/1357.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 674,
@@ -4366,8 +4024,7 @@
 		"niveau_max": 48,
 		"pv_min": 200,
 		"pv_max": 320,
-		"image": "/img/monsters/1369.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1369.svg"
 	},
 	{
 		"id": 675,
@@ -4379,8 +4036,7 @@
 		"pv_min": 6200,
 		"pv_max": 7000,
 		"image": "/img/monsters/1357.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 676,
@@ -4392,8 +4048,7 @@
 		"pv_min": 1000,
 		"pv_max": 1000,
 		"image": "/img/monsters/1369.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 677,
@@ -4405,8 +4060,7 @@
 		"pv_min": 6200,
 		"pv_max": 7000,
 		"image": "/img/monsters/1357.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 678,
@@ -4417,8 +4071,7 @@
 		"niveau_max": 5,
 		"pv_min": 300,
 		"pv_max": 380,
-		"image": "/img/monsters/1370.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1370.svg"
 	},
 	{
 		"id": 679,
@@ -4429,8 +4082,7 @@
 		"niveau_max": 5,
 		"pv_min": 300,
 		"pv_max": 380,
-		"image": "/img/monsters/1370.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1370.svg"
 	},
 	{
 		"id": 680,
@@ -4441,8 +4093,7 @@
 		"niveau_max": 5,
 		"pv_min": 300,
 		"pv_max": 380,
-		"image": "/img/monsters/1370.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1370.svg"
 	},
 	{
 		"id": 681,
@@ -4454,8 +4105,7 @@
 		"pv_min": 6200,
 		"pv_max": 7000,
 		"image": "/img/monsters/1357.svg",
-		"couleur": "Bleu / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu / Blanc"
 	},
 	{
 		"id": 682,
@@ -4466,8 +4116,7 @@
 		"niveau_max": 5,
 		"pv_min": 100,
 		"pv_max": 140,
-		"image": "/img/monsters/1369.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1369.svg"
 	},
 	{
 		"id": 751,
@@ -4479,8 +4128,7 @@
 		"pv_min": 600,
 		"pv_max": 800,
 		"image": "/img/monsters/1359.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 752,
@@ -4492,8 +4140,7 @@
 		"pv_min": 600,
 		"pv_max": 800,
 		"image": "/img/monsters/1359.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 753,
@@ -4505,8 +4152,7 @@
 		"pv_min": 600,
 		"pv_max": 800,
 		"image": "/img/monsters/1359.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 754,
@@ -4518,8 +4164,7 @@
 		"pv_min": 600,
 		"pv_max": 800,
 		"image": "/img/monsters/1359.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 755,
@@ -4531,8 +4176,7 @@
 		"pv_min": 1200,
 		"pv_max": 1600,
 		"image": "/img/monsters/1366.svg",
-		"couleur": "Marron / Vert / Rose",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert / Rose"
 	},
 	{
 		"id": 762,
@@ -4543,8 +4187,7 @@
 		"niveau_max": 24,
 		"pv_min": 100,
 		"pv_max": 140,
-		"image": "/img/monsters/1369.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1369.svg"
 	},
 	{
 		"id": 763,
@@ -4556,8 +4199,7 @@
 		"pv_min": 2000,
 		"pv_max": 2400,
 		"image": "/img/monsters/1440.svg",
-		"couleur": "Orange / Gris / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange / Gris / Bleu"
 	},
 	{
 		"id": 780,
@@ -4569,8 +4211,7 @@
 		"pv_min": 5600,
 		"pv_max": 6000,
 		"image": "/img/monsters/1450.svg",
-		"couleur": "Blanc / Rose / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Rose / Orange"
 	},
 	{
 		"id": 788,
@@ -4581,8 +4222,7 @@
 		"niveau_max": 140,
 		"pv_min": 2350,
 		"pv_max": 2750,
-		"image": "/img/monsters/1193.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1193.svg"
 	},
 	{
 		"id": 789,
@@ -4593,8 +4233,7 @@
 		"niveau_max": 120,
 		"pv_min": 1300,
 		"pv_max": 1500,
-		"image": "/img/monsters/1194.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1194.svg"
 	},
 	{
 		"id": 790,
@@ -4605,8 +4244,7 @@
 		"niveau_max": 120,
 		"pv_min": 1200,
 		"pv_max": 1400,
-		"image": "/img/monsters/1195.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1195.svg"
 	},
 	{
 		"id": 791,
@@ -4617,8 +4255,7 @@
 		"niveau_max": 88,
 		"pv_min": 4000,
 		"pv_max": 6000,
-		"image": "/img/monsters/1131.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1131.svg"
 	},
 	{
 		"id": 792,
@@ -4630,8 +4267,7 @@
 		"pv_min": 2400,
 		"pv_max": 3200,
 		"image": "/img/monsters/1241.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 793,
@@ -4643,8 +4279,7 @@
 		"pv_min": 60,
 		"pv_max": 120,
 		"image": "/img/monsters/1117.svg",
-		"couleur": "Blanc / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Orange"
 	},
 	{
 		"id": 794,
@@ -4656,8 +4291,7 @@
 		"pv_min": 8,
 		"pv_max": 24,
 		"image": "/img/monsters/1111.svg",
-		"couleur": "Jaune / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune / Orange"
 	},
 	{
 		"id": 795,
@@ -4669,8 +4303,7 @@
 		"pv_min": 400,
 		"pv_max": 600,
 		"image": "/img/monsters/1453.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 796,
@@ -4682,8 +4315,7 @@
 		"pv_min": 40,
 		"pv_max": 60,
 		"image": "/img/monsters/1462.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 797,
@@ -4695,8 +4327,7 @@
 		"pv_min": 1500,
 		"pv_max": 1900,
 		"image": "/img/monsters/1455.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 798,
@@ -4708,8 +4339,7 @@
 		"pv_min": 150,
 		"pv_max": 150,
 		"image": "/img/monsters/1454.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 799,
@@ -4721,8 +4351,7 @@
 		"pv_min": 500,
 		"pv_max": 620,
 		"image": "/img/monsters/1459.svg",
-		"couleur": "Vert / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Jaune"
 	},
 	{
 		"id": 800,
@@ -4734,8 +4363,7 @@
 		"pv_min": 700,
 		"pv_max": 900,
 		"image": "/img/monsters/1380.svg",
-		"couleur": "Jaune / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune / Bleu"
 	},
 	{
 		"id": 801,
@@ -4746,8 +4374,7 @@
 		"niveau_max": 28,
 		"pv_min": 40,
 		"pv_max": 48,
-		"image": "/img/monsters/1443.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1443.svg"
 	},
 	{
 		"id": 802,
@@ -4758,8 +4385,7 @@
 		"niveau_max": 14,
 		"pv_min": 15,
 		"pv_max": 15,
-		"image": "/img/monsters/1379.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1379.svg"
 	},
 	{
 		"id": 803,
@@ -4770,8 +4396,7 @@
 		"niveau_max": 28,
 		"pv_min": 40,
 		"pv_max": 48,
-		"image": "/img/monsters/1377.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1377.svg"
 	},
 	{
 		"id": 804,
@@ -4783,8 +4408,7 @@
 		"pv_min": 200,
 		"pv_max": 320,
 		"image": "/img/monsters/1376.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 805,
@@ -4795,8 +4419,7 @@
 		"niveau_max": 28,
 		"pv_min": 40,
 		"pv_max": 48,
-		"image": "/img/monsters/1375.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1375.svg"
 	},
 	{
 		"id": 806,
@@ -4808,8 +4431,7 @@
 		"pv_min": 200,
 		"pv_max": 280,
 		"image": "/img/monsters/1374.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 807,
@@ -4821,8 +4443,7 @@
 		"pv_min": 300,
 		"pv_max": 420,
 		"image": "/img/monsters/1373.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 808,
@@ -4834,8 +4455,7 @@
 		"pv_min": 500,
 		"pv_max": 700,
 		"image": "/img/monsters/1372.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 809,
@@ -4846,8 +4466,7 @@
 		"niveau_max": 51,
 		"pv_min": 380,
 		"pv_max": 620,
-		"image": "/img/monsters/1049.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1049.svg"
 	},
 	{
 		"id": 810,
@@ -4858,8 +4477,7 @@
 		"niveau_max": 51,
 		"pv_min": 380,
 		"pv_max": 620,
-		"image": "/img/monsters/1452.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1452.svg"
 	},
 	{
 		"id": 811,
@@ -4870,8 +4488,7 @@
 		"niveau_max": 37,
 		"pv_min": 400,
 		"pv_max": 600,
-		"image": "/img/monsters/1008.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1008.svg"
 	},
 	{
 		"id": 812,
@@ -4882,8 +4499,7 @@
 		"niveau_max": 28,
 		"pv_min": 190,
 		"pv_max": 270,
-		"image": "/img/monsters/1248.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1248.svg"
 	},
 	{
 		"id": 818,
@@ -4894,8 +4510,7 @@
 		"niveau_max": 48,
 		"pv_min": 400,
 		"pv_max": 520,
-		"image": "/img/monsters/1408.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1408.svg"
 	},
 	{
 		"id": 819,
@@ -4907,8 +4522,7 @@
 		"pv_min": 700,
 		"pv_max": 820,
 		"image": "/img/monsters/1407.svg",
-		"couleur": "Beige / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Rouge"
 	},
 	{
 		"id": 820,
@@ -4920,8 +4534,7 @@
 		"pv_min": 700,
 		"pv_max": 820,
 		"image": "/img/monsters/1406.svg",
-		"couleur": "Orange / Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange / Bleu"
 	},
 	{
 		"id": 823,
@@ -4932,8 +4545,7 @@
 		"niveau_max": 98,
 		"pv_min": 1600,
 		"pv_max": 1800,
-		"image": "/img/monsters/1406.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1406.svg"
 	},
 	{
 		"id": 824,
@@ -4944,8 +4556,7 @@
 		"niveau_max": 88,
 		"pv_min": 1400,
 		"pv_max": 1600,
-		"image": "/img/monsters/1408.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1408.svg"
 	},
 	{
 		"id": 825,
@@ -4956,8 +4567,7 @@
 		"niveau_max": 98,
 		"pv_min": 1600,
 		"pv_max": 1800,
-		"image": "/img/monsters/1407.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1407.svg"
 	},
 	{
 		"id": 826,
@@ -4969,8 +4579,7 @@
 		"pv_min": 1380,
 		"pv_max": 1620,
 		"image": "/img/monsters/1049.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 827,
@@ -4982,8 +4591,7 @@
 		"pv_min": 16000,
 		"pv_max": 20000,
 		"image": "/img/monsters/1444.svg",
-		"couleur": "Beige / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Marron"
 	},
 	{
 		"id": 828,
@@ -4995,8 +4603,7 @@
 		"pv_min": 500,
 		"pv_max": 620,
 		"image": "/img/monsters/1442.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 829,
@@ -5008,8 +4615,7 @@
 		"pv_min": 600,
 		"pv_max": 640,
 		"image": "/img/monsters/1409.svg",
-		"couleur": "Gris / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris / Rouge"
 	},
 	{
 		"id": 830,
@@ -5021,8 +4627,7 @@
 		"pv_min": 200,
 		"pv_max": 240,
 		"image": "/img/monsters/1388.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 831,
@@ -5034,8 +4639,7 @@
 		"pv_min": 4000,
 		"pv_max": 4400,
 		"image": "/img/monsters/1387.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 832,
@@ -5047,8 +4651,7 @@
 		"pv_min": 4000,
 		"pv_max": 4400,
 		"image": "/img/monsters/1338.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 834,
@@ -5060,8 +4663,7 @@
 		"pv_min": 120,
 		"pv_max": 160,
 		"image": "/img/monsters/1347.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 835,
@@ -5073,8 +4675,7 @@
 		"pv_min": 120,
 		"pv_max": 200,
 		"image": "/img/monsters/1341.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 836,
@@ -5086,8 +4687,7 @@
 		"pv_min": 240,
 		"pv_max": 280,
 		"image": "/img/monsters/1348.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 837,
@@ -5098,8 +4698,7 @@
 		"niveau_max": 440,
 		"pv_min": 10000,
 		"pv_max": 18000,
-		"image": "/img/monsters/30.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/30.svg"
 	},
 	{
 		"id": 839,
@@ -5111,8 +4710,7 @@
 		"pv_min": 3000,
 		"pv_max": 5000,
 		"image": "/img/monsters/1472.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 840,
@@ -5124,8 +4722,7 @@
 		"pv_min": 700,
 		"pv_max": 1100,
 		"image": "/img/monsters/1497.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 841,
@@ -5137,8 +4734,7 @@
 		"pv_min": 60,
 		"pv_max": 108,
 		"image": "/img/monsters/1518.svg",
-		"couleur": "Blanc / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Jaune"
 	},
 	{
 		"id": 842,
@@ -5150,8 +4746,7 @@
 		"pv_min": 120,
 		"pv_max": 320,
 		"image": "/img/monsters/1495.svg",
-		"couleur": "Vert / Rouge / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Rouge / Blanc"
 	},
 	{
 		"id": 843,
@@ -5162,8 +4757,7 @@
 		"niveau_max": 50,
 		"pv_min": 242,
 		"pv_max": 550,
-		"image": "/img/monsters/1499.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1499.svg"
 	},
 	{
 		"id": 844,
@@ -5174,8 +4768,7 @@
 		"niveau_max": 24,
 		"pv_min": 150,
 		"pv_max": 270,
-		"image": "/img/monsters/1091.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1091.svg"
 	},
 	{
 		"id": 845,
@@ -5187,8 +4780,7 @@
 		"pv_min": 1200,
 		"pv_max": 1600,
 		"image": "/img/monsters/1513.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 846,
@@ -5200,8 +4792,7 @@
 		"pv_min": 200,
 		"pv_max": 300,
 		"image": "/img/monsters/1062.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 847,
@@ -5212,8 +4803,7 @@
 		"niveau_max": 58,
 		"pv_min": 315,
 		"pv_max": 1200,
-		"image": "/img/monsters/1518.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1518.svg"
 	},
 	{
 		"id": 849,
@@ -5225,8 +4815,7 @@
 		"pv_min": 120,
 		"pv_max": 280,
 		"image": "/img/monsters/1514.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 851,
@@ -5238,8 +4827,7 @@
 		"pv_min": 170,
 		"pv_max": 490,
 		"image": "/img/monsters/1515.svg",
-		"couleur": "Vert / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Rouge"
 	},
 	{
 		"id": 854,
@@ -5251,8 +4839,7 @@
 		"pv_min": 10000,
 		"pv_max": 12000,
 		"image": "/img/monsters/1451.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 862,
@@ -5264,8 +4851,7 @@
 		"pv_min": 900,
 		"pv_max": 1300,
 		"image": "/img/monsters/1502.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 864,
@@ -5276,8 +4862,7 @@
 		"niveau_max": 87,
 		"pv_min": 7000,
 		"pv_max": 7000,
-		"image": "/img/monsters/1504.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1504.svg"
 	},
 	{
 		"id": 867,
@@ -5289,8 +4874,7 @@
 		"pv_min": 240,
 		"pv_max": 360,
 		"image": "/img/monsters/1510.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 868,
@@ -5301,8 +4885,7 @@
 		"niveau_max": 47,
 		"pv_min": 315,
 		"pv_max": 655,
-		"image": "/img/monsters/1518.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1518.svg"
 	},
 	{
 		"id": 869,
@@ -5314,8 +4897,7 @@
 		"pv_min": 3400,
 		"pv_max": 5000,
 		"image": "/img/monsters/1506.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 870,
@@ -5326,8 +4908,7 @@
 		"niveau_max": 6,
 		"pv_min": 10,
 		"pv_max": 30,
-		"image": "/img/monsters/1505.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1505.svg"
 	},
 	{
 		"id": 871,
@@ -5339,8 +4920,7 @@
 		"pv_min": 60,
 		"pv_max": 80,
 		"image": "/img/monsters/1505.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 872,
@@ -5352,8 +4932,7 @@
 		"pv_min": 5000,
 		"pv_max": 7000,
 		"image": "/img/monsters/1511.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 874,
@@ -5364,8 +4943,7 @@
 		"niveau_max": 200,
 		"pv_min": 2500,
 		"pv_max": 3500,
-		"image": "/img/monsters/1517.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1517.svg"
 	},
 	{
 		"id": 876,
@@ -5377,8 +4955,7 @@
 		"pv_min": 150,
 		"pv_max": 350,
 		"image": "/img/monsters/1003.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 880,
@@ -5389,8 +4966,7 @@
 		"niveau_max": 5,
 		"pv_min": 50,
 		"pv_max": 200,
-		"image": "/img/monsters/1522.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1522.svg"
 	},
 	{
 		"id": 881,
@@ -5401,8 +4977,7 @@
 		"niveau_max": 5,
 		"pv_min": 50,
 		"pv_max": 200,
-		"image": "/img/monsters/1522.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1522.svg"
 	},
 	{
 		"id": 882,
@@ -5413,8 +4988,7 @@
 		"niveau_max": 5,
 		"pv_min": 50,
 		"pv_max": 200,
-		"image": "/img/monsters/1522.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1522.svg"
 	},
 	{
 		"id": 887,
@@ -5425,8 +4999,7 @@
 		"niveau_max": 5,
 		"pv_min": 80,
 		"pv_max": 80,
-		"image": "/img/monsters/1522.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1522.svg"
 	},
 	{
 		"id": 888,
@@ -5437,8 +5010,7 @@
 		"niveau_max": 50,
 		"pv_min": 5000,
 		"pv_max": 5000,
-		"image": "/img/monsters/1522.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1522.svg"
 	},
 	{
 		"id": 889,
@@ -5449,8 +5021,7 @@
 		"niveau_max": 20,
 		"pv_min": 2500,
 		"pv_max": 2500,
-		"image": "/img/monsters/1522.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1522.svg"
 	},
 	{
 		"id": 890,
@@ -5461,8 +5032,7 @@
 		"niveau_max": 20,
 		"pv_min": 500,
 		"pv_max": 500,
-		"image": "/img/monsters/1522.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1522.svg"
 	},
 	{
 		"id": 891,
@@ -5474,8 +5044,7 @@
 		"pv_min": 1995,
 		"pv_max": 4380,
 		"image": "/img/monsters/1523.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 896,
@@ -5487,8 +5056,7 @@
 		"pv_min": 420,
 		"pv_max": 540,
 		"image": "/img/monsters/1519.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 899,
@@ -5500,8 +5068,7 @@
 		"pv_min": 450,
 		"pv_max": 570,
 		"image": "/img/monsters/1520.svg",
-		"couleur": "Blanc / Noir / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Noir / Rouge"
 	},
 	{
 		"id": 901,
@@ -5512,8 +5079,7 @@
 		"niveau_max": 90,
 		"pv_min": 420,
 		"pv_max": 540,
-		"image": "/img/monsters/1521.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1521.svg"
 	},
 	{
 		"id": 907,
@@ -5524,8 +5090,7 @@
 		"niveau_max": 48,
 		"pv_min": 1400,
 		"pv_max": 2000,
-		"image": "/img/monsters/1523.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1523.svg"
 	},
 	{
 		"id": 919,
@@ -5536,8 +5101,67 @@
 		"niveau_max": 39,
 		"pv_min": 400,
 		"pv_max": 400,
-		"image": "/img/monsters/1001.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1001.svg"
+	},
+	{
+		"id": 920,
+		"name": "Pichon Orange",
+		"ecosystem": "Créatures des plages",
+		"race": "Monstres des plages",
+		"niveau_min": 10,
+		"niveau_max": 30,
+		"pv_min": 40,
+		"pv_max": 240,
+		"image": "/img/monsters/1488.svg",
+		"couleur": "orange"
+	},
+	{
+		"id": 921,
+		"name": "Pichon Bleu",
+		"ecosystem": "Créatures des plages",
+		"race": "Monstres des plages",
+		"niveau_min": 10,
+		"niveau_max": 30,
+		"pv_min": 40,
+		"pv_max": 240,
+		"image": "/img/monsters/1487.svg",
+		"couleur": "bleu"
+	},
+	{
+		"id": 922,
+		"name": "Pichon Blanc",
+		"ecosystem": "Créatures des plages",
+		"race": "Monstres des plages",
+		"niveau_min": 10,
+		"niveau_max": 30,
+		"pv_min": 40,
+		"pv_max": 240,
+		"image": "/img/monsters/1485.svg",
+		"couleur": "blanc"
+	},
+	{
+		"id": 923,
+		"name": "Pichon Vert",
+		"ecosystem": "Créatures des plages",
+		"race": "Monstres des plages",
+		"niveau_min": 10,
+		"niveau_max": 30,
+		"pv_min": 40,
+		"pv_max": 240,
+		"image": "/img/monsters/1484.svg",
+		"couleur": "vert"
+	},
+	{
+		"id": 924,
+		"name": "Pichon Kloune",
+		"ecosystem": "Créatures des plages",
+		"race": "Monstres des plages",
+		"niveau_min": 25,
+		"niveau_max": 45,
+		"pv_min": 200,
+		"pv_max": 400,
+		"image": "/img/monsters/1483.svg",
+		"couleur": "multicolore"
 	},
 	{
 		"id": 929,
@@ -5548,8 +5172,7 @@
 		"niveau_max": 198,
 		"pv_min": 20000,
 		"pv_max": 28000,
-		"image": "/img/monsters/1478.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1478.svg"
 	},
 	{
 		"id": 932,
@@ -5560,8 +5183,7 @@
 		"niveau_max": 73,
 		"pv_min": 290,
 		"pv_max": 490,
-		"image": "/img/monsters/1194.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1194.svg"
 	},
 	{
 		"id": 935,
@@ -5573,8 +5195,7 @@
 		"pv_min": 1100,
 		"pv_max": 2700,
 		"image": "/img/monsters/1535.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 936,
@@ -5586,8 +5207,7 @@
 		"pv_min": 1400,
 		"pv_max": 2200,
 		"image": "/img/monsters/1534.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 937,
@@ -5599,8 +5219,7 @@
 		"pv_min": 800,
 		"pv_max": 2000,
 		"image": "/img/monsters/1536.svg",
-		"couleur": "Marron / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Blanc"
 	},
 	{
 		"id": 938,
@@ -5612,8 +5231,7 @@
 		"pv_min": 800,
 		"pv_max": 2000,
 		"image": "/img/monsters/1537.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 939,
@@ -5625,8 +5243,7 @@
 		"pv_min": 4600,
 		"pv_max": 5000,
 		"image": "/img/monsters/1538.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 940,
@@ -5638,8 +5255,7 @@
 		"pv_min": 4600,
 		"pv_max": 5000,
 		"image": "/img/monsters/1544.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 941,
@@ -5651,8 +5267,7 @@
 		"pv_min": 1400,
 		"pv_max": 2200,
 		"image": "/img/monsters/1539.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 942,
@@ -5664,8 +5279,7 @@
 		"pv_min": 1100,
 		"pv_max": 2700,
 		"image": "/img/monsters/1436.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 943,
@@ -5677,8 +5291,7 @@
 		"pv_min": 8000,
 		"pv_max": 10000,
 		"image": "/img/monsters/1541.svg",
-		"couleur": "Noir / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir / Vert"
 	},
 	{
 		"id": 944,
@@ -5689,8 +5302,7 @@
 		"niveau_max": 21,
 		"pv_min": 130,
 		"pv_max": 170,
-		"image": "/img/monsters/1126.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1126.svg"
 	},
 	{
 		"id": 945,
@@ -5701,8 +5313,7 @@
 		"niveau_max": 20,
 		"pv_min": 120,
 		"pv_max": 160,
-		"image": "/img/monsters/1128.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1128.svg"
 	},
 	{
 		"id": 946,
@@ -5713,8 +5324,7 @@
 		"niveau_max": 24,
 		"pv_min": 160,
 		"pv_max": 200,
-		"image": "/img/monsters/1127.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1127.svg"
 	},
 	{
 		"id": 947,
@@ -5725,8 +5335,7 @@
 		"niveau_max": 22,
 		"pv_min": 140,
 		"pv_max": 180,
-		"image": "/img/monsters/1125.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1125.svg"
 	},
 	{
 		"id": 952,
@@ -5737,8 +5346,7 @@
 		"niveau_max": 5,
 		"pv_min": 200,
 		"pv_max": 200,
-		"image": "/img/monsters/1016.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1016.svg"
 	},
 	{
 		"id": 970,
@@ -5750,8 +5358,7 @@
 		"pv_min": 6,
 		"pv_max": 14,
 		"image": "/img/monsters/1558.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 971,
@@ -5763,8 +5370,7 @@
 		"pv_min": 20,
 		"pv_max": 32,
 		"image": "/img/monsters/1566.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 972,
@@ -5776,8 +5382,7 @@
 		"pv_min": 15,
 		"pv_max": 23,
 		"image": "/img/monsters/1570.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 973,
@@ -5789,8 +5394,7 @@
 		"pv_min": 15,
 		"pv_max": 23,
 		"image": "/img/monsters/1571.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 974,
@@ -5802,8 +5406,7 @@
 		"pv_min": 10,
 		"pv_max": 22,
 		"image": "/img/monsters/1572.svg",
-		"couleur": "Bleu / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu / Orange"
 	},
 	{
 		"id": 975,
@@ -5815,8 +5418,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1563.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 976,
@@ -5828,8 +5430,7 @@
 		"pv_min": 25,
 		"pv_max": 33,
 		"image": "/img/monsters/1567.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 977,
@@ -5841,8 +5442,7 @@
 		"pv_min": 15,
 		"pv_max": 19,
 		"image": "/img/monsters/1568.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 978,
@@ -5854,8 +5454,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1565.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 979,
@@ -5867,8 +5466,7 @@
 		"pv_min": 15,
 		"pv_max": 19,
 		"image": "/img/monsters/1560.svg",
-		"couleur": "Jaune / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune / Blanc"
 	},
 	{
 		"id": 980,
@@ -5880,8 +5478,7 @@
 		"pv_min": 10,
 		"pv_max": 18,
 		"image": "/img/monsters/1561.svg",
-		"couleur": "Rouge / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge / Blanc"
 	},
 	{
 		"id": 981,
@@ -5893,8 +5490,7 @@
 		"pv_min": 40,
 		"pv_max": 60,
 		"image": "/img/monsters/1569.svg",
-		"couleur": "Jaune / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune / Marron"
 	},
 	{
 		"id": 982,
@@ -5906,8 +5502,7 @@
 		"pv_min": 10,
 		"pv_max": 30,
 		"image": "/img/monsters/1564.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 983,
@@ -5919,8 +5514,7 @@
 		"pv_min": 80,
 		"pv_max": 100,
 		"image": "/img/monsters/1562.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 984,
@@ -5932,8 +5526,7 @@
 		"pv_min": 80,
 		"pv_max": 100,
 		"image": "/img/monsters/1573.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 989,
@@ -5945,8 +5538,7 @@
 		"pv_min": 100,
 		"pv_max": 120,
 		"image": "/img/monsters/1001.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 990,
@@ -5958,8 +5550,7 @@
 		"pv_min": 100,
 		"pv_max": 120,
 		"image": "/img/monsters/1337.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 991,
@@ -5971,8 +5562,7 @@
 		"pv_min": 200,
 		"pv_max": 240,
 		"image": "/img/monsters/1158.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 992,
@@ -5984,8 +5574,7 @@
 		"pv_min": 200,
 		"pv_max": 240,
 		"image": "/img/monsters/1334.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 993,
@@ -5996,8 +5585,7 @@
 		"niveau_max": 14,
 		"pv_min": 100,
 		"pv_max": 160,
-		"image": "/img/monsters/1212.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1212.svg"
 	},
 	{
 		"id": 996,
@@ -6009,8 +5597,7 @@
 		"pv_min": 50,
 		"pv_max": 70,
 		"image": "/img/monsters/1014.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 998,
@@ -6022,8 +5609,7 @@
 		"pv_min": 20,
 		"pv_max": 40,
 		"image": "/img/monsters/1475.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 999,
@@ -6034,8 +5620,7 @@
 		"niveau_max": 1,
 		"pv_min": 10,
 		"pv_max": 10,
-		"image": "/img/monsters/1219.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1219.svg"
 	},
 	{
 		"id": 1001,
@@ -6046,8 +5631,7 @@
 		"niveau_max": 26,
 		"pv_min": 200,
 		"pv_max": 240,
-		"image": "/img/monsters/1581.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1581.svg"
 	},
 	{
 		"id": 1003,
@@ -6058,8 +5642,7 @@
 		"niveau_max": 1,
 		"pv_min": 20,
 		"pv_max": 20,
-		"image": "/img/monsters/1219.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1219.svg"
 	},
 	{
 		"id": 1006,
@@ -6070,8 +5653,7 @@
 		"niveau_max": 80,
 		"pv_min": 700,
 		"pv_max": 1200,
-		"image": "/img/monsters/1069.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1069.svg"
 	},
 	{
 		"id": 1011,
@@ -6082,8 +5664,7 @@
 		"niveau_max": 48,
 		"pv_min": 200,
 		"pv_max": 320,
-		"image": "/img/monsters/1376.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1376.svg"
 	},
 	{
 		"id": 1012,
@@ -6094,8 +5675,7 @@
 		"niveau_max": 70,
 		"pv_min": 180,
 		"pv_max": 340,
-		"image": "/img/monsters/1372.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1372.svg"
 	},
 	{
 		"id": 1013,
@@ -6106,8 +5686,7 @@
 		"niveau_max": 70,
 		"pv_min": 250,
 		"pv_max": 360,
-		"image": "/img/monsters/1372.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1372.svg"
 	},
 	{
 		"id": 1017,
@@ -6118,8 +5697,7 @@
 		"niveau_max": 80,
 		"pv_min": 1200,
 		"pv_max": 2000,
-		"image": "/img/monsters/1275.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1275.svg"
 	},
 	{
 		"id": 1019,
@@ -6131,8 +5709,7 @@
 		"pv_min": 500,
 		"pv_max": 1300,
 		"image": "/img/monsters/1586.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 1020,
@@ -6144,8 +5721,7 @@
 		"pv_min": 1700,
 		"pv_max": 3300,
 		"image": "/img/monsters/1631.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 1022,
@@ -6157,8 +5733,7 @@
 		"pv_min": 500,
 		"pv_max": 700,
 		"image": "/img/monsters/1587.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 1025,
@@ -6170,8 +5745,7 @@
 		"pv_min": 500,
 		"pv_max": 1300,
 		"image": "/img/monsters/1528.svg",
-		"couleur": "Beige / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Blanc"
 	},
 	{
 		"id": 1026,
@@ -6183,8 +5757,7 @@
 		"pv_min": 350,
 		"pv_max": 550,
 		"image": "/img/monsters/1551.svg",
-		"couleur": "Beige / Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Blanc"
 	},
 	{
 		"id": 1027,
@@ -6196,8 +5769,7 @@
 		"pv_min": 2000,
 		"pv_max": 2400,
 		"image": "/img/monsters/1617.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 1029,
@@ -6209,8 +5781,7 @@
 		"pv_min": 900,
 		"pv_max": 2100,
 		"image": "/img/monsters/1615.svg",
-		"couleur": "Marron / Vert / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert / Jaune"
 	},
 	{
 		"id": 1039,
@@ -6221,8 +5792,7 @@
 		"niveau_max": 53,
 		"pv_min": 600,
 		"pv_max": 1000,
-		"image": "/img/monsters/1109.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1109.svg"
 	},
 	{
 		"id": 1041,
@@ -6234,8 +5804,7 @@
 		"pv_min": 800,
 		"pv_max": 1600,
 		"image": "/img/monsters/1638.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 1043,
@@ -6247,8 +5816,7 @@
 		"pv_min": 1700,
 		"pv_max": 2500,
 		"image": "/img/monsters/1600.svg",
-		"couleur": "Vert / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Jaune"
 	},
 	{
 		"id": 1044,
@@ -6260,8 +5828,7 @@
 		"pv_min": 1700,
 		"pv_max": 2900,
 		"image": "/img/monsters/1622.svg",
-		"couleur": "Vert / Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Orange"
 	},
 	{
 		"id": 1045,
@@ -6273,8 +5840,7 @@
 		"pv_min": 9000,
 		"pv_max": 11000,
 		"image": "/img/monsters/1623.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 1046,
@@ -6286,8 +5852,7 @@
 		"pv_min": 1100,
 		"pv_max": 1500,
 		"image": "/img/monsters/1531.svg",
-		"couleur": "Vert / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Marron"
 	},
 	{
 		"id": 1047,
@@ -6299,8 +5864,7 @@
 		"pv_min": 1700,
 		"pv_max": 3500,
 		"image": "/img/monsters/1598.svg",
-		"couleur": "Blanc",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc"
 	},
 	{
 		"id": 1048,
@@ -6312,8 +5876,7 @@
 		"pv_min": 500,
 		"pv_max": 1100,
 		"image": "/img/monsters/1619.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 1049,
@@ -6325,8 +5888,7 @@
 		"pv_min": 500,
 		"pv_max": 1100,
 		"image": "/img/monsters/1618.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 1050,
@@ -6338,8 +5900,7 @@
 		"pv_min": 700,
 		"pv_max": 940,
 		"image": "/img/monsters/1620.svg",
-		"couleur": "Orange",
-		"availableFrom": "2025-1-1"
+		"couleur": "Orange"
 	},
 	{
 		"id": 1051,
@@ -6351,8 +5912,7 @@
 		"pv_min": 2000,
 		"pv_max": 2400,
 		"image": "/img/monsters/1621.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1052,
@@ -6364,8 +5924,7 @@
 		"pv_min": 2000,
 		"pv_max": 3800,
 		"image": "/img/monsters/1610.svg",
-		"couleur": "Marron / Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Beige"
 	},
 	{
 		"id": 1053,
@@ -6377,8 +5936,7 @@
 		"pv_min": 1400,
 		"pv_max": 2000,
 		"image": "/img/monsters/1609.svg",
-		"couleur": "Marron / Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Beige"
 	},
 	{
 		"id": 1054,
@@ -6390,8 +5948,7 @@
 		"pv_min": 1100,
 		"pv_max": 2300,
 		"image": "/img/monsters/1608.svg",
-		"couleur": "Marron / Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Beige"
 	},
 	{
 		"id": 1055,
@@ -6403,8 +5960,7 @@
 		"pv_min": 1100,
 		"pv_max": 1700,
 		"image": "/img/monsters/1606.svg",
-		"couleur": "Marron / Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Beige"
 	},
 	{
 		"id": 1056,
@@ -6416,8 +5972,7 @@
 		"pv_min": 1700,
 		"pv_max": 2700,
 		"image": "/img/monsters/1607.svg",
-		"couleur": "Marron / Beige",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Beige"
 	},
 	{
 		"id": 1057,
@@ -6429,8 +5984,7 @@
 		"pv_min": 7600,
 		"pv_max": 8000,
 		"image": "/img/monsters/1624.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 1058,
@@ -6442,8 +5996,7 @@
 		"pv_min": 1100,
 		"pv_max": 2300,
 		"image": "/img/monsters/1626.svg",
-		"couleur": "Noir / Violet",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir / Violet"
 	},
 	{
 		"id": 1059,
@@ -6455,8 +6008,7 @@
 		"pv_min": 1400,
 		"pv_max": 2000,
 		"image": "/img/monsters/1625.svg",
-		"couleur": "Marron / Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Noir"
 	},
 	{
 		"id": 1060,
@@ -6468,8 +6020,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1592.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 1061,
@@ -6481,8 +6032,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1594.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1062,
@@ -6494,8 +6044,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1593.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 1063,
@@ -6507,8 +6056,7 @@
 		"pv_min": 200,
 		"pv_max": 400,
 		"image": "/img/monsters/1595.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 1064,
@@ -6520,8 +6068,7 @@
 		"pv_min": 200,
 		"pv_max": 800,
 		"image": "/img/monsters/1604.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 1065,
@@ -6533,8 +6080,7 @@
 		"pv_min": 200,
 		"pv_max": 800,
 		"image": "/img/monsters/1603.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1066,
@@ -6546,8 +6092,7 @@
 		"pv_min": 200,
 		"pv_max": 800,
 		"image": "/img/monsters/1605.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 1067,
@@ -6559,8 +6104,7 @@
 		"pv_min": 200,
 		"pv_max": 800,
 		"image": "/img/monsters/1602.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 1068,
@@ -6572,8 +6116,7 @@
 		"pv_min": 650,
 		"pv_max": 1050,
 		"image": "/img/monsters/1601.svg",
-		"couleur": "Beige / Violet",
-		"availableFrom": "2025-1-1"
+		"couleur": "Beige / Violet"
 	},
 	{
 		"id": 1069,
@@ -6585,8 +6128,7 @@
 		"pv_min": 500,
 		"pv_max": 1300,
 		"image": "/img/monsters/1628.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 1070,
@@ -6598,8 +6140,7 @@
 		"pv_min": 600,
 		"pv_max": 1120,
 		"image": "/img/monsters/1629.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 1071,
@@ -6611,8 +6152,7 @@
 		"pv_min": 8000,
 		"pv_max": 10000,
 		"image": "/img/monsters/1585.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1072,
@@ -6624,8 +6164,7 @@
 		"pv_min": 4000,
 		"pv_max": 5200,
 		"image": "/img/monsters/1616.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 1085,
@@ -6636,8 +6175,7 @@
 		"niveau_max": 240,
 		"pv_min": 4000,
 		"pv_max": 5200,
-		"image": "/img/monsters/1617.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1617.svg"
 	},
 	{
 		"id": 1086,
@@ -6648,8 +6186,7 @@
 		"niveau_max": 240,
 		"pv_min": 4000,
 		"pv_max": 5200,
-		"image": "/img/monsters/1618.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1618.svg"
 	},
 	{
 		"id": 1087,
@@ -6660,8 +6197,7 @@
 		"niveau_max": 240,
 		"pv_min": 4000,
 		"pv_max": 5200,
-		"image": "/img/monsters/1619.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1619.svg"
 	},
 	{
 		"id": 1073,
@@ -6673,8 +6209,7 @@
 		"pv_min": 1100,
 		"pv_max": 1700,
 		"image": "/img/monsters/1614.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 1074,
@@ -6686,8 +6221,7 @@
 		"pv_min": 650,
 		"pv_max": 1050,
 		"image": "/img/monsters/1613.svg",
-		"couleur": "Gris / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris / Jaune"
 	},
 	{
 		"id": 1075,
@@ -6699,8 +6233,7 @@
 		"pv_min": 1100,
 		"pv_max": 1700,
 		"image": "/img/monsters/1611.svg",
-		"couleur": "Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron"
 	},
 	{
 		"id": 1076,
@@ -6712,8 +6245,7 @@
 		"pv_min": 500,
 		"pv_max": 900,
 		"image": "/img/monsters/1612.svg",
-		"couleur": "Vert / Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert / Jaune"
 	},
 	{
 		"id": 1077,
@@ -6725,8 +6257,7 @@
 		"pv_min": 1100,
 		"pv_max": 2500,
 		"image": "/img/monsters/1599.svg",
-		"couleur": "Marron / Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Noir"
 	},
 	{
 		"id": 1078,
@@ -6738,8 +6269,7 @@
 		"pv_min": 100,
 		"pv_max": 200,
 		"image": "/img/monsters/1083.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 1080,
@@ -6750,8 +6280,7 @@
 		"niveau_max": 20,
 		"pv_min": 100,
 		"pv_max": 100,
-		"image": "/img/monsters/1619.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1619.svg"
 	},
 	{
 		"id": 1081,
@@ -6762,8 +6291,7 @@
 		"niveau_max": 78,
 		"pv_min": 700,
 		"pv_max": 900,
-		"image": "/img/monsters/1597.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1597.svg"
 	},
 	{
 		"id": 1082,
@@ -6774,8 +6302,7 @@
 		"niveau_max": 38,
 		"pv_min": 800,
 		"pv_max": 1200,
-		"image": "/img/monsters/1133.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1133.svg"
 	},
 	{
 		"id": 1084,
@@ -6787,8 +6314,7 @@
 		"pv_min": 100,
 		"pv_max": 100,
 		"image": "/img/monsters/1630.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 1088,
@@ -6800,8 +6326,7 @@
 		"pv_min": 100,
 		"pv_max": 100,
 		"image": "/img/monsters/1636.svg",
-		"couleur": "Marron / Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Marron / Vert"
 	},
 	{
 		"id": 1090,
@@ -6812,8 +6337,7 @@
 		"niveau_max": 133,
 		"pv_min": 200,
 		"pv_max": 240,
-		"image": "/img/monsters/1632.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1632.svg"
 	},
 	{
 		"id": 1091,
@@ -6824,8 +6348,7 @@
 		"niveau_max": 133,
 		"pv_min": 200,
 		"pv_max": 240,
-		"image": "/img/monsters/1632.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1632.svg"
 	},
 	{
 		"id": 1092,
@@ -6836,8 +6359,7 @@
 		"niveau_max": 133,
 		"pv_min": 200,
 		"pv_max": 240,
-		"image": "/img/monsters/1632.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1632.svg"
 	},
 	{
 		"id": 1093,
@@ -6849,8 +6371,7 @@
 		"pv_min": 1400,
 		"pv_max": 2200,
 		"image": "/img/monsters/120.svg",
-		"couleur": "Noir / Rose",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir / Rose"
 	},
 	{
 		"id": 1094,
@@ -6861,8 +6382,7 @@
 		"niveau_max": 170,
 		"pv_min": 1400,
 		"pv_max": 2200,
-		"image": "/img/monsters/30.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/30.svg"
 	},
 	{
 		"id": 1096,
@@ -6874,8 +6394,7 @@
 		"pv_min": 250,
 		"pv_max": 370,
 		"image": "/img/monsters/1633.svg",
-		"couleur": "Noir / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir / Marron"
 	},
 	{
 		"id": 1111,
@@ -6886,8 +6405,7 @@
 		"niveau_max": 5,
 		"pv_min": 1000,
 		"pv_max": 5000,
-		"image": "/img/monsters/8101.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/8101.svg"
 	},
 	{
 		"id": 1112,
@@ -6898,8 +6416,7 @@
 		"niveau_max": 5,
 		"pv_min": 1000,
 		"pv_max": 5000,
-		"image": "/img/monsters/8100.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/8100.svg"
 	},
 	{
 		"id": 1119,
@@ -6910,8 +6427,7 @@
 		"niveau_max": 44,
 		"pv_min": 350,
 		"pv_max": 630,
-		"image": "/img/monsters/60.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/60.svg"
 	},
 	{
 		"id": 1124,
@@ -6922,8 +6438,7 @@
 		"niveau_max": 50,
 		"pv_min": 600,
 		"pv_max": 600,
-		"image": "/img/monsters/1192.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1192.svg"
 	},
 	{
 		"id": 1125,
@@ -6934,8 +6449,7 @@
 		"niveau_max": 50,
 		"pv_min": 600,
 		"pv_max": 600,
-		"image": "/img/monsters/1205.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1205.svg"
 	},
 	{
 		"id": 1127,
@@ -6946,8 +6460,7 @@
 		"niveau_max": 30,
 		"pv_min": 500,
 		"pv_max": 500,
-		"image": "/img/monsters/1201.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1201.svg"
 	},
 	{
 		"id": 1128,
@@ -6958,8 +6471,7 @@
 		"niveau_max": 70,
 		"pv_min": 900,
 		"pv_max": 900,
-		"image": "/img/monsters/1192.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1192.svg"
 	},
 	{
 		"id": 1133,
@@ -6970,8 +6482,7 @@
 		"niveau_max": 40,
 		"pv_min": 600,
 		"pv_max": 600,
-		"image": "/img/monsters/1192.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1192.svg"
 	},
 	{
 		"id": 1134,
@@ -6982,8 +6493,7 @@
 		"niveau_max": 50,
 		"pv_min": 800,
 		"pv_max": 800,
-		"image": "/img/monsters/1192.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1192.svg"
 	},
 	{
 		"id": 1141,
@@ -6994,8 +6504,7 @@
 		"niveau_max": 50,
 		"pv_min": 750,
 		"pv_max": 750,
-		"image": "/img/monsters/80.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/80.svg"
 	},
 	{
 		"id": 1143,
@@ -7006,8 +6515,7 @@
 		"niveau_max": 40,
 		"pv_min": 500,
 		"pv_max": 500,
-		"image": "/img/monsters/30.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/30.svg"
 	},
 	{
 		"id": 1159,
@@ -7019,8 +6527,7 @@
 		"pv_min": 16000,
 		"pv_max": 18000,
 		"image": "/img/monsters/1258.svg",
-		"couleur": "Blanc / Marron",
-		"availableFrom": "2025-1-1"
+		"couleur": "Blanc / Marron"
 	},
 	{
 		"id": 1160,
@@ -7031,8 +6538,7 @@
 		"niveau_max": 80,
 		"pv_min": 3000,
 		"pv_max": 3000,
-		"image": "/img/monsters/1192.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1192.svg"
 	},
 	{
 		"id": 1178,
@@ -7043,8 +6549,7 @@
 		"niveau_max": 120,
 		"pv_min": 2000,
 		"pv_max": 2800,
-		"image": "/img/monsters/1335.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1335.svg"
 	},
 	{
 		"id": 1179,
@@ -7056,8 +6561,7 @@
 		"pv_min": 500,
 		"pv_max": 700,
 		"image": "/img/monsters/1514.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1180,
@@ -7069,8 +6573,7 @@
 		"pv_min": 20,
 		"pv_max": 40,
 		"image": "/img/monsters/1514.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1181,
@@ -7082,8 +6585,7 @@
 		"pv_min": 490,
 		"pv_max": 930,
 		"image": "/img/monsters/1652.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 1182,
@@ -7095,8 +6597,7 @@
 		"pv_min": 310,
 		"pv_max": 650,
 		"image": "/img/monsters/1645.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1183,
@@ -7108,8 +6609,7 @@
 		"pv_min": 310,
 		"pv_max": 650,
 		"image": "/img/monsters/1653.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1184,
@@ -7121,8 +6621,7 @@
 		"pv_min": 2600,
 		"pv_max": 3000,
 		"image": "/img/monsters/1654.svg",
-		"couleur": "Jaune",
-		"availableFrom": "2025-1-1"
+		"couleur": "Jaune"
 	},
 	{
 		"id": 1185,
@@ -7134,8 +6633,7 @@
 		"pv_min": 2600,
 		"pv_max": 3000,
 		"image": "/img/monsters/1657.svg",
-		"couleur": "Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rouge"
 	},
 	{
 		"id": 1186,
@@ -7147,8 +6645,7 @@
 		"pv_min": 2600,
 		"pv_max": 3000,
 		"image": "/img/monsters/1656.svg",
-		"couleur": "Bleu",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu"
 	},
 	{
 		"id": 1187,
@@ -7160,8 +6657,7 @@
 		"pv_min": 2600,
 		"pv_max": 3000,
 		"image": "/img/monsters/1655.svg",
-		"couleur": "Vert",
-		"availableFrom": "2025-1-1"
+		"couleur": "Vert"
 	},
 	{
 		"id": 1188,
@@ -7173,8 +6669,7 @@
 		"pv_min": 4600,
 		"pv_max": 5000,
 		"image": "/img/monsters/1647.svg",
-		"couleur": "Bleu / Vert / Jaune / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Bleu / Vert / Jaune / Rouge"
 	},
 	{
 		"id": 1189,
@@ -7185,8 +6680,7 @@
 		"niveau_max": 140,
 		"pv_min": 5000,
 		"pv_max": 7000,
-		"image": "/img/monsters/1071.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1071.svg"
 	},
 	{
 		"id": 1190,
@@ -7197,8 +6691,7 @@
 		"niveau_max": 43,
 		"pv_min": 500,
 		"pv_max": 700,
-		"image": "/img/monsters/1574.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1574.svg"
 	},
 	{
 		"id": 1191,
@@ -7209,8 +6702,7 @@
 		"niveau_max": 120,
 		"pv_min": 2250,
 		"pv_max": 2650,
-		"image": "/img/monsters/1037.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1037.svg"
 	},
 	{
 		"id": 1192,
@@ -7221,8 +6713,7 @@
 		"niveau_max": 133,
 		"pv_min": 6000,
 		"pv_max": 7200,
-		"image": "/img/monsters/1088.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1088.svg"
 	},
 	{
 		"id": 1193,
@@ -7233,8 +6724,7 @@
 		"niveau_max": 198,
 		"pv_min": 12000,
 		"pv_max": 16000,
-		"image": "/img/monsters/1069.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1069.svg"
 	},
 	{
 		"id": 1194,
@@ -7246,8 +6736,7 @@
 		"pv_min": 7000,
 		"pv_max": 9000,
 		"image": "/img/monsters/1660.svg",
-		"couleur": "Noir / Rouge",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir / Rouge"
 	},
 	{
 		"id": 1196,
@@ -7258,8 +6747,7 @@
 		"niveau_max": 240,
 		"pv_min": 3500,
 		"pv_max": 4500,
-		"image": "/img/monsters/1662.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1662.svg"
 	},
 	{
 		"id": 1229,
@@ -7270,8 +6758,7 @@
 		"niveau_max": 28,
 		"pv_min": 100,
 		"pv_max": 200,
-		"image": "/img/monsters/1133.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1133.svg"
 	},
 	{
 		"id": 1230,
@@ -7282,8 +6769,7 @@
 		"niveau_max": 39,
 		"pv_min": 200,
 		"pv_max": 320,
-		"image": "/img/monsters/1123.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1123.svg"
 	},
 	{
 		"id": 1231,
@@ -7294,8 +6780,7 @@
 		"niveau_max": 29,
 		"pv_min": 120,
 		"pv_max": 200,
-		"image": "/img/monsters/1132.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1132.svg"
 	},
 	{
 		"id": 1232,
@@ -7307,8 +6792,7 @@
 		"pv_min": 60,
 		"pv_max": 120,
 		"image": "/img/monsters/1663.svg",
-		"couleur": "Rose",
-		"availableFrom": "2025-1-1"
+		"couleur": "Rose"
 	},
 	{
 		"id": 1247,
@@ -7319,8 +6803,7 @@
 		"niveau_max": 14,
 		"pv_min": 70,
 		"pv_max": 90,
-		"image": "/img/monsters/9090.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/9090.svg"
 	},
 	{
 		"id": 2627,
@@ -7331,8 +6814,7 @@
 		"niveau_max": 14,
 		"pv_min": 70,
 		"pv_max": 90,
-		"image": "/img/monsters/9090.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/9090.svg"
 	},
 	{
 		"id": 2642,
@@ -7343,8 +6825,7 @@
 		"niveau_max": 30,
 		"pv_min": 450,
 		"pv_max": 450,
-		"image": "/img/monsters/1201.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1201.svg"
 	},
 	{
 		"id": 2664,
@@ -7355,8 +6836,7 @@
 		"niveau_max": 43,
 		"pv_min": 150,
 		"pv_max": 350,
-		"image": "/img/monsters/1003.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1003.svg"
 	},
 	{
 		"id": 2680,
@@ -7367,8 +6847,7 @@
 		"niveau_max": 220,
 		"pv_min": 6500,
 		"pv_max": 8500,
-		"image": "/img/monsters/1244.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1244.svg"
 	},
 	{
 		"id": 2685,
@@ -7379,8 +6858,7 @@
 		"niveau_max": 220,
 		"pv_min": 6500,
 		"pv_max": 8500,
-		"image": "/img/monsters/1188.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1188.svg"
 	},
 	{
 		"id": 2691,
@@ -7391,8 +6869,7 @@
 		"niveau_max": 100,
 		"pv_min": 200,
 		"pv_max": 1000,
-		"image": "/img/monsters/1456.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1456.svg"
 	},
 	{
 		"id": 2771,
@@ -7403,8 +6880,7 @@
 		"niveau_max": 39,
 		"pv_min": 400,
 		"pv_max": 800,
-		"image": "/img/monsters/1001.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1001.svg"
 	},
 	{
 		"id": 2772,
@@ -7415,8 +6891,7 @@
 		"niveau_max": 440,
 		"pv_min": 5250,
 		"pv_max": 6250,
-		"image": "/img/monsters/8038.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/8038.svg"
 	},
 	{
 		"id": 2781,
@@ -7427,8 +6902,7 @@
 		"niveau_max": 1,
 		"pv_min": 20,
 		"pv_max": 20,
-		"image": "/img/monsters/1107.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1107.svg"
 	},
 	{
 		"id": 2786,
@@ -7439,8 +6913,7 @@
 		"niveau_max": 150,
 		"pv_min": 3300,
 		"pv_max": 3700,
-		"image": "/img/monsters/1077.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1077.svg"
 	},
 	{
 		"id": 2788,
@@ -7451,8 +6924,7 @@
 		"niveau_max": 50,
 		"pv_min": 300,
 		"pv_max": 400,
-		"image": "/img/monsters/1072.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1072.svg"
 	},
 	{
 		"id": 2789,
@@ -7463,8 +6935,7 @@
 		"niveau_max": 28,
 		"pv_min": 380,
 		"pv_max": 540,
-		"image": "/img/monsters/1248.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1248.svg"
 	},
 	{
 		"id": 2790,
@@ -7475,8 +6946,7 @@
 		"niveau_max": 60,
 		"pv_min": 400,
 		"pv_max": 480,
-		"image": "/img/monsters/1212.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1212.svg"
 	},
 	{
 		"id": 2791,
@@ -7487,8 +6957,7 @@
 		"niveau_max": 60,
 		"pv_min": 500,
 		"pv_max": 500,
-		"image": "/img/monsters/1085.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1085.svg"
 	},
 	{
 		"id": 2793,
@@ -7499,8 +6968,7 @@
 		"niveau_max": 440,
 		"pv_min": 7000,
 		"pv_max": 7400,
-		"image": "/img/monsters/1073.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1073.svg"
 	},
 	{
 		"id": 2795,
@@ -7511,8 +6979,7 @@
 		"niveau_max": 1,
 		"pv_min": 8000,
 		"pv_max": 8000,
-		"image": "/img/monsters/1096.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1096.svg"
 	},
 	{
 		"id": 2800,
@@ -7524,8 +6991,7 @@
 		"pv_min": 100000,
 		"pv_max": 100000,
 		"image": "/img/monsters/1503.svg",
-		"couleur": "Noir",
-		"availableFrom": "2025-1-1"
+		"couleur": "Noir"
 	},
 	{
 		"id": 2801,
@@ -7537,8 +7003,7 @@
 		"pv_min": 100000,
 		"pv_max": 100000,
 		"image": "/img/monsters/1508.svg",
-		"couleur": "Gris",
-		"availableFrom": "2025-1-1"
+		"couleur": "Gris"
 	},
 	{
 		"id": 2840,
@@ -7549,8 +7014,7 @@
 		"niveau_max": 47,
 		"pv_min": 300,
 		"pv_max": 480,
-		"image": "/img/monsters/1456.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1456.svg"
 	},
 	{
 		"id": 2841,
@@ -7561,8 +7025,7 @@
 		"niveau_max": 47,
 		"pv_min": 300,
 		"pv_max": 480,
-		"image": "/img/monsters/1456.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1456.svg"
 	},
 	{
 		"id": 2842,
@@ -7573,8 +7036,7 @@
 		"niveau_max": 47,
 		"pv_min": 300,
 		"pv_max": 480,
-		"image": "/img/monsters/1456.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1456.svg"
 	},
 	{
 		"id": 2976,
@@ -7585,8 +7047,7 @@
 		"niveau_max": 430,
 		"pv_min": 11000,
 		"pv_max": 15000,
-		"image": "/img/monsters/1296.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1296.svg"
 	},
 	{
 		"id": 2984,
@@ -7597,7 +7058,6 @@
 		"niveau_max": 460,
 		"pv_min": 12000,
 		"pv_max": 16000,
-		"image": "/img/monsters/1292.svg",
-		"availableFrom": "2025-1-1"
+		"image": "/img/monsters/1292.svg"
 	}
 ]
