@@ -518,6 +518,13 @@ body::before {
 	color: var(--correct);
 }
 
+.victory-monster-img {
+	width: 96px;
+	height: 96px;
+	object-fit: contain;
+	margin-bottom: 12px;
+}
+
 .victory-modal p {
 	margin-bottom: 20px;
 	color: var(--text-secondary);

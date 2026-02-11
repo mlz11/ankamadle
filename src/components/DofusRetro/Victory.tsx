@@ -16,6 +16,7 @@ interface Props {
 	results: GuessResult[];
 	stats: GameStats;
 	targetName: string;
+	targetImage?: string;
 }
 
 function buildShareText(results: GuessResult[], targetName: string): string {
@@ -41,7 +42,12 @@ function buildShareText(results: GuessResult[], targetName: string): string {
 	return `${header}\n${grid}`;
 }
 
-export default function Victory({ results, stats, targetName }: Props) {
+export default function Victory({
+	results,
+	stats,
+	targetName,
+	targetImage,
+}: Props) {
 	const [copied, setCopied] = useState(false);
 	const [countdown, setCountdown] = useState(getTimeUntilMidnight);
 
@@ -67,6 +73,13 @@ export default function Victory({ results, stats, targetName }: Props) {
 		<div className="victory-overlay">
 			<div className="victory-modal">
 				<h2>Bravo !</h2>
+				{targetImage && (
+					<img
+						src={targetImage}
+						alt={targetName}
+						className="victory-monster-img"
+					/>
+				)}
 				<p>
 					Tu as trouvé <strong>{targetName}</strong> en{" "}
 					<strong>{results.length}</strong> essai{results.length > 1 ? "s" : ""}

@@ -120,7 +120,12 @@ export default function Game() {
 			<GuessGrid results={results} newGuessIndex={newGuessIndex} />
 			{results.length > 0 && !won && <ColorLegend />}
 			{won && (
-				<Victory results={results} stats={stats} targetName={target.name} />
+				<Victory
+					results={results}
+					stats={stats}
+					targetName={target.name}
+					targetImage={target.image}
+				/>
 			)}
 		</div>
 	);
