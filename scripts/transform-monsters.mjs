@@ -16,7 +16,10 @@ if (existsSync(outPath)) {
 	for (const m of existing) existingById.set(m.id, m);
 }
 
-const monsters = raw.map((m) => {
+const excluded = ["Monstres de quête", "Monstres des conquêtes de territoires"];
+const filtered = raw.filter((m) => !excluded.includes(m.race));
+
+const monsters = filtered.map((m) => {
 	const prev = existingById.get(m.id) || {};
 	return {
 		id: m.id,
