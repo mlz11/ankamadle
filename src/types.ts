@@ -9,6 +9,7 @@ export interface Monster {
 	pv_max: number;
 	couleur: string;
 	image?: string;
+	availableFrom: string;
 }
 
 export type FeedbackStatus = "correct" | "partial" | "wrong";

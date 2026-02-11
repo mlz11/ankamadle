@@ -23,6 +23,19 @@ function getYesterdayKey(): string {
 	return getDateKey(yesterday);
 }
 
+function parseDateKey(key: string): [number, number, number] {
+	const [y, m, d] = key.split("-").map(Number);
+	return [y, m, d];
+}
+
+function isDateOnOrBefore(a: string, b: string): boolean {
+	const [ay, am, ad] = parseDateKey(a);
+	const [by, bm, bd] = parseDateKey(b);
+	if (ay !== by) return ay < by;
+	if (am !== bm) return am < bm;
+	return ad <= bd;
+}
+
 function hash(str: string): number {
 	let h = 0;
 	for (const ch of str) {
@@ -36,9 +49,13 @@ export function getDailyMonster(
 	monsters: Monster[],
 	seed: string = getTodayKey(),
 ): Monster {
-	let best = monsters[0];
+	const eligible = monsters.filter((m) =>
+		isDateOnOrBefore(m.availableFrom, seed),
+	);
+	const pool = eligible.length > 0 ? eligible : monsters;
+	let best = pool[0];
 	let bestScore = -Infinity;
-	for (const monster of monsters) {
+	for (const monster of pool) {
 		const score = hash(`${seed}-${monster.id}`);
 		if (score > bestScore) {
 			bestScore = score;
