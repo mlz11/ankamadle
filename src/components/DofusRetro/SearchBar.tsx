@@ -41,7 +41,11 @@ export default function SearchBar({
 		.sort((a, b) => a.name.localeCompare(b.name));
 
 	const fzf = useMemo(
-		() => new Fzf(available, { selector: (m) => m.name }),
+		() =>
+			new Fzf(available, {
+				selector: (m) => m.name,
+				casing: "case-insensitive",
+			}),
 		[available],
 	);
 
