@@ -524,6 +524,34 @@ body::before {
 	gap: 2px;
 }
 
+/* ===== Yesterday's Answer ===== */
+.yesterday-answer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	max-width: 520px;
+	margin: 0 auto 24px;
+	padding: 10px 16px;
+	background: var(--bg-secondary);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	animation: fadeIn 0.3s ease;
+}
+
+.yesterday-answer-img {
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.yesterday-answer strong {
+	color: var(--text-primary);
+}
+
 /* ===== Victory Modal ===== */
 .victory-overlay {
 	position: fixed;

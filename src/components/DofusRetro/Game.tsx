@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import monstersData from "../../data/monsters.json";
 import type { GameStats, GuessResult, Monster } from "../../types";
 import { compareMonsters } from "../../utils/compare";
-import { getDailyMonster } from "../../utils/daily";
+import { getDailyMonster, getYesterdayMonster } from "../../utils/daily";
 import {
 	loadProgress,
 	loadStats,
@@ -14,6 +14,7 @@ import ColorLegend from "./ColorLegend";
 import GuessGrid from "./GuessGrid";
 import SearchBar from "./SearchBar";
 import Victory from "./Victory";
+import YesterdayAnswer from "./YesterdayAnswer";
 
 const monsters: Monster[] = monstersData as Monster[];
 
@@ -24,6 +25,7 @@ interface Props {
 
 export default function Game({ stats, onStatsChange }: Props) {
 	const [target, setTarget] = useState(() => getDailyMonster(monsters));
+	const yesterdayMonster = useMemo(() => getYesterdayMonster(monsters), []);
 	const [devMode, setDevMode] = useState(false);
 
 	const [results, setResults] = useState<GuessResult[]>([]);
@@ -129,6 +131,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 			/>
 			<GuessGrid results={results} newGuessIndex={newGuessIndex} />
 			{results.length > 0 && !won && <ColorLegend />}
+			<YesterdayAnswer monster={yesterdayMonster} />
 			{showVictory && (
 				<Victory
 					results={results}

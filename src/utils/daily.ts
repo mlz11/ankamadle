@@ -1,17 +1,26 @@
 import type { Monster } from "../types";
 
-export function getTodayKey(): string {
-	const today = new Date();
+function getDateKey(date: Date): string {
 	const paris = new Intl.DateTimeFormat("en-CA", {
 		timeZone: "Europe/Paris",
 		year: "numeric",
 		month: "numeric",
 		day: "numeric",
-	}).formatToParts(today);
+	}).formatToParts(date);
 	const y = paris.find((p) => p.type === "year")?.value;
 	const m = paris.find((p) => p.type === "month")?.value;
 	const d = paris.find((p) => p.type === "day")?.value;
 	return `${y}-${Number(m)}-${Number(d)}`;
+}
+
+export function getTodayKey(): string {
+	return getDateKey(new Date());
+}
+
+function getYesterdayKey(): string {
+	const yesterday = new Date();
+	yesterday.setDate(yesterday.getDate() - 1);
+	return getDateKey(yesterday);
 }
 
 function hash(str: string): number {
@@ -23,8 +32,10 @@ function hash(str: string): number {
 	return h;
 }
 
-export function getDailyMonster(monsters: Monster[]): Monster {
-	const seed = getTodayKey();
+export function getDailyMonster(
+	monsters: Monster[],
+	seed: string = getTodayKey(),
+): Monster {
 	let best = monsters[0];
 	let bestScore = -Infinity;
 	for (const monster of monsters) {
@@ -35,4 +46,8 @@ export function getDailyMonster(monsters: Monster[]): Monster {
 		}
 	}
 	return best;
+}
+
+export function getYesterdayMonster(monsters: Monster[]): Monster {
+	return getDailyMonster(monsters, getYesterdayKey());
 }
