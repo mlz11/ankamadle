@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Scrape monster data from Solomonk.fr for Ankamadle.
+Scrape monster data from Solomonk.fr for Dofusdle.
 
 Fetches all monsters from the bestiary AJAX endpoint and extracts:
 - id, name, ecosystem, race, zone (subarea), level range, HP range,

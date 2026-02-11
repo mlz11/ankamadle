@@ -31,7 +31,7 @@ function buildShareText(
 ): string {
 	const hintSuffix =
 		hintsUsed > 0 ? ` (+${hintsUsed} indice${hintsUsed > 1 ? "s" : ""})` : "";
-	const header = `Ankamadle - ${targetName} en ${results.length} essai${results.length > 1 ? "s" : ""}${hintSuffix}`;
+	const header = `Dofusdle - ${targetName} en ${results.length} essai${results.length > 1 ? "s" : ""}${hintSuffix}`;
 	const grid = results
 		.map((r) => {
 			const cells = [

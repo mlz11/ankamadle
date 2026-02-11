@@ -24,13 +24,13 @@ No test runner is configured. There are no tests.
 
 ## Architecture
 
-Ankamadle is a client-side Wordle-style daily guessing game for Dofus Retro 1.29 monsters. No backend — fully static Vite + React 19 SPA.
+Dofusdle is a client-side Wordle-style daily guessing game for Dofus Retro 1.29 monsters. No backend — fully static Vite + React 19 SPA.
 
 ### Core Data Flow
 
 1. **Daily monster selection** (`src/utils/daily.ts`): Deterministic hash of today's date selects a monster from `src/data/monsters.json`. Same monster for all players each day.
 2. **Guess comparison** (`src/utils/compare.ts`): Each guess produces feedback on 5 attributes (type, zone, niveau, couleur, pv) with statuses: correct/partial/wrong and directional arrows for numeric fields. Zone comparison uses a region grouping map for partial matches. Numeric thresholds: niveau ±10, pv ±20%.
-3. **Persistence** (`src/utils/storage.ts`): Daily progress and cumulative stats stored in localStorage (`ankamadle-progress`, `ankamadle-stats`). Progress auto-clears when the date changes.
+3. **Persistence** (`src/utils/storage.ts`): Daily progress and cumulative stats stored in localStorage (`dofusdle-progress`, `dofusdle-stats`). Progress auto-clears when the date changes.
 
 ### Component Structure
 

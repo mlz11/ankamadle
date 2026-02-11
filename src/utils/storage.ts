@@ -1,8 +1,20 @@
 import type { DailyProgress, GameStats } from "../types";
 import { getTodayKey } from "./daily";
 
-const PROGRESS_KEY = "ankamadle-progress";
-const STATS_KEY = "ankamadle-stats";
+const PROGRESS_KEY = "dofusdle-progress";
+const STATS_KEY = "dofusdle-stats";
+
+// One-time migration from old keys
+for (const [oldKey, newKey] of [
+	["ankamadle-progress", PROGRESS_KEY],
+	["ankamadle-stats", STATS_KEY],
+] as const) {
+	const old = localStorage.getItem(oldKey);
+	if (old && !localStorage.getItem(newKey)) {
+		localStorage.setItem(newKey, old);
+		localStorage.removeItem(oldKey);
+	}
+}
 
 function defaultStats(): GameStats {
 	return {

@@ -37,7 +37,7 @@ export default function Header({ stats }: Props) {
 	return (
 		<header className="app-header">
 			<h1 className="header-title">
-				<img src="/images/logo.webp" alt="Ankamadle" className="header-logo" />
+				<img src="/images/logo.webp" alt="Dofusdle" className="header-logo" />
 			</h1>
 			<p className="game-subtitle">
 				Dofus Retro 1.29 — Devine le monstre du jour

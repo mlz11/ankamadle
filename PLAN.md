@@ -1,8 +1,8 @@
-# Ankamadle — Implementation Plan
+# Dofusdle — Implementation Plan
 
 ## Context
 
-Build **Ankamadle**, a Wordle-style daily guessing game platform for Ankama games. The first (and only for now) section is **Dofus Retro 1.29** — guess monsters by their attributes. The architecture allows adding more Ankama games later (Wakfu, Dofus Touch, etc.).
+Build **Dofusdle**, a Wordle-style daily guessing game for Dofus Retro 1.29 monsters. The first (and only for now) section is **Dofus Retro 1.29** — guess monsters by their attributes. The architecture allows adding more Ankama games later (Wakfu, Dofus Touch, etc.).
 
 ---
 
@@ -45,7 +45,7 @@ Build **Ankamadle**, a Wordle-style daily guessing game platform for Ankama game
 ## Project Structure
 
 ```
-ankamadle/
+dofusdle/
 ├── public/
 │   └── images/                # Monster sprites (added later)
 ├── src/
@@ -105,11 +105,11 @@ ankamadle/
 4. **SearchBar** — text input with filtered autocomplete dropdown
 5. **Game** — orchestrates state: guesses, daily monster, win detection
 6. **Victory** — modal with guess count, streak, share-to-clipboard
-7. **Header** — "Ankamadle" title, rules modal
+7. **Header** — "Dofusdle" title, rules modal
 8. **App** — wraps Header + Game
 
 ### Step 6: Styling
-- Dark theme with Ankama-inspired colors
+- Dark theme with Dofus-inspired colors
 - Green / orange / red feedback cells
 - Responsive (mobile-friendly)
 - Smooth row reveal animations
@@ -132,7 +132,7 @@ function getDailyMonster(monsters: Monster[]): Monster {
 
 ## Verification Checklist
 
-- [ ] `npm run dev` loads — shows "Ankamadle" header + Dofus Retro game
+- [ ] `npm run dev` loads — shows "Dofusdle" header + Dofus Retro game
 - [ ] Type a monster name → autocomplete suggests matches
 - [ ] Submit a guess → row appears with colored feedback
 - [ ] Guess correctly → victory modal with stats + share button
