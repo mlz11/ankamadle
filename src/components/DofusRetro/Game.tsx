@@ -56,9 +56,8 @@ export default function Game({ stats, onStatsChange }: Props) {
 	const [won, setWon] = useState(false);
 	const [showVictory, setShowVictory] = useState(false);
 	const [victoryShownOnce, setVictoryShownOnce] = useState(false);
-	const [newGuessIndex, setNewGuessIndex] = useState(-1);
-	const [hint1Revealed, setHint1Revealed] = useState(false);
-	const [hint2Revealed, setHint2Revealed] = useState(false);
+	const [animatingRowIndex, setAnimatingRowIndex] = useState(-1);
+	const [hints, setHints] = useState({ hint1: false, hint2: false });
 
 	const resetForNewDay = useCallback((newKey: string) => {
 		setDateKey(newKey);
@@ -67,9 +66,8 @@ export default function Game({ stats, onStatsChange }: Props) {
 		setWon(false);
 		setShowVictory(false);
 		setVictoryShownOnce(false);
-		setNewGuessIndex(-1);
-		setHint1Revealed(false);
-		setHint2Revealed(false);
+		setAnimatingRowIndex(-1);
+		setHints({ hint1: false, hint2: false });
 	}, []);
 
 	// Reset game when the Paris day changes while the tab is in the background
@@ -105,8 +103,10 @@ export default function Game({ stats, onStatsChange }: Props) {
 			}
 			setResults(restored);
 			setWon(progress.won);
-			setHint1Revealed(progress.hint1Revealed ?? false);
-			setHint2Revealed(progress.hint2Revealed ?? false);
+			setHints({
+				hint1: progress.hint1Revealed ?? false,
+				hint2: progress.hint2Revealed ?? false,
+			});
 			if (progress.won) {
 				setShowVictory(true);
 				setVictoryShownOnce(true);
@@ -122,9 +122,8 @@ export default function Game({ stats, onStatsChange }: Props) {
 		setWon(false);
 		setShowVictory(false);
 		setVictoryShownOnce(false);
-		setNewGuessIndex(-1);
-		setHint1Revealed(false);
-		setHint2Revealed(false);
+		setAnimatingRowIndex(-1);
+		setHints({ hint1: false, hint2: false });
 	}
 
 	const usedIds = useMemo(
@@ -143,7 +142,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		const result = compareMonsters(monster, target);
 		const newResults = [...results, result];
 		setResults(newResults);
-		setNewGuessIndex(newResults.length - 1);
+		setAnimatingRowIndex(newResults.length - 1);
 
 		const isWin = monster.id === target.id;
 		if (isWin) {
@@ -166,33 +165,33 @@ export default function Game({ stats, onStatsChange }: Props) {
 			saveProgress(
 				newResults.map((r) => r.monster.name),
 				isWin,
-				hint1Revealed,
-				hint2Revealed,
+				hints.hint1,
+				hints.hint2,
 			);
 		}
 	}
 
-	const hintsUsed = (hint1Revealed ? 1 : 0) + (hint2Revealed ? 1 : 0);
+	const hintsUsed = (hints.hint1 ? 1 : 0) + (hints.hint2 ? 1 : 0);
 
 	function handleRevealHint1() {
-		setHint1Revealed(true);
+		setHints((h) => ({ ...h, hint1: true }));
 		if (!devMode) {
 			saveProgress(
 				results.map((r) => r.monster.name),
 				won,
 				true,
-				hint2Revealed,
+				hints.hint2,
 			);
 		}
 	}
 
 	function handleRevealHint2() {
-		setHint2Revealed(true);
+		setHints((h) => ({ ...h, hint2: true }));
 		if (!devMode) {
 			saveProgress(
 				results.map((r) => r.monster.name),
 				won,
-				hint1Revealed,
+				hints.hint1,
 				true,
 			);
 		}
@@ -223,8 +222,8 @@ export default function Game({ stats, onStatsChange }: Props) {
 			<HintPanel
 				guessCount={results.length}
 				won={won}
-				hint1Revealed={hint1Revealed}
-				hint2Revealed={hint2Revealed}
+				hint1Revealed={hints.hint1}
+				hint2Revealed={hints.hint2}
 				targetImage={target.image}
 				targetEcosystem={target.ecosystem}
 				onRevealHint1={handleRevealHint1}
@@ -236,7 +235,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 				onSelect={handleGuess}
 				disabled={won}
 			/>
-			<GuessGrid results={results} newGuessIndex={newGuessIndex} />
+			<GuessGrid results={results} animatingRowIndex={animatingRowIndex} />
 			{results.length > 0 && !won && <ColorLegend />}
 			{won && !showVictory && victoryShownOnce && (
 				<button

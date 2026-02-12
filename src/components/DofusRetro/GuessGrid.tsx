@@ -3,10 +3,10 @@ import GuessRow from "./GuessRow";
 
 interface Props {
 	results: GuessResult[];
-	newGuessIndex?: number;
+	animatingRowIndex?: number;
 }
 
-export default function GuessGrid({ results, newGuessIndex = -1 }: Props) {
+export default function GuessGrid({ results, animatingRowIndex = -1 }: Props) {
 	if (results.length === 0) return null;
 
 	return (
@@ -25,7 +25,7 @@ export default function GuessGrid({ results, newGuessIndex = -1 }: Props) {
 				<GuessRow
 					key={`${r.monster.id}-${i}`}
 					result={r}
-					isNew={results.length - 1 - i === newGuessIndex}
+					isNew={results.length - 1 - i === animatingRowIndex}
 				/>
 			))}
 		</div>

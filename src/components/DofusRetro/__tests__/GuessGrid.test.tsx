@@ -44,7 +44,9 @@ function makeResult(
 
 describe("GuessGrid", () => {
 	it("should render nothing when there are no guesses", () => {
-		const { container } = render(<GuessGrid results={[]} newGuessIndex={-1} />);
+		const { container } = render(
+			<GuessGrid results={[]} animatingRowIndex={-1} />,
+		);
 		expect(container.firstChild).toBeNull();
 	});
 
