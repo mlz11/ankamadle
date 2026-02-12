@@ -1,20 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { useCloseOnKey } from "../hooks/useCloseOnKey";
+
+const CLOSE_KEYS = ["Escape", "Enter"];
 
 export default function Footer() {
 	const [showInfo, setShowInfo] = useState(false);
 	const btnRef = useRef<HTMLButtonElement>(null);
 
-	useEffect(() => {
-		if (!showInfo) return;
-		const handleKey = (e: KeyboardEvent) => {
-			if (e.key === "Escape" || e.key === "Enter") {
-				setShowInfo(false);
-				btnRef.current?.blur();
-			}
-		};
-		document.addEventListener("keydown", handleKey);
-		return () => document.removeEventListener("keydown", handleKey);
-	}, [showInfo]);
+	const closeInfo = useCallback(() => {
+		setShowInfo(false);
+		btnRef.current?.blur();
+	}, []);
+
+	useCloseOnKey(showInfo, closeInfo, CLOSE_KEYS);
 
 	return (
 		<footer className="app-footer">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCloseOnKey } from "../../hooks/useCloseOnKey";
 import type { GameStats, GuessResult } from "../../types";
 
 function getTimeUntilMidnightParis(): string {
@@ -68,13 +69,7 @@ export default function Victory({
 		return () => clearInterval(id);
 	}, []);
 
-	useEffect(() => {
-		function handleKeyDown(e: KeyboardEvent) {
-			if (e.key === "Escape") onClose();
-		}
-		document.addEventListener("keydown", handleKeyDown);
-		return () => document.removeEventListener("keydown", handleKeyDown);
-	}, [onClose]);
+	useCloseOnKey(true, onClose);
 
 	function handleShare() {
 		const text = buildShareText(results, hintsUsed);

@@ -1,5 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { useCloseOnKey } from "../hooks/useCloseOnKey";
 import type { GameStats } from "../types";
+
+const CLOSE_KEYS = ["Escape", "Enter"];
 
 interface Props {
 	stats: GameStats;
@@ -11,23 +14,17 @@ export default function Header({ stats }: Props) {
 	const rulesBtnRef = useRef<HTMLButtonElement>(null);
 	const statsBtnRef = useRef<HTMLButtonElement>(null);
 
-	useEffect(() => {
-		if (!showRules && !showStats) return;
-		const handleKey = (e: KeyboardEvent) => {
-			if (e.key === "Escape" || e.key === "Enter") {
-				if (showRules) {
-					setShowRules(false);
-					rulesBtnRef.current?.blur();
-				}
-				if (showStats) {
-					setShowStats(false);
-					statsBtnRef.current?.blur();
-				}
-			}
-		};
-		document.addEventListener("keydown", handleKey);
-		return () => document.removeEventListener("keydown", handleKey);
-	}, [showRules, showStats]);
+	const closeRules = useCallback(() => {
+		setShowRules(false);
+		rulesBtnRef.current?.blur();
+	}, []);
+	const closeStats = useCallback(() => {
+		setShowStats(false);
+		statsBtnRef.current?.blur();
+	}, []);
+
+	useCloseOnKey(showRules, closeRules, CLOSE_KEYS);
+	useCloseOnKey(showStats, closeStats, CLOSE_KEYS);
 
 	const winPct =
 		stats.gamesPlayed > 0
