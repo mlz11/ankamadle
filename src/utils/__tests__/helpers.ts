@@ -1,5 +1,21 @@
 import type { Monster } from "../../types";
 
+export function makeMonsterWith(overrides: Partial<Monster> = {}): Monster {
+	return {
+		id: 1,
+		name: "Default",
+		ecosystem: "Plaine",
+		race: "Bouftou",
+		niveau_min: 1,
+		niveau_max: 50,
+		pv_min: 10,
+		pv_max: 500,
+		couleur: "Bleu",
+		availableFrom: "2025-1-1",
+		...overrides,
+	};
+}
+
 export function makeMonster(id: number, availableFrom = "2025-1-1"): Monster {
 	return {
 		id,

@@ -1,22 +1,6 @@
 import { describe, expect, it } from "vitest";
-import type { Monster } from "../../types";
 import { compareMonsters } from "../compare";
-
-function monster(overrides: Partial<Monster> = {}): Monster {
-	return {
-		id: 1,
-		name: "Default",
-		ecosystem: "Plaine",
-		race: "Bouftou",
-		niveau_min: 1,
-		niveau_max: 50,
-		pv_min: 10,
-		pv_max: 500,
-		couleur: "Bleu",
-		availableFrom: "2025-1-1",
-		...overrides,
-	};
-}
+import { makeMonsterWith as monster } from "./helpers";
 
 describe("compareMonsters", () => {
 	describe("ecosystem", () => {

@@ -3,6 +3,7 @@ import "@testing-library/jest-dom/vitest";
 import { cleanup, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import type { GuessResult, Monster } from "../../../types";
+import { makeMonsterWith } from "../../../utils/__tests__/helpers";
 import AttributeCell from "../AttributeCell";
 import GuessGrid from "../GuessGrid";
 import GuessRow from "../GuessRow";
@@ -10,19 +11,15 @@ import GuessRow from "../GuessRow";
 afterEach(cleanup);
 
 function makeMonster(overrides: Partial<Monster> = {}): Monster {
-	return {
-		id: 1,
+	return makeMonsterWith({
 		name: "Bouftou",
 		ecosystem: "Plaines de Cania",
 		race: "Bouftou",
-		niveau_min: 1,
 		niveau_max: 20,
-		pv_min: 10,
 		pv_max: 50,
 		couleur: "Orange",
-		availableFrom: "2025-1-1",
 		...overrides,
-	};
+	});
 }
 
 function makeResult(
