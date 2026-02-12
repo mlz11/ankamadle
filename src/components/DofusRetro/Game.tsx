@@ -26,6 +26,13 @@ import YesterdayAnswer from "./YesterdayAnswer";
 
 const monsters: Monster[] = monstersData as Monster[];
 
+/** Delay before first confetti burst (after last cell finishes flipping). */
+const CONFETTI_FIRST_MS = 1200;
+/** Delay before second, smaller confetti burst. */
+const CONFETTI_SECOND_MS = 1700;
+/** Delay before showing the victory modal. */
+const VICTORY_MODAL_DELAY_MS = 2000;
+
 interface Props {
 	stats: GameStats;
 	onStatsChange: (stats: GameStats) => void;
@@ -143,19 +150,16 @@ export default function Game({ stats, onStatsChange }: Props) {
 			setWon(true);
 			const newStats = recordWin(newResults.length);
 			onStatsChange(newStats);
-			// First confetti burst right as last cell finishes flipping
 			setTimeout(() => {
 				confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
-			}, 1200);
-			// Second smaller burst for extra celebration
+			}, CONFETTI_FIRST_MS);
 			setTimeout(() => {
 				confetti({ particleCount: 80, spread: 60, origin: { y: 0.5 } });
-			}, 1700);
-			// Show victory modal after cells flip + confetti enjoyed
+			}, CONFETTI_SECOND_MS);
 			setTimeout(() => {
 				setShowVictory(true);
 				setVictoryShownOnce(true);
-			}, 2000);
+			}, VICTORY_MODAL_DELAY_MS);
 		}
 
 		if (!devMode) {
