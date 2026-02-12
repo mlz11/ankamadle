@@ -17,8 +17,8 @@ export default function GuessGrid({ results, newGuessIndex = -1 }: Props) {
 					<div className="header-cell">Écosystème</div>
 					<div className="header-cell">Race</div>
 					<div className="header-cell">Couleur</div>
-					<div className="header-cell">Niveau</div>
-					<div className="header-cell">PV</div>
+					<div className="header-cell">Niveau max</div>
+					<div className="header-cell">PV max</div>
 				</div>
 			</div>
 			{[...results].reverse().map((r, i) => (

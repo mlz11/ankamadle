@@ -199,7 +199,7 @@ export default function Header({ stats }: Props) {
 							</li>
 							<li>
 								<span className="legend-partial">🟧 Orange</span> — Proche
-								(plages qui se chevauchent)
+								(valeur presque correcte)
 							</li>
 							<li>
 								<span className="legend-wrong">🟥 Rouge</span> — Pas de
@@ -235,7 +235,7 @@ export default function Header({ stats }: Props) {
 						<p>
 							Les 5 attributs : <strong>Écosystème</strong>,{" "}
 							<strong>Race</strong>, <strong>Couleur</strong>,{" "}
-							<strong>Niveau</strong>, <strong>PV</strong>
+							<strong>Niveau max</strong>, <strong>PV max</strong>
 						</p>
 						<button
 							type="button"

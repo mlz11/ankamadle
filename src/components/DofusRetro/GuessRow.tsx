@@ -42,13 +42,13 @@ export default function GuessRow({ result, isNew }: Props) {
 					index={3}
 				/>
 				<AttributeCell
-					label="Niveau"
+					label="Niveau max"
 					feedback={result.feedback.niveau}
 					isNew={isNew}
 					index={4}
 				/>
 				<AttributeCell
-					label="PV"
+					label="PV max"
 					feedback={result.feedback.pv}
 					isNew={isNew}
 					index={5}

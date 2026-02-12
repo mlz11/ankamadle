@@ -26,45 +26,31 @@ function compareCouleur(
 	return "wrong";
 }
 
-function compareRange(
-	guessMin: number,
-	guessMax: number,
-	targetMin: number,
-	targetMax: number,
+function compareNumeric(
+	guessVal: number,
+	targetVal: number,
+	threshold: number,
 ): { status: FeedbackStatus; arrow: ArrowDirection } {
-	if (guessMin === targetMin && guessMax === targetMax) {
+	if (guessVal === targetVal) {
 		return { status: "correct", arrow: null };
 	}
 
-	const overlaps = guessMin <= targetMax && targetMin <= guessMax;
-	const guessMid = (guessMin + guessMax) / 2;
-	const targetMid = (targetMin + targetMax) / 2;
-	const arrow: ArrowDirection = guessMid < targetMid ? "up" : "down";
+	const arrow: ArrowDirection = guessVal < targetVal ? "up" : "down";
+	const diff = Math.abs(guessVal - targetVal);
 
-	if (overlaps) {
+	if (diff <= threshold) {
 		return { status: "partial", arrow };
 	}
 
 	return { status: "wrong", arrow };
 }
 
-function formatRange(min: number, max: number): string {
-	if (min === max) return String(min);
-	return `${min} - ${max}`;
-}
-
 export function compareMonsters(guess: Monster, target: Monster): GuessResult {
-	const niveauResult = compareRange(
-		guess.niveau_min,
-		guess.niveau_max,
-		target.niveau_min,
-		target.niveau_max,
-	);
-	const pvResult = compareRange(
-		guess.pv_min,
+	const niveauResult = compareNumeric(guess.niveau_max, target.niveau_max, 10);
+	const pvResult = compareNumeric(
 		guess.pv_max,
-		target.pv_min,
 		target.pv_max,
+		target.pv_max * 0.2,
 	);
 
 	return {
@@ -81,7 +67,7 @@ export function compareMonsters(guess: Monster, target: Monster): GuessResult {
 				arrow: null,
 			},
 			niveau: {
-				value: formatRange(guess.niveau_min, guess.niveau_max),
+				value: String(guess.niveau_max),
 				status: niveauResult.status,
 				arrow: niveauResult.arrow,
 			},
@@ -91,7 +77,7 @@ export function compareMonsters(guess: Monster, target: Monster): GuessResult {
 				arrow: null,
 			},
 			pv: {
-				value: formatRange(guess.pv_min, guess.pv_max),
+				value: String(guess.pv_max),
 				status: pvResult.status,
 				arrow: pvResult.arrow,
 			},
