@@ -41,7 +41,7 @@ export default function AttributeCell({
 	return (
 		<div
 			className={`attribute-cell ${STATUS_CLASS[feedback.status]} ${isNew ? "cell-flip" : ""}`}
-			style={isNew ? { animationDelay: `${index * 100}ms` } : undefined}
+			style={isNew ? { animationDelay: `${index * 200}ms` } : undefined}
 		>
 			<span className="cell-label">{label}</span>
 			<span className="cell-value">

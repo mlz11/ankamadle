@@ -404,7 +404,7 @@ body::before {
 
 /* ===== Cell Flip Animation ===== */
 .cell-flip {
-	animation: cellFlip 0.5s ease both;
+	animation: cellFlip 0.85s ease both;
 }
 
 .guess-monster-name {
