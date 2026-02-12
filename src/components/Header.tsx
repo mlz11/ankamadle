@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { useCloseOnKey } from "../hooks/useCloseOnKey";
 import type { GameStats } from "../types";
+import { getWinPercentage } from "../utils/storage";
 
 const CLOSE_KEYS = ["Escape", "Enter"];
 
@@ -26,10 +27,7 @@ export default function Header({ stats }: Props) {
 	useCloseOnKey(showRules, closeRules, CLOSE_KEYS);
 	useCloseOnKey(showStats, closeStats, CLOSE_KEYS);
 
-	const winPct =
-		stats.gamesPlayed > 0
-			? Math.round((stats.gamesWon / stats.gamesPlayed) * 100)
-			: 0;
+	const winPct = getWinPercentage(stats);
 
 	return (
 		<header className="app-header">

@@ -76,6 +76,12 @@ export function loadTargetMonster(dateKey: string): number | null {
 	}
 }
 
+export function getWinPercentage(stats: GameStats): number {
+	return stats.gamesPlayed > 0
+		? Math.round((stats.gamesWon / stats.gamesPlayed) * 100)
+		: 0;
+}
+
 export function recordWin(guessCount: number): GameStats {
 	const stats = loadStats();
 	stats.gamesPlayed += 1;

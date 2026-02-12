@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCloseOnKey } from "../../hooks/useCloseOnKey";
 import type { GameStats, GuessResult } from "../../types";
+import { getWinPercentage } from "../../utils/storage";
 
 function getTimeUntilMidnightParis(): string {
 	const now = new Date();
@@ -79,10 +80,7 @@ export default function Victory({
 		});
 	}
 
-	const winPct =
-		stats.gamesPlayed > 0
-			? Math.round((stats.gamesWon / stats.gamesPlayed) * 100)
-			: 0;
+	const winPct = getWinPercentage(stats);
 
 	return (
 		<div className="victory-overlay" onClick={onClose} onKeyDown={() => {}}>

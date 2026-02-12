@@ -80,6 +80,10 @@ const { bouftou, tofu, arakne, mockStorage, mockConfetti, mockDaily } =
 				),
 				saveTargetMonster: vi.fn(),
 				loadTargetMonster: vi.fn((): number | null => null),
+				getWinPercentage: (stats: GameStats) =>
+					stats.gamesPlayed > 0
+						? Math.round((stats.gamesWon / stats.gamesPlayed) * 100)
+						: 0,
 			},
 			mockConfetti: vi.fn(),
 		};
