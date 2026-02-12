@@ -1,5 +1,5 @@
 import confetti from "canvas-confetti";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import monstersData from "../../data/monsters.json";
 import type { GameStats, GuessResult, Monster } from "../../types";
 import { compareMonsters } from "../../utils/compare";
@@ -32,16 +32,17 @@ interface Props {
 }
 
 export default function Game({ stats, onStatsChange }: Props) {
+	const [dateKey, setDateKey] = useState(getTodayKey);
 	const [target, setTarget] = useState(() => getDailyMonster(monsters));
+	const yesterdayKey = getYesterdayKey();
 	const yesterdayMonster = useMemo(() => {
-		const yesterdayKey = getYesterdayKey();
 		const cachedId = loadTargetMonster(yesterdayKey);
 		if (cachedId !== null) {
 			const found = monsters.find((m) => m.id === cachedId);
 			if (found) return found;
 		}
 		return getYesterdayMonster(monsters);
-	}, []);
+	}, [yesterdayKey]);
 	const [devMode, setDevMode] = useState(false);
 
 	const [results, setResults] = useState<GuessResult[]>([]);
@@ -52,12 +53,38 @@ export default function Game({ stats, onStatsChange }: Props) {
 	const [hint1Revealed, setHint1Revealed] = useState(false);
 	const [hint2Revealed, setHint2Revealed] = useState(false);
 
+	const resetForNewDay = useCallback((newKey: string) => {
+		setDateKey(newKey);
+		setTarget(getDailyMonster(monsters, newKey));
+		setResults([]);
+		setWon(false);
+		setShowVictory(false);
+		setVictoryShownOnce(false);
+		setNewGuessIndex(-1);
+		setHint1Revealed(false);
+		setHint2Revealed(false);
+	}, []);
+
+	// Reset game when the Paris day changes while the tab is in the background
+	useEffect(() => {
+		function checkDayChange() {
+			if (document.visibilityState !== "visible") return;
+			const currentKey = getTodayKey();
+			if (currentKey !== dateKey) {
+				resetForNewDay(currentKey);
+			}
+		}
+		document.addEventListener("visibilitychange", checkDayChange);
+		return () =>
+			document.removeEventListener("visibilitychange", checkDayChange);
+	}, [dateKey, resetForNewDay]);
+
 	// Cache today's target so tomorrow we can show "yesterday's answer" even if the pool changes
 	useEffect(() => {
 		if (!devMode) {
-			saveTargetMonster(getTodayKey(), target.id);
+			saveTargetMonster(dateKey, target.id);
 		}
-	}, [target, devMode]);
+	}, [dateKey, target, devMode]);
 
 	// Restore progress on mount (skip in dev mode)
 	useEffect(() => {
@@ -99,6 +126,11 @@ export default function Game({ stats, onStatsChange }: Props) {
 	);
 
 	function handleGuess(monster: Monster) {
+		const currentKey = getTodayKey();
+		if (currentKey !== dateKey) {
+			resetForNewDay(currentKey);
+			return;
+		}
 		if (won || usedIds.has(monster.id)) return;
 
 		const result = compareMonsters(monster, target);

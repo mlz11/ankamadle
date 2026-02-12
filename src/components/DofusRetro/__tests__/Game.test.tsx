@@ -7,87 +7,89 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { DailyProgress, GameStats } from "../../../types";
 import Game from "../Game";
 
-const { bouftou, tofu, arakne, mockStorage, mockConfetti } = vi.hoisted(() => {
-	const bouftou = {
-		id: 1,
-		name: "Bouftou",
-		ecosystem: "Plaines de Cania",
-		race: "Bouftous",
-		niveau_min: 1,
-		niveau_max: 10,
-		pv_min: 10,
-		pv_max: 50,
-		couleur: "Orange",
-		image: "/img/monsters/1.svg",
-		availableFrom: "2025-1-1",
-	};
-	const tofu = {
-		id: 2,
-		name: "Tofu",
-		ecosystem: "Forêt d'Amakna",
-		race: "Tofus",
-		niveau_min: 1,
-		niveau_max: 5,
-		pv_min: 5,
-		pv_max: 20,
-		couleur: "Bleu",
-		image: "/img/monsters/2.svg",
-		availableFrom: "2025-1-1",
-	};
-	const arakne = {
-		id: 3,
-		name: "Arakne",
-		ecosystem: "Bois de Litneg",
-		race: "Araknes",
-		niveau_min: 1,
-		niveau_max: 4,
-		pv_min: 4,
-		pv_max: 16,
-		couleur: "Vert",
-		availableFrom: "2025-1-1",
-	};
-	return {
-		bouftou,
-		tofu,
-		arakne,
-		mockStorage: {
-			loadProgress: vi.fn((): DailyProgress | null => null),
-			saveProgress: vi.fn(),
-			loadStats: vi.fn(
-				(): GameStats => ({
-					gamesPlayed: 0,
-					gamesWon: 0,
-					currentStreak: 0,
-					maxStreak: 0,
-					guessDistribution: {},
-				}),
-			),
-			recordWin: vi.fn(
-				(): GameStats => ({
-					gamesPlayed: 1,
-					gamesWon: 1,
-					currentStreak: 1,
-					maxStreak: 1,
-					guessDistribution: { 1: 1 },
-				}),
-			),
-			saveTargetMonster: vi.fn(),
-			loadTargetMonster: vi.fn((): number | null => null),
-		},
-		mockConfetti: vi.fn(),
-	};
-});
+const { bouftou, tofu, arakne, mockStorage, mockConfetti, mockDaily } =
+	vi.hoisted(() => {
+		const bouftou = {
+			id: 1,
+			name: "Bouftou",
+			ecosystem: "Plaines de Cania",
+			race: "Bouftous",
+			niveau_min: 1,
+			niveau_max: 10,
+			pv_min: 10,
+			pv_max: 50,
+			couleur: "Orange",
+			image: "/img/monsters/1.svg",
+			availableFrom: "2025-1-1",
+		};
+		const tofu = {
+			id: 2,
+			name: "Tofu",
+			ecosystem: "Forêt d'Amakna",
+			race: "Tofus",
+			niveau_min: 1,
+			niveau_max: 5,
+			pv_min: 5,
+			pv_max: 20,
+			couleur: "Bleu",
+			image: "/img/monsters/2.svg",
+			availableFrom: "2025-1-1",
+		};
+		const arakne = {
+			id: 3,
+			name: "Arakne",
+			ecosystem: "Bois de Litneg",
+			race: "Araknes",
+			niveau_min: 1,
+			niveau_max: 4,
+			pv_min: 4,
+			pv_max: 16,
+			couleur: "Vert",
+			availableFrom: "2025-1-1",
+		};
+		return {
+			bouftou,
+			tofu,
+			arakne,
+			mockDaily: {
+				getDailyMonster: vi.fn(),
+				getYesterdayMonster: vi.fn(),
+				getTodayKey: vi.fn(),
+				getYesterdayKey: vi.fn(),
+			},
+			mockStorage: {
+				loadProgress: vi.fn((): DailyProgress | null => null),
+				saveProgress: vi.fn(),
+				loadStats: vi.fn(
+					(): GameStats => ({
+						gamesPlayed: 0,
+						gamesWon: 0,
+						currentStreak: 0,
+						maxStreak: 0,
+						guessDistribution: {},
+					}),
+				),
+				recordWin: vi.fn(
+					(): GameStats => ({
+						gamesPlayed: 1,
+						gamesWon: 1,
+						currentStreak: 1,
+						maxStreak: 1,
+						guessDistribution: { 1: 1 },
+					}),
+				),
+				saveTargetMonster: vi.fn(),
+				loadTargetMonster: vi.fn((): number | null => null),
+			},
+			mockConfetti: vi.fn(),
+		};
+	});
 
 vi.mock("../../../data/monsters.json", () => ({
 	default: [bouftou, tofu, arakne],
 }));
 
-vi.mock("../../../utils/daily", () => ({
-	getDailyMonster: () => bouftou,
-	getYesterdayMonster: () => arakne,
-	getTodayKey: () => "2025-6-15",
-	getYesterdayKey: () => "2025-6-14",
-}));
+vi.mock("../../../utils/daily", () => mockDaily);
 
 vi.mock("../../../utils/storage", () => mockStorage);
 
@@ -120,6 +122,10 @@ async function guessMonster(user: ReturnType<typeof setupUser>, name: string) {
 
 beforeEach(() => {
 	vi.useFakeTimers({ shouldAdvanceTime: true });
+	mockDaily.getDailyMonster.mockReturnValue(bouftou);
+	mockDaily.getYesterdayMonster.mockReturnValue(arakne);
+	mockDaily.getTodayKey.mockReturnValue("2025-6-15");
+	mockDaily.getYesterdayKey.mockReturnValue("2025-6-14");
 	mockStorage.loadProgress.mockReturnValue(null);
 	mockStorage.loadStats.mockReturnValue(emptyStats);
 	mockStorage.recordWin.mockReturnValue({
@@ -268,6 +274,74 @@ describe("Game", () => {
 		it("should display yesterday's monster below the game", () => {
 			render(<GameWrapper />);
 			expect(screen.getByText(/Arakne/)).toBeVisible();
+		});
+	});
+
+	describe("day change detection", () => {
+		it("should clear guesses when returning to the tab on a new day", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Tofu");
+			expect(
+				screen.getByText("Tofu", { selector: ".guess-row span" }),
+			).toBeVisible();
+
+			mockDaily.getTodayKey.mockReturnValue("2025-6-16");
+			mockDaily.getDailyMonster.mockReturnValue(tofu);
+			act(() => {
+				document.dispatchEvent(new Event("visibilitychange"));
+			});
+
+			expect(
+				screen.queryByText("Tofu", { selector: ".guess-row span" }),
+			).not.toBeInTheDocument();
+		});
+
+		it("should close the victory modal when returning to the tab on a new day", () => {
+			mockStorage.loadProgress.mockReturnValue({
+				date: "2025-6-15",
+				guesses: ["Bouftou"],
+				won: true,
+			});
+			render(<GameWrapper />);
+			expect(screen.getByText("Bravo !")).toBeVisible();
+
+			mockDaily.getTodayKey.mockReturnValue("2025-6-16");
+			mockDaily.getDailyMonster.mockReturnValue(tofu);
+			mockStorage.loadProgress.mockReturnValue(null);
+			act(() => {
+				document.dispatchEvent(new Event("visibilitychange"));
+			});
+
+			expect(screen.queryByText("Bravo !")).not.toBeInTheDocument();
+		});
+
+		it("should keep guesses when returning to the tab on the same day", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Tofu");
+
+			act(() => {
+				document.dispatchEvent(new Event("visibilitychange"));
+			});
+
+			expect(
+				screen.getByText("Tofu", { selector: ".guess-row span" }),
+			).toBeVisible();
+		});
+
+		it("should discard a guess when the day changes before it is submitted", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+
+			mockDaily.getTodayKey.mockReturnValue("2025-6-16");
+			mockDaily.getDailyMonster.mockReturnValue(tofu);
+
+			await guessMonster(user, "Tofu");
+
+			expect(
+				screen.queryByText("Tofu", { selector: ".guess-row span" }),
+			).not.toBeInTheDocument();
 		});
 	});
 });
