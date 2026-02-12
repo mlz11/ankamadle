@@ -3,6 +3,7 @@ import { getTodayKey } from "./daily";
 
 const PROGRESS_KEY = "dofusdle-progress";
 const STATS_KEY = "dofusdle-stats";
+const TARGET_KEY = "dofusdle-target";
 
 // One-time migration from old keys
 for (const [oldKey, newKey] of [
@@ -64,8 +65,28 @@ export function loadStats(): GameStats {
 	}
 }
 
-export function saveStats(stats: GameStats): void {
+function saveStats(stats: GameStats): void {
 	localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+}
+
+export function saveTargetMonster(dateKey: string, monsterId: number): void {
+	localStorage.setItem(
+		TARGET_KEY,
+		JSON.stringify({ date: dateKey, monsterId }),
+	);
+}
+
+export function loadTargetMonster(dateKey: string): number | null {
+	try {
+		const raw = localStorage.getItem(TARGET_KEY);
+		if (!raw) return null;
+		const data = JSON.parse(raw);
+		if (data?.date !== dateKey || typeof data?.monsterId !== "number")
+			return null;
+		return data.monsterId;
+	} catch {
+		return null;
+	}
 }
 
 export function recordWin(guessCount: number): GameStats {

@@ -3,12 +3,19 @@ import { useEffect, useMemo, useState } from "react";
 import monstersData from "../../data/monsters.json";
 import type { GameStats, GuessResult, Monster } from "../../types";
 import { compareMonsters } from "../../utils/compare";
-import { getDailyMonster, getYesterdayMonster } from "../../utils/daily";
+import {
+	getDailyMonster,
+	getTodayKey,
+	getYesterdayKey,
+	getYesterdayMonster,
+} from "../../utils/daily";
 import {
 	loadProgress,
 	loadStats,
+	loadTargetMonster,
 	recordWin,
 	saveProgress,
+	saveTargetMonster,
 } from "../../utils/storage";
 import ColorLegend from "./ColorLegend";
 import GuessGrid from "./GuessGrid";
@@ -26,7 +33,15 @@ interface Props {
 
 export default function Game({ stats, onStatsChange }: Props) {
 	const [target, setTarget] = useState(() => getDailyMonster(monsters));
-	const yesterdayMonster = useMemo(() => getYesterdayMonster(monsters), []);
+	const yesterdayMonster = useMemo(() => {
+		const yesterdayKey = getYesterdayKey();
+		const cachedId = loadTargetMonster(yesterdayKey);
+		if (cachedId !== null) {
+			const found = monsters.find((m) => m.id === cachedId);
+			if (found) return found;
+		}
+		return getYesterdayMonster(monsters);
+	}, []);
 	const [devMode, setDevMode] = useState(false);
 
 	const [results, setResults] = useState<GuessResult[]>([]);
@@ -36,6 +51,13 @@ export default function Game({ stats, onStatsChange }: Props) {
 	const [newGuessIndex, setNewGuessIndex] = useState(-1);
 	const [hint1Revealed, setHint1Revealed] = useState(false);
 	const [hint2Revealed, setHint2Revealed] = useState(false);
+
+	// Cache today's target so tomorrow we can show "yesterday's answer" even if the pool changes
+	useEffect(() => {
+		if (!devMode) {
+			saveTargetMonster(getTodayKey(), target.id);
+		}
+	}, [target, devMode]);
 
 	// Restore progress on mount (skip in dev mode)
 	useEffect(() => {

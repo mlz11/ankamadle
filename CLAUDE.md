@@ -13,12 +13,22 @@ npm run lint:fix     # Auto-fix lint issues
 npm run format       # Format all files with Biome
 ```
 
-No test runner is configured. There are no tests.
+npm run test         # Run tests (Vitest)
+npm run test:watch   # Run tests in watch mode
+
+## Testing
+
+- **Runner**: Vitest (`npm run test` / `npm run test:watch`)
+- **Rule**: Never export functions solely for testing. Tests should exercise the public API only. Use techniques like creating new array references (`[...pool]`) to invalidate caches instead of exporting test-only reset helpers.
+- **Structure**: One `describe` block per tested function.
+- **Naming**: Test names must follow the form `"should ... when ..."`. The name alone should be enough to understand the assertion.
 
 ## Code Style
 
 - **Formatter**: Biome with tab indentation and double quotes for JS/TS
 - **Linting**: Biome recommended rules (a11y `noStaticElementInteractions` disabled)
+- **Exports**: Never export functions that are only used within the same file. Keep internal helpers unexported.
+- **Dependencies**: Always use exact versions in package.json (no `^` or `~` prefixes).
 - **Commits**: Conventional commits enforced via commitlint (`feat:`, `fix:`, `build:`, etc.)
 - **Git hooks**: Pre-commit runs `npm run lint`; commit-msg validates conventional commit format
 
