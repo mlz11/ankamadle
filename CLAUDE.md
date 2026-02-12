@@ -11,6 +11,7 @@ npm run preview      # Preview production build locally
 npm run lint         # Biome lint check
 npm run lint:fix     # Auto-fix lint issues
 npm run format       # Format all files with Biome
+npm run typecheck    # TypeScript check (app + tests)
 npm run test         # Run tests (Vitest)
 npm run test:watch   # Run tests in watch mode
 ```

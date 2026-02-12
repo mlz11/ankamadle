@@ -1,0 +1,273 @@
+// @vitest-environment jsdom
+import "@testing-library/jest-dom/vitest";
+import { act, cleanup, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { useState } from "react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import type { DailyProgress, GameStats } from "../../../types";
+import Game from "../Game";
+
+const { bouftou, tofu, arakne, mockStorage, mockConfetti } = vi.hoisted(() => {
+	const bouftou = {
+		id: 1,
+		name: "Bouftou",
+		ecosystem: "Plaines de Cania",
+		race: "Bouftous",
+		niveau_min: 1,
+		niveau_max: 10,
+		pv_min: 10,
+		pv_max: 50,
+		couleur: "Orange",
+		image: "/img/monsters/1.svg",
+		availableFrom: "2025-1-1",
+	};
+	const tofu = {
+		id: 2,
+		name: "Tofu",
+		ecosystem: "Forêt d'Amakna",
+		race: "Tofus",
+		niveau_min: 1,
+		niveau_max: 5,
+		pv_min: 5,
+		pv_max: 20,
+		couleur: "Bleu",
+		image: "/img/monsters/2.svg",
+		availableFrom: "2025-1-1",
+	};
+	const arakne = {
+		id: 3,
+		name: "Arakne",
+		ecosystem: "Bois de Litneg",
+		race: "Araknes",
+		niveau_min: 1,
+		niveau_max: 4,
+		pv_min: 4,
+		pv_max: 16,
+		couleur: "Vert",
+		availableFrom: "2025-1-1",
+	};
+	return {
+		bouftou,
+		tofu,
+		arakne,
+		mockStorage: {
+			loadProgress: vi.fn((): DailyProgress | null => null),
+			saveProgress: vi.fn(),
+			loadStats: vi.fn(
+				(): GameStats => ({
+					gamesPlayed: 0,
+					gamesWon: 0,
+					currentStreak: 0,
+					maxStreak: 0,
+					guessDistribution: {},
+				}),
+			),
+			recordWin: vi.fn(
+				(): GameStats => ({
+					gamesPlayed: 1,
+					gamesWon: 1,
+					currentStreak: 1,
+					maxStreak: 1,
+					guessDistribution: { 1: 1 },
+				}),
+			),
+			saveTargetMonster: vi.fn(),
+			loadTargetMonster: vi.fn((): number | null => null),
+		},
+		mockConfetti: vi.fn(),
+	};
+});
+
+vi.mock("../../../data/monsters.json", () => ({
+	default: [bouftou, tofu, arakne],
+}));
+
+vi.mock("../../../utils/daily", () => ({
+	getDailyMonster: () => bouftou,
+	getYesterdayMonster: () => arakne,
+	getTodayKey: () => "2025-6-15",
+	getYesterdayKey: () => "2025-6-14",
+}));
+
+vi.mock("../../../utils/storage", () => mockStorage);
+
+vi.mock("canvas-confetti", () => ({ default: mockConfetti }));
+
+const emptyStats: GameStats = {
+	gamesPlayed: 0,
+	gamesWon: 0,
+	currentStreak: 0,
+	maxStreak: 0,
+	guessDistribution: {},
+};
+
+function GameWrapper({ initialStats }: { initialStats?: GameStats }) {
+	const [stats, setStats] = useState<GameStats>(initialStats ?? emptyStats);
+	return <Game stats={stats} onStatsChange={setStats} />;
+}
+
+function setupUser() {
+	return userEvent.setup({
+		advanceTimers: (ms) => vi.advanceTimersByTime(ms),
+	});
+}
+
+async function guessMonster(user: ReturnType<typeof setupUser>, name: string) {
+	const input = screen.getByPlaceholderText("Devine le monstre...");
+	await user.type(input, name);
+	await user.click(screen.getByText(name));
+}
+
+beforeEach(() => {
+	vi.useFakeTimers({ shouldAdvanceTime: true });
+	mockStorage.loadProgress.mockReturnValue(null);
+	mockStorage.loadStats.mockReturnValue(emptyStats);
+	mockStorage.recordWin.mockReturnValue({
+		gamesPlayed: 1,
+		gamesWon: 1,
+		currentStreak: 1,
+		maxStreak: 1,
+		guessDistribution: { 1: 1 },
+	});
+	mockStorage.loadTargetMonster.mockReturnValue(null);
+});
+
+afterEach(() => {
+	cleanup();
+	vi.useRealTimers();
+	vi.clearAllMocks();
+});
+
+describe("Game", () => {
+	describe("returning to the page", () => {
+		it("should show previous guesses when returning to the page mid-game", () => {
+			mockStorage.loadProgress.mockReturnValue({
+				date: "2025-6-15",
+				guesses: ["Tofu"],
+				won: false,
+			});
+			render(<GameWrapper />);
+			expect(screen.getByText("Tofu")).toBeVisible();
+		});
+
+		it("should show the victory modal when returning to the page after winning", () => {
+			mockStorage.loadProgress.mockReturnValue({
+				date: "2025-6-15",
+				guesses: ["Bouftou"],
+				won: true,
+			});
+			render(<GameWrapper />);
+			expect(screen.getByText("Bravo !")).toBeVisible();
+		});
+
+		it("should show previously revealed hints when returning to the page mid-game", () => {
+			mockStorage.loadProgress.mockReturnValue({
+				date: "2025-6-15",
+				guesses: ["Tofu"],
+				won: false,
+				hint1Revealed: true,
+			});
+			render(<GameWrapper />);
+			expect(screen.getByAltText("Indice visuel")).toBeVisible();
+		});
+	});
+
+	describe("guessing", () => {
+		it("should display the guess result in the grid when a monster is selected", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Tofu");
+			expect(
+				screen.getByText("Tofu", { selector: ".guess-row span" }),
+			).toBeVisible();
+		});
+
+		it("should prevent further guessing after winning", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			expect(
+				screen.getByPlaceholderText("Bravo ! Reviens demain."),
+			).toBeVisible();
+		});
+	});
+
+	describe("winning", () => {
+		it("should show the victory modal shortly after guessing the correct monster", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			act(() => vi.advanceTimersByTime(2000));
+			expect(screen.getByText("Bravo !")).toBeVisible();
+		});
+
+		it("should fire confetti when guessing the correct monster", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			act(() => vi.advanceTimersByTime(1200));
+			expect(mockConfetti).toHaveBeenCalled();
+		});
+
+		it("should show updated stats in the victory modal after winning", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			act(() => vi.advanceTimersByTime(2000));
+			expect(screen.getByText("100%")).toBeVisible();
+			expect(
+				screen.getByText("Parties").previousElementSibling,
+			).toHaveTextContent("1");
+		});
+	});
+
+	describe("results button", () => {
+		it("should show a results button when the victory modal is closed", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			expect(screen.queryByText("Voir résultats")).not.toBeInTheDocument();
+			act(() => vi.advanceTimersByTime(2000));
+			await user.keyboard("{Escape}");
+			expect(screen.getByText("Voir résultats")).toBeVisible();
+		});
+
+		it("should reopen the victory modal when clicking the results button", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			act(() => vi.advanceTimersByTime(2000));
+			await user.keyboard("{Escape}");
+			await user.click(screen.getByText("Voir résultats"));
+			expect(screen.getByText("Bravo !")).toBeVisible();
+		});
+
+		it("should not show the results button before the player has won", () => {
+			render(<GameWrapper />);
+			expect(screen.queryByText("Voir résultats")).not.toBeInTheDocument();
+		});
+	});
+
+	describe("color legend", () => {
+		it("should show the color legend while guessing", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Tofu");
+			expect(screen.getByText("Exact")).toBeVisible();
+		});
+
+		it("should hide the color legend after winning", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			expect(screen.queryByText("Exact")).not.toBeInTheDocument();
+		});
+	});
+
+	describe("yesterday's answer", () => {
+		it("should display yesterday's monster below the game", () => {
+			render(<GameWrapper />);
+			expect(screen.getByText(/Arakne/)).toBeVisible();
+		});
+	});
+});

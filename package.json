@@ -11,7 +11,7 @@
 		"lint": "biome check .",
 		"lint:fix": "biome check --write .",
 		"format": "biome format --write .",
-		"typecheck": "tsc --noEmit",
+		"typecheck": "tsc --noEmit && tsc -p tsconfig.test.json --noEmit",
 		"preview": "vite preview",
 		"commitlint": "commitlint --edit",
 		"prepare": "husky"
