@@ -21,9 +21,7 @@ export function getTodayKey(): string {
 }
 
 export function getYesterdayKey(): string {
-	const yesterday = new Date();
-	yesterday.setDate(yesterday.getDate() - 1);
-	return getDateKey(yesterday);
+	return getPreviousDayKey(getTodayKey());
 }
 
 function parseDateKey(key: string): [number, number, number] {
@@ -39,18 +37,39 @@ function isDateOnOrBefore(a: string, b: string): boolean {
 	return ad <= bd;
 }
 
+function daysInMonth(y: number, m: number): number {
+	if (m === 2) {
+		return y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0) ? 29 : 28;
+	}
+	return [4, 6, 9, 11].includes(m) ? 30 : 31;
+}
+
 function getPreviousDayKey(dateKey: string): string {
-	const [y, m, d] = dateKey.split("-").map(Number);
-	const date = new Date(y, m - 1, d);
-	date.setDate(date.getDate() - 1);
-	return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+	let [y, m, d] = dateKey.split("-").map(Number);
+	d -= 1;
+	if (d < 1) {
+		m -= 1;
+		if (m < 1) {
+			m = 12;
+			y -= 1;
+		}
+		d = daysInMonth(y, m);
+	}
+	return `${y}-${m}-${d}`;
 }
 
 function getNextDayKey(dateKey: string): string {
-	const [y, m, d] = dateKey.split("-").map(Number);
-	const date = new Date(y, m - 1, d);
-	date.setDate(date.getDate() + 1);
-	return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+	let [y, m, d] = dateKey.split("-").map(Number);
+	d += 1;
+	if (d > daysInMonth(y, m)) {
+		d = 1;
+		m += 1;
+		if (m > 12) {
+			m = 1;
+			y += 1;
+		}
+	}
+	return `${y}-${m}-${d}`;
 }
 
 function hashString(str: string): number {
