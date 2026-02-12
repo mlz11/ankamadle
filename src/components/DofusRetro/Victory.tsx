@@ -24,14 +24,10 @@ interface Props {
 	onClose: () => void;
 }
 
-function buildShareText(
-	results: GuessResult[],
-	targetName: string,
-	hintsUsed: number,
-): string {
+function buildShareText(results: GuessResult[], hintsUsed: number): string {
 	const hintSuffix =
 		hintsUsed > 0 ? ` (+${hintsUsed} indice${hintsUsed > 1 ? "s" : ""})` : "";
-	const header = `Dofusdle - ${targetName} en ${results.length} essai${results.length > 1 ? "s" : ""}${hintSuffix}`;
+	const header = `Dofusdle - J'ai trouvé la réponse en ${results.length} essai${results.length > 1 ? "s" : ""}${hintSuffix}`;
 	const grid = results
 		.map((r) => {
 			const cells = [
@@ -81,7 +77,7 @@ export default function Victory({
 	}, [onClose]);
 
 	function handleShare() {
-		const text = buildShareText(results, targetName, hintsUsed);
+		const text = buildShareText(results, hintsUsed);
 		navigator.clipboard.writeText(text).then(() => {
 			setCopied(true);
 			setTimeout(() => setCopied(false), 2000);
