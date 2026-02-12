@@ -32,6 +32,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 	const [results, setResults] = useState<GuessResult[]>([]);
 	const [won, setWon] = useState(false);
 	const [showVictory, setShowVictory] = useState(false);
+	const [victoryShownOnce, setVictoryShownOnce] = useState(false);
 	const [newGuessIndex, setNewGuessIndex] = useState(-1);
 	const [hint1Revealed, setHint1Revealed] = useState(false);
 	const [hint2Revealed, setHint2Revealed] = useState(false);
@@ -52,6 +53,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 			setHint2Revealed(progress.hint2Revealed ?? false);
 			if (progress.won) {
 				setShowVictory(true);
+				setVictoryShownOnce(true);
 				onStatsChange(loadStats());
 			}
 		}
@@ -63,6 +65,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		setResults([]);
 		setWon(false);
 		setShowVictory(false);
+		setVictoryShownOnce(false);
 		setNewGuessIndex(-1);
 		setHint1Revealed(false);
 		setHint2Revealed(false);
@@ -97,6 +100,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 			// Show victory modal after cells flip + confetti enjoyed
 			setTimeout(() => {
 				setShowVictory(true);
+				setVictoryShownOnce(true);
 			}, 2000);
 		}
 
@@ -176,7 +180,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 			/>
 			<GuessGrid results={results} newGuessIndex={newGuessIndex} />
 			{results.length > 0 && !won && <ColorLegend />}
-			{won && !showVictory && (
+			{won && !showVictory && victoryShownOnce && (
 				<button
 					type="button"
 					className="reopen-victory-btn"
