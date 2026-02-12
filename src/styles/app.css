@@ -403,8 +403,28 @@ body::before {
 }
 
 /* ===== Cell Flip Animation ===== */
-.cell-flip {
+.row-animating .guess-monster-name,
+.row-animating .attribute-cell {
 	animation: cellFlip 0.85s ease both;
+}
+
+.row-animating .guess-monster-name {
+	animation-delay: 0ms;
+}
+.row-animating .attribute-cell:nth-child(1) {
+	animation-delay: 200ms;
+}
+.row-animating .attribute-cell:nth-child(2) {
+	animation-delay: 400ms;
+}
+.row-animating .attribute-cell:nth-child(3) {
+	animation-delay: 600ms;
+}
+.row-animating .attribute-cell:nth-child(4) {
+	animation-delay: 800ms;
+}
+.row-animating .attribute-cell:nth-child(5) {
+	animation-delay: 1000ms;
 }
 
 .guess-monster-name {

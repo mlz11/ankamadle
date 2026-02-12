@@ -4,8 +4,6 @@ import ArrowIcon from "./ArrowIcon";
 interface Props {
 	label: string;
 	feedback: AttributeFeedback;
-	isNew?: boolean;
-	index?: number;
 }
 
 const STATUS_CLASS: Record<string, string> = {
@@ -14,17 +12,9 @@ const STATUS_CLASS: Record<string, string> = {
 	wrong: "cell-wrong",
 };
 
-export default function AttributeCell({
-	label,
-	feedback,
-	isNew,
-	index = 0,
-}: Props) {
+export default function AttributeCell({ label, feedback }: Props) {
 	return (
-		<div
-			className={`attribute-cell ${STATUS_CLASS[feedback.status]} ${isNew ? "cell-flip" : ""}`}
-			style={isNew ? { animationDelay: `${index * 200}ms` } : undefined}
-		>
+		<div className={`attribute-cell ${STATUS_CLASS[feedback.status]}`}>
 			<span className="cell-label">{label}</span>
 			<span className="cell-value">
 				{feedback.value}
