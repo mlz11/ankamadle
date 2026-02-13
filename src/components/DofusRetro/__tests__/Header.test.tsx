@@ -29,6 +29,16 @@ describe("Header", () => {
 			).toBeVisible();
 		});
 
+		it("should have a visually hidden SEO heading when rendered", () => {
+			renderHeader();
+			const heading = screen.getByRole("heading", { level: 1 });
+			expect(heading).toHaveTextContent(
+				"Dofusdle - Le Wordle des monstres Dofus Retro",
+			);
+			const seoText = heading.querySelector("span");
+			expect(seoText).toHaveClass("visually-hidden");
+		});
+
 		it("should display the current streak count when rendered", () => {
 			renderHeader({ currentStreak: 7 });
 			expect(screen.getByText("7")).toBeVisible();
