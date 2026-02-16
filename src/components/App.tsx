@@ -10,7 +10,7 @@ import Header from "./Header";
 function FallbackUI() {
 	return (
 		<div className={styles.app}>
-			<p>Une erreur est survenue. Veuillez rafraichir la page.</p>
+			<p>Une erreur est survenue. Veuillez rafraîchir la page.</p>
 		</div>
 	);
 }
