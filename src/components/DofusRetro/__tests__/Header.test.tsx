@@ -34,7 +34,7 @@ describe("Header", () => {
 		it("should display the game subtitle when rendered", () => {
 			renderHeader();
 			expect(
-				screen.getByText("Dofus Retro 1.29 — Devine le monstre du jour"),
+				screen.getByText("Dofus Retro 1.29 - Devine le monstre du jour"),
 			).toBeVisible();
 		});
 

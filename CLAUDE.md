@@ -34,9 +34,9 @@ npm run test:watch   # Run tests in watch mode
   - `toHaveTextContent()` for text inside an element already queried
   - Never use `toBeTruthy()` or `container.innerHTML` for DOM assertions
 - **Queries**: Use user-facing queries (`getByText`, `getByRole`, `getByAltText`). Avoid `getByTestId` unless no semantic query fits. When the same text appears in multiple places, use `within()` to scope queries to a parent element instead of `getAllByText(...)[0]`.
-- **Mindset**: Tests assert what the user experiences, not implementation details. Don't assert CSS class names, internal state, or callback references — assert visible text, presence/absence, and user interactions.
+- **Mindset**: Tests assert what the user experiences, not implementation details. Don't assert CSS class names, internal state, or callback references - assert visible text, presence/absence, and user interactions.
 - **Async**: Prefer `findByText` / `findByRole` over `waitFor(() => expect(...))`. Wait for a user-visible DOM change, then assert synchronously.
-- **Clipboard**: Don't mock `navigator.clipboard`. `userEvent.setup()` provides a built-in clipboard — verify content with `await navigator.clipboard.readText()`.
+- **Clipboard**: Don't mock `navigator.clipboard`. `userEvent.setup()` provides a built-in clipboard - verify content with `await navigator.clipboard.readText()`.
 - **Fake timers + userEvent**: Use `vi.useFakeTimers({ shouldAdvanceTime: true })` and pass `advanceTimers: (ms) => vi.advanceTimersByTime(ms)` to `userEvent.setup()`. Create the user instance per-test via a `setupUser()` helper, not at module level.
 
 ## Code Style
@@ -47,10 +47,11 @@ npm run test:watch   # Run tests in watch mode
 - **Dependencies**: Always use exact versions in package.json (no `^` or `~` prefixes).
 - **Commits**: Conventional commits enforced via commitlint (`feat:`, `fix:`, `build:`, etc.)
 - **Git hooks**: Pre-commit runs `npm run lint`; commit-msg validates conventional commit format
+- **Punctuation**: Never use em dashes (`—`). Use a regular hyphen surrounded by spaces (` - `) instead.
 
 ## Architecture
 
-Dofusdle is a client-side Wordle-style daily guessing game for Dofus Retro 1.29 monsters. No backend — fully static Vite + React 19 SPA.
+Dofusdle is a client-side Wordle-style daily guessing game for Dofus Retro 1.29 monsters. No backend - fully static Vite + React 19 SPA.
 
 ### Core Data Flow
 
@@ -61,14 +62,14 @@ Dofusdle is a client-side Wordle-style daily guessing game for Dofus Retro 1.29 
 ### Component Structure
 
 `Game.tsx` is the main orchestrator under `src/components/DofusRetro/`. It owns all game state (guesses, win status, stats) and delegates to:
-- `SearchBar` — autocomplete input with keyboard navigation
-- `GuessGrid` → `GuessRow` → `AttributeCell` — renders guess results with flip animations
-- `Victory` — win modal with stats and emoji share
+- `SearchBar` - autocomplete input with keyboard navigation
+- `GuessGrid` → `GuessRow` → `AttributeCell` - renders guess results with flip animations
+- `Victory` - win modal with stats and emoji share
 
 Components are organized under `src/components/DofusRetro/` to allow future game modes for other Ankama titles (each would get its own directory).
 
 ### Key Types (`src/types.ts`)
 
-- `Monster` — id, name, type, zone, niveau, couleur, pv, image?
-- `GuessResult` — monster + feedback map of `AttributeFeedback` (value, status, arrow)
-- `GameStats` / `DailyProgress` — localStorage-persisted structures
+- `Monster` - id, name, type, zone, niveau, couleur, pv, image?
+- `GuessResult` - monster + feedback map of `AttributeFeedback` (value, status, arrow)
+- `GameStats` / `DailyProgress` - localStorage-persisted structures

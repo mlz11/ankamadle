@@ -43,7 +43,7 @@ export default function Header({ stats }: Props) {
 				</a>
 			</h1>
 			<p className={styles.subtitle}>
-				Dofus Retro 1.29 — Devine le monstre du jour
+				Dofus Retro 1.29 - Devine le monstre du jour
 			</p>
 			<nav className={styles.toolbar}>
 				<button
@@ -212,14 +212,14 @@ export default function Header({ stats }: Props) {
 						</p>
 						<ul>
 							<li>
-								<span className="legend-correct">🟩 Vert</span> — Attribut exact
+								<span className="legend-correct">🟩 Vert</span> - Attribut exact
 							</li>
 							<li>
-								<span className="legend-partial">🟧 Orange</span> — Proche
+								<span className="legend-partial">🟧 Orange</span> - Proche
 								(valeur presque correcte)
 							</li>
 							<li>
-								<span className="legend-wrong">🟥 Rouge</span> — Pas de
+								<span className="legend-wrong">🟥 Rouge</span> - Pas de
 								correspondance
 							</li>
 							<li>
@@ -246,7 +246,7 @@ export default function Header({ stats }: Props) {
 								>
 									<path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor" />
 								</svg>{" "}
-								— Le vrai monstre est plus haut / plus bas
+								- Le vrai monstre est plus haut / plus bas
 							</li>
 						</ul>
 						<p>
