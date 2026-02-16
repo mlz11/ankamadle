@@ -232,7 +232,7 @@ describe("compareMonsters", () => {
 		it("should display dash for couleur value when guess color is empty", () => {
 			const guess = monster({ couleur: "" });
 			const target = monster();
-			expect(compareMonsters(guess, target).feedback.couleur.value).toBe("—");
+			expect(compareMonsters(guess, target).feedback.couleur.value).toBe("-");
 		});
 	});
 });

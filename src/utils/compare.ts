@@ -72,7 +72,7 @@ export function compareMonsters(guess: Monster, target: Monster): GuessResult {
 				arrow: niveauResult.arrow,
 			},
 			couleur: {
-				value: guess.couleur || "—",
+				value: guess.couleur || "-",
 				status: compareCouleur(guess.couleur, target.couleur),
 				arrow: null,
 			},

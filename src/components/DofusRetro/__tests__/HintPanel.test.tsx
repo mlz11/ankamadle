@@ -36,7 +36,7 @@ describe("HintPanel", () => {
 		});
 	});
 
-	describe("hint 1 — locked state", () => {
+	describe("hint 1 - locked state", () => {
 		it("should show hint 1 as locked when fewer than 5 guesses have been made", () => {
 			renderPanel({ guessCount: 2 });
 			expect(screen.getByText("dans 3 essais")).toBeVisible();
@@ -53,7 +53,7 @@ describe("HintPanel", () => {
 		});
 	});
 
-	describe("hint 1 — unlocked state", () => {
+	describe("hint 1 - unlocked state", () => {
 		it("should show hint 1 as unlockable when exactly 5 guesses have been made", () => {
 			renderPanel({ guessCount: 5 });
 			const buttons = screen.getAllByText("Cliquer pour révéler");
@@ -67,7 +67,7 @@ describe("HintPanel", () => {
 		});
 	});
 
-	describe("hint 1 — revealed state", () => {
+	describe("hint 1 - revealed state", () => {
 		it("should reveal hint 1 blurred image when reveal button is clicked", async () => {
 			const onRevealHint1 = vi.fn();
 			renderPanel({ guessCount: 5, onRevealHint1 });
@@ -87,7 +87,7 @@ describe("HintPanel", () => {
 		});
 	});
 
-	describe("hint 2 — locked state", () => {
+	describe("hint 2 - locked state", () => {
 		it("should show hint 2 as locked when fewer than 8 guesses have been made", () => {
 			renderPanel({ guessCount: 5 });
 			expect(screen.getByText("dans 3 essais")).toBeVisible();
@@ -104,7 +104,7 @@ describe("HintPanel", () => {
 		});
 	});
 
-	describe("hint 2 — unlocked state", () => {
+	describe("hint 2 - unlocked state", () => {
 		it("should show hint 2 as unlockable when exactly 8 guesses have been made", () => {
 			renderPanel({ guessCount: 8 });
 			const hint2Button = screen
@@ -124,7 +124,7 @@ describe("HintPanel", () => {
 		});
 	});
 
-	describe("hint 2 — revealed state", () => {
+	describe("hint 2 - revealed state", () => {
 		it("should reveal hint 2 ecosystem text when reveal button is clicked", async () => {
 			const onRevealHint2 = vi.fn();
 			renderPanel({ guessCount: 8, hint1Revealed: true, onRevealHint2 });

@@ -25,9 +25,9 @@ After each guess, you get feedback on **5 attributes**:
 |-----------|----------|
 | **Ecosystem** | 🟩 Correct or 🟥 Wrong |
 | **Race** | 🟩 Correct or 🟥 Wrong |
-| **Max Level** | 🟩 Exact, 🟧 Within ±10, or 🟥 Far off — with ↑/↓ arrows |
+| **Max Level** | 🟩 Exact, 🟧 Within ±10, or 🟥 Far off - with ↑/↓ arrows |
 | **Color** | 🟩 Exact, 🟧 Partially matching, or 🟥 No match |
-| **Max HP** | 🟩 Exact, 🟧 Within ±20%, or 🟥 Far off — with ↑/↓ arrows |
+| **Max HP** | 🟩 Exact, 🟧 Within ±20%, or 🟥 Far off - with ↑/↓ arrows |
 
 Stuck? After a few wrong guesses, **hints** unlock progressively: the monster's image preview and its ecosystem name.
 
@@ -36,14 +36,14 @@ The puzzle resets every day at **midnight Paris time**.
 ## ✨ Features
 
 - **605 monsters** from the Dofus Retro 1.29 bestiary
-- **Deterministic daily puzzle** — same monster for all players, powered by a seeded PRNG with a 30-day anti-repeat window
+- **Deterministic daily puzzle** - same monster for all players, powered by a seeded PRNG with a 30-day anti-repeat window
 - **Fuzzy search** with autocomplete and monster images
 - **Progressive hints** to help you narrow it down
-- **Stats tracking** — win rate, current streak, max streak, and guess distribution persisted in localStorage
-- **Emoji share** — copy your result grid to share with friends without spoilers
+- **Stats tracking** - win rate, current streak, max streak, and guess distribution persisted in localStorage
+- **Emoji share** - copy your result grid to share with friends without spoilers
 - **Yesterday's answer** displayed after the first guess
-- **Fully client-side** — no backend, no accounts, no tracking. Just a static SPA.
-- **Mobile-friendly** — responsive layout that works on any screen size
+- **Fully client-side** - no backend, no accounts, no tracking. Just a static SPA.
+- **Mobile-friendly** - responsive layout that works on any screen size
 
 ## 🛠 Tech Stack
 
@@ -56,7 +56,7 @@ The puzzle resets every day at **midnight Paris time**.
 | **Search** | fzf (fuzzy finder) |
 | **Effects** | canvas-confetti |
 
-No backend. No database. Fully static — deploy anywhere.
+No backend. No database. Fully static - deploy anywhere.
 
 ## 💻 Development
 
@@ -122,7 +122,7 @@ src/
 <details>
 <summary><strong>Why only Dofus Retro 1.29?</strong></summary>
 
-Dofus Retro has a well-defined, stable bestiary that doesn't change frequently — perfect for a daily guessing game. The component structure is organized under `DofusRetro/` to allow future game modes for other Ankama titles.
+Dofus Retro has a well-defined, stable bestiary that doesn't change frequently - perfect for a daily guessing game. The component structure is organized under `DofusRetro/` to allow future game modes for other Ankama titles.
 
 </details>
 
@@ -142,6 +142,6 @@ Everything stays in your browser's localStorage. No data is sent to any server. 
 
 ## 🙏 Credits
 
-- **[Ankama](https://www.ankama.com/)** — Dofus is their creation. This project is a fan-made tribute, not affiliated with Ankama.
-- **[solomonk.fr](https://solomonk.fr/)** and **[wiki-dofus.eu](https://wiki-dofus.eu/)** — Monster data sources.
+- **[Ankama](https://www.ankama.com/)** - Dofus is their creation. This project is a fan-made tribute, not affiliated with Ankama.
+- **[solomonk.fr](https://solomonk.fr/)** and **[wiki-dofus.eu](https://wiki-dofus.eu/)** - Monster data sources.
 - Inspired by [Wordle](https://www.nytimes.com/games/wordle) and [LoLdle](https://loldle.net/).
