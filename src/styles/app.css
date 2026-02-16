@@ -32,11 +32,18 @@ textarea {
 
 body {
 	font-family: "Quicksand", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	background: var(--bg-primary) url("/images/background.webp") no-repeat center
-		center fixed;
-	background-size: cover;
+	background: var(--bg-primary);
 	color: var(--text-primary);
 	min-height: 100vh;
+}
+
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background: url("/images/background.webp") no-repeat center center;
+	background-size: cover;
+	z-index: -1;
 }
 
 body::before {
