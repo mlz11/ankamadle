@@ -74,6 +74,9 @@ body::before {
 
 /* ===== Header ===== */
 .app-header {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 	text-align: center;
 	padding: 20px 0 0;
 	margin-bottom: 20px;
@@ -81,7 +84,6 @@ body::before {
 
 .header-title {
 	line-height: 0;
-	margin-bottom: 12px;
 }
 
 .header-logo {
@@ -95,8 +97,9 @@ body::before {
 	align-items: baseline;
 	justify-content: center;
 	gap: 16px;
+	width: 100%;
 	max-width: 220px;
-	margin: 0 auto;
+	margin-inline: auto;
 	padding: 8px 20px;
 	background: var(--bg-secondary);
 	border: 2px solid var(--border);
@@ -235,6 +238,9 @@ body::before {
 
 /* ===== Game ===== */
 .game {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
 	text-align: center;
 }
 
@@ -243,7 +249,6 @@ body::before {
 	font-size: 1.05rem;
 	font-weight: 600;
 	padding-bottom: 12px;
-	margin-bottom: 16px;
 	border-bottom: 2px solid rgba(212, 152, 60, 0.3);
 }
 
@@ -262,8 +267,9 @@ body::before {
 /* ===== Search Bar ===== */
 .search-bar {
 	position: relative;
+	width: 100%;
 	max-width: 400px;
-	margin: 0 auto 24px;
+	margin-inline: auto;
 }
 
 .search-input-wrapper {
@@ -381,14 +387,15 @@ body::before {
 
 /* ===== Guess Grid ===== */
 .guess-grid {
-	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
 }
 
 .guess-grid-header {
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	margin-bottom: 8px;
 }
 
 .header-label {
@@ -412,7 +419,6 @@ body::before {
 	display: flex;
 	align-items: stretch;
 	gap: 6px;
-	margin-bottom: 6px;
 }
 
 /* ===== Cell Flip Animation ===== */
@@ -519,8 +525,9 @@ body::before {
 /* ===== Color Legend ===== */
 .color-legend {
 	position: relative;
+	width: 100%;
 	max-width: 520px;
-	margin: 0 auto 24px;
+	margin-inline: auto;
 	padding: 10px 16px;
 	background: var(--bg-secondary);
 	border: 1px solid var(--border);
@@ -559,8 +566,12 @@ body::before {
 
 /* ===== Hint Panel ===== */
 .hint-panel {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
 	max-width: 400px;
-	margin: 0 auto 20px;
+	margin-inline: auto;
 	padding: 16px;
 	background: var(--bg-secondary);
 	border: 1px solid var(--border);
@@ -573,7 +584,6 @@ body::before {
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--text-secondary);
-	margin-bottom: 10px;
 }
 
 .hint-slots {
@@ -680,8 +690,9 @@ body::before {
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
+	width: 100%;
 	max-width: 520px;
-	margin: 0 auto 24px;
+	margin-inline: auto;
 	padding: 10px 16px;
 	background: var(--bg-secondary);
 	border: 1px solid var(--border);
@@ -704,6 +715,7 @@ body::before {
 
 /* ===== Re-open Victory Button ===== */
 .reopen-victory-btn {
+	align-self: center;
 	padding: 10px 32px;
 	background: var(--correct);
 	color: white;
@@ -713,7 +725,6 @@ body::before {
 	font-weight: 700;
 	cursor: pointer;
 	transition: opacity 0.2s;
-	margin-bottom: 24px;
 }
 
 .reopen-victory-btn:hover {
