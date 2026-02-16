@@ -8,14 +8,24 @@ export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd(), "VITE_");
 	const port = env.VITE_PORT ? Number(env.VITE_PORT) : undefined;
 
+	const sentryOrg = process.env.SENTRY_ORG;
+	const sentryProject = process.env.SENTRY_PROJECT;
+	const sentryAuthToken = process.env.SENTRY_AUTH_TOKEN;
+
+	if (mode === "production") {
+		if (!sentryOrg) throw new Error("SENTRY_ORG is required");
+		if (!sentryProject) throw new Error("SENTRY_PROJECT is required");
+		if (!sentryAuthToken) throw new Error("SENTRY_AUTH_TOKEN is required");
+	}
+
 	return {
 		plugins: [
 			react(),
 			mode === "production" &&
 				sentryVitePlugin({
-					org: process.env.SENTRY_ORG,
-					project: process.env.SENTRY_PROJECT,
-					authToken: process.env.SENTRY_AUTH_TOKEN,
+					org: sentryOrg,
+					project: sentryProject,
+					authToken: sentryAuthToken,
 				}),
 		],
 		build: {
