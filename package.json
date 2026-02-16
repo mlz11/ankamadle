@@ -17,6 +17,7 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
+		"@sentry/react": "10.39.0",
 		"canvas-confetti": "1.9.4",
 		"fzf": "0.5.2",
 		"react": "19.2.4",
@@ -26,6 +27,7 @@
 		"@biomejs/biome": "2.3.14",
 		"@commitlint/cli": "20.4.1",
 		"@commitlint/config-conventional": "20.4.1",
+		"@sentry/vite-plugin": "4.9.1",
 		"@testing-library/jest-dom": "6.9.1",
 		"@testing-library/react": "16.3.2",
 		"@testing-library/user-event": "14.6.1",
