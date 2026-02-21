@@ -38,6 +38,7 @@ export interface GameStats {
 	currentStreak: number;
 	maxStreak: number;
 	guessDistribution: Record<number, number>;
+	lastPlayedDate: string | null;
 }
 
 export interface DailyProgress {

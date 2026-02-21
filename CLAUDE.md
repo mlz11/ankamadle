@@ -5,16 +5,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev          # Start dev server (http://localhost:5173)
-npm run build        # TypeScript check + Vite production build
-npm run preview      # Preview production build locally
-npm run lint         # Biome lint check
-npm run lint:fix     # Auto-fix lint issues
-npm run format       # Format all files with Biome
-npm run typecheck    # TypeScript check (app + tests)
-npm run test         # Run tests (Vitest)
-npm run test:watch   # Run tests in watch mode
+npm run dev              # Start dev server (http://localhost:5173)
+npm run build            # TypeScript check + Vite build (staging mode, no Sentry)
+npm run build:production # TypeScript check + Vite build (production mode, requires SENTRY_* env vars)
+npm run preview          # Preview production build locally
+npm run lint             # Biome lint check
+npm run lint:fix         # Auto-fix lint issues
+npm run format           # Format all files with Biome
+npm run typecheck        # TypeScript check (app + tests)
+npm run test             # Run tests (Vitest)
+npm run test:watch       # Run tests in watch mode
 ```
+
+`npm run build` is safe to run locally without any env vars. `npm run build:production` is used by Cloudflare Pages and requires `SENTRY_ORG`, `SENTRY_PROJECT`, and `SENTRY_AUTH_TOKEN`.
 
 ## Testing
 

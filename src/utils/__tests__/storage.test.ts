@@ -11,6 +11,7 @@ import {
 
 vi.mock("../daily", () => ({
 	getTodayKey: () => "2025-6-15",
+	getYesterdayKey: () => "2025-6-14",
 }));
 
 const PROGRESS_KEY = "dofusdle-progress";
@@ -152,6 +153,7 @@ describe("loadStats", () => {
 			currentStreak: 0,
 			maxStreak: 0,
 			guessDistribution: {},
+			lastPlayedDate: null,
 		});
 	});
 
@@ -175,6 +177,7 @@ describe("loadStats", () => {
 			currentStreak: 0,
 			maxStreak: 0,
 			guessDistribution: {},
+			lastPlayedDate: null,
 		});
 	});
 });
@@ -233,5 +236,55 @@ describe("recordWin", () => {
 		expect(raw.gamesPlayed).toBe(1);
 		expect(raw.gamesWon).toBe(1);
 		expect(raw.guessDistribution[4]).toBe(1);
+	});
+
+	it("should reset currentStreak to 1 when the player skipped a day", () => {
+		localStorage.setItem(
+			STATS_KEY,
+			JSON.stringify({
+				gamesPlayed: 5,
+				gamesWon: 5,
+				currentStreak: 5,
+				maxStreak: 5,
+				guessDistribution: {},
+				lastPlayedDate: "2025-6-10",
+			}),
+		);
+		const stats = recordWin(3);
+		expect(stats.currentStreak).toBe(1);
+		expect(stats.maxStreak).toBe(5);
+	});
+
+	it("should continue the streak when the player played yesterday", () => {
+		localStorage.setItem(
+			STATS_KEY,
+			JSON.stringify({
+				gamesPlayed: 3,
+				gamesWon: 3,
+				currentStreak: 3,
+				maxStreak: 3,
+				guessDistribution: {},
+				lastPlayedDate: "2025-6-14",
+			}),
+		);
+		const stats = recordWin(2);
+		expect(stats.currentStreak).toBe(4);
+		expect(stats.maxStreak).toBe(4);
+	});
+
+	it("should not reset the streak when lastPlayedDate is missing (migration)", () => {
+		localStorage.setItem(
+			STATS_KEY,
+			JSON.stringify({
+				gamesPlayed: 10,
+				gamesWon: 10,
+				currentStreak: 10,
+				maxStreak: 10,
+				guessDistribution: {},
+			}),
+		);
+		const stats = recordWin(1);
+		expect(stats.currentStreak).toBe(11);
+		expect(stats.maxStreak).toBe(11);
 	});
 });

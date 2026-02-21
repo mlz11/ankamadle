@@ -1,5 +1,5 @@
 import type { DailyProgress, GameStats } from "../types";
-import { getTodayKey } from "./daily";
+import { getTodayKey, getYesterdayKey } from "./daily";
 
 const PROGRESS_KEY = "dofusdle-progress";
 const STATS_KEY = "dofusdle-stats";
@@ -11,6 +11,7 @@ function defaultStats(): GameStats {
 		currentStreak: 0,
 		maxStreak: 0,
 		guessDistribution: {},
+		lastPlayedDate: null,
 	};
 }
 
@@ -87,6 +88,15 @@ export function getWinPercentage(stats: GameStats): number {
 
 export function recordWin(guessCount: number): GameStats {
 	const stats = loadStats();
+	const today = getTodayKey();
+	const yesterday = getYesterdayKey();
+	if (
+		stats.lastPlayedDate &&
+		stats.lastPlayedDate !== yesterday &&
+		stats.lastPlayedDate !== today
+	) {
+		stats.currentStreak = 0;
+	}
 	stats.gamesPlayed += 1;
 	stats.gamesWon += 1;
 	stats.currentStreak += 1;
@@ -95,6 +105,7 @@ export function recordWin(guessCount: number): GameStats {
 	}
 	stats.guessDistribution[guessCount] =
 		(stats.guessDistribution[guessCount] || 0) + 1;
+	stats.lastPlayedDate = today;
 	saveStats(stats);
 	return stats;
 }

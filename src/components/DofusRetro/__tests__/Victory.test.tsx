@@ -31,6 +31,7 @@ const stats: GameStats = {
 	currentStreak: 3,
 	maxStreak: 5,
 	guessDistribution: {},
+	lastPlayedDate: null,
 };
 
 const defaults = {
