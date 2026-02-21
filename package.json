@@ -40,6 +40,7 @@
 		"jsdom": "28.0.0",
 		"typescript": "5.9.3",
 		"vite": "7.3.1",
+		"vite-prerender-plugin": "0.5.12",
 		"vitest": "4.0.18"
 	}
 }

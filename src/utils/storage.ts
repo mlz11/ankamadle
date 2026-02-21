@@ -15,6 +15,7 @@ function defaultStats(): GameStats {
 }
 
 export function loadProgress(): DailyProgress | null {
+	if (typeof window === "undefined") return null;
 	try {
 		const raw = localStorage.getItem(PROGRESS_KEY);
 		if (!raw) return null;
@@ -43,6 +44,7 @@ export function saveProgress(
 }
 
 export function loadStats(): GameStats {
+	if (typeof window === "undefined") return defaultStats();
 	try {
 		const raw = localStorage.getItem(STATS_KEY);
 		if (!raw) return defaultStats();
@@ -64,6 +66,7 @@ export function saveTargetMonster(dateKey: string, monsterId: number): void {
 }
 
 export function loadTargetMonster(dateKey: string): number | null {
+	if (typeof window === "undefined") return null;
 	try {
 		const raw = localStorage.getItem(TARGET_KEY);
 		if (!raw) return null;

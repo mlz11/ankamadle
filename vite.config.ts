@@ -1,7 +1,47 @@
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
+import type { Plugin } from "vite";
 import { loadEnv } from "vite";
+import { vitePrerenderPlugin } from "vite-prerender-plugin";
 import { defineConfig } from "vitest/config";
+
+/**
+ * Removes the prerender entry JS chunk and its modulepreload tag from the
+ * final build output. The chunk is only needed at build time for
+ * vite-prerender-plugin and should not be shipped to clients.
+ */
+function removePrerenderChunk(): Plugin {
+	return {
+		name: "remove-prerender-chunk",
+		apply: "build",
+		enforce: "post",
+		generateBundle(_, bundle) {
+			const prerenderAssets: string[] = [];
+			for (const key of Object.keys(bundle)) {
+				if (key.endsWith(".js") && key.includes("prerender")) {
+					prerenderAssets.push(key);
+					delete bundle[key];
+				}
+				if (key.endsWith(".js.map") && key.includes("prerender")) {
+					delete bundle[key];
+				}
+			}
+
+			const html = bundle["index.html"];
+			if (html && html.type === "asset" && typeof html.source === "string") {
+				let source = html.source;
+				for (const asset of prerenderAssets) {
+					const escaped = asset.replace(/\./g, "\\.");
+					source = source.replace(
+						new RegExp(`\\s*<link[^>]+href="/${escaped}"[^>]*>`),
+						"",
+					);
+				}
+				html.source = source;
+			}
+		},
+	};
+}
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -21,6 +61,11 @@ export default defineConfig(({ mode }) => {
 	return {
 		plugins: [
 			react(),
+			vitePrerenderPlugin({
+				renderTarget: "#root",
+				prerenderScript: "src/prerender.tsx",
+			}),
+			removePrerenderChunk(),
 			mode === "production" &&
 				sentryVitePlugin({
 					org: sentryOrg,

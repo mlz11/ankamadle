@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/react";
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import "./styles/app.css";
 import App from "./components/App";
 
@@ -17,8 +17,15 @@ Sentry.init({
 
 const root = document.getElementById("root");
 if (!root) throw new Error("Root element not found");
-createRoot(root).render(
+
+const app = (
 	<StrictMode>
 		<App />
-	</StrictMode>,
+	</StrictMode>
 );
+
+if (root.children.length > 0) {
+	hydrateRoot(root, app);
+} else {
+	createRoot(root).render(app);
+}
