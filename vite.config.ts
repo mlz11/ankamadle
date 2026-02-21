@@ -6,6 +6,22 @@ import { vitePrerenderPlugin } from "vite-prerender-plugin";
 import { defineConfig } from "vitest/config";
 
 /**
+ * Forces the process to exit after the build completes. The source-map
+ * dependency used by vite-prerender-plugin initializes a WebAssembly worker
+ * (MessagePort) at import time that keeps the Node.js event loop alive.
+ */
+function forceExitAfterBuild(): Plugin {
+	return {
+		name: "force-exit-after-build",
+		apply: "build",
+		enforce: "post",
+		closeBundle() {
+			process.exit(0);
+		},
+	};
+}
+
+/**
  * Removes the prerender entry JS chunk and its modulepreload tag from the
  * final build output. The chunk is only needed at build time for
  * vite-prerender-plugin and should not be shipped to clients.
@@ -72,6 +88,7 @@ export default defineConfig(({ mode }) => {
 					project: sentryProject,
 					authToken: sentryAuthToken,
 				}),
+			forceExitAfterBuild(),
 		],
 		build: {
 			sourcemap: mode === "production" ? "hidden" : undefined,
