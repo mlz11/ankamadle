@@ -1,9 +1,9 @@
-import * as Sentry from "@sentry/react";
 import { useState } from "react";
 import type { GameStats } from "../types";
 import { loadStats } from "../utils/storage";
 import styles from "./App.module.css";
 import Game from "./DofusRetro/Game";
+import ErrorBoundary from "./ErrorBoundary";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -19,7 +19,7 @@ export default function App() {
 	const [stats, setStats] = useState<GameStats>(loadStats);
 
 	return (
-		<Sentry.ErrorBoundary fallback={<FallbackUI />}>
+		<ErrorBoundary fallback={<FallbackUI />}>
 			<div className={styles.app}>
 				<Header stats={stats} />
 				<main>
@@ -27,6 +27,6 @@ export default function App() {
 				</main>
 				<Footer />
 			</div>
-		</Sentry.ErrorBoundary>
+		</ErrorBoundary>
 	);
 }

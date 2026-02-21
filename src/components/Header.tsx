@@ -36,7 +36,16 @@ export default function Header({ stats }: Props) {
 		<header className={styles.header}>
 			<h1 className={styles.title}>
 				<a href="/" className={styles.homeLink}>
-					<img src="/images/logo.webp" alt="" className={styles.logo} />
+					<img
+						src="/images/logo-866w.webp"
+						srcSet="/images/logo-433w.webp 433w, /images/logo-866w.webp 866w"
+						sizes="(max-width: 600px) 250px, 300px"
+						width={866}
+						height={452}
+						fetchPriority="high"
+						alt=""
+						className={styles.logo}
+					/>
 					<span className="visually-hidden">
 						Dofusdle - Le Wordle des monstres Dofus Retro
 					</span>
