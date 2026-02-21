@@ -67,6 +67,7 @@ const { bouftou, tofu, arakne, mockStorage, mockConfetti, mockDaily } =
 						currentStreak: 0,
 						maxStreak: 0,
 						guessDistribution: {},
+						lastPlayedDate: null,
 					}),
 				),
 				recordWin: vi.fn(
@@ -76,6 +77,7 @@ const { bouftou, tofu, arakne, mockStorage, mockConfetti, mockDaily } =
 						currentStreak: 1,
 						maxStreak: 1,
 						guessDistribution: { 1: 1 },
+						lastPlayedDate: "2025-6-15",
 					}),
 				),
 				saveTargetMonster: vi.fn(),
@@ -105,6 +107,7 @@ const emptyStats: GameStats = {
 	currentStreak: 0,
 	maxStreak: 0,
 	guessDistribution: {},
+	lastPlayedDate: null,
 };
 
 function GameWrapper({ initialStats }: { initialStats?: GameStats }) {
@@ -138,6 +141,7 @@ beforeEach(() => {
 		currentStreak: 1,
 		maxStreak: 1,
 		guessDistribution: { 1: 1 },
+		lastPlayedDate: "2025-6-15",
 	});
 	mockStorage.loadTargetMonster.mockReturnValue(null);
 });

@@ -14,6 +14,7 @@ const defaultStats: GameStats = {
 	currentStreak: 3,
 	maxStreak: 5,
 	guessDistribution: {},
+	lastPlayedDate: null,
 };
 
 function renderHeader(stats: Partial<GameStats> = {}) {
