@@ -350,6 +350,20 @@ describe("Game", () => {
 			).not.toBeInTheDocument();
 		});
 
+		it("should dismiss the banner when the user guesses another monster", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou Royal");
+			act(() => vi.advanceTimersByTime(1200));
+			expect(
+				screen.getByText(/Mêmes attributs, mais ce n'est pas le bon monstre/),
+			).toBeVisible();
+			await guessMonster(user, "Tofu");
+			expect(
+				screen.queryByText(/Mêmes attributs, mais ce n'est pas le bon monstre/),
+			).not.toBeInTheDocument();
+		});
+
 		it("should dismiss the banner when clicked", async () => {
 			const user = setupUser();
 			render(<GameWrapper />);

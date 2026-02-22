@@ -147,6 +147,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		}
 		if (won || usedIds.has(monster.id)) return;
 
+		setDuplicateBannerVisible(false);
 		const result = compareMonsters(monster, target);
 		const newResults = [...results, result];
 		setResults(newResults);
