@@ -116,15 +116,18 @@ export default function Game({ stats, onStatsChange }: Props) {
 		}
 	}, [target, devMode, onStatsChange]);
 
-	function resetGame() {
-		const randomMonster = monsters[Math.floor(Math.random() * monsters.length)];
-		setTarget(randomMonster);
+	function selectTarget(monster: Monster) {
+		setTarget(monster);
 		setResults([]);
 		setWon(false);
 		setShowVictory(false);
 		setVictoryShownOnce(false);
 		setAnimatingRowIndex(-1);
 		setHints({ hint1: false, hint2: false });
+	}
+
+	function resetGame() {
+		selectTarget(monsters[Math.floor(Math.random() * monsters.length)]);
 	}
 
 	const usedIds = useMemo(
@@ -216,6 +219,22 @@ export default function Game({ stats, onStatsChange }: Props) {
 								New Game
 							</button>
 							<span>Target: {target.name}</span>
+							<input
+								list="dev-monster-list"
+								placeholder="Choose monster..."
+								onChange={(e) => {
+									const found = monsters.find((m) => m.name === e.target.value);
+									if (found) {
+										selectTarget(found);
+										e.target.value = "";
+									}
+								}}
+							/>
+							<datalist id="dev-monster-list">
+								{monsters.map((m) => (
+									<option key={m.id} value={m.name} />
+								))}
+							</datalist>
 						</>
 					)}
 				</div>
