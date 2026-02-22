@@ -121,14 +121,6 @@ describe("GuessRow", () => {
 
 		expect(container.querySelector("img")).toBeInTheDocument();
 	});
-
-	it("should not display an image when the monster has none", () => {
-		const result = makeResult({ image: undefined });
-
-		const { container } = render(<GuessRow result={result} />);
-
-		expect(container.querySelector("img")).not.toBeInTheDocument();
-	});
 });
 
 describe("AttributeCell", () => {

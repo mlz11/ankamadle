@@ -105,7 +105,7 @@ export function recordWin(guessCount: number): GameStats {
 		stats.maxStreak = stats.currentStreak;
 	}
 	stats.guessDistribution[guessCount] =
-		(stats.guessDistribution[guessCount] ?? 0) + 1;
+		(stats.guessDistribution[guessCount] || 0) + 1;
 	stats.lastPlayedDate = today;
 	saveStats(stats);
 	return stats;

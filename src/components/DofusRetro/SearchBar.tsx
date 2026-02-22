@@ -73,9 +73,8 @@ export default function SearchBar({
 		if (!showDropdown || filtered.length === 0) {
 			if (e.key === "Enter") {
 				e.preventDefault();
-				const only = filtered[0];
-				if (filtered.length === 1 && only) {
-					handleSelect(only);
+				if (filtered.length === 1) {
+					handleSelect(filtered[0]);
 				} else {
 					triggerShake();
 				}
@@ -90,9 +89,8 @@ export default function SearchBar({
 			setHighlightIndex((i) => Math.max(i - 1, 0));
 		} else if (e.key === "Enter") {
 			e.preventDefault();
-			const highlighted = filtered[highlightIndex];
-			if (highlighted) {
-				handleSelect(highlighted);
+			if (filtered[highlightIndex]) {
+				handleSelect(filtered[highlightIndex]);
 			}
 		} else if (e.key === "Escape") {
 			setShowDropdown(false);
@@ -100,12 +98,10 @@ export default function SearchBar({
 	}
 
 	function handleSubmit() {
-		const highlighted = filtered[highlightIndex];
-		const only = filtered[0];
-		if (showDropdown && highlighted) {
-			handleSelect(highlighted);
-		} else if (query.length > 0 && filtered.length === 1 && only) {
-			handleSelect(only);
+		if (showDropdown && filtered[highlightIndex]) {
+			handleSelect(filtered[highlightIndex]);
+		} else if (query.length > 0 && filtered.length === 1) {
+			handleSelect(filtered[0]);
 		} else {
 			triggerShake();
 		}

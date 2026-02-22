@@ -25,11 +25,9 @@ describe("parseMonsters", () => {
 		expect(result).toEqual([validMonster]);
 	});
 
-	it("should accept monsters without optional image field", () => {
+	it("should throw when image field is missing", () => {
 		const { image: _, ...noImage } = validMonster;
-		const result = parseMonsters([noImage]);
-		expect(result).toHaveLength(1);
-		expect(result[0]).not.toHaveProperty("image");
+		expect(() => parseMonsters([noImage])).toThrow();
 	});
 
 	it("should default couleur to empty string when missing", () => {

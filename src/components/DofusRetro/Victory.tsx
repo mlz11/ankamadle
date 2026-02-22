@@ -23,7 +23,7 @@ interface Props {
 	results: GuessResult[];
 	stats: GameStats;
 	targetName: string;
-	targetImage?: string | undefined;
+	targetImage: string;
 	hintsUsed: number;
 	onClose: () => void;
 }

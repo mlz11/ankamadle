@@ -41,7 +41,7 @@ const defaults = {
 	],
 	stats,
 	targetName: "Bouftou",
-	targetImage: "/img/monsters/bouftou.svg" as string | undefined,
+	targetImage: "/img/monsters/bouftou.svg",
 	hintsUsed: 0,
 	onClose: vi.fn(),
 };
@@ -93,11 +93,6 @@ describe("Victory", () => {
 		it("should display target monster image when image is provided", () => {
 			renderVictory();
 			expect(screen.getByAltText("Bouftou")).toBeVisible();
-		});
-
-		it("should not display an image when monster has no image", () => {
-			renderVictory({ targetImage: undefined });
-			expect(screen.queryByAltText("Bouftou")).not.toBeInTheDocument();
 		});
 	});
 

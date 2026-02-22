@@ -31,10 +31,4 @@ describe("YesterdayAnswer", () => {
 		render(<YesterdayAnswer monster={monster} />);
 		expect(screen.getByAltText("Bouftou")).toBeVisible();
 	});
-
-	it("should not display an image when monster has no image", () => {
-		const noImageMonster = { ...monster, image: undefined };
-		render(<YesterdayAnswer monster={noImageMonster} />);
-		expect(screen.queryByRole("img")).not.toBeInTheDocument();
-	});
 });

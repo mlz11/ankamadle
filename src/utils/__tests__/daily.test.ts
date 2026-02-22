@@ -200,7 +200,7 @@ describe("getDailyMonster", () => {
 			let nonWinnerChanges = 0;
 			let nonWinnerDays = 0;
 			for (let i = 0; i < dates.length; i++) {
-				if (!removedIds.has(baseSelections[i] as number)) {
+				if (!removedIds.has(baseSelections[i])) {
 					nonWinnerDays++;
 					if (baseSelections[i] !== newSelections[i]) nonWinnerChanges++;
 				}

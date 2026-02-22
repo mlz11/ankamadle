@@ -18,7 +18,9 @@ if (!result.success) {
 const ids = result.data.map((m) => m.id);
 const duplicates = ids.filter((id, i) => ids.indexOf(id) !== i);
 if (duplicates.length > 0) {
-	console.error(`Duplicate monster IDs found: ${[...new Set(duplicates)].join(", ")}`);
+	console.error(
+		`Duplicate monster IDs found: ${[...new Set(duplicates)].join(", ")}`,
+	);
 	process.exit(1);
 }
 
