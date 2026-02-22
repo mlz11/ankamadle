@@ -38,7 +38,7 @@ export function makePool(count: number, availableFrom = "2025-1-1"): Monster[] {
 }
 
 export function getNextDayKey(dateKey: string): string {
-	const [y, m, d] = dateKey.split("-").map(Number);
+	const [y, m, d] = dateKey.split("-").map(Number) as [number, number, number];
 	const date = new Date(y, m - 1, d);
 	date.setDate(date.getDate() + 1);
 	return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;

@@ -7,6 +7,10 @@ import type { Monster } from "../../../types";
 import SearchBar from "../SearchBar";
 import styles from "../SearchBar.module.css";
 
+const highlighted = styles.highlighted as string;
+const searchBar = styles.searchBar as string;
+const shake = styles.shake as string;
+
 afterEach(cleanup);
 
 const monsters: Monster[] = [
@@ -174,7 +178,7 @@ describe("SearchBar", () => {
 				screen.getByPlaceholderText("Devine le monstre..."),
 			);
 			const items = screen.getAllByRole("listitem");
-			expect(items[0]).toHaveClass(styles.highlighted);
+			expect(items[0]).toHaveClass(highlighted);
 		});
 
 		it("should move highlight down when pressing ArrowDown", async () => {
@@ -184,7 +188,7 @@ describe("SearchBar", () => {
 			);
 			await userEvent.keyboard("{ArrowDown}");
 			const items = screen.getAllByRole("listitem");
-			expect(items[1]).toHaveClass(styles.highlighted);
+			expect(items[1]).toHaveClass(highlighted);
 		});
 
 		it("should move highlight up when pressing ArrowUp", async () => {
@@ -194,7 +198,7 @@ describe("SearchBar", () => {
 			);
 			await userEvent.keyboard("{ArrowDown}{ArrowDown}{ArrowUp}");
 			const items = screen.getAllByRole("listitem");
-			expect(items[1]).toHaveClass(styles.highlighted);
+			expect(items[1]).toHaveClass(highlighted);
 		});
 
 		it("should not move highlight above first item", async () => {
@@ -204,7 +208,7 @@ describe("SearchBar", () => {
 			);
 			await userEvent.keyboard("{ArrowUp}");
 			const items = screen.getAllByRole("listitem");
-			expect(items[0]).toHaveClass(styles.highlighted);
+			expect(items[0]).toHaveClass(highlighted);
 		});
 
 		it("should not move highlight below last item", async () => {
@@ -214,7 +218,7 @@ describe("SearchBar", () => {
 			);
 			await userEvent.keyboard("{ArrowDown}{ArrowDown}{ArrowDown}{ArrowDown}");
 			const items = screen.getAllByRole("listitem");
-			expect(items[2]).toHaveClass(styles.highlighted);
+			expect(items[2]).toHaveClass(highlighted);
 		});
 
 		it("should select highlighted monster when pressing Enter", async () => {
@@ -295,9 +299,7 @@ describe("SearchBar", () => {
 			);
 			await userEvent.keyboard("{Escape}");
 			await userEvent.click(screen.getByRole("button", { name: "Valider" }));
-			expect(document.querySelector(`.${styles.searchBar}`)).toHaveClass(
-				styles.shake,
-			);
+			expect(document.querySelector(`.${searchBar}`)).toHaveClass(shake);
 		});
 	});
 
@@ -309,9 +311,7 @@ describe("SearchBar", () => {
 				"zzzzz",
 			);
 			await userEvent.keyboard("{Enter}");
-			expect(document.querySelector(`.${styles.searchBar}`)).toHaveClass(
-				styles.shake,
-			);
+			expect(document.querySelector(`.${searchBar}`)).toHaveClass(shake);
 		});
 
 		it("should shake when pressing Enter with multiple matches and dropdown closed", async () => {
@@ -321,9 +321,7 @@ describe("SearchBar", () => {
 			);
 			await userEvent.keyboard("{Escape}");
 			await userEvent.keyboard("{Enter}");
-			expect(document.querySelector(`.${styles.searchBar}`)).toHaveClass(
-				styles.shake,
-			);
+			expect(document.querySelector(`.${searchBar}`)).toHaveClass(shake);
 		});
 	});
 });

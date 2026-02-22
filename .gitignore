@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 .sentryclirc
 
-# Data pipeline scripts
-scripts/
+# Data pipeline scripts (allow validate-data.ts)
+scripts/*
+!scripts/validate-data.ts

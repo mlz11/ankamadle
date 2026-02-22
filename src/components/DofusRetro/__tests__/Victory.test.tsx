@@ -41,7 +41,7 @@ const defaults = {
 	],
 	stats,
 	targetName: "Bouftou",
-	targetImage: "/img/monsters/bouftou.svg",
+	targetImage: "/img/monsters/bouftou.svg" as string | undefined,
 	hintsUsed: 0,
 	onClose: vi.fn(),
 };

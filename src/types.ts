@@ -1,16 +1,13 @@
-export interface Monster {
-	id: number;
-	name: string;
-	ecosystem: string;
-	race: string;
-	niveau_min: number;
-	niveau_max: number;
-	pv_min: number;
-	pv_max: number;
-	couleur: string;
-	image?: string;
-	availableFrom: string;
-}
+import type { z } from "zod";
+import type {
+	DailyProgressSchema,
+	GameStatsSchema,
+	MonsterSchema,
+} from "./schemas";
+
+export type Monster = z.infer<typeof MonsterSchema>;
+export type DailyProgress = z.infer<typeof DailyProgressSchema>;
+export type GameStats = z.infer<typeof GameStatsSchema>;
 
 export type FeedbackStatus = "correct" | "partial" | "wrong";
 export type ArrowDirection = "up" | "down" | null;
@@ -30,21 +27,4 @@ export interface GuessResult {
 		couleur: AttributeFeedback;
 		pv: AttributeFeedback;
 	};
-}
-
-export interface GameStats {
-	gamesPlayed: number;
-	gamesWon: number;
-	currentStreak: number;
-	maxStreak: number;
-	guessDistribution: Record<number, number>;
-	lastPlayedDate: string | null;
-}
-
-export interface DailyProgress {
-	date: string;
-	guesses: string[];
-	won: boolean;
-	hint1Revealed?: boolean;
-	hint2Revealed?: boolean;
 }
