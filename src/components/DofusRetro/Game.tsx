@@ -18,6 +18,7 @@ import {
 	saveTargetMonster,
 } from "../../utils/storage";
 import ColorLegend from "./ColorLegend";
+import DuplicateBanner from "./DuplicateBanner";
 import styles from "./Game.module.css";
 import GuessGrid from "./GuessGrid";
 import HintPanel from "./HintPanel";
@@ -59,6 +60,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 	const [victoryShownOnce, setVictoryShownOnce] = useState(false);
 	const [animatingRowIndex, setAnimatingRowIndex] = useState(-1);
 	const [hints, setHints] = useState({ hint1: false, hint2: false });
+	const [duplicateBannerVisible, setDuplicateBannerVisible] = useState(false);
 
 	const resetForNewDay = useCallback((newKey: string) => {
 		setDateKey(newKey);
@@ -69,6 +71,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		setVictoryShownOnce(false);
 		setAnimatingRowIndex(-1);
 		setHints({ hint1: false, hint2: false });
+		setDuplicateBannerVisible(false);
 	}, []);
 
 	// Reset game when the Paris day changes while the tab is in the background
@@ -124,6 +127,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		setVictoryShownOnce(false);
 		setAnimatingRowIndex(-1);
 		setHints({ hint1: false, hint2: false });
+		setDuplicateBannerVisible(false);
 	}
 
 	function resetGame() {
@@ -163,6 +167,17 @@ export default function Game({ stats, onStatsChange }: Props) {
 				setShowVictory(true);
 				setVictoryShownOnce(true);
 			}, VICTORY_MODAL_DELAY_MS);
+		}
+
+		if (!isWin) {
+			const allCorrect = Object.values(result.feedback).every(
+				(f) => f.status === "correct",
+			);
+			if (allCorrect) {
+				setTimeout(() => {
+					setDuplicateBannerVisible(true);
+				}, CONFETTI_FIRST_MS);
+			}
 		}
 
 		if (!devMode) {
@@ -255,6 +270,9 @@ export default function Game({ stats, onStatsChange }: Props) {
 				onSelect={handleGuess}
 				disabled={won}
 			/>
+			{duplicateBannerVisible && (
+				<DuplicateBanner onDismiss={() => setDuplicateBannerVisible(false)} />
+			)}
 			<GuessGrid results={results} animatingRowIndex={animatingRowIndex} />
 			{results.length > 0 && !won && <ColorLegend />}
 			{won && !showVictory && victoryShownOnce && (

@@ -7,92 +7,112 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { DailyProgress, GameStats } from "../../../types";
 import Game from "../Game";
 
-const { bouftou, tofu, arakne, mockStorage, mockConfetti, mockDaily } =
-	vi.hoisted(() => {
-		const bouftou = {
-			id: 1,
-			name: "Bouftou",
-			ecosystem: "Plaines de Cania",
-			race: "Bouftous",
-			niveau_min: 1,
-			niveau_max: 10,
-			pv_min: 10,
-			pv_max: 50,
-			couleur: "Orange",
-			image: "/img/monsters/1.svg",
-			availableFrom: "2025-1-1",
-		};
-		const tofu = {
-			id: 2,
-			name: "Tofu",
-			ecosystem: "Forêt d'Amakna",
-			race: "Tofus",
-			niveau_min: 1,
-			niveau_max: 5,
-			pv_min: 5,
-			pv_max: 20,
-			couleur: "Bleu",
-			image: "/img/monsters/2.svg",
-			availableFrom: "2025-1-1",
-		};
-		const arakne = {
-			id: 3,
-			name: "Arakne",
-			ecosystem: "Bois de Litneg",
-			race: "Araknes",
-			niveau_min: 1,
-			niveau_max: 4,
-			pv_min: 4,
-			pv_max: 16,
-			couleur: "Vert",
-			availableFrom: "2025-1-1",
-		};
-		return {
-			bouftou,
-			tofu,
-			arakne,
-			mockDaily: {
-				getDailyMonster: vi.fn(),
-				getYesterdayMonster: vi.fn(),
-				getTodayKey: vi.fn(),
-				getYesterdayKey: vi.fn(),
-			},
-			mockStorage: {
-				loadProgress: vi.fn((): DailyProgress | null => null),
-				saveProgress: vi.fn(),
-				loadStats: vi.fn(
-					(): GameStats => ({
-						gamesPlayed: 0,
-						gamesWon: 0,
-						currentStreak: 0,
-						maxStreak: 0,
-						guessDistribution: {},
-						lastPlayedDate: null,
-					}),
-				),
-				recordWin: vi.fn(
-					(): GameStats => ({
-						gamesPlayed: 1,
-						gamesWon: 1,
-						currentStreak: 1,
-						maxStreak: 1,
-						guessDistribution: { 1: 1 },
-						lastPlayedDate: "2025-6-15",
-					}),
-				),
-				saveTargetMonster: vi.fn(),
-				loadTargetMonster: vi.fn((): number | null => null),
-				getWinPercentage: (stats: GameStats) =>
-					stats.gamesPlayed > 0
-						? Math.round((stats.gamesWon / stats.gamesPlayed) * 100)
-						: 0,
-			},
-			mockConfetti: vi.fn(),
-		};
-	});
+const {
+	bouftou,
+	tofu,
+	arakne,
+	bouftouRoyal,
+	mockStorage,
+	mockConfetti,
+	mockDaily,
+} = vi.hoisted(() => {
+	const bouftou = {
+		id: 1,
+		name: "Bouftou",
+		ecosystem: "Plaines de Cania",
+		race: "Bouftous",
+		niveau_min: 1,
+		niveau_max: 10,
+		pv_min: 10,
+		pv_max: 50,
+		couleur: "Orange",
+		image: "/img/monsters/1.svg",
+		availableFrom: "2025-1-1",
+	};
+	const tofu = {
+		id: 2,
+		name: "Tofu",
+		ecosystem: "Forêt d'Amakna",
+		race: "Tofus",
+		niveau_min: 1,
+		niveau_max: 5,
+		pv_min: 5,
+		pv_max: 20,
+		couleur: "Bleu",
+		image: "/img/monsters/2.svg",
+		availableFrom: "2025-1-1",
+	};
+	const arakne = {
+		id: 3,
+		name: "Arakne",
+		ecosystem: "Bois de Litneg",
+		race: "Araknes",
+		niveau_min: 1,
+		niveau_max: 4,
+		pv_min: 4,
+		pv_max: 16,
+		couleur: "Vert",
+		availableFrom: "2025-1-1",
+	};
+	const bouftouRoyal = {
+		id: 4,
+		name: "Bouftou Royal",
+		ecosystem: "Plaines de Cania",
+		race: "Bouftous",
+		niveau_min: 1,
+		niveau_max: 10,
+		pv_min: 10,
+		pv_max: 50,
+		couleur: "Orange",
+		availableFrom: "2025-1-1",
+	};
+	return {
+		bouftou,
+		tofu,
+		arakne,
+		bouftouRoyal,
+		mockDaily: {
+			getDailyMonster: vi.fn(),
+			getYesterdayMonster: vi.fn(),
+			getTodayKey: vi.fn(),
+			getYesterdayKey: vi.fn(),
+		},
+		mockStorage: {
+			loadProgress: vi.fn((): DailyProgress | null => null),
+			saveProgress: vi.fn(),
+			loadStats: vi.fn(
+				(): GameStats => ({
+					gamesPlayed: 0,
+					gamesWon: 0,
+					currentStreak: 0,
+					maxStreak: 0,
+					guessDistribution: {},
+					lastPlayedDate: null,
+				}),
+			),
+			recordWin: vi.fn(
+				(): GameStats => ({
+					gamesPlayed: 1,
+					gamesWon: 1,
+					currentStreak: 1,
+					maxStreak: 1,
+					guessDistribution: { 1: 1 },
+					lastPlayedDate: "2025-6-15",
+				}),
+			),
+			saveTargetMonster: vi.fn(),
+			loadTargetMonster: vi.fn((): number | null => null),
+			getWinPercentage: (stats: GameStats) =>
+				stats.gamesPlayed > 0
+					? Math.round((stats.gamesWon / stats.gamesPlayed) * 100)
+					: 0,
+		},
+		mockConfetti: vi.fn(),
+	};
+});
 
 vi.mock("../../../data/monsters.json", () => ({
-	default: [bouftou, tofu, arakne],
+	default: [bouftou, tofu, arakne, bouftouRoyal],
 }));
 
 vi.mock("../../../utils/daily", () => mockDaily);
@@ -282,6 +302,64 @@ describe("Game", () => {
 		it("should display yesterday's monster below the game", () => {
 			render(<GameWrapper />);
 			expect(screen.getByText(/Arakne/)).toBeVisible();
+		});
+	});
+
+	describe("duplicate attributes banner", () => {
+		it("should show the banner when all attributes match but the monster is wrong", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou Royal");
+			act(() => vi.advanceTimersByTime(1200));
+			expect(
+				screen.getByText(/Mêmes attributs, mais ce n'est pas le bon monstre/),
+			).toBeVisible();
+		});
+
+		it("should not show the banner when the guess is the correct monster", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou");
+			act(() => vi.advanceTimersByTime(1200));
+			expect(
+				screen.queryByText(/Mêmes attributs, mais ce n'est pas le bon monstre/),
+			).not.toBeInTheDocument();
+		});
+
+		it("should not show the banner when some attributes are wrong", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Tofu");
+			act(() => vi.advanceTimersByTime(1200));
+			expect(
+				screen.queryByText(/Mêmes attributs, mais ce n'est pas le bon monstre/),
+			).not.toBeInTheDocument();
+		});
+
+		it("should auto-dismiss the banner after 5 seconds when left untouched", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou Royal");
+			act(() => vi.advanceTimersByTime(1200));
+			expect(
+				screen.getByText(/Mêmes attributs, mais ce n'est pas le bon monstre/),
+			).toBeVisible();
+			act(() => vi.advanceTimersByTime(5000));
+			expect(
+				screen.queryByText(/Mêmes attributs, mais ce n'est pas le bon monstre/),
+			).not.toBeInTheDocument();
+		});
+
+		it("should dismiss the banner when clicked", async () => {
+			const user = setupUser();
+			render(<GameWrapper />);
+			await guessMonster(user, "Bouftou Royal");
+			act(() => vi.advanceTimersByTime(1200));
+			const banner = screen.getByText(
+				/Mêmes attributs, mais ce n'est pas le bon monstre/,
+			);
+			await user.click(banner);
+			expect(banner).not.toBeInTheDocument();
 		});
 	});
 
