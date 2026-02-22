@@ -1,5 +1,4 @@
-import confetti from "canvas-confetti";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import monstersData from "../../data/monsters.json";
 import type { GameStats, GuessResult, Monster } from "../../types";
 import { compareMonsters } from "../../utils/compare";
@@ -22,18 +21,13 @@ import DuplicateBanner from "./DuplicateBanner";
 import styles from "./Game.module.css";
 import GuessGrid from "./GuessGrid";
 import HintPanel from "./HintPanel";
+import { useHints } from "./hooks/useHints";
+import { CONFETTI_FIRST_MS, useVictoryModal } from "./hooks/useVictoryModal";
 import SearchBar from "./SearchBar";
 import Victory from "./Victory";
 import YesterdayAnswer from "./YesterdayAnswer";
 
 const monsters: Monster[] = monstersData as Monster[];
-
-/** Delay before first confetti burst (after last cell finishes flipping). */
-const CONFETTI_FIRST_MS = 1200;
-/** Delay before second, smaller confetti burst. */
-const CONFETTI_SECOND_MS = 1700;
-/** Delay before showing the victory modal. */
-const VICTORY_MODAL_DELAY_MS = 2000;
 
 interface Props {
 	stats: GameStats;
@@ -56,23 +50,66 @@ export default function Game({ stats, onStatsChange }: Props) {
 
 	const [results, setResults] = useState<GuessResult[]>([]);
 	const [won, setWon] = useState(false);
-	const [showVictory, setShowVictory] = useState(false);
-	const [victoryShownOnce, setVictoryShownOnce] = useState(false);
 	const [animatingRowIndex, setAnimatingRowIndex] = useState(-1);
-	const [hints, setHints] = useState({ hint1: false, hint2: false });
 	const [duplicateBannerVisible, setDuplicateBannerVisible] = useState(false);
 
-	const resetForNewDay = useCallback((newKey: string) => {
-		setDateKey(newKey);
-		setTarget(getDailyMonster(monsters, newKey));
-		setResults([]);
-		setWon(false);
-		setShowVictory(false);
-		setVictoryShownOnce(false);
-		setAnimatingRowIndex(-1);
-		setHints({ hint1: false, hint2: false });
-		setDuplicateBannerVisible(false);
-	}, []);
+	const {
+		hint1,
+		hint2,
+		hintsUsed,
+		revealHint1,
+		revealHint2,
+		resetHints,
+		setRestoredHints,
+	} = useHints();
+	const {
+		showVictory,
+		victoryShownOnce,
+		triggerWin,
+		closeVictory,
+		reopenVictory,
+		showImmediately,
+		resetVictory,
+	} = useVictoryModal();
+
+	// Persist progress to localStorage, consolidating all save calls.
+	// Accepts optional hint overrides for when a hint is being revealed
+	// (the new value hasn't propagated to state yet).
+	const hint1Ref = useRef(hint1);
+	const hint2Ref = useRef(hint2);
+	hint1Ref.current = hint1;
+	hint2Ref.current = hint2;
+
+	const persistProgress = useCallback(
+		(
+			guesses: GuessResult[],
+			hasWon: boolean,
+			hintOverrides?: { hint1?: boolean; hint2?: boolean },
+		) => {
+			if (devMode) return;
+			saveProgress(
+				guesses.map((r) => r.monster.name),
+				hasWon,
+				hintOverrides?.hint1 ?? hint1Ref.current,
+				hintOverrides?.hint2 ?? hint2Ref.current,
+			);
+		},
+		[devMode],
+	);
+
+	const resetForNewDay = useCallback(
+		(newKey: string) => {
+			setDateKey(newKey);
+			setTarget(getDailyMonster(monsters, newKey));
+			setResults([]);
+			setWon(false);
+			setAnimatingRowIndex(-1);
+			setDuplicateBannerVisible(false);
+			resetHints();
+			resetVictory();
+		},
+		[resetHints, resetVictory],
+	);
 
 	// Reset game when the Paris day changes while the tab is in the background
 	useEffect(() => {
@@ -107,27 +144,25 @@ export default function Game({ stats, onStatsChange }: Props) {
 			}
 			setResults(restored);
 			setWon(progress.won);
-			setHints({
-				hint1: progress.hint1Revealed ?? false,
-				hint2: progress.hint2Revealed ?? false,
-			});
+			setRestoredHints(
+				progress.hint1Revealed ?? false,
+				progress.hint2Revealed ?? false,
+			);
 			if (progress.won) {
-				setShowVictory(true);
-				setVictoryShownOnce(true);
+				showImmediately();
 				onStatsChange(loadStats());
 			}
 		}
-	}, [target, devMode, onStatsChange]);
+	}, [target, devMode, onStatsChange, setRestoredHints, showImmediately]);
 
 	function selectTarget(monster: Monster) {
 		setTarget(monster);
 		setResults([]);
 		setWon(false);
-		setShowVictory(false);
-		setVictoryShownOnce(false);
 		setAnimatingRowIndex(-1);
-		setHints({ hint1: false, hint2: false });
 		setDuplicateBannerVisible(false);
+		resetHints();
+		resetVictory();
 	}
 
 	function resetGame() {
@@ -158,16 +193,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 			setWon(true);
 			const newStats = recordWin(newResults.length);
 			onStatsChange(newStats);
-			setTimeout(() => {
-				confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
-			}, CONFETTI_FIRST_MS);
-			setTimeout(() => {
-				confetti({ particleCount: 80, spread: 60, origin: { y: 0.5 } });
-			}, CONFETTI_SECOND_MS);
-			setTimeout(() => {
-				setShowVictory(true);
-				setVictoryShownOnce(true);
-			}, VICTORY_MODAL_DELAY_MS);
+			triggerWin();
 		}
 
 		if (!isWin) {
@@ -181,40 +207,17 @@ export default function Game({ stats, onStatsChange }: Props) {
 			}
 		}
 
-		if (!devMode) {
-			saveProgress(
-				newResults.map((r) => r.monster.name),
-				isWin,
-				hints.hint1,
-				hints.hint2,
-			);
-		}
+		persistProgress(newResults, isWin);
 	}
 
-	const hintsUsed = (hints.hint1 ? 1 : 0) + (hints.hint2 ? 1 : 0);
-
 	function handleRevealHint1() {
-		setHints((h) => ({ ...h, hint1: true }));
-		if (!devMode) {
-			saveProgress(
-				results.map((r) => r.monster.name),
-				won,
-				true,
-				hints.hint2,
-			);
-		}
+		revealHint1();
+		persistProgress(results, won, { hint1: true });
 	}
 
 	function handleRevealHint2() {
-		setHints((h) => ({ ...h, hint2: true }));
-		if (!devMode) {
-			saveProgress(
-				results.map((r) => r.monster.name),
-				won,
-				hints.hint1,
-				true,
-			);
-		}
+		revealHint2();
+		persistProgress(results, won, { hint2: true });
 	}
 
 	return (
@@ -258,8 +261,8 @@ export default function Game({ stats, onStatsChange }: Props) {
 			<HintPanel
 				guessCount={results.length}
 				won={won}
-				hint1Revealed={hints.hint1}
-				hint2Revealed={hints.hint2}
+				hint1Revealed={hint1}
+				hint2Revealed={hint2}
 				targetImage={target.image}
 				targetEcosystem={target.ecosystem}
 				onRevealHint1={handleRevealHint1}
@@ -280,7 +283,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 				<button
 					type="button"
 					className={styles.reopenBtn}
-					onClick={() => setShowVictory(true)}
+					onClick={reopenVictory}
 				>
 					Voir résultats
 				</button>
@@ -293,7 +296,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 					targetName={target.name}
 					targetImage={target.image}
 					hintsUsed={hintsUsed}
-					onClose={() => setShowVictory(false)}
+					onClose={closeVictory}
 				/>
 			)}
 		</div>
