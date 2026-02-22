@@ -41,7 +41,7 @@ interface Props {
 	won: boolean;
 	hint1Revealed: boolean;
 	hint2Revealed: boolean;
-	targetImage?: string;
+	targetImage?: string | undefined;
 	targetEcosystem: string;
 	onRevealHint1: () => void;
 	onRevealHint2: () => void;

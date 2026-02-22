@@ -1,4 +1,5 @@
 import type { DailyProgress, GameStats } from "../types";
+import { parseDailyProgress, parseGameStats } from "../validation";
 import { getTodayKey, getYesterdayKey } from "./daily";
 
 const PROGRESS_KEY = "dofusdle-progress";
@@ -20,8 +21,8 @@ export function loadProgress(): DailyProgress | null {
 	try {
 		const raw = localStorage.getItem(PROGRESS_KEY);
 		if (!raw) return null;
-		const progress: DailyProgress = JSON.parse(raw);
-		if (progress.date !== getTodayKey()) return null;
+		const progress = parseDailyProgress(JSON.parse(raw));
+		if (!progress || progress.date !== getTodayKey()) return null;
 		return progress;
 	} catch {
 		return null;
@@ -49,7 +50,7 @@ export function loadStats(): GameStats {
 	try {
 		const raw = localStorage.getItem(STATS_KEY);
 		if (!raw) return defaultStats();
-		return JSON.parse(raw);
+		return parseGameStats(JSON.parse(raw)) ?? defaultStats();
 	} catch {
 		return defaultStats();
 	}
@@ -104,7 +105,7 @@ export function recordWin(guessCount: number): GameStats {
 		stats.maxStreak = stats.currentStreak;
 	}
 	stats.guessDistribution[guessCount] =
-		(stats.guessDistribution[guessCount] || 0) + 1;
+		(stats.guessDistribution[guessCount] ?? 0) + 1;
 	stats.lastPlayedDate = today;
 	saveStats(stats);
 	return stats;

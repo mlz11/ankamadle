@@ -143,6 +143,30 @@ describe("loadProgress", () => {
 		expect(progress?.hint1Revealed).toBe(true);
 		expect(progress?.hint2Revealed).toBe(true);
 	});
+
+	it("should return null when stored data has wrong shape", () => {
+		localStorage.setItem(
+			PROGRESS_KEY,
+			JSON.stringify({
+				date: "2025-6-15",
+				guesses: "not an array",
+				won: false,
+			}),
+		);
+		expect(loadProgress()).toBeNull();
+	});
+
+	it("should return null when stored data has wrong types", () => {
+		localStorage.setItem(
+			PROGRESS_KEY,
+			JSON.stringify({
+				date: "2025-6-15",
+				guesses: ["Bouftou"],
+				won: "yes",
+			}),
+		);
+		expect(loadProgress()).toBeNull();
+	});
 });
 
 describe("loadStats", () => {
@@ -171,6 +195,39 @@ describe("loadStats", () => {
 
 	it("should return default stats when localStorage contains corrupted JSON", () => {
 		localStorage.setItem(STATS_KEY, "not json!!!");
+		expect(loadStats()).toEqual({
+			gamesPlayed: 0,
+			gamesWon: 0,
+			currentStreak: 0,
+			maxStreak: 0,
+			guessDistribution: {},
+			lastPlayedDate: null,
+		});
+	});
+
+	it("should return default stats when stored data has wrong shape", () => {
+		localStorage.setItem(STATS_KEY, JSON.stringify({ foo: "bar", baz: 42 }));
+		expect(loadStats()).toEqual({
+			gamesPlayed: 0,
+			gamesWon: 0,
+			currentStreak: 0,
+			maxStreak: 0,
+			guessDistribution: {},
+			lastPlayedDate: null,
+		});
+	});
+
+	it("should return default stats when stored data has wrong types", () => {
+		localStorage.setItem(
+			STATS_KEY,
+			JSON.stringify({
+				gamesPlayed: "ten",
+				gamesWon: 0,
+				currentStreak: 0,
+				maxStreak: 0,
+				guessDistribution: {},
+			}),
+		);
 		expect(loadStats()).toEqual({
 			gamesPlayed: 0,
 			gamesWon: 0,

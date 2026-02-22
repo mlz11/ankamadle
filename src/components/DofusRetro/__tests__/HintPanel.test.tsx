@@ -12,7 +12,7 @@ const defaults = {
 	won: false,
 	hint1Revealed: false,
 	hint2Revealed: false,
-	targetImage: "/img/monsters/42.svg",
+	targetImage: "/img/monsters/42.svg" as string | undefined,
 	targetEcosystem: "Créatures des champs",
 	onRevealHint1: vi.fn(),
 	onRevealHint2: vi.fn(),
@@ -76,8 +76,10 @@ describe("HintPanel", () => {
 			const onRevealHint1 = vi.fn();
 			renderPanel({ guessCount: 5, onRevealHint1 });
 
-			const buttons = screen.getAllByText("Cliquer pour révéler");
-			await user.click(buttons[0]);
+			const button = screen.getAllByText(
+				"Cliquer pour révéler",
+			)[0] as HTMLElement;
+			await user.click(button);
 			await vi.advanceTimersByTimeAsync(300);
 
 			expect(onRevealHint1).toHaveBeenCalledOnce();

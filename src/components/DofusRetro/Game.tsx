@@ -16,6 +16,7 @@ import {
 	saveProgress,
 	saveTargetMonster,
 } from "../../utils/storage";
+import { parseMonsters } from "../../validation";
 import ColorLegend from "./ColorLegend";
 import DuplicateBanner from "./DuplicateBanner";
 import styles from "./Game.module.css";
@@ -27,7 +28,7 @@ import SearchBar from "./SearchBar";
 import Victory from "./Victory";
 import YesterdayAnswer from "./YesterdayAnswer";
 
-const monsters: Monster[] = monstersData as Monster[];
+const monsters = parseMonsters(monstersData);
 
 interface Props {
 	stats: GameStats;
@@ -166,7 +167,8 @@ export default function Game({ stats, onStatsChange }: Props) {
 	}
 
 	function resetGame() {
-		selectTarget(monsters[Math.floor(Math.random() * monsters.length)]);
+		const random = monsters[Math.floor(Math.random() * monsters.length)];
+		if (random) selectTarget(random);
 	}
 
 	const usedIds = useMemo(
