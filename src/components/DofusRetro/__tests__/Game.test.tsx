@@ -52,6 +52,7 @@ const {
 		pv_min: 4,
 		pv_max: 16,
 		couleur: "Vert",
+		image: "/img/monsters/3.svg",
 		availableFrom: "2025-1-1",
 	};
 	const bouftouRoyal = {
@@ -64,6 +65,7 @@ const {
 		pv_min: 10,
 		pv_max: 50,
 		couleur: "Orange",
+		image: "/img/monsters/4.svg",
 		availableFrom: "2025-1-1",
 	};
 	return {

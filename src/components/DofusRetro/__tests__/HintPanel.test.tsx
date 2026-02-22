@@ -12,7 +12,7 @@ const defaults = {
 	won: false,
 	hint1Revealed: false,
 	hint2Revealed: false,
-	targetImage: "/img/monsters/42.svg" as string | undefined,
+	targetImage: "/img/monsters/42.svg",
 	targetEcosystem: "Créatures des champs",
 	onRevealHint1: vi.fn(),
 	onRevealHint2: vi.fn(),
@@ -76,22 +76,12 @@ describe("HintPanel", () => {
 			const onRevealHint1 = vi.fn();
 			renderPanel({ guessCount: 5, onRevealHint1 });
 
-			const button = screen.getAllByText(
-				"Cliquer pour révéler",
-			)[0] as HTMLElement;
-			await user.click(button);
+			const buttons = screen.getAllByText("Cliquer pour révéler");
+			await user.click(buttons[0]);
 			await vi.advanceTimersByTimeAsync(300);
 
 			expect(onRevealHint1).toHaveBeenCalledOnce();
 			vi.useRealTimers();
-		});
-
-		it('should show "Aucune image" when hint 1 is revealed but monster has no image', () => {
-			renderPanel({
-				hint1Revealed: true,
-				targetImage: undefined,
-			});
-			expect(screen.getByText("Aucune image")).toBeVisible();
 		});
 	});
 

@@ -10,7 +10,7 @@ export const MonsterSchema = z.object({
 	pv_min: z.number(),
 	pv_max: z.number(),
 	couleur: z.string().optional().default(""),
-	image: z.string().optional(),
+	image: z.string(),
 	availableFrom: z.string(),
 });
 

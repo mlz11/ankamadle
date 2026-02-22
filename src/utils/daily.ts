@@ -25,7 +25,7 @@ export function getYesterdayKey(): string {
 }
 
 function parseDateKey(key: string): [number, number, number] {
-	const [y, m, d] = key.split("-").map(Number) as [number, number, number];
+	const [y, m, d] = key.split("-").map(Number);
 	return [y, m, d];
 }
 
@@ -45,10 +45,8 @@ function daysInMonth(y: number, m: number): number {
 }
 
 function getPreviousDayKey(dateKey: string): string {
-	const [py, pm, pd] = parseDateKey(dateKey);
-	let y = py;
-	let m = pm;
-	let d = pd - 1;
+	let [y, m, d] = parseDateKey(dateKey);
+	d -= 1;
 	if (d < 1) {
 		m -= 1;
 		if (m < 1) {
@@ -61,10 +59,8 @@ function getPreviousDayKey(dateKey: string): string {
 }
 
 function getNextDayKey(dateKey: string): string {
-	const [ny, nm, nd] = parseDateKey(dateKey);
-	let y = ny;
-	let m = nm;
-	let d = nd + 1;
+	let [y, m, d] = parseDateKey(dateKey);
+	d += 1;
 	if (d > daysInMonth(y, m)) {
 		d = 1;
 		m += 1;
@@ -107,9 +103,8 @@ function getEligiblePool(monsters: Monster[], dateKey: string): Monster[] {
 }
 
 function scorePool(pool: Monster[], dateKey: string): Monster | null {
-	const first = pool[0];
-	if (!first) return null;
-	let best = first;
+	if (pool.length === 0) return null;
+	let best = pool[0];
 	let bestScore = -1;
 	for (const monster of pool) {
 		const seed = hashString(`${dateKey}-${monster.id}`);
@@ -187,8 +182,7 @@ function selectMonsterForDay(monsters: Monster[], dateKey: string): Monster {
 		const found = pool.find((m) => m.id === winnerId);
 		if (found) return found;
 	}
-	// Pool is always non-empty: getEligiblePool falls back to the full monster array
-	return pool[0] as Monster;
+	return pool[0];
 }
 
 export function getDailyMonster(

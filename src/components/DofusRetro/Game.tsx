@@ -167,8 +167,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 	}
 
 	function resetGame() {
-		const random = monsters[Math.floor(Math.random() * monsters.length)];
-		if (random) selectTarget(random);
+		selectTarget(monsters[Math.floor(Math.random() * monsters.length)]);
 	}
 
 	const usedIds = useMemo(
