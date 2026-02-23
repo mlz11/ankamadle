@@ -2,7 +2,7 @@ interface Env {
 	SOLVE_COUNTS: KVNamespace;
 }
 
-/** Date format YYYY-M-D matching getTodayKey() in src/utils/daily.ts */
+/** Must produce the same format as getTodayKey() in src/utils/daily.ts */
 function getTodayKeyParis(): string {
 	const now = new Date();
 	const parts = new Intl.DateTimeFormat("en-CA", {
@@ -17,12 +17,16 @@ function getTodayKeyParis(): string {
 	return `${y}-${Number(m)}-${Number(d)}`;
 }
 
-const DEDUP_TTL_SECONDS = 26 * 60 * 60; // 26 hours - covers full Paris day + drift
+// 26h so the key outlives the full Paris-timezone day even with clock skew
+const DEDUP_TTL_SECONDS = 26 * 60 * 60;
+
+async function getCount(kv: KVNamespace, dateKey: string): Promise<number> {
+	const raw = await kv.get(`solves:${dateKey}`);
+	return raw !== null ? Number(raw) : 0;
+}
 
 export const onRequestGet: PagesFunction<Env> = async ({ env }) => {
-	const dateKey = getTodayKeyParis();
-	const raw = await env.SOLVE_COUNTS.get(`solves:${dateKey}`);
-	const count = raw !== null ? Number(raw) : 0;
+	const count = await getCount(env.SOLVE_COUNTS, getTodayKeyParis());
 	return Response.json({ count });
 };
 
@@ -37,8 +41,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
 	const dedupKey = `solves:${dateKey}:${ip}`;
 	const alreadySolved = await env.SOLVE_COUNTS.get(dedupKey);
 	if (alreadySolved !== null) {
-		const raw = await env.SOLVE_COUNTS.get(`solves:${dateKey}`);
-		const count = raw !== null ? Number(raw) : 0;
+		const count = await getCount(env.SOLVE_COUNTS, dateKey);
 		return Response.json({ count });
 	}
 
@@ -46,11 +49,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ env, request }) => {
 		expirationTtl: DEDUP_TTL_SECONDS,
 	});
 
-	// KV has no atomic increment - concurrent requests may read the same value
-	// and lose an increment. Acceptable for an approximate social counter.
-	const raw = await env.SOLVE_COUNTS.get(`solves:${dateKey}`);
-	const current = raw !== null ? Number(raw) : 0;
-	const next = current + 1;
+	// KV has no atomic increment, so concurrent requests may lose an update.
+	// Acceptable for an approximate social counter.
+	const next = (await getCount(env.SOLVE_COUNTS, dateKey)) + 1;
 	await env.SOLVE_COUNTS.put(`solves:${dateKey}`, String(next));
 
 	return Response.json({ count: next });
