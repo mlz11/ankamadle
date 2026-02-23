@@ -1,0 +1,8 @@
+name = "dofusdle"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "SOLVE_COUNTS"
+id = "REPLACE_WITH_PRODUCTION_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"

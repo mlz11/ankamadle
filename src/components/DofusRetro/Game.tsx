@@ -23,6 +23,7 @@ import styles from "./Game.module.css";
 import GuessGrid from "./GuessGrid";
 import HintPanel from "./HintPanel";
 import { useHints } from "./hooks/useHints";
+import { useSolveCount } from "./hooks/useSolveCount";
 import { CONFETTI_FIRST_MS, useVictoryModal } from "./hooks/useVictoryModal";
 import SearchBar from "./SearchBar";
 import Victory from "./Victory";
@@ -72,6 +73,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		showImmediately,
 		resetVictory,
 	} = useVictoryModal();
+	const solveCount = useSolveCount(!devMode && won, dateKey);
 
 	// Persist progress to localStorage, consolidating all save calls.
 	// Accepts optional hint overrides for when a hint is being revealed
@@ -269,6 +271,12 @@ export default function Game({ stats, onStatsChange }: Props) {
 				onRevealHint1={handleRevealHint1}
 				onRevealHint2={handleRevealHint2}
 			/>
+			{solveCount !== null && solveCount > 0 && (
+				<p className={styles.guessCounter}>
+					{solveCount} joueur{solveCount !== 1 ? "s" : ""}{" "}
+					{solveCount !== 1 ? "ont" : "a"} déjà trouvé !
+				</p>
+			)}
 			<SearchBar
 				monsters={monsters}
 				usedIds={usedIds}
