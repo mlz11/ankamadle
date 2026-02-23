@@ -2,10 +2,7 @@ name = "dofusdle"
 compatibility_date = "2025-01-01"
 pages_build_output_dir = "dist"
 
-# Create the KV namespaces, then replace the placeholder IDs below:
-#   npx wrangler kv namespace create SOLVE_COUNTS
-#   npx wrangler kv namespace create SOLVE_COUNTS --preview
 [[kv_namespaces]]
 binding = "SOLVE_COUNTS"
-id = "REPLACE_WITH_PRODUCTION_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"
+id = "b124dcd877b743139b0cf12728493a60"
+preview_id = "b0b31ffba87e40a2a7355d5bfea54849"
