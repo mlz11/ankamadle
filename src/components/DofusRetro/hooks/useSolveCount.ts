@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function parseCount(data: unknown): number | null {
 	if (
@@ -12,22 +12,13 @@ function parseCount(data: unknown): number | null {
 	return null;
 }
 
-/**
- * Fetches the daily solve count on mount and when the date changes.
- * When `postOnWin` transitions to `true` during the session, fires
- * a POST to record the solve and updates the count.
- * Returns `null` while loading or on failure (caller hides the display).
- */
-export function useSolveCount(
-	postOnWin: boolean,
-	dateKey: string,
-): number | null {
+export function useSolveCount(dateKey: string): {
+	count: number | null;
+	reportSolve: () => void;
+} {
 	const [count, setCount] = useState<number | null>(null);
-	// Initialize to postOnWin so a restored win (already true on mount)
-	// does not trigger a spurious POST.
-	const posted = useRef(postOnWin);
+	const posted = useRef(false);
 
-	// Fetch count on mount and when the date changes (day rollover)
 	useEffect(() => {
 		posted.current = false;
 		setCount(null);
@@ -40,8 +31,8 @@ export function useSolveCount(
 			.catch(() => {});
 	}, [dateKey]);
 
-	useEffect(() => {
-		if (!postOnWin || posted.current) return;
+	const reportSolve = useCallback(() => {
+		if (posted.current) return;
 		posted.current = true;
 		fetch("/api/solve", { method: "POST" })
 			.then((r) => r.json())
@@ -50,7 +41,7 @@ export function useSolveCount(
 				if (n !== null) setCount(n);
 			})
 			.catch(() => {});
-	}, [postOnWin]);
+	}, []);
 
-	return count;
+	return { count, reportSolve };
 }

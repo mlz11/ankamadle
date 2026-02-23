@@ -50,6 +50,7 @@ npm run test:watch       # Run tests in watch mode
 - **Dependencies**: Always use exact versions in package.json (no `^` or `~` prefixes).
 - **Commits**: Conventional commits enforced via commitlint (`feat:`, `fix:`, `build:`, etc.)
 - **Git hooks**: Pre-commit runs `npm run lint`; commit-msg validates conventional commit format
+- **Comments**: Avoid comments unless absolutely necessary to understand the code. The code should be self-explanatory.
 - **Punctuation**: Never use em dashes (`—`). Use a regular hyphen surrounded by spaces (` - `) instead.
 
 ## Architecture

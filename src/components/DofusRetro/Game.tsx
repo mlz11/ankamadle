@@ -73,7 +73,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		showImmediately,
 		resetVictory,
 	} = useVictoryModal();
-	const solveCount = useSolveCount(!devMode && won, dateKey);
+	const { count: solveCount, reportSolve } = useSolveCount(dateKey);
 
 	// Persist progress to localStorage, consolidating all save calls.
 	// Accepts optional hint overrides for when a hint is being revealed
@@ -197,6 +197,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 			const newStats = recordWin(newResults.length);
 			onStatsChange(newStats);
 			triggerWin();
+			if (!devMode) reportSolve();
 		}
 
 		if (!isWin) {
