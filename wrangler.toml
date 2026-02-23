@@ -1,6 +1,15 @@
 name = "dofusdle"
-compatibility_date = "2025-01-01"
+compatibility_date = "2026-02-11"
 pages_build_output_dir = "dist"
+
+[env.production.vars]
+SENTRY_ORG = "mlz11"
+SENTRY_PROJECT = "dofusdle"
+VITE_SENTRY_DSN = "https://42681133ca4c6a57c3faa0b5772d9254@o4510897575362560.ingest.de.sentry.io/4510897576869968"
+
+[[env.production.kv_namespaces]]
+id = "b124dcd877b743139b0cf12728493a60"
+binding = "SOLVE_COUNTS"
 
 [[kv_namespaces]]
 binding = "SOLVE_COUNTS"
