@@ -9,6 +9,7 @@ npm run dev              # Start dev server (http://localhost:5173)
 npm run build            # TypeScript check + Vite production build (requires SENTRY_* env vars)
 npm run build:development # TypeScript check + Vite development build (no Sentry)
 npm run preview          # Preview production build locally
+npm run dev:pages        # Preview with Cloudflare Functions + KV (requires dist/)
 npm run lint             # Biome lint check
 npm run lint:fix         # Auto-fix lint issues
 npm run format           # Format all files with Biome
