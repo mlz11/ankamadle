@@ -23,10 +23,10 @@ function forceExitAfterBuild(): Plugin {
 }
 
 /**
- * Strips the prerender entry's modulepreload / script tags from the HTML
- * and removes its sourcemap. The JS chunk itself is kept because Vite may
- * code-split shared dependencies into it, and the main bundle imports from
- * it at runtime.
+ * Strips the prerender entry's modulepreload / script tags from every HTML
+ * page and removes its sourcemap. The JS chunk itself is kept because Vite
+ * may code-split shared dependencies into it, and the main bundle imports
+ * from it at runtime.
  */
 function removePrerenderChunk(): Plugin {
 	return {
@@ -44,11 +44,18 @@ function removePrerenderChunk(): Plugin {
 				}
 			}
 
-			const html = bundle["index.html"];
-			if (html && html.type === "asset" && typeof html.source === "string") {
-				let source = html.source;
-				for (const asset of prerenderAssets) {
-					const escaped = asset.replace(/\./g, "\\.");
+			for (const key of Object.keys(bundle)) {
+				const asset = bundle[key];
+				if (
+					!key.endsWith(".html") ||
+					asset.type !== "asset" ||
+					typeof asset.source !== "string"
+				)
+					continue;
+
+				let source = asset.source;
+				for (const name of prerenderAssets) {
+					const escaped = name.replace(/\./g, "\\.");
 					source = source.replace(
 						new RegExp(`\\s*<link[^>]+href="/${escaped}"[^>]*>`),
 						"",
@@ -58,7 +65,93 @@ function removePrerenderChunk(): Plugin {
 						"",
 					);
 				}
-				html.source = source;
+				asset.source = source;
+			}
+		},
+	};
+}
+
+const ROUTE_META: Record<
+	string,
+	{ title: string; description: string; url: string }
+> = {
+	"/": {
+		title: "Dofusdle - Le jeu de devinettes Dofus Retro",
+		description:
+			"Choisis ton mode de jeu Dofusdle ! Devine le monstre Dofus Retro du jour dans différents modes inspirés de Wordle.",
+		url: "https://dofusdle.fr/",
+	},
+	"/classique": {
+		title: "Dofusdle - Devine le monstre Dofus Retro du jour !",
+		description:
+			"Devine le monstre Dofus Retro du jour ! Un jeu de devinettes quotidien inspiré de Wordle pour les fans de Dofus 1.29.",
+		url: "https://dofusdle.fr/classique",
+	},
+};
+
+function htmlKeyToRoute(key: string): string {
+	if (key === "index.html") return "/";
+	return `/${key.replace(/\/index\.html$/, "")}`;
+}
+
+/**
+ * Injects the correct meta tags into each prerendered HTML page so that
+ * crawlers and social-media bots see the right title, description, and
+ * canonical URL without needing JavaScript.
+ */
+function injectRouteMeta(): Plugin {
+	return {
+		name: "inject-route-meta",
+		apply: "build",
+		enforce: "post",
+		generateBundle(_, bundle) {
+			for (const key of Object.keys(bundle)) {
+				const asset = bundle[key];
+				if (
+					!key.endsWith(".html") ||
+					asset.type !== "asset" ||
+					typeof asset.source !== "string"
+				)
+					continue;
+
+				const route = htmlKeyToRoute(key);
+				const meta = ROUTE_META[route];
+				if (!meta) continue;
+
+				let html = asset.source;
+				html = html.replace(
+					/<title>[^<]*<\/title>/,
+					`<title>${meta.title}</title>`,
+				);
+				html = html.replace(
+					/(<link rel="canonical" href=")[^"]*(")/,
+					`$1${meta.url}$2`,
+				);
+				html = html.replace(
+					/(<meta name="description" content=")[^"]*(")/,
+					`$1${meta.description}$2`,
+				);
+				html = html.replace(
+					/(<meta property="og:url" content=")[^"]*(")/,
+					`$1${meta.url}$2`,
+				);
+				html = html.replace(
+					/(<meta property="og:title" content=")[^"]*(")/,
+					`$1${meta.title}$2`,
+				);
+				html = html.replace(
+					/(<meta property="og:description" content=")[^"]*(")/,
+					`$1${meta.description}$2`,
+				);
+				html = html.replace(
+					/(<meta name="twitter:title" content=")[^"]*(")/,
+					`$1${meta.title}$2`,
+				);
+				html = html.replace(
+					/(<meta name="twitter:description" content=")[^"]*(")/,
+					`$1${meta.description}$2`,
+				);
+				asset.source = html;
 			}
 		},
 	};
@@ -110,6 +203,7 @@ export default defineConfig(({ mode }) => {
 				prerenderScript: "src/prerender.tsx",
 			}),
 			removePrerenderChunk(),
+			injectRouteMeta(),
 			mode === "production" &&
 				sentryVitePlugin({
 					org: sentryOrg,
