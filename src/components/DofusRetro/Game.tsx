@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import monstersData from "../../data/monsters.json";
+import { useDocumentMeta } from "../../hooks/useDocumentMeta";
 import type { GameStats, GuessResult, Monster } from "../../types";
 import { compareMonsters } from "../../utils/compare";
 import {
@@ -37,6 +38,13 @@ interface Props {
 }
 
 export default function Game({ stats, onStatsChange }: Props) {
+	useDocumentMeta({
+		title: "Dofusdle - Devine le monstre Dofus Retro du jour !",
+		description:
+			"Devine le monstre Dofus Retro du jour ! Un jeu de devinettes quotidien inspiré de Wordle pour les fans de Dofus 1.29.",
+		canonicalUrl: "https://dofusdle.fr/classique",
+	});
+
 	const [dateKey, setDateKey] = useState(getTodayKey);
 	const [target, setTarget] = useState(() => getDailyMonster(monsters));
 	const yesterdayKey = getYesterdayKey();

@@ -2,6 +2,7 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 import { afterEach, describe, expect, it } from "vitest";
 import type { GameStats } from "../../../types";
 import Header from "../../Header";
@@ -18,7 +19,11 @@ const defaultStats: GameStats = {
 };
 
 function renderHeader(stats: Partial<GameStats> = {}) {
-	return render(<Header stats={{ ...defaultStats, ...stats }} />);
+	return render(
+		<MemoryRouter>
+			<Header stats={{ ...defaultStats, ...stats }} />
+		</MemoryRouter>,
+	);
 }
 
 describe("Header", () => {

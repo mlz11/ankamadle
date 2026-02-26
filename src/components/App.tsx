@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import type { GameStats } from "../types";
 import { loadStats } from "../utils/storage";
 import styles from "./App.module.css";
@@ -6,6 +7,7 @@ import Game from "./DofusRetro/Game";
 import ErrorBoundary from "./ErrorBoundary";
 import Footer from "./Footer";
 import Header from "./Header";
+import HomePage from "./HomePage";
 
 function FallbackUI() {
 	return (
@@ -23,7 +25,14 @@ export default function App() {
 			<div className={styles.app}>
 				<Header stats={stats} />
 				<main>
-					<Game stats={stats} onStatsChange={setStats} />
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+						<Route
+							path="/classique"
+							element={<Game stats={stats} onStatsChange={setStats} />}
+						/>
+						<Route path="*" element={<Navigate to="/" replace />} />
+					</Routes>
 				</main>
 				<Footer />
 			</div>

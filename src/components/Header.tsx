@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useCloseOnKey } from "../hooks/useCloseOnKey";
 import modalStyles from "../styles/Modal.module.css";
 import statsGridStyles from "../styles/StatsGrid.module.css";
@@ -35,7 +36,7 @@ export default function Header({ stats }: Props) {
 	return (
 		<header className={styles.header}>
 			<h1 className={styles.title}>
-				<a href="/" className={styles.homeLink}>
+				<Link to="/" className={styles.homeLink}>
 					<img
 						src="/images/logo-866w.webp"
 						srcSet="/images/logo-500w.webp 500w, /images/logo-866w.webp 866w"
@@ -49,7 +50,7 @@ export default function Header({ stats }: Props) {
 					<span className="visually-hidden">
 						Dofusdle - Le Wordle des monstres Dofus Retro
 					</span>
-				</a>
+				</Link>
 			</h1>
 			<p className={styles.subtitle}>
 				Dofus Retro 1.29 - Devine le monstre du jour
