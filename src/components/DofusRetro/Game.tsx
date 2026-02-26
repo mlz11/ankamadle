@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import monstersData from "../../data/monsters.json";
 import { useDocumentMeta } from "../../hooks/useDocumentMeta";
-import type { GameStats, GuessResult, Monster } from "../../types";
+import type { GameMode, GameStats, GuessResult, Monster } from "../../types";
 import { compareMonsters } from "../../utils/compare";
 import {
 	getDailyMonster,
@@ -33,11 +33,12 @@ import YesterdayAnswer from "./YesterdayAnswer";
 const monsters = parseMonsters(monstersData);
 
 interface Props {
+	gameMode: GameMode;
 	stats: GameStats;
 	onStatsChange: (stats: GameStats) => void;
 }
 
-export default function Game({ stats, onStatsChange }: Props) {
+export default function Game({ gameMode, stats, onStatsChange }: Props) {
 	useDocumentMeta({
 		title: "Dofusdle - Devine le monstre Dofus Retro du jour !",
 		description:
@@ -81,7 +82,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		showImmediately,
 		resetVictory,
 	} = useVictoryModal();
-	const { count: solveCount, reportSolve } = useSolveCount(dateKey);
+	const { count: solveCount, reportSolve } = useSolveCount(dateKey, gameMode);
 
 	// Persist progress to localStorage, consolidating all save calls.
 	// Accepts optional hint overrides for when a hint is being revealed
@@ -99,13 +100,14 @@ export default function Game({ stats, onStatsChange }: Props) {
 		) => {
 			if (devMode) return;
 			saveProgress(
+				gameMode,
 				guesses.map((r) => r.monster.name),
 				hasWon,
 				hintOverrides?.hint1 ?? hint1Ref.current,
 				hintOverrides?.hint2 ?? hint2Ref.current,
 			);
 		},
-		[devMode],
+		[devMode, gameMode],
 	);
 
 	const resetForNewDay = useCallback(
@@ -146,7 +148,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 	// Restore progress on mount (skip in dev mode)
 	useEffect(() => {
 		if (devMode) return;
-		const progress = loadProgress();
+		const progress = loadProgress(gameMode);
 		if (progress) {
 			const restored: GuessResult[] = [];
 			for (const name of progress.guesses) {
@@ -161,10 +163,17 @@ export default function Game({ stats, onStatsChange }: Props) {
 			);
 			if (progress.won) {
 				showImmediately();
-				onStatsChange(loadStats());
+				onStatsChange(loadStats(gameMode));
 			}
 		}
-	}, [target, devMode, onStatsChange, setRestoredHints, showImmediately]);
+	}, [
+		target,
+		devMode,
+		gameMode,
+		onStatsChange,
+		setRestoredHints,
+		showImmediately,
+	]);
 
 	function selectTarget(monster: Monster) {
 		setTarget(monster);
@@ -202,7 +211,7 @@ export default function Game({ stats, onStatsChange }: Props) {
 		const isWin = monster.id === target.id;
 		if (isWin) {
 			setWon(true);
-			const newStats = recordWin(newResults.length);
+			const newStats = recordWin(gameMode, newResults.length);
 			onStatsChange(newStats);
 			triggerWin();
 			if (!devMode) reportSolve();

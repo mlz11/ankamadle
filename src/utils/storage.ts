@@ -1,10 +1,39 @@
-import type { DailyProgress, GameStats } from "../types";
+import type { DailyProgress, GameMode, GameStats } from "../types";
 import { parseDailyProgress, parseGameStats } from "../validation";
 import { getTodayKey, getYesterdayKey } from "./daily";
 
-const PROGRESS_KEY = "dofusdle-progress";
-const STATS_KEY = "dofusdle-stats";
+const LEGACY_PROGRESS_KEY = "dofusdle-progress";
+const LEGACY_STATS_KEY = "dofusdle-stats";
 const TARGET_KEY = "dofusdle-target";
+
+function progressKey(mode: GameMode): string {
+	return `dofusdle-progress-${mode}`;
+}
+
+function statsKey(mode: GameMode): string {
+	return `dofusdle-stats-${mode}`;
+}
+
+function migrateIfNeeded(mode: GameMode): void {
+	if (mode !== "classique") return;
+
+	const legacyStats = localStorage.getItem(LEGACY_STATS_KEY);
+	if (legacyStats !== null) {
+		if (localStorage.getItem(statsKey(mode)) === null) {
+			localStorage.setItem(statsKey(mode), legacyStats);
+		}
+		localStorage.removeItem(LEGACY_STATS_KEY);
+	}
+
+	const legacyProgress = localStorage.getItem(LEGACY_PROGRESS_KEY);
+	if (legacyProgress !== null) {
+		if (localStorage.getItem(progressKey(mode)) === null) {
+			localStorage.setItem(progressKey(mode), legacyProgress);
+		}
+		localStorage.removeItem(LEGACY_PROGRESS_KEY);
+	}
+}
+
 function defaultStats(): GameStats {
 	return {
 		gamesPlayed: 0,
@@ -16,10 +45,11 @@ function defaultStats(): GameStats {
 	};
 }
 
-export function loadProgress(): DailyProgress | null {
+export function loadProgress(mode: GameMode): DailyProgress | null {
 	if (typeof window === "undefined") return null;
 	try {
-		const raw = localStorage.getItem(PROGRESS_KEY);
+		migrateIfNeeded(mode);
+		const raw = localStorage.getItem(progressKey(mode));
 		if (!raw) return null;
 		const progress = parseDailyProgress(JSON.parse(raw));
 		if (!progress || progress.date !== getTodayKey()) return null;
@@ -30,6 +60,7 @@ export function loadProgress(): DailyProgress | null {
 }
 
 export function saveProgress(
+	mode: GameMode,
 	guesses: string[],
 	won: boolean,
 	hint1Revealed = false,
@@ -42,13 +73,14 @@ export function saveProgress(
 		hint1Revealed,
 		hint2Revealed,
 	};
-	localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+	localStorage.setItem(progressKey(mode), JSON.stringify(progress));
 }
 
-export function loadStats(): GameStats {
+export function loadStats(mode: GameMode): GameStats {
 	if (typeof window === "undefined") return defaultStats();
 	try {
-		const raw = localStorage.getItem(STATS_KEY);
+		migrateIfNeeded(mode);
+		const raw = localStorage.getItem(statsKey(mode));
 		if (!raw) return defaultStats();
 		return parseGameStats(JSON.parse(raw)) ?? defaultStats();
 	} catch {
@@ -56,8 +88,8 @@ export function loadStats(): GameStats {
 	}
 }
 
-function saveStats(stats: GameStats): void {
-	localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+function saveStats(mode: GameMode, stats: GameStats): void {
+	localStorage.setItem(statsKey(mode), JSON.stringify(stats));
 }
 
 export function saveTargetMonster(dateKey: string, monsterId: number): void {
@@ -87,8 +119,8 @@ export function getWinPercentage(stats: GameStats): number {
 		: 0;
 }
 
-export function recordWin(guessCount: number): GameStats {
-	const stats = loadStats();
+export function recordWin(mode: GameMode, guessCount: number): GameStats {
+	const stats = loadStats(mode);
 	const today = getTodayKey();
 	const yesterday = getYesterdayKey();
 	if (
@@ -107,6 +139,6 @@ export function recordWin(guessCount: number): GameStats {
 	stats.guessDistribution[guessCount] =
 		(stats.guessDistribution[guessCount] || 0) + 1;
 	stats.lastPlayedDate = today;
-	saveStats(stats);
+	saveStats(mode, stats);
 	return stats;
 }

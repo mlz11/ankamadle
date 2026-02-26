@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCloseOnKey } from "../hooks/useCloseOnKey";
 import modalStyles from "../styles/Modal.module.css";
 import statsGridStyles from "../styles/StatsGrid.module.css";
@@ -14,6 +14,7 @@ interface Props {
 }
 
 export default function Header({ stats }: Props) {
+	const isHome = useLocation().pathname === "/";
 	const [showRules, setShowRules] = useState(false);
 	const [showStats, setShowStats] = useState(false);
 	const rulesBtnRef = useRef<HTMLButtonElement>(null);
@@ -52,105 +53,109 @@ export default function Header({ stats }: Props) {
 					</span>
 				</Link>
 			</h1>
-			<p className={styles.subtitle}>
-				Dofus Retro 1.29 - Devine le monstre du jour
-			</p>
-			<nav className={styles.toolbar}>
-				<button
-					ref={statsBtnRef}
-					type="button"
-					className={styles.toolbarBtn}
-					onClick={() => setShowStats((v) => !v)}
-					aria-label="Statistiques"
-				>
-					<svg
-						width="26"
-						height="26"
-						viewBox="0 0 24 24"
-						fill="none"
-						aria-hidden="true"
+			{!isHome && (
+				<p className={styles.subtitle}>
+					Dofus Retro 1.29 - Devine le monstre du jour
+				</p>
+			)}
+			{!isHome && (
+				<nav className={styles.toolbar}>
+					<button
+						ref={statsBtnRef}
+						type="button"
+						className={styles.toolbarBtn}
+						onClick={() => setShowStats((v) => !v)}
+						aria-label="Statistiques"
 					>
-						<rect
-							x="4"
-							y="14"
-							width="4"
-							height="8"
-							rx="1"
-							fill="currentColor"
-						/>
-						<rect
-							x="10"
-							y="8"
-							width="4"
-							height="14"
-							rx="1"
-							fill="currentColor"
-						/>
-						<rect
-							x="16"
-							y="2"
-							width="4"
-							height="20"
-							rx="1"
-							fill="currentColor"
-						/>
-					</svg>
-				</button>
-				<div className={styles.streak}>
-					<svg
-						width="34"
-						height="34"
-						viewBox="0 0 16 16"
-						fill="var(--accent)"
-						aria-hidden="true"
-					>
-						<path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16" />
-						<text
-							x="8"
-							y="13.5"
-							textAnchor="middle"
-							fill="#fff"
-							fontSize="6.5"
-							fontWeight="800"
+						<svg
+							width="26"
+							height="26"
+							viewBox="0 0 24 24"
+							fill="none"
+							aria-hidden="true"
 						>
-							{stats.currentStreak}
-						</text>
-					</svg>
-				</div>
-				<button
-					ref={rulesBtnRef}
-					type="button"
-					className={styles.toolbarBtn}
-					onClick={() => setShowRules((v) => !v)}
-					aria-label="Règles"
-				>
-					<svg
-						width="26"
-						height="26"
-						viewBox="0 0 24 24"
-						fill="none"
-						aria-hidden="true"
-					>
-						<circle
-							cx="12"
-							cy="12"
-							r="10"
-							stroke="currentColor"
-							strokeWidth="2"
-						/>
-						<text
-							x="12"
-							y="17"
-							textAnchor="middle"
-							fill="currentColor"
-							fontSize="14"
-							fontWeight="700"
+							<rect
+								x="4"
+								y="14"
+								width="4"
+								height="8"
+								rx="1"
+								fill="currentColor"
+							/>
+							<rect
+								x="10"
+								y="8"
+								width="4"
+								height="14"
+								rx="1"
+								fill="currentColor"
+							/>
+							<rect
+								x="16"
+								y="2"
+								width="4"
+								height="20"
+								rx="1"
+								fill="currentColor"
+							/>
+						</svg>
+					</button>
+					<div className={styles.streak}>
+						<svg
+							width="34"
+							height="34"
+							viewBox="0 0 16 16"
+							fill="var(--accent)"
+							aria-hidden="true"
 						>
-							?
-						</text>
-					</svg>
-				</button>
-			</nav>
+							<path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16" />
+							<text
+								x="8"
+								y="13.5"
+								textAnchor="middle"
+								fill="#fff"
+								fontSize="6.5"
+								fontWeight="800"
+							>
+								{stats.currentStreak}
+							</text>
+						</svg>
+					</div>
+					<button
+						ref={rulesBtnRef}
+						type="button"
+						className={styles.toolbarBtn}
+						onClick={() => setShowRules((v) => !v)}
+						aria-label="Règles"
+					>
+						<svg
+							width="26"
+							height="26"
+							viewBox="0 0 24 24"
+							fill="none"
+							aria-hidden="true"
+						>
+							<circle
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="currentColor"
+								strokeWidth="2"
+							/>
+							<text
+								x="12"
+								y="17"
+								textAnchor="middle"
+								fill="currentColor"
+								fontSize="14"
+								fontWeight="700"
+							>
+								?
+							</text>
+						</svg>
+					</button>
+				</nav>
+			)}
 			{showStats && (
 				<div
 					className={modalStyles.overlay}

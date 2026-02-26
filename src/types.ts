@@ -9,6 +9,8 @@ export type Monster = z.infer<typeof MonsterSchema>;
 export type DailyProgress = z.infer<typeof DailyProgressSchema>;
 export type GameStats = z.infer<typeof GameStatsSchema>;
 
+export type GameMode = "classique";
+
 export type FeedbackStatus = "correct" | "partial" | "wrong";
 export type ArrowDirection = "up" | "down" | null;
 

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { GameMode } from "../../../types";
 
 function parseCount(data: unknown): number | null {
 	if (
@@ -12,7 +13,10 @@ function parseCount(data: unknown): number | null {
 	return null;
 }
 
-export function useSolveCount(dateKey: string): {
+export function useSolveCount(
+	dateKey: string,
+	gameMode: GameMode = "classique",
+): {
 	count: number | null;
 	reportSolve: () => void;
 } {
@@ -22,26 +26,26 @@ export function useSolveCount(dateKey: string): {
 	useEffect(() => {
 		posted.current = false;
 		setCount(null);
-		fetch(`/api/solve?d=${dateKey}`)
+		fetch(`/api/solve?d=${dateKey}&mode=${gameMode}`)
 			.then((r) => r.json())
 			.then((data: unknown) => {
 				const n = parseCount(data);
 				if (n !== null) setCount(n);
 			})
 			.catch(() => {});
-	}, [dateKey]);
+	}, [dateKey, gameMode]);
 
 	const reportSolve = useCallback(() => {
 		if (posted.current) return;
 		posted.current = true;
-		fetch("/api/solve", { method: "POST" })
+		fetch(`/api/solve?mode=${gameMode}`, { method: "POST" })
 			.then((r) => r.json())
 			.then((data: unknown) => {
 				const n = parseCount(data);
 				if (n !== null) setCount(n);
 			})
 			.catch(() => {});
-	}, []);
+	}, [gameMode]);
 
 	return { count, reportSolve };
 }
