@@ -18,7 +18,7 @@ function FallbackUI() {
 }
 
 export default function App() {
-	const [stats, setStats] = useState<GameStats>(loadStats);
+	const [stats, setStats] = useState<GameStats>(() => loadStats("classique"));
 
 	return (
 		<ErrorBoundary fallback={<FallbackUI />}>
@@ -29,7 +29,13 @@ export default function App() {
 						<Route path="/" element={<HomePage />} />
 						<Route
 							path="/classique"
-							element={<Game stats={stats} onStatsChange={setStats} />}
+							element={
+								<Game
+									gameMode="classique"
+									stats={stats}
+									onStatsChange={setStats}
+								/>
+							}
 						/>
 						<Route path="*" element={<Navigate to="/" replace />} />
 					</Routes>

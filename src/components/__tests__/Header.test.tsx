@@ -4,8 +4,8 @@ import { cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { afterEach, describe, expect, it } from "vitest";
-import type { GameStats } from "../../../types";
-import Header from "../../Header";
+import type { GameStats } from "../../types";
+import Header from "../Header";
 
 afterEach(cleanup);
 
@@ -18,9 +18,12 @@ const defaultStats: GameStats = {
 	lastPlayedDate: null,
 };
 
-function renderHeader(stats: Partial<GameStats> = {}) {
+function renderHeader(
+	stats: Partial<GameStats> = {},
+	{ route = "/classique" }: { route?: string } = {},
+) {
 	return render(
-		<MemoryRouter>
+		<MemoryRouter initialEntries={[route]}>
 			<Header stats={{ ...defaultStats, ...stats }} />
 		</MemoryRouter>,
 	);
@@ -36,8 +39,48 @@ describe("Header", () => {
 		});
 	});
 
+	describe("route-aware visibility", () => {
+		it("should hide the subtitle when on the home page", () => {
+			renderHeader({}, { route: "/" });
+			expect(
+				screen.queryByText("Dofus Retro 1.29 - Devine le monstre du jour"),
+			).not.toBeInTheDocument();
+		});
+
+		it("should hide the toolbar when on the home page", () => {
+			renderHeader({}, { route: "/" });
+			expect(
+				screen.queryByRole("button", { name: "Statistiques" }),
+			).not.toBeInTheDocument();
+			expect(
+				screen.queryByRole("button", { name: "Règles" }),
+			).not.toBeInTheDocument();
+		});
+
+		it("should display the subtitle when on a game route", () => {
+			renderHeader({}, { route: "/classique" });
+			expect(
+				screen.getByText("Dofus Retro 1.29 - Devine le monstre du jour"),
+			).toBeVisible();
+		});
+
+		it("should display the toolbar when on a game route", () => {
+			renderHeader({}, { route: "/classique" });
+			expect(
+				screen.getByRole("button", { name: "Statistiques" }),
+			).toBeVisible();
+			expect(screen.getByRole("button", { name: "Règles" })).toBeVisible();
+		});
+
+		it("should always display the logo when on the home page", () => {
+			renderHeader({}, { route: "/" });
+			const heading = screen.getByRole("heading", { level: 1 });
+			expect(heading).toBeVisible();
+		});
+	});
+
 	describe("rendering", () => {
-		it("should display the game subtitle when rendered", () => {
+		it("should display the game subtitle when rendered on a game route", () => {
 			renderHeader();
 			expect(
 				screen.getByText("Dofus Retro 1.29 - Devine le monstre du jour"),
@@ -54,7 +97,7 @@ describe("Header", () => {
 			expect(seoText).toHaveClass("visually-hidden");
 		});
 
-		it("should display the current streak count when rendered", () => {
+		it("should display the current streak count when rendered on a game route", () => {
 			renderHeader({ currentStreak: 7 });
 			expect(screen.getByText("7")).toBeVisible();
 		});

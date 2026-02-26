@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import { afterEach, describe, expect, it, vi } from "vitest";
+import type { GameMode } from "../../types";
 import {
 	loadProgress,
 	loadStats,
@@ -14,14 +15,15 @@ vi.mock("../daily", () => ({
 	getYesterdayKey: () => "2025-6-14",
 }));
 
-const PROGRESS_KEY = "dofusdle-progress";
-const STATS_KEY = "dofusdle-stats";
+const MODE: GameMode = "classique";
+const PROGRESS_KEY = `dofusdle-progress-${MODE}`;
+const STATS_KEY = `dofusdle-stats-${MODE}`;
 const TARGET_KEY = "dofusdle-target";
+const LEGACY_PROGRESS_KEY = "dofusdle-progress";
+const LEGACY_STATS_KEY = "dofusdle-stats";
 
 afterEach(() => {
-	localStorage.removeItem(PROGRESS_KEY);
-	localStorage.removeItem(STATS_KEY);
-	localStorage.removeItem(TARGET_KEY);
+	localStorage.clear();
 });
 
 describe("saveTargetMonster", () => {
@@ -79,7 +81,7 @@ describe("loadTargetMonster", () => {
 
 describe("saveProgress", () => {
 	it("should persist guesses and win state to localStorage when called", () => {
-		saveProgress(["Bouftou", "Tofu"], true);
+		saveProgress(MODE, ["Bouftou", "Tofu"], true);
 		const raw = JSON.parse(localStorage.getItem(PROGRESS_KEY) as string);
 		expect(raw.guesses).toEqual(["Bouftou", "Tofu"]);
 		expect(raw.won).toBe(true);
@@ -87,14 +89,14 @@ describe("saveProgress", () => {
 	});
 
 	it("should default hint states to false when not provided", () => {
-		saveProgress(["Bouftou"], false);
+		saveProgress(MODE, ["Bouftou"], false);
 		const raw = JSON.parse(localStorage.getItem(PROGRESS_KEY) as string);
 		expect(raw.hint1Revealed).toBe(false);
 		expect(raw.hint2Revealed).toBe(false);
 	});
 
 	it("should persist hint states when provided", () => {
-		saveProgress(["Bouftou"], false, true, true);
+		saveProgress(MODE, ["Bouftou"], false, true, true);
 		const raw = JSON.parse(localStorage.getItem(PROGRESS_KEY) as string);
 		expect(raw.hint1Revealed).toBe(true);
 		expect(raw.hint2Revealed).toBe(true);
@@ -103,8 +105,8 @@ describe("saveProgress", () => {
 
 describe("loadProgress", () => {
 	it("should return saved progress when date matches today", () => {
-		saveProgress(["Bouftou", "Tofu"], true, true, false);
-		const progress = loadProgress();
+		saveProgress(MODE, ["Bouftou", "Tofu"], true, true, false);
+		const progress = loadProgress(MODE);
 		expect(progress).toEqual({
 			date: "2025-6-15",
 			guesses: ["Bouftou", "Tofu"],
@@ -115,7 +117,7 @@ describe("loadProgress", () => {
 	});
 
 	it("should return null when no progress has been saved", () => {
-		expect(loadProgress()).toBeNull();
+		expect(loadProgress(MODE)).toBeNull();
 	});
 
 	it("should return null when stored date does not match today", () => {
@@ -129,17 +131,17 @@ describe("loadProgress", () => {
 				hint2Revealed: false,
 			}),
 		);
-		expect(loadProgress()).toBeNull();
+		expect(loadProgress(MODE)).toBeNull();
 	});
 
 	it("should return null when localStorage contains corrupted JSON", () => {
 		localStorage.setItem(PROGRESS_KEY, "not json!!!");
-		expect(loadProgress()).toBeNull();
+		expect(loadProgress(MODE)).toBeNull();
 	});
 
 	it("should preserve hint states from saved progress", () => {
-		saveProgress(["Bouftou"], false, true, true);
-		const progress = loadProgress();
+		saveProgress(MODE, ["Bouftou"], false, true, true);
+		const progress = loadProgress(MODE);
 		expect(progress?.hint1Revealed).toBe(true);
 		expect(progress?.hint2Revealed).toBe(true);
 	});
@@ -153,7 +155,7 @@ describe("loadProgress", () => {
 				won: false,
 			}),
 		);
-		expect(loadProgress()).toBeNull();
+		expect(loadProgress(MODE)).toBeNull();
 	});
 
 	it("should return null when stored data has wrong types", () => {
@@ -165,13 +167,13 @@ describe("loadProgress", () => {
 				won: "yes",
 			}),
 		);
-		expect(loadProgress()).toBeNull();
+		expect(loadProgress(MODE)).toBeNull();
 	});
 });
 
 describe("loadStats", () => {
 	it("should return default stats when nothing has been saved", () => {
-		expect(loadStats()).toEqual({
+		expect(loadStats(MODE)).toEqual({
 			gamesPlayed: 0,
 			gamesWon: 0,
 			currentStreak: 0,
@@ -190,12 +192,12 @@ describe("loadStats", () => {
 			guessDistribution: { 1: 1, 3: 2 },
 		};
 		localStorage.setItem(STATS_KEY, JSON.stringify(stats));
-		expect(loadStats()).toEqual(stats);
+		expect(loadStats(MODE)).toEqual(stats);
 	});
 
 	it("should return default stats when localStorage contains corrupted JSON", () => {
 		localStorage.setItem(STATS_KEY, "not json!!!");
-		expect(loadStats()).toEqual({
+		expect(loadStats(MODE)).toEqual({
 			gamesPlayed: 0,
 			gamesWon: 0,
 			currentStreak: 0,
@@ -207,7 +209,7 @@ describe("loadStats", () => {
 
 	it("should return default stats when stored data has wrong shape", () => {
 		localStorage.setItem(STATS_KEY, JSON.stringify({ foo: "bar", baz: 42 }));
-		expect(loadStats()).toEqual({
+		expect(loadStats(MODE)).toEqual({
 			gamesPlayed: 0,
 			gamesWon: 0,
 			currentStreak: 0,
@@ -228,7 +230,7 @@ describe("loadStats", () => {
 				guessDistribution: {},
 			}),
 		);
-		expect(loadStats()).toEqual({
+		expect(loadStats(MODE)).toEqual({
 			gamesPlayed: 0,
 			gamesWon: 0,
 			currentStreak: 0,
@@ -241,21 +243,21 @@ describe("loadStats", () => {
 
 describe("recordWin", () => {
 	it("should increment gamesPlayed and gamesWon when called", () => {
-		const stats = recordWin(3);
+		const stats = recordWin(MODE, 3);
 		expect(stats.gamesPlayed).toBe(1);
 		expect(stats.gamesWon).toBe(1);
 	});
 
 	it("should increment currentStreak when called", () => {
-		recordWin(3);
-		const stats = recordWin(2);
+		recordWin(MODE, 3);
+		const stats = recordWin(MODE, 2);
 		expect(stats.currentStreak).toBe(2);
 	});
 
 	it("should update maxStreak when currentStreak exceeds it", () => {
-		recordWin(3);
-		recordWin(2);
-		const stats = recordWin(1);
+		recordWin(MODE, 3);
+		recordWin(MODE, 2);
+		const stats = recordWin(MODE, 1);
 		expect(stats.maxStreak).toBe(3);
 	});
 
@@ -270,25 +272,25 @@ describe("recordWin", () => {
 				guessDistribution: {},
 			}),
 		);
-		const stats = recordWin(3);
+		const stats = recordWin(MODE, 3);
 		expect(stats.currentStreak).toBe(2);
 		expect(stats.maxStreak).toBe(5);
 	});
 
 	it("should increment guessDistribution for the given guess count", () => {
-		const stats = recordWin(3);
+		const stats = recordWin(MODE, 3);
 		expect(stats.guessDistribution[3]).toBe(1);
 	});
 
 	it("should accumulate distribution across multiple wins", () => {
-		recordWin(3);
-		recordWin(3);
-		const stats = recordWin(3);
+		recordWin(MODE, 3);
+		recordWin(MODE, 3);
+		const stats = recordWin(MODE, 3);
 		expect(stats.guessDistribution[3]).toBe(3);
 	});
 
 	it("should persist updated stats to localStorage when called", () => {
-		recordWin(4);
+		recordWin(MODE, 4);
 		const raw = JSON.parse(localStorage.getItem(STATS_KEY) as string);
 		expect(raw.gamesPlayed).toBe(1);
 		expect(raw.gamesWon).toBe(1);
@@ -307,7 +309,7 @@ describe("recordWin", () => {
 				lastPlayedDate: "2025-6-10",
 			}),
 		);
-		const stats = recordWin(3);
+		const stats = recordWin(MODE, 3);
 		expect(stats.currentStreak).toBe(1);
 		expect(stats.maxStreak).toBe(5);
 	});
@@ -324,7 +326,7 @@ describe("recordWin", () => {
 				lastPlayedDate: "2025-6-14",
 			}),
 		);
-		const stats = recordWin(2);
+		const stats = recordWin(MODE, 2);
 		expect(stats.currentStreak).toBe(4);
 		expect(stats.maxStreak).toBe(4);
 	});
@@ -340,8 +342,113 @@ describe("recordWin", () => {
 				guessDistribution: {},
 			}),
 		);
-		const stats = recordWin(1);
+		const stats = recordWin(MODE, 1);
 		expect(stats.currentStreak).toBe(11);
 		expect(stats.maxStreak).toBe(11);
+	});
+});
+
+describe("legacy migration", () => {
+	it("should migrate legacy stats to classique-scoped key when loading stats", () => {
+		const legacyStats = {
+			gamesPlayed: 7,
+			gamesWon: 5,
+			currentStreak: 3,
+			maxStreak: 4,
+			guessDistribution: { 2: 3, 3: 2 },
+			lastPlayedDate: "2025-6-14",
+		};
+		localStorage.setItem(LEGACY_STATS_KEY, JSON.stringify(legacyStats));
+		const stats = loadStats(MODE);
+		expect(stats).toEqual(legacyStats);
+		expect(localStorage.getItem(LEGACY_STATS_KEY)).toBeNull();
+		expect(localStorage.getItem(STATS_KEY)).toBe(JSON.stringify(legacyStats));
+	});
+
+	it("should migrate legacy progress to classique-scoped key when loading progress", () => {
+		const legacyProgress = {
+			date: "2025-6-15",
+			guesses: ["Bouftou"],
+			won: false,
+			hint1Revealed: false,
+			hint2Revealed: false,
+		};
+		localStorage.setItem(LEGACY_PROGRESS_KEY, JSON.stringify(legacyProgress));
+		const progress = loadProgress(MODE);
+		expect(progress).toEqual(legacyProgress);
+		expect(localStorage.getItem(LEGACY_PROGRESS_KEY)).toBeNull();
+		expect(localStorage.getItem(PROGRESS_KEY)).toBe(
+			JSON.stringify(legacyProgress),
+		);
+	});
+
+	it("should not overwrite existing scoped stats when legacy data exists", () => {
+		const scopedStats = {
+			gamesPlayed: 10,
+			gamesWon: 8,
+			currentStreak: 5,
+			maxStreak: 5,
+			guessDistribution: { 1: 8 },
+			lastPlayedDate: "2025-6-14",
+		};
+		const legacyStats = {
+			gamesPlayed: 1,
+			gamesWon: 1,
+			currentStreak: 1,
+			maxStreak: 1,
+			guessDistribution: {},
+		};
+		localStorage.setItem(STATS_KEY, JSON.stringify(scopedStats));
+		localStorage.setItem(LEGACY_STATS_KEY, JSON.stringify(legacyStats));
+		const stats = loadStats(MODE);
+		expect(stats).toEqual(scopedStats);
+		expect(localStorage.getItem(LEGACY_STATS_KEY)).toBeNull();
+	});
+
+	it("should not overwrite existing scoped progress when legacy data exists", () => {
+		const scopedProgress = {
+			date: "2025-6-15",
+			guesses: ["Bouftou", "Tofu"],
+			won: true,
+			hint1Revealed: true,
+			hint2Revealed: false,
+		};
+		const legacyProgress = {
+			date: "2025-6-15",
+			guesses: ["Arakne"],
+			won: false,
+			hint1Revealed: false,
+			hint2Revealed: false,
+		};
+		localStorage.setItem(PROGRESS_KEY, JSON.stringify(scopedProgress));
+		localStorage.setItem(LEGACY_PROGRESS_KEY, JSON.stringify(legacyProgress));
+		const progress = loadProgress(MODE);
+		expect(progress).toEqual(scopedProgress);
+		expect(localStorage.getItem(LEGACY_PROGRESS_KEY)).toBeNull();
+	});
+
+	it("should remove legacy keys even when scoped keys already exist", () => {
+		localStorage.setItem(
+			STATS_KEY,
+			JSON.stringify({
+				gamesPlayed: 1,
+				gamesWon: 1,
+				currentStreak: 1,
+				maxStreak: 1,
+				guessDistribution: {},
+			}),
+		);
+		localStorage.setItem(
+			LEGACY_STATS_KEY,
+			JSON.stringify({
+				gamesPlayed: 2,
+				gamesWon: 2,
+				currentStreak: 2,
+				maxStreak: 2,
+				guessDistribution: {},
+			}),
+		);
+		loadStats(MODE);
+		expect(localStorage.getItem(LEGACY_STATS_KEY)).toBeNull();
 	});
 });

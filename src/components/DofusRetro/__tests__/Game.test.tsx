@@ -134,7 +134,7 @@ const emptyStats: GameStats = {
 
 function GameWrapper({ initialStats }: { initialStats?: GameStats }) {
 	const [stats, setStats] = useState<GameStats>(initialStats ?? emptyStats);
-	return <Game stats={stats} onStatsChange={setStats} />;
+	return <Game gameMode="classique" stats={stats} onStatsChange={setStats} />;
 }
 
 function setupUser() {
