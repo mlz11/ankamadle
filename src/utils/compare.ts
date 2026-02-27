@@ -26,6 +26,15 @@ function compareCouleur(
 	return "wrong";
 }
 
+const CORRECT_PERCENT = 0.1;
+const PARTIAL_PERCENT = 0.2;
+
+const NIVEAU_CORRECT_FLOOR = 5;
+const NIVEAU_PARTIAL_FLOOR = 10;
+
+const PV_CORRECT_FLOOR = 25;
+const PV_PARTIAL_FLOOR = 50;
+
 function compareNumeric(
 	guessVal: number,
 	targetVal: number,
@@ -55,14 +64,14 @@ export function compareMonsters(guess: Monster, target: Monster): GuessResult {
 	const niveauResult = compareNumeric(
 		guess.niveau_max,
 		target.niveau_max,
-		Math.max(target.niveau_max * 0.2, 10),
-		Math.max(target.niveau_max * 0.1, 5),
+		Math.max(target.niveau_max * PARTIAL_PERCENT, NIVEAU_PARTIAL_FLOOR),
+		Math.max(target.niveau_max * CORRECT_PERCENT, NIVEAU_CORRECT_FLOOR),
 	);
 	const pvResult = compareNumeric(
 		guess.pv_max,
 		target.pv_max,
-		Math.max(target.pv_max * 0.2, 50),
-		Math.max(target.pv_max * 0.1, 25),
+		Math.max(target.pv_max * PARTIAL_PERCENT, PV_PARTIAL_FLOOR),
+		Math.max(target.pv_max * CORRECT_PERCENT, PV_CORRECT_FLOOR),
 	);
 
 	return {
