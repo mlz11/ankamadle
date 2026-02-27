@@ -2,15 +2,29 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 12px;
-	padding: 20px 0 40px;
+	gap: 16px;
+	padding: 0 0 40px;
 	text-align: center;
 }
 
+.taglineBar {
+	background: rgba(100, 75, 50, 0.95);
+	border: 1px solid rgba(180, 155, 110, 0.3);
+	border-radius: 12px;
+	padding: 10px 40px;
+	width: 100%;
+	max-width: 680px;
+}
+
 .tagline {
-	color: var(--text-secondary);
+	color: #e0e0e0;
 	font-size: 1.05rem;
 	font-weight: 600;
+}
+
+.gridPanel {
+	width: 100%;
+	max-width: 680px;
 }
 
 .grid {
@@ -18,8 +32,6 @@
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 20px;
 	width: 100%;
-	max-width: 680px;
-	margin-top: 16px;
 	justify-items: center;
 }
 
@@ -42,7 +54,7 @@
 
 .cardImageContainer {
 	position: relative;
-	overflow: hidden;
+	overflow: visible;
 	border-radius: 14px;
 	aspect-ratio: 2 / 3;
 	width: 100%;
@@ -62,6 +74,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	border-radius: 12px;
 	transition: filter 0.3s;
 }
 
@@ -81,6 +94,7 @@
 	justify-content: center;
 	padding: 24px;
 	opacity: 0;
+	border-radius: 12px;
 	transition: opacity 0.3s;
 }
 
@@ -95,17 +109,27 @@
 	text-align: center;
 }
 
-.cardBody {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 4px;
-}
-
 .cardTitle {
-	font-size: 1.15rem;
+	position: absolute;
+	bottom: -14px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(50, 35, 70, 0.95);
+	border: 1px solid rgba(180, 155, 110, 0.35);
+	border-radius: 20px;
+	padding: 4px 24px;
+	font-size: 1.05rem;
 	font-weight: 700;
 	color: #e0e0e0;
+	white-space: nowrap;
+}
+
+.cardBody {
+	display: none;
+}
+
+.cardTitleMobile {
+	display: none;
 }
 
 .cardDescriptionMobile {
@@ -113,10 +137,18 @@
 }
 
 @media (max-width: 600px) {
+	.taglineBar {
+		padding: 8px 20px;
+		margin: 0 16px;
+	}
+
+	.gridPanel {
+		padding: 0 16px;
+	}
+
 	.grid {
 		grid-template-columns: 1fr;
 		max-width: 100%;
-		padding: 0 16px;
 	}
 
 	.card {
@@ -141,6 +173,7 @@
 		width: 56px;
 		height: 56px;
 		aspect-ratio: auto;
+		overflow: hidden;
 		border: none;
 		border-radius: 12px;
 	}
@@ -170,12 +203,22 @@
 		display: none;
 	}
 
-	.cardBody {
-		align-items: flex-start;
-		text-align: left;
+	.cardTitle {
+		display: none;
 	}
 
-	.cardTitle {
+	.cardBody {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-align: left;
+		gap: 4px;
+	}
+
+	.cardTitleMobile {
+		display: block;
+		font-size: 1.15rem;
+		font-weight: 700;
 		color: #e0e0e0;
 	}
 
