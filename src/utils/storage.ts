@@ -5,7 +5,7 @@ import { getTodayKey, getYesterdayKey } from "./daily";
 // TODO(#71): Remove legacy keys and migrateIfNeeded() after March 2026
 const LEGACY_PROGRESS_KEY = "dofusdle-progress";
 const LEGACY_STATS_KEY = "dofusdle-stats";
-const TARGET_KEY = "dofusdle-target";
+const LEGACY_TARGET_KEY = "dofusdle-target";
 
 function progressKey(mode: GameMode): string {
 	return `dofusdle-progress-${mode}`;
@@ -13,6 +13,10 @@ function progressKey(mode: GameMode): string {
 
 function statsKey(mode: GameMode): string {
 	return `dofusdle-stats-${mode}`;
+}
+
+function targetKey(mode: GameMode): string {
+	return `dofusdle-target-${mode}`;
 }
 
 function migrateIfNeeded(mode: GameMode): void {
@@ -32,6 +36,14 @@ function migrateIfNeeded(mode: GameMode): void {
 			localStorage.setItem(progressKey(mode), legacyProgress);
 		}
 		localStorage.removeItem(LEGACY_PROGRESS_KEY);
+	}
+
+	const legacyTarget = localStorage.getItem(LEGACY_TARGET_KEY);
+	if (legacyTarget !== null) {
+		if (localStorage.getItem(targetKey(mode)) === null) {
+			localStorage.setItem(targetKey(mode), legacyTarget);
+		}
+		localStorage.removeItem(LEGACY_TARGET_KEY);
 	}
 }
 
@@ -93,17 +105,25 @@ function saveStats(mode: GameMode, stats: GameStats): void {
 	localStorage.setItem(statsKey(mode), JSON.stringify(stats));
 }
 
-export function saveTargetMonster(dateKey: string, monsterId: number): void {
+export function saveTargetMonster(
+	mode: GameMode,
+	dateKey: string,
+	monsterId: number,
+): void {
 	localStorage.setItem(
-		TARGET_KEY,
+		targetKey(mode),
 		JSON.stringify({ date: dateKey, monsterId }),
 	);
 }
 
-export function loadTargetMonster(dateKey: string): number | null {
+export function loadTargetMonster(
+	mode: GameMode,
+	dateKey: string,
+): number | null {
 	if (typeof window === "undefined") return null;
 	try {
-		const raw = localStorage.getItem(TARGET_KEY);
+		migrateIfNeeded(mode);
+		const raw = localStorage.getItem(targetKey(mode));
 		if (!raw) return null;
 		const data = JSON.parse(raw);
 		if (data?.date !== dateKey || typeof data?.monsterId !== "number")
