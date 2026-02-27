@@ -228,10 +228,10 @@ export default function Header({ stats }: Props) {
 						<ul>
 							<li>
 								<span className="legend-correct">🟩 Vert</span> - Attribut exact
+								ou très proche
 							</li>
 							<li>
 								<span className="legend-partial">🟧 Orange</span> - Proche
-								(valeur presque correcte)
 							</li>
 							<li>
 								<span className="legend-wrong">🟥 Rouge</span> - Pas de

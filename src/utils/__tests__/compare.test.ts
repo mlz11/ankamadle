@@ -120,20 +120,20 @@ describe("compareMonsters", () => {
 			expect(arrow).toBeNull();
 		});
 
-		it("should return partial with up arrow when guess is slightly below target", () => {
+		it("should return correct when guess is within green threshold below target", () => {
 			const guess = monster({ niveau_max: 45 });
 			const target = monster({ niveau_max: 50 });
 			const { status, arrow } = compareMonsters(guess, target).feedback.niveau;
-			expect(status).toBe("partial");
-			expect(arrow).toBe("up");
+			expect(status).toBe("correct");
+			expect(arrow).toBeNull();
 		});
 
-		it("should return partial with down arrow when guess is slightly above target", () => {
+		it("should return correct when guess is within green threshold above target", () => {
 			const guess = monster({ niveau_max: 55 });
 			const target = monster({ niveau_max: 50 });
 			const { status, arrow } = compareMonsters(guess, target).feedback.niveau;
-			expect(status).toBe("partial");
-			expect(arrow).toBe("down");
+			expect(status).toBe("correct");
+			expect(arrow).toBeNull();
 		});
 
 		it("should return wrong with up arrow when guess is far below target", () => {
@@ -152,11 +152,27 @@ describe("compareMonsters", () => {
 			expect(arrow).toBe("down");
 		});
 
-		it("should return partial when difference is exactly 10", () => {
+		it("should return partial when difference is exactly at partial threshold", () => {
 			const guess = monster({ niveau_max: 40 });
 			const target = monster({ niveau_max: 50 });
 			const { status } = compareMonsters(guess, target).feedback.niveau;
 			expect(status).toBe("partial");
+		});
+
+		it("should return correct when diff is within green floor for low-level monster", () => {
+			const guess = monster({ niveau_max: 20 });
+			const target = monster({ niveau_max: 25 });
+			const { status, arrow } = compareMonsters(guess, target).feedback.niveau;
+			expect(status).toBe("correct");
+			expect(arrow).toBeNull();
+		});
+
+		it("should return partial when diff is within partial floor for low-level monster", () => {
+			const guess = monster({ niveau_max: 15 });
+			const target = monster({ niveau_max: 25 });
+			const { status, arrow } = compareMonsters(guess, target).feedback.niveau;
+			expect(status).toBe("partial");
+			expect(arrow).toBe("up");
 		});
 	});
 
@@ -169,20 +185,20 @@ describe("compareMonsters", () => {
 			expect(arrow).toBeNull();
 		});
 
-		it("should return partial with up arrow when guess is within 20% below target", () => {
+		it("should return correct when guess is within green threshold below target", () => {
 			const guess = monster({ pv_max: 450 });
 			const target = monster({ pv_max: 500 });
 			const { status, arrow } = compareMonsters(guess, target).feedback.pv;
-			expect(status).toBe("partial");
-			expect(arrow).toBe("up");
+			expect(status).toBe("correct");
+			expect(arrow).toBeNull();
 		});
 
-		it("should return partial with down arrow when guess is within 20% above target", () => {
+		it("should return correct when guess is within green threshold above target", () => {
 			const guess = monster({ pv_max: 550 });
 			const target = monster({ pv_max: 500 });
 			const { status, arrow } = compareMonsters(guess, target).feedback.pv;
-			expect(status).toBe("partial");
-			expect(arrow).toBe("down");
+			expect(status).toBe("correct");
+			expect(arrow).toBeNull();
 		});
 
 		it("should return wrong with up arrow when guess is far below target", () => {
@@ -209,15 +225,33 @@ describe("compareMonsters", () => {
 		});
 
 		it("should scale threshold with target value", () => {
-			// 20% of 1000 = 200, so 850 is within threshold
+			// 20% of 1000 = 200, so 850 (diff 150) is within partial threshold
 			const guess = monster({ pv_max: 850 });
 			const target = monster({ pv_max: 1000 });
 			expect(compareMonsters(guess, target).feedback.pv.status).toBe("partial");
 
-			// 20% of 100 = 20, so 150 is outside threshold
+			// 20% of 100 = 20 but floor is 50, so 150 (diff 50) is within partial floor
 			const guess2 = monster({ pv_max: 150 });
 			const target2 = monster({ pv_max: 100 });
-			expect(compareMonsters(guess2, target2).feedback.pv.status).toBe("wrong");
+			expect(compareMonsters(guess2, target2).feedback.pv.status).toBe(
+				"partial",
+			);
+		});
+
+		it("should return correct when diff is within green floor for low-pv monster", () => {
+			const guess = monster({ pv_max: 30 });
+			const target = monster({ pv_max: 50 });
+			const { status, arrow } = compareMonsters(guess, target).feedback.pv;
+			expect(status).toBe("correct");
+			expect(arrow).toBeNull();
+		});
+
+		it("should return partial when diff is within partial floor for low-pv monster", () => {
+			const guess = monster({ pv_max: 30 });
+			const target = monster({ pv_max: 70 });
+			const { status, arrow } = compareMonsters(guess, target).feedback.pv;
+			expect(status).toBe("partial");
+			expect(arrow).toBe("up");
 		});
 	});
 

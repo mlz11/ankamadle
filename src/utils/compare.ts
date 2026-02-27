@@ -29,16 +29,22 @@ function compareCouleur(
 function compareNumeric(
 	guessVal: number,
 	targetVal: number,
-	threshold: number,
+	partialThreshold: number,
+	correctThreshold = 0,
 ): { status: FeedbackStatus; arrow: ArrowDirection } {
 	if (guessVal === targetVal) {
 		return { status: "correct", arrow: null };
 	}
 
-	const arrow: ArrowDirection = guessVal < targetVal ? "up" : "down";
 	const diff = Math.abs(guessVal - targetVal);
 
-	if (diff <= threshold) {
+	if (diff <= correctThreshold) {
+		return { status: "correct", arrow: null };
+	}
+
+	const arrow: ArrowDirection = guessVal < targetVal ? "up" : "down";
+
+	if (diff <= partialThreshold) {
 		return { status: "partial", arrow };
 	}
 
@@ -46,11 +52,17 @@ function compareNumeric(
 }
 
 export function compareMonsters(guess: Monster, target: Monster): GuessResult {
-	const niveauResult = compareNumeric(guess.niveau_max, target.niveau_max, 10);
+	const niveauResult = compareNumeric(
+		guess.niveau_max,
+		target.niveau_max,
+		Math.max(target.niveau_max * 0.2, 10),
+		Math.max(target.niveau_max * 0.1, 5),
+	);
 	const pvResult = compareNumeric(
 		guess.pv_max,
 		target.pv_max,
-		target.pv_max * 0.2,
+		Math.max(target.pv_max * 0.2, 50),
+		Math.max(target.pv_max * 0.1, 25),
 	);
 
 	return {
