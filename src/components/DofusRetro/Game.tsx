@@ -50,13 +50,13 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 	const [target, setTarget] = useState(() => getDailyMonster(monsters));
 	const yesterdayKey = getYesterdayKey();
 	const yesterdayMonster = useMemo(() => {
-		const cachedId = loadTargetMonster(yesterdayKey);
+		const cachedId = loadTargetMonster(gameMode, yesterdayKey);
 		if (cachedId !== null) {
 			const found = monsters.find((m) => m.id === cachedId);
 			if (found) return found;
 		}
 		return getYesterdayMonster(monsters);
-	}, [yesterdayKey]);
+	}, [yesterdayKey, gameMode]);
 	const [devMode, setDevMode] = useState(false);
 
 	const [results, setResults] = useState<GuessResult[]>([]);
@@ -141,7 +141,7 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 	// Cache today's target so tomorrow we can show "yesterday's answer" even if the pool changes
 	useEffect(() => {
 		if (!devMode) {
-			saveTargetMonster(dateKey, target.id);
+			saveTargetMonster(gameMode, dateKey, target.id);
 		}
 	}, [dateKey, target, devMode]);
 

@@ -18,9 +18,10 @@ vi.mock("../daily", () => ({
 const MODE: GameMode = "classique";
 const PROGRESS_KEY = `dofusdle-progress-${MODE}`;
 const STATS_KEY = `dofusdle-stats-${MODE}`;
-const TARGET_KEY = "dofusdle-target";
+const TARGET_KEY = `dofusdle-target-${MODE}`;
 const LEGACY_PROGRESS_KEY = "dofusdle-progress";
 const LEGACY_STATS_KEY = "dofusdle-stats";
+const LEGACY_TARGET_KEY = "dofusdle-target";
 
 afterEach(() => {
 	localStorage.clear();
@@ -28,7 +29,7 @@ afterEach(() => {
 
 describe("saveTargetMonster", () => {
 	it("should persist date and monsterId to localStorage when called", () => {
-		saveTargetMonster("2025-6-15", 42);
+		saveTargetMonster(MODE, "2025-6-15", 42);
 		const raw = localStorage.getItem(TARGET_KEY);
 		expect(raw).toBeTruthy();
 		expect(JSON.parse(raw as string)).toEqual({
@@ -38,36 +39,36 @@ describe("saveTargetMonster", () => {
 	});
 
 	it("should overwrite the previous entry when called again", () => {
-		saveTargetMonster("2025-6-15", 42);
-		saveTargetMonster("2025-6-16", 99);
-		expect(loadTargetMonster("2025-6-15")).toBeNull();
-		expect(loadTargetMonster("2025-6-16")).toBe(99);
+		saveTargetMonster(MODE, "2025-6-15", 42);
+		saveTargetMonster(MODE, "2025-6-16", 99);
+		expect(loadTargetMonster(MODE, "2025-6-15")).toBeNull();
+		expect(loadTargetMonster(MODE, "2025-6-16")).toBe(99);
 	});
 });
 
 describe("loadTargetMonster", () => {
 	it("should return the monsterId when the stored date matches", () => {
-		saveTargetMonster("2025-6-15", 42);
-		expect(loadTargetMonster("2025-6-15")).toBe(42);
+		saveTargetMonster(MODE, "2025-6-15", 42);
+		expect(loadTargetMonster(MODE, "2025-6-15")).toBe(42);
 	});
 
 	it("should return null when the stored date does not match", () => {
-		saveTargetMonster("2025-6-15", 42);
-		expect(loadTargetMonster("2025-6-16")).toBeNull();
+		saveTargetMonster(MODE, "2025-6-15", 42);
+		expect(loadTargetMonster(MODE, "2025-6-16")).toBeNull();
 	});
 
 	it("should return null when nothing has been saved", () => {
-		expect(loadTargetMonster("2025-6-15")).toBeNull();
+		expect(loadTargetMonster(MODE, "2025-6-15")).toBeNull();
 	});
 
 	it("should return null when localStorage contains corrupted data", () => {
 		localStorage.setItem(TARGET_KEY, "not json!!!");
-		expect(loadTargetMonster("2025-6-15")).toBeNull();
+		expect(loadTargetMonster(MODE, "2025-6-15")).toBeNull();
 	});
 
 	it("should return null when the stored data has an unexpected shape", () => {
 		localStorage.setItem(TARGET_KEY, JSON.stringify({ foo: "bar" }));
-		expect(loadTargetMonster("2025-6-15")).toBeNull();
+		expect(loadTargetMonster(MODE, "2025-6-15")).toBeNull();
 	});
 
 	it("should return null when the stored monsterId is not a number", () => {
@@ -75,7 +76,7 @@ describe("loadTargetMonster", () => {
 			TARGET_KEY,
 			JSON.stringify({ date: "2025-6-15", monsterId: "abc" }),
 		);
-		expect(loadTargetMonster("2025-6-15")).toBeNull();
+		expect(loadTargetMonster(MODE, "2025-6-15")).toBeNull();
 	});
 });
 
@@ -425,6 +426,17 @@ describe("legacy migration", () => {
 		const progress = loadProgress(MODE);
 		expect(progress).toEqual(scopedProgress);
 		expect(localStorage.getItem(LEGACY_PROGRESS_KEY)).toBeNull();
+	});
+
+	it("should migrate legacy target to classique-scoped key when loading target", () => {
+		const legacyTarget = { date: "2025-6-14", monsterId: 77 };
+		localStorage.setItem(LEGACY_TARGET_KEY, JSON.stringify(legacyTarget));
+		const id = loadTargetMonster(MODE, "2025-6-14");
+		expect(id).toBe(77);
+		expect(localStorage.getItem(LEGACY_TARGET_KEY)).toBeNull();
+		expect(localStorage.getItem(TARGET_KEY)).toBe(
+			JSON.stringify(legacyTarget),
+		);
 	});
 
 	it("should remove legacy keys even when scoped keys already exist", () => {
