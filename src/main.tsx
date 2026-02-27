@@ -30,6 +30,7 @@ import("@sentry/react").then((Sentry) => {
 	}
 	Sentry.init({
 		dsn,
+		environment: import.meta.env.MODE,
 		sendDefaultPii: true,
 		integrations: [Sentry.browserTracingIntegration()],
 		tracesSampleRate: 1.0,
