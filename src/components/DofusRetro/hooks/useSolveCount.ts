@@ -32,7 +32,13 @@ export function useSolveCount(
 				const n = parseCount(data);
 				if (n !== null) setCount(n);
 			})
-			.catch(() => {});
+			.catch((error: unknown) => {
+				import("@sentry/react").then((Sentry) => {
+					Sentry.captureException(error, {
+						extra: { gameMode, dateKey },
+					});
+				});
+			});
 	}, [dateKey, gameMode]);
 
 	const reportSolve = useCallback(() => {
@@ -44,7 +50,13 @@ export function useSolveCount(
 				const n = parseCount(data);
 				if (n !== null) setCount(n);
 			})
-			.catch(() => {});
+			.catch((error: unknown) => {
+				import("@sentry/react").then((Sentry) => {
+					Sentry.captureException(error, {
+						extra: { gameMode },
+					});
+				});
+			});
 	}, [gameMode]);
 
 	return { count, reportSolve };
