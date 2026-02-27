@@ -2,6 +2,7 @@ import type { DailyProgress, GameMode, GameStats } from "../types";
 import { parseDailyProgress, parseGameStats } from "../validation";
 import { getTodayKey, getYesterdayKey } from "./daily";
 
+// TODO(#71): Remove legacy keys and migrateIfNeeded() after March 2026
 const LEGACY_PROGRESS_KEY = "dofusdle-progress";
 const LEGACY_STATS_KEY = "dofusdle-stats";
 const TARGET_KEY = "dofusdle-target";
