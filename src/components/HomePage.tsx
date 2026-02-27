@@ -15,17 +15,34 @@ export default function HomePage() {
 			<p className={styles.tagline}>Choisis ton mode de jeu</p>
 			<div className={styles.grid}>
 				<Link to="/classique" className={styles.card}>
-					<img
-						src="/og-image.png"
-						width={96}
-						height={96}
-						alt=""
-						className={styles.cardImage}
-					/>
-					<span className={styles.cardTitle}>Classique</span>
-					<span className={styles.cardDescription}>
-						Devine le monstre du jour en comparant ses attributs
-					</span>
+					<div className={styles.cardImageContainer}>
+						<img
+							src="/images/classique.webp"
+							width={512}
+							height={768}
+							loading="lazy"
+							alt=""
+							className={styles.cardImageLarge}
+						/>
+						<img
+							src="/og-image.png"
+							width={96}
+							height={96}
+							alt=""
+							className={styles.cardImageSmall}
+						/>
+						<div className={styles.cardOverlay}>
+							<span className={styles.cardDescription}>
+								Devine le monstre du jour en comparant ses attributs
+							</span>
+						</div>
+					</div>
+					<div className={styles.cardBody}>
+						<span className={styles.cardTitle}>Classique</span>
+						<span className={styles.cardDescriptionMobile}>
+							Devine le monstre du jour en comparant ses attributs
+						</span>
+					</div>
 				</Link>
 			</div>
 		</div>
