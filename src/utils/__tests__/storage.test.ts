@@ -434,9 +434,7 @@ describe("legacy migration", () => {
 		const id = loadTargetMonster(MODE, "2025-6-14");
 		expect(id).toBe(77);
 		expect(localStorage.getItem(LEGACY_TARGET_KEY)).toBeNull();
-		expect(localStorage.getItem(TARGET_KEY)).toBe(
-			JSON.stringify(legacyTarget),
-		);
+		expect(localStorage.getItem(TARGET_KEY)).toBe(JSON.stringify(legacyTarget));
 	});
 
 	it("should remove legacy keys even when scoped keys already exist", () => {

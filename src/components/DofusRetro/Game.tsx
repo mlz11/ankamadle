@@ -143,7 +143,7 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 		if (!devMode) {
 			saveTargetMonster(gameMode, dateKey, target.id);
 		}
-	}, [dateKey, target, devMode]);
+	}, [dateKey, target, devMode, gameMode]);
 
 	// Restore progress on mount (skip in dev mode)
 	useEffect(() => {
