@@ -8,8 +8,8 @@
 }
 
 .taglineBar {
-	background: rgba(100, 75, 50, 0.95);
-	border: 1px solid rgba(180, 155, 110, 0.3);
+	background: rgba(50, 35, 70, 0.5);
+	border: 1px solid rgba(200, 190, 220, 0.6);
 	border-radius: 12px;
 	padding: 10px 40px;
 	width: 100%;
@@ -157,14 +157,36 @@
 		width: 100%;
 		gap: 14px;
 		padding: 16px;
-		background: rgba(61, 174, 96, 0.08);
-		border: 2px solid rgba(61, 174, 96, 0.35);
+		background: linear-gradient(
+			to bottom,
+			rgba(30, 80, 45, 0.55),
+			rgba(26, 23, 37, 0.9)
+		);
+		border: none;
 		border-radius: 14px;
+		position: relative;
+	}
+
+	.card::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 14px;
+		padding: 2px;
+		background: linear-gradient(
+			to bottom,
+			rgba(61, 174, 96, 0.35),
+			rgba(26, 23, 37, 0.9)
+		);
+		mask:
+			linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
+		mask-composite: exclude;
+		pointer-events: none;
 	}
 
 	.card:hover {
 		transform: none;
-		border-color: rgba(61, 174, 96, 0.7);
 		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 	}
 
