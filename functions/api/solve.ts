@@ -20,7 +20,7 @@ function getTodayKeyParis(): string {
 // 26h so the key outlives the full Paris-timezone day even with clock skew
 const DEDUP_TTL_SECONDS = 26 * 60 * 60;
 
-const VALID_MODES = new Set(["classique"]);
+const VALID_MODES = new Set(["classique", "silhouette"]);
 
 function getMode(url: URL): string {
 	const mode = url.searchParams.get("mode") || "classique";

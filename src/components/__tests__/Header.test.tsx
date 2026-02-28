@@ -4,7 +4,7 @@ import { cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { afterEach, describe, expect, it } from "vitest";
-import type { GameStats } from "../../types";
+import type { GameMode, GameStats } from "../../types";
 import Header from "../Header";
 
 afterEach(cleanup);
@@ -20,11 +20,14 @@ const defaultStats: GameStats = {
 
 function renderHeader(
 	stats: Partial<GameStats> = {},
-	{ route = "/classique" }: { route?: string } = {},
+	{
+		route = "/classique",
+		gameMode = "classique" as GameMode | null,
+	}: { route?: string; gameMode?: GameMode | null } = {},
 ) {
 	return render(
 		<MemoryRouter initialEntries={[route]}>
-			<Header stats={{ ...defaultStats, ...stats }} />
+			<Header stats={{ ...defaultStats, ...stats }} gameMode={gameMode} />
 		</MemoryRouter>,
 	);
 }
@@ -57,10 +60,19 @@ describe("Header", () => {
 			).not.toBeInTheDocument();
 		});
 
-		it("should display the subtitle when on a game route", () => {
+		it("should display the classique subtitle when on the classique route", () => {
 			renderHeader({}, { route: "/classique" });
 			expect(
 				screen.getByText("Dofus Retro 1.29 - Devine le monstre du jour"),
+			).toBeVisible();
+		});
+
+		it("should display the silhouette subtitle when in silhouette mode", () => {
+			renderHeader({}, { route: "/silhouette", gameMode: "silhouette" });
+			expect(
+				screen.getByText(
+					"Dofus Retro 1.29 - Trouve le monstre à partir de sa silhouette",
+				),
 			).toBeVisible();
 		});
 
@@ -224,6 +236,13 @@ describe("Header", () => {
 			expect(screen.getByText("Couleur")).toBeVisible();
 			expect(screen.getByText("Niveau max")).toBeVisible();
 			expect(screen.getByText("PV max")).toBeVisible();
+		});
+
+		it("should display silhouette rules when in silhouette mode", async () => {
+			renderHeader({}, { route: "/silhouette", gameMode: "silhouette" });
+			await userEvent.click(screen.getByRole("button", { name: "Règles" }));
+			expect(screen.getByText(/silhouette noire du monstre/)).toBeVisible();
+			expect(screen.getByText(/la forme du monstre/)).toBeVisible();
 		});
 
 		it('should close rules modal when "Compris !" button is clicked', async () => {

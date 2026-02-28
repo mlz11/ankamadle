@@ -16,6 +16,6 @@ export async function prerender(data: { url: string }) {
 
 	return {
 		html,
-		links: new Set(["/", "/classique"]),
+		links: new Set(["/", "/classique", "/silhouette"]),
 	};
 }
