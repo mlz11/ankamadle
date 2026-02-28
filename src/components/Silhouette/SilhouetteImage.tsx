@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function SilhouetteImage({ src, revealed }: Props) {
-	const [loaded, setLoaded] = useState(false);
+	const [loadedSrc, setLoadedSrc] = useState<string | null>(null);
 
 	if (!src) return null;
 
@@ -18,8 +18,10 @@ export default function SilhouetteImage({ src, revealed }: Props) {
 					src={src}
 					alt={revealed ? "Monstre révélé" : "Silhouette du monstre"}
 					className={`${styles.image} ${revealed ? styles.revealed : styles.silhouette}`}
-					style={{ visibility: loaded || revealed ? "visible" : "hidden" }}
-					onLoad={() => setLoaded(true)}
+					style={{
+						visibility: loadedSrc === src || revealed ? "visible" : "hidden",
+					}}
+					onLoad={() => setLoadedSrc(src)}
 				/>
 			</div>
 		</div>
