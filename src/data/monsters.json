@@ -1585,6 +1585,19 @@
 		"availableFrom": "2025-1-1"
 	},
 	{
+		"id": 253,
+		"name": "Abraknyde Sombre",
+		"ecosystem": "Créatures de la forêt",
+		"race": "Abraknydien",
+		"niveau_min": 72,
+		"niveau_max": 84,
+		"pv_min": 1450,
+		"pv_max": 1850,
+		"image": "/img/monsters/1158.svg",
+		"couleur": "Gris",
+		"availableFrom": "2026-3-1"
+	},
+	{
 		"id": 254,
 		"name": "Abraknyde Vénérable",
 		"ecosystem": "Créatures de la forêt",
@@ -3432,6 +3445,19 @@
 		"availableFrom": "2025-1-1"
 	},
 	{
+		"id": 651,
+		"name": "Abrakne Sombre",
+		"ecosystem": "Créatures de la forêt",
+		"race": "Abraknydien",
+		"niveau_min": 80,
+		"niveau_max": 92,
+		"pv_min": 1200,
+		"pv_max": 1600,
+		"image": "/img/monsters/1334.svg",
+		"couleur": "Gris",
+		"availableFrom": "2026-3-1"
+	},
+	{
 		"id": 652,
 		"name": "Champa Vert",
 		"ecosystem": "Créatures des champs",
@@ -4289,6 +4315,19 @@
 		"pv_max": 540,
 		"image": "/img/monsters/1521.svg",
 		"availableFrom": "2025-1-1"
+	},
+	{
+		"id": 917,
+		"name": "Araknotron",
+		"ecosystem": "Créatures de la forêt",
+		"race": "Abraknydien",
+		"niveau_min": 40,
+		"niveau_max": 48,
+		"pv_min": 300,
+		"pv_max": 420,
+		"image": "/img/monsters/1337.svg",
+		"couleur": "Marron",
+		"availableFrom": "2026-3-1"
 	},
 	{
 		"id": 919,
