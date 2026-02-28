@@ -13,13 +13,15 @@ export default function SilhouetteImage({ src, revealed }: Props) {
 
 	return (
 		<div className={styles.container}>
-			<img
-				src={src}
-				alt={revealed ? "Monstre révélé" : "Silhouette du monstre"}
-				className={`${styles.image} ${revealed ? styles.revealed : styles.silhouette}`}
-				style={{ visibility: loaded || revealed ? "visible" : "hidden" }}
-				onLoad={() => setLoaded(true)}
-			/>
+			<div className={styles.frame}>
+				<img
+					src={src}
+					alt={revealed ? "Monstre révélé" : "Silhouette du monstre"}
+					className={`${styles.image} ${revealed ? styles.revealed : styles.silhouette}`}
+					style={{ visibility: loaded || revealed ? "visible" : "hidden" }}
+					onLoad={() => setLoaded(true)}
+				/>
+			</div>
 		</div>
 	);
 }

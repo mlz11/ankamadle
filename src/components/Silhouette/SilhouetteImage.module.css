@@ -4,9 +4,28 @@
 	align-items: center;
 }
 
+.frame {
+	position: relative;
+	width: 220px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.frame::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: url("/images/silhouette-frame.webp") center / contain no-repeat;
+	filter: sepia(0.6) saturate(2) hue-rotate(-20deg) brightness(0.9);
+	pointer-events: none;
+}
+
 .image {
-	width: 200px;
-	height: 200px;
+	position: relative;
+	width: 160px;
+	height: 160px;
 	object-fit: contain;
 	filter: brightness(0);
 }
@@ -21,8 +40,13 @@
 }
 
 @media (max-width: 600px) {
+	.frame {
+		width: 180px;
+		height: 330px;
+	}
+
 	.image {
-		width: 160px;
-		height: 160px;
+		width: 130px;
+		height: 130px;
 	}
 }
