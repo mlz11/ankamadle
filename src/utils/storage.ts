@@ -89,6 +89,10 @@ export function saveProgress(
 	localStorage.setItem(progressKey(mode), JSON.stringify(progress));
 }
 
+export function clearProgress(mode: GameMode): void {
+	localStorage.removeItem(progressKey(mode));
+}
+
 export function loadStats(mode: GameMode): GameStats {
 	if (typeof window === "undefined") return defaultStats();
 	try {

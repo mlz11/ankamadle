@@ -10,6 +10,7 @@ import {
 	getYesterdayMonster,
 } from "../../utils/daily";
 import {
+	clearProgress,
 	loadProgress,
 	loadStats,
 	loadTargetMonster,
@@ -183,6 +184,7 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 		setDuplicateBannerVisible(false);
 		resetHints();
 		resetVictory();
+		clearProgress(gameMode);
 	}
 
 	function resetGame() {

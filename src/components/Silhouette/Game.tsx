@@ -9,6 +9,7 @@ import {
 	getYesterdayMonster,
 } from "../../utils/daily";
 import {
+	clearProgress,
 	loadProgress,
 	loadStats,
 	loadTargetMonster,
@@ -132,6 +133,7 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 		setWrongGuesses([]);
 		setWon(false);
 		resetVictory();
+		clearProgress(gameMode);
 	}
 
 	function resetGame() {
