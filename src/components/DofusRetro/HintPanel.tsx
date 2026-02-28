@@ -1,48 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import styles from "./HintPanel.module.css";
-
-function BlurredImage({ src }: { src: string }) {
-	const canvasRef = useRef<HTMLCanvasElement>(null);
-
-	useEffect(() => {
-		const canvas = canvasRef.current;
-		if (!canvas) return;
-		const ctx = canvas.getContext("2d");
-		if (!ctx) return;
-
-		const img = new Image();
-		img.onload = () => {
-			const padding = canvas.width * 0.1;
-			ctx.drawImage(
-				img,
-				padding,
-				padding,
-				canvas.width - padding * 2,
-				canvas.height - padding * 2,
-			);
-		};
-		img.src = src;
-	}, [src]);
-
-	return (
-		<canvas
-			ref={canvasRef}
-			width={110}
-			height={110}
-			className={styles.blurredImage}
-			role="img"
-			aria-label="Indice visuel"
-		/>
-	);
-}
 
 interface Props {
 	guessCount: number;
 	won: boolean;
 	hint1Revealed: boolean;
 	hint2Revealed: boolean;
-	targetImage: string;
 	targetEcosystem: string;
+	targetRace: string;
 	onRevealHint1: () => void;
 	onRevealHint2: () => void;
 }
@@ -56,8 +21,8 @@ export default function HintPanel({
 	won,
 	hint1Revealed,
 	hint2Revealed,
-	targetImage,
 	targetEcosystem,
+	targetRace,
 	onRevealHint1,
 	onRevealHint2,
 }: Props) {
@@ -100,14 +65,8 @@ export default function HintPanel({
 						className={`${styles.slot} ${styles.slotRevealed} ${justRevealed1 ? styles.flipIn : ""}`}
 						onAnimationEnd={() => setJustRevealed1(false)}
 					>
-						{targetImage ? (
-							<div className={styles.blurredContainer}>
-								<BlurredImage src={targetImage} />
-							</div>
-						) : (
-							<span className={styles.slotLabel}>Aucune image</span>
-						)}
-						<span className={styles.slotLabel}>Image floue</span>
+						<span className={styles.slotValue}>{targetEcosystem}</span>
+						<span className={styles.slotLabel}>Ecosystème</span>
 					</div>
 				) : hint1Unlocked ? (
 					<button
@@ -115,64 +74,6 @@ export default function HintPanel({
 						className={`${styles.slot} ${styles.slotUnlocked} ${flipping1 ? styles.flipOut : ""}`}
 						onClick={handleFlipHint1}
 						disabled={flipping1}
-					>
-						<svg
-							aria-hidden="true"
-							className={styles.icon}
-							width="28"
-							height="28"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-						>
-							<rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-							<circle cx="8.5" cy="8.5" r="1.5" />
-							<path d="M21 15l-5-5L5 21" />
-						</svg>
-						<span className={styles.slotLabel}>Image floue</span>
-						<span className={styles.action}>Cliquer pour révéler</span>
-					</button>
-				) : (
-					<div className={`${styles.slot} ${styles.slotLocked}`}>
-						<svg
-							aria-hidden="true"
-							className={styles.icon}
-							width="28"
-							height="28"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-						>
-							<rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-							<path d="M7 11V7a5 5 0 0 1 10 0v4" />
-						</svg>
-						<span className={styles.slotLabel}>Image floue</span>
-						<span className={styles.remaining}>
-							dans {hint1Remaining} essai{hint1Remaining > 1 ? "s" : ""}
-						</span>
-					</div>
-				)}
-
-				{hint2Revealed || justRevealed2 ? (
-					<div
-						className={`${styles.slot} ${styles.slotRevealed} ${justRevealed2 ? styles.flipIn : ""}`}
-						onAnimationEnd={() => setJustRevealed2(false)}
-					>
-						<span className={styles.slotValue}>{targetEcosystem}</span>
-						<span className={styles.slotLabel}>Ecosystème</span>
-					</div>
-				) : hint2Unlocked ? (
-					<button
-						type="button"
-						className={`${styles.slot} ${styles.slotUnlocked} ${flipping2 ? styles.flipOut : ""}`}
-						onClick={handleFlipHint2}
-						disabled={flipping2}
 					>
 						<svg
 							aria-hidden="true"
@@ -211,6 +112,65 @@ export default function HintPanel({
 							<path d="M7 11V7a5 5 0 0 1 10 0v4" />
 						</svg>
 						<span className={styles.slotLabel}>Ecosystème</span>
+						<span className={styles.remaining}>
+							dans {hint1Remaining} essai{hint1Remaining > 1 ? "s" : ""}
+						</span>
+					</div>
+				)}
+
+				{hint2Revealed || justRevealed2 ? (
+					<div
+						className={`${styles.slot} ${styles.slotRevealed} ${justRevealed2 ? styles.flipIn : ""}`}
+						onAnimationEnd={() => setJustRevealed2(false)}
+					>
+						<span className={styles.slotValue}>{targetRace}</span>
+						<span className={styles.slotLabel}>Race</span>
+					</div>
+				) : hint2Unlocked ? (
+					<button
+						type="button"
+						className={`${styles.slot} ${styles.slotUnlocked} ${flipping2 ? styles.flipOut : ""}`}
+						onClick={handleFlipHint2}
+						disabled={flipping2}
+					>
+						<svg
+							aria-hidden="true"
+							className={styles.icon}
+							width="28"
+							height="28"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+							<circle cx="9" cy="7" r="4" />
+							<path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+							<path d="M16 3.13a4 4 0 0 1 0 7.75" />
+						</svg>
+						<span className={styles.slotLabel}>Race</span>
+						<span className={styles.action}>Cliquer pour révéler</span>
+					</button>
+				) : (
+					<div className={`${styles.slot} ${styles.slotLocked}`}>
+						<svg
+							aria-hidden="true"
+							className={styles.icon}
+							width="28"
+							height="28"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							<rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+							<path d="M7 11V7a5 5 0 0 1 10 0v4" />
+						</svg>
+						<span className={styles.slotLabel}>Race</span>
 						<span className={styles.remaining}>
 							dans {hint2Remaining} essai{hint2Remaining > 1 ? "s" : ""}
 						</span>

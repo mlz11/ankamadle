@@ -12,8 +12,8 @@ const defaults = {
 	won: false,
 	hint1Revealed: false,
 	hint2Revealed: false,
-	targetImage: "/img/monsters/42.svg",
 	targetEcosystem: "Créatures des champs",
+	targetRace: "Plantes des champs",
 	onRevealHint1: vi.fn(),
 	onRevealHint2: vi.fn(),
 };
@@ -68,7 +68,7 @@ describe("HintPanel", () => {
 	});
 
 	describe("hint 1 - revealed state", () => {
-		it("should reveal hint 1 blurred image when reveal button is clicked", async () => {
+		it("should reveal hint 1 ecosystem text when reveal button is clicked", async () => {
 			vi.useFakeTimers({ shouldAdvanceTime: true });
 			const user = userEvent.setup({
 				advanceTimers: (ms) => vi.advanceTimersByTime(ms),
@@ -82,6 +82,11 @@ describe("HintPanel", () => {
 
 			expect(onRevealHint1).toHaveBeenCalledOnce();
 			vi.useRealTimers();
+		});
+
+		it("should show ecosystem text when hint 1 is revealed", () => {
+			renderPanel({ hint1Revealed: true });
+			expect(screen.getByText("Créatures des champs")).toBeVisible();
 		});
 	});
 
@@ -107,7 +112,7 @@ describe("HintPanel", () => {
 			renderPanel({ guessCount: 8 });
 			const hint2Button = screen
 				.getAllByRole("button")
-				.find((btn) => btn.textContent?.includes("Ecosystème"));
+				.find((btn) => btn.textContent?.includes("Race"));
 			expect(hint2Button).toBeVisible();
 			expect(hint2Button).toHaveTextContent("Cliquer pour révéler");
 		});
@@ -116,14 +121,14 @@ describe("HintPanel", () => {
 			renderPanel({ guessCount: 10 });
 			const hint2Button = screen
 				.getAllByRole("button")
-				.find((btn) => btn.textContent?.includes("Ecosystème"));
+				.find((btn) => btn.textContent?.includes("Race"));
 			expect(hint2Button).toBeVisible();
 			expect(hint2Button).toHaveTextContent("Cliquer pour révéler");
 		});
 	});
 
 	describe("hint 2 - revealed state", () => {
-		it("should reveal hint 2 ecosystem text when reveal button is clicked", async () => {
+		it("should reveal hint 2 race text when reveal button is clicked", async () => {
 			vi.useFakeTimers({ shouldAdvanceTime: true });
 			const user = userEvent.setup({
 				advanceTimers: (ms) => vi.advanceTimersByTime(ms),
@@ -137,6 +142,11 @@ describe("HintPanel", () => {
 			expect(onRevealHint2).toHaveBeenCalledOnce();
 			vi.useRealTimers();
 		});
+
+		it("should show race text when hint 2 is revealed", () => {
+			renderPanel({ hint2Revealed: true });
+			expect(screen.getByText("Plantes des champs")).toBeVisible();
+		});
 	});
 
 	describe("independent hint states", () => {
@@ -144,9 +154,8 @@ describe("HintPanel", () => {
 			renderPanel({
 				guessCount: 3,
 				hint1Revealed: true,
-				targetImage: "/img/monsters/42.svg",
 			});
-			expect(screen.getByRole("img", { name: "Indice visuel" })).toBeVisible();
+			expect(screen.getByText("Créatures des champs")).toBeVisible();
 			expect(screen.getByText("dans 5 essais")).toBeVisible();
 		});
 

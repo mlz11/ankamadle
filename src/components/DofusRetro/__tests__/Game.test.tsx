@@ -204,7 +204,7 @@ describe("Game", () => {
 				hint1Revealed: true,
 			});
 			render(<GameWrapper />);
-			expect(screen.getByRole("img", { name: "Indice visuel" })).toBeVisible();
+			expect(screen.getByText("Plaines de Cania")).toBeVisible();
 		});
 	});
 
