@@ -79,6 +79,12 @@ body::after {
 	z-index: -1;
 }
 
+@media (max-width: 600px) and (orientation: portrait) {
+	body::after {
+		background-image: url("/images/background-mobile.webp");
+	}
+}
+
 body::before {
 	content: "";
 	position: fixed;
