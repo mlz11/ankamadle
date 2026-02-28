@@ -57,7 +57,7 @@ export default function Header({ stats, gameMode }: Props) {
 			{!isHome && (
 				<p className={styles.subtitle}>
 					{gameMode === "silhouette"
-						? "Dofus Retro 1.29 - Trouve le monstre à partir de sa silhouette"
+						? "Dofus Retro 1.29 - Devine le monstre à partir de sa silhouette"
 						: "Dofus Retro 1.29 - Devine le monstre du jour"}
 				</p>
 			)}
