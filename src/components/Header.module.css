@@ -18,6 +18,11 @@
 .logo {
 	width: min(300px, 60vw);
 	height: auto;
+	transition: transform 0.2s;
+}
+
+.homeLink:hover .logo {
+	transform: translateY(-4px);
 }
 
 .subtitle {
