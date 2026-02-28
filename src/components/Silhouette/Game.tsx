@@ -223,7 +223,10 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 				onSelect={handleGuess}
 				disabled={won}
 			/>
-			<WrongGuessList guesses={wrongGuesses} />
+			<WrongGuessList
+				guesses={wrongGuesses}
+				winner={won ? target : undefined}
+			/>
 			{won && !showVictory && victoryShownOnce && (
 				<button
 					type="button"
