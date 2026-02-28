@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import type { GameMode, GameStats } from "../types";
 import { loadStats } from "../utils/storage";
@@ -48,9 +48,19 @@ function AppContent() {
 		}),
 	);
 
-	function handleStatsChange(mode: GameMode, stats: GameStats) {
+	const handleStatsChange = useCallback((mode: GameMode, stats: GameStats) => {
 		setStatsByMode((prev) => ({ ...prev, [mode]: stats }));
-	}
+	}, []);
+
+	const handleClassiqueStatsChange = useCallback(
+		(s: GameStats) => handleStatsChange("classique", s),
+		[handleStatsChange],
+	);
+
+	const handleSilhouetteStatsChange = useCallback(
+		(s: GameStats) => handleStatsChange("silhouette", s),
+		[handleStatsChange],
+	);
 
 	return (
 		<div className={styles.app}>
@@ -67,7 +77,7 @@ function AppContent() {
 							<ClassiqueGame
 								gameMode="classique"
 								stats={statsByMode.classique}
-								onStatsChange={(s) => handleStatsChange("classique", s)}
+								onStatsChange={handleClassiqueStatsChange}
 							/>
 						}
 					/>
@@ -77,7 +87,7 @@ function AppContent() {
 							<SilhouetteGame
 								gameMode="silhouette"
 								stats={statsByMode.silhouette}
-								onStatsChange={(s) => handleStatsChange("silhouette", s)}
+								onStatsChange={handleSilhouetteStatsChange}
 							/>
 						}
 					/>
