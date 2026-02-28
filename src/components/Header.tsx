@@ -42,7 +42,7 @@ export default function Header({ stats, gameMode }: Props) {
 					<img
 						src="/images/logo-866w.webp"
 						srcSet="/images/logo-500w.webp 500w, /images/logo-866w.webp 866w"
-						sizes="(max-width: 600px) 250px, 300px"
+						sizes="(max-width: 600px) 240px, 240px"
 						width={866}
 						height={452}
 						fetchPriority="high"

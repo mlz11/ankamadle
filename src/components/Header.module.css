@@ -1,9 +1,8 @@
 .header {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
 	text-align: center;
-	padding: 20px 0 0;
+	padding: 8px 0 0;
 	margin-bottom: 20px;
 }
 
@@ -16,7 +15,7 @@
 }
 
 .logo {
-	width: min(300px, 60vw);
+	width: min(240px, 60vw);
 	height: auto;
 	transition: transform 0.2s;
 }
@@ -40,7 +39,7 @@
 	gap: 16px;
 	width: 100%;
 	max-width: 220px;
-	margin-inline: auto;
+	margin: 16px auto 0;
 	padding: 8px 20px;
 	background: var(--bg-secondary);
 	border: 2px solid var(--border);
