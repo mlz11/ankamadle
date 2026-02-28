@@ -3,7 +3,7 @@ import styles from "./WrongGuessList.module.css";
 
 interface Props {
 	guesses: Monster[];
-	winner?: Monster;
+	winner?: Monster | undefined;
 }
 
 export default function WrongGuessList({ guesses, winner }: Props) {
