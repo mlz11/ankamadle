@@ -66,12 +66,12 @@
 }
 
 .cardGreen .cardImageContainer {
-	border-color: rgba(61, 174, 96, 0.35);
+	border-color: rgba(198, 229, 124, 0.35);
 }
 
 .cardGreen:hover .cardImageContainer {
-	border-color: rgba(61, 174, 96, 0.7);
-	box-shadow: 0 8px 28px rgba(61, 174, 96, 0.25);
+	border-color: rgba(198, 229, 124, 0.7);
+	box-shadow: 0 8px 28px rgba(198, 229, 124, 0.25);
 }
 
 .cardOrange .cardImageContainer {
