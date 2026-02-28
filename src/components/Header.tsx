@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useCloseOnKey } from "../hooks/useCloseOnKey";
 import modalStyles from "../styles/Modal.module.css";
 import statsGridStyles from "../styles/StatsGrid.module.css";
-import type { GameStats } from "../types";
+import type { GameMode, GameStats } from "../types";
 import { getWinPercentage } from "../utils/storage";
 import styles from "./Header.module.css";
 
@@ -11,9 +11,10 @@ const CLOSE_KEYS = ["Escape", "Enter"];
 
 interface Props {
 	stats: GameStats;
+	gameMode: GameMode | null;
 }
 
-export default function Header({ stats }: Props) {
+export default function Header({ stats, gameMode }: Props) {
 	const isHome = useLocation().pathname === "/";
 	const [showRules, setShowRules] = useState(false);
 	const [showStats, setShowStats] = useState(false);
@@ -55,7 +56,9 @@ export default function Header({ stats }: Props) {
 			</h1>
 			{!isHome && (
 				<p className={styles.subtitle}>
-					Dofus Retro 1.29 - Devine le monstre du jour
+					{gameMode === "silhouette"
+						? "Dofus Retro 1.29 - Trouve le monstre à partir de sa silhouette"
+						: "Dofus Retro 1.29 - Devine le monstre du jour"}
 				</p>
 			)}
 			{!isHome && (
@@ -222,53 +225,70 @@ export default function Header({ stats }: Props) {
 						className={modalStyles.modal}
 					>
 						<h2>Comment jouer</h2>
-						<p>
-							Trouve le monstre Dofus Retro du jour en devinant ses attributs.
-						</p>
-						<ul>
-							<li>
-								<span className="legend-correct">🟩 Vert</span> - Attribut exact
-								ou très proche
-							</li>
-							<li>
-								<span className="legend-partial">🟧 Orange</span> - Proche
-							</li>
-							<li>
-								<span className="legend-wrong">🟥 Rouge</span> - Pas de
-								correspondance
-							</li>
-							<li>
-								<svg
-									width="14"
-									height="14"
-									viewBox="0 0 24 24"
-									fill="none"
-									style={{ verticalAlign: "middle" }}
-									aria-hidden="true"
-								>
-									<path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor" />
-								</svg>
-								<svg
-									width="14"
-									height="14"
-									viewBox="0 0 24 24"
-									fill="none"
-									style={{
-										verticalAlign: "middle",
-										transform: "rotate(180deg)",
-									}}
-									aria-hidden="true"
-								>
-									<path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor" />
-								</svg>{" "}
-								- Le vrai monstre est plus haut / plus bas
-							</li>
-						</ul>
-						<p>
-							Les 5 attributs : <strong>Écosystème</strong>,{" "}
-							<strong>Race</strong>, <strong>Couleur</strong>,{" "}
-							<strong>Niveau max</strong>, <strong>PV max</strong>
-						</p>
+						{gameMode === "silhouette" ? (
+							<>
+								<p>
+									Trouve le monstre Dofus Retro du jour à partir de sa
+									silhouette.
+								</p>
+								<ul>
+									<li>Une silhouette noire du monstre est affichée</li>
+									<li>Propose des noms de monstres pour deviner</li>
+									<li>Seule indication : la forme du monstre !</li>
+								</ul>
+							</>
+						) : (
+							<>
+								<p>
+									Trouve le monstre Dofus Retro du jour en devinant ses
+									attributs.
+								</p>
+								<ul>
+									<li>
+										<span className="legend-correct">🟩 Vert</span> - Attribut
+										exact ou très proche
+									</li>
+									<li>
+										<span className="legend-partial">🟧 Orange</span> - Proche
+									</li>
+									<li>
+										<span className="legend-wrong">🟥 Rouge</span> - Pas de
+										correspondance
+									</li>
+									<li>
+										<svg
+											width="14"
+											height="14"
+											viewBox="0 0 24 24"
+											fill="none"
+											style={{ verticalAlign: "middle" }}
+											aria-hidden="true"
+										>
+											<path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor" />
+										</svg>
+										<svg
+											width="14"
+											height="14"
+											viewBox="0 0 24 24"
+											fill="none"
+											style={{
+												verticalAlign: "middle",
+												transform: "rotate(180deg)",
+											}}
+											aria-hidden="true"
+										>
+											<path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor" />
+										</svg>{" "}
+										- Le vrai monstre est plus haut / plus bas
+									</li>
+								</ul>
+								<p>
+									Les 5 attributs : <strong>Écosystème</strong>,{" "}
+									<strong>Race</strong>, <strong>Couleur</strong>,{" "}
+									<strong>Niveau max</strong>, <strong>PV max</strong>
+								</p>
+							</>
+						)}
 						<button
 							type="button"
 							className={modalStyles.closeBtn}

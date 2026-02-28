@@ -51,7 +51,10 @@ export default function HomePage() {
 							</span>
 						</div>
 					</Link>
-					<div className={`${styles.card} ${styles.cardOrange}`}>
+					<Link
+						to="/silhouette"
+						className={`${styles.card} ${styles.cardOrange}`}
+					>
 						<div className={styles.cardImageContainer}>
 							<img
 								src="/images/silhouette.webp"
@@ -81,7 +84,7 @@ export default function HomePage() {
 								Devine le monstre du jour à partir de sa silhouette
 							</span>
 						</div>
-					</div>
+					</Link>
 				</div>
 			</div>
 		</div>

@@ -102,12 +102,17 @@ function getEligiblePool(monsters: Monster[], dateKey: string): Monster[] {
 	return [...pool].sort((a, b) => a.id - b.id);
 }
 
-function scorePool(pool: Monster[], dateKey: string): Monster | null {
+function scorePool(
+	pool: Monster[],
+	dateKey: string,
+	salt = "",
+): Monster | null {
 	if (pool.length === 0) return null;
 	let best = pool[0];
 	let bestScore = -1;
+	const prefix = salt ? `${salt}:` : "";
 	for (const monster of pool) {
-		const seed = hashString(`${dateKey}-${monster.id}`);
+		const seed = hashString(`${prefix}${dateKey}-${monster.id}`);
 		const score = mulberry32(seed)();
 		if (score > bestScore) {
 			best = monster;
@@ -117,33 +122,49 @@ function scorePool(pool: Monster[], dateKey: string): Monster | null {
 	return best;
 }
 
-// Module-level cache: ensures consistent selections across calls.
-// All selections are computed forward from EPOCH, so day D's result
-// is always the same regardless of which target date triggered the computation.
-let _cachedPool: Monster[] | null = null;
-let _selections = new Map<string, number>();
-let _latestDate: string | null = null;
+interface ModeCache {
+	pool: Monster[] | null;
+	selections: Map<string, number>;
+	latestDate: string | null;
+}
 
-function ensureComputedUntil(monsters: Monster[], targetDate: string): void {
-	if (_cachedPool !== monsters) {
-		_cachedPool = monsters;
-		_selections = new Map();
-		_latestDate = null;
+const _caches = new Map<string, ModeCache>();
+
+function getCache(salt: string): ModeCache {
+	let cache = _caches.get(salt);
+	if (!cache) {
+		cache = { pool: null, selections: new Map(), latestDate: null };
+		_caches.set(salt, cache);
+	}
+	return cache;
+}
+
+function ensureComputedUntil(
+	monsters: Monster[],
+	targetDate: string,
+	salt = "",
+): void {
+	const cache = getCache(salt);
+
+	if (cache.pool !== monsters) {
+		cache.pool = monsters;
+		cache.selections = new Map();
+		cache.latestDate = null;
 	}
 
-	// Already computed up to or past targetDate
-	if (_latestDate !== null && isDateOnOrBefore(targetDate, _latestDate)) {
+	if (
+		cache.latestDate !== null &&
+		isDateOnOrBefore(targetDate, cache.latestDate)
+	) {
 		return;
 	}
 
-	// Start from the day after latest computed, or EPOCH
-	let key = _latestDate !== null ? getNextDayKey(_latestDate) : EPOCH;
+	let key = cache.latestDate !== null ? getNextDayKey(cache.latestDate) : EPOCH;
 
-	// Handle dates before EPOCH: compute just that day with no history
 	if (!isDateOnOrBefore(EPOCH, targetDate)) {
 		const pool = getEligiblePool(monsters, targetDate);
-		const winner = scorePool(pool, targetDate);
-		if (winner) _selections.set(targetDate, winner.id);
+		const winner = scorePool(pool, targetDate, salt);
+		if (winner) cache.selections.set(targetDate, winner.id);
 		return;
 	}
 
@@ -151,33 +172,38 @@ function ensureComputedUntil(monsters: Monster[], targetDate: string): void {
 		const pool = getEligiblePool(monsters, key);
 
 		if (pool.length <= 1) {
-			if (pool[0]) _selections.set(key, pool[0].id);
+			if (pool[0]) cache.selections.set(key, pool[0].id);
 		} else {
 			const recentIds = new Set<number>();
 			let prev = key;
 			for (let j = 0; j < ANTI_REPEAT_WINDOW; j++) {
 				prev = getPreviousDayKey(prev);
-				const prevId = _selections.get(prev);
+				const prevId = cache.selections.get(prev);
 				if (prevId !== undefined) recentIds.add(prevId);
 			}
 
 			const filtered = pool.filter((m) => !recentIds.has(m.id));
 			const candidates = filtered.length > 0 ? filtered : pool;
-			const winner = scorePool(candidates, key);
-			if (winner) _selections.set(key, winner.id);
+			const winner = scorePool(candidates, key, salt);
+			if (winner) cache.selections.set(key, winner.id);
 		}
 
 		if (key === targetDate) break;
 		key = getNextDayKey(key);
 	}
 
-	_latestDate = targetDate;
+	cache.latestDate = targetDate;
 }
 
-function selectMonsterForDay(monsters: Monster[], dateKey: string): Monster {
-	ensureComputedUntil(monsters, dateKey);
+function selectMonsterForDay(
+	monsters: Monster[],
+	dateKey: string,
+	salt = "",
+): Monster {
+	ensureComputedUntil(monsters, dateKey, salt);
+	const cache = getCache(salt);
 	const pool = getEligiblePool(monsters, dateKey);
-	const winnerId = _selections.get(dateKey);
+	const winnerId = cache.selections.get(dateKey);
 	if (winnerId !== undefined) {
 		const found = pool.find((m) => m.id === winnerId);
 		if (found) return found;
@@ -192,6 +218,20 @@ export function getDailyMonster(
 	return selectMonsterForDay(monsters, seed);
 }
 
-export function getYesterdayMonster(monsters: Monster[]): Monster {
+export function getDailyMonsterForMode(
+	monsters: Monster[],
+	mode: string,
+	seed: string = getTodayKey(),
+): Monster {
+	return selectMonsterForDay(monsters, seed, mode);
+}
+
+export function getYesterdayMonster(
+	monsters: Monster[],
+	mode?: string,
+): Monster {
+	if (mode) {
+		return getDailyMonsterForMode(monsters, mode, getYesterdayKey());
+	}
 	return getDailyMonster(monsters, getYesterdayKey());
 }

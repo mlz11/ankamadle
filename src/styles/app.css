@@ -143,3 +143,18 @@ body.theme-classique::after {
 		background-image: url("/images/background-classique-mobile.webp");
 	}
 }
+
+.theme-silhouette {
+	--accent: #e07a5f;
+	--accent-contrast: #2a2540;
+}
+
+body.theme-silhouette::after {
+	background-image: url("/images/background-silhouette.webp");
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+	body.theme-silhouette::after {
+		background-image: url("/images/background-silhouette-mobile.webp");
+	}
+}

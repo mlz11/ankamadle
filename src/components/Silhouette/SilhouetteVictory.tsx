@@ -1,65 +1,29 @@
 import { useEffect, useState } from "react";
 import { useCloseOnKey } from "../../hooks/useCloseOnKey";
 import statsGridStyles from "../../styles/StatsGrid.module.css";
-import type { GameStats, GuessResult } from "../../types";
+import type { GameStats } from "../../types";
 import { getWinPercentage } from "../../utils/storage";
 import { getTimeUntilMidnightParis } from "../../utils/time";
-import styles from "./Victory.module.css";
+import styles from "./SilhouetteVictory.module.css";
 
 interface Props {
-	results: GuessResult[];
+	guessCount: number;
 	stats: GameStats;
 	targetName: string;
 	targetImage: string;
-	hintsUsed: number;
 	onClose: () => void;
 }
 
-const COLLAPSE_THRESHOLD = 12;
-const VISIBLE_ROWS = 3;
-
-function buildShareText(results: GuessResult[], hintsUsed: number): string {
-	const hintSuffix =
-		hintsUsed > 0 ? ` (+${hintsUsed} indice${hintsUsed > 1 ? "s" : ""})` : "";
-	const header = `Dofusdle - J'ai trouvé la réponse en ${results.length} essai${results.length > 1 ? "s" : ""}${hintSuffix}`;
-	const rows = results.map((r) => {
-		const cells = [
-			r.feedback.ecosystem,
-			r.feedback.race,
-			r.feedback.couleur,
-			r.feedback.niveau,
-			r.feedback.pv,
-		];
-		return cells
-			.map((c) => {
-				if (c.status === "correct") return "🟩";
-				if (c.status === "partial") return "🟧";
-				return "🟥";
-			})
-			.join("");
-	});
-
-	let grid: string;
-	if (rows.length > COLLAPSE_THRESHOLD) {
-		const hidden = rows.length - VISIBLE_ROWS * 2;
-		grid = [
-			...rows.slice(0, VISIBLE_ROWS),
-			`   ⋮ (${hidden} de plus)`,
-			...rows.slice(-VISIBLE_ROWS),
-		].join("\n");
-	} else {
-		grid = rows.join("\n");
-	}
-
-	return `${header}\n${grid}\nhttps://dofusdle.fr`;
+function buildShareText(guessCount: number): string {
+	const header = `Dofusdle Silhouette - J'ai trouvé la réponse en ${guessCount} essai${guessCount > 1 ? "s" : ""} !`;
+	return `${header}\nhttps://dofusdle.fr/silhouette`;
 }
 
-export default function Victory({
-	results,
+export default function SilhouetteVictory({
+	guessCount,
 	stats,
 	targetName,
 	targetImage,
-	hintsUsed,
 	onClose,
 }: Props) {
 	const [copied, setCopied] = useState(false);
@@ -76,7 +40,7 @@ export default function Victory({
 	useCloseOnKey(true, onClose);
 
 	function handleShare() {
-		const text = buildShareText(results, hintsUsed);
+		const text = buildShareText(guessCount);
 		navigator.clipboard.writeText(text).then(() => {
 			setCopied(true);
 			setTimeout(() => setCopied(false), 2000);
@@ -110,8 +74,7 @@ export default function Victory({
 				)}
 				<p>
 					Tu as trouvé <strong>{targetName}</strong> en{" "}
-					<strong>{results.length}</strong> essai{results.length > 1 ? "s" : ""}
-					.
+					<strong>{guessCount}</strong> essai{guessCount > 1 ? "s" : ""}.
 				</p>
 
 				<div className={statsGridStyles.grid}>

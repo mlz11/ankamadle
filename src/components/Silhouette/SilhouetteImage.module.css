@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.image {
+	width: 200px;
+	height: 200px;
+	object-fit: contain;
+	transition: filter 0.6s ease;
+}
+
+.silhouette {
+	filter: brightness(0);
+}
+
+@media (max-width: 600px) {
+	.image {
+		width: 160px;
+		height: 160px;
+	}
+}
