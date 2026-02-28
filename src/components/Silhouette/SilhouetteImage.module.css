@@ -8,11 +8,16 @@
 	width: 200px;
 	height: 200px;
 	object-fit: contain;
-	transition: filter 0.6s ease;
+	filter: brightness(0);
 }
 
 .silhouette {
 	filter: brightness(0);
+}
+
+.revealed {
+	filter: none;
+	transition: filter 0.6s ease;
 }
 
 @media (max-width: 600px) {
