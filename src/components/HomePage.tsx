@@ -17,7 +17,10 @@ export default function HomePage() {
 			</div>
 			<div className={styles.gridPanel}>
 				<div className={styles.grid}>
-					<Link to="/classique" className={styles.card}>
+					<Link
+						to="/classique"
+						className={`${styles.card} ${styles.cardGreen}`}
+					>
 						<div className={styles.cardImageContainer}>
 							<img
 								src="/images/classique.webp"
@@ -28,7 +31,7 @@ export default function HomePage() {
 								className={styles.cardImageLarge}
 							/>
 							<img
-								src="/og-image.png"
+								src="/images/dofus-emeraude.png"
 								width={96}
 								height={96}
 								alt=""
@@ -48,6 +51,37 @@ export default function HomePage() {
 							</span>
 						</div>
 					</Link>
+					<div className={`${styles.card} ${styles.cardOrange}`}>
+						<div className={styles.cardImageContainer}>
+							<img
+								src="/images/silhouette.webp"
+								width={512}
+								height={768}
+								loading="lazy"
+								alt=""
+								className={styles.cardImageLarge}
+							/>
+							<img
+								src="/images/dofus-pourpre.png"
+								width={96}
+								height={96}
+								alt=""
+								className={styles.cardImageSmall}
+							/>
+							<div className={styles.cardOverlay}>
+								<span className={styles.cardDescription}>
+									Devine le monstre du jour à partir de sa silhouette
+								</span>
+							</div>
+							<span className={styles.cardTitle}>Silhouette</span>
+						</div>
+						<div className={styles.cardBody}>
+							<span className={styles.cardTitleMobile}>Silhouette</span>
+							<span className={styles.cardDescriptionMobile}>
+								Devine le monstre du jour à partir de sa silhouette
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
