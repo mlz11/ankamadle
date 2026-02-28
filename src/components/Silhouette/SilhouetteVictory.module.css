@@ -49,7 +49,7 @@
 .modal h2 {
 	font-size: 1.6rem;
 	margin-bottom: 12px;
-	color: var(--correct);
+	color: var(--accent);
 }
 
 .monsterImg {
@@ -88,8 +88,8 @@
 
 .shareBtn {
 	padding: 10px 32px;
-	background: var(--correct);
-	color: white;
+	background: var(--accent);
+	color: var(--accent-contrast);
 	border: none;
 	border-radius: 8px;
 	font-size: 1rem;
