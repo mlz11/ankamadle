@@ -284,8 +284,8 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 				won={won}
 				hint1Revealed={hint1}
 				hint2Revealed={hint2}
-				targetImage={target.image}
 				targetEcosystem={target.ecosystem}
+				targetRace={target.race}
 				onRevealHint1={handleRevealHint1}
 				onRevealHint2={handleRevealHint2}
 			/>
