@@ -61,6 +61,7 @@ textarea {
 	--input-bg: #2a2540;
 	--dropdown-bg: #262038;
 	--highlight: #443c60;
+	--accent-contrast: white;
 }
 
 body {
@@ -125,4 +126,20 @@ body::before {
 .cell-wrong {
 	background: var(--wrong);
 	color: #fff;
+}
+
+/* ===== Game Mode Themes ===== */
+.theme-classique {
+	--accent: #c6e57c;
+	--accent-contrast: #2a2540;
+}
+
+body.theme-classique::after {
+	background-image: url("/images/background-classique.webp");
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+	body.theme-classique::after {
+		background-image: url("/images/background-classique-mobile.webp");
+	}
 }

@@ -62,7 +62,7 @@
 
 .slotRevealed {
 	border-color: var(--accent);
-	background: rgba(212, 152, 60, 0.1);
+	background: color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .flipOut {

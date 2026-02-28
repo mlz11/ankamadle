@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import type { GameStats } from "../types";
 import { loadStats } from "../utils/storage";
 import styles from "./App.module.css";
@@ -19,6 +19,13 @@ function FallbackUI() {
 
 export default function App() {
 	const [stats, setStats] = useState<GameStats>(() => loadStats("classique"));
+	const location = useLocation();
+
+	useEffect(() => {
+		const isClassique = location.pathname === "/classique";
+		document.body.classList.toggle("theme-classique", isClassique);
+		return () => document.body.classList.remove("theme-classique");
+	}, [location.pathname]);
 
 	return (
 		<ErrorBoundary fallback={<FallbackUI />}>

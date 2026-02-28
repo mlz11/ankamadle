@@ -113,7 +113,7 @@ export default function Header({ stats }: Props) {
 								x="8"
 								y="13.5"
 								textAnchor="middle"
-								fill="#fff"
+								fill="var(--accent-contrast)"
 								fontSize="6.5"
 								fontWeight="800"
 							>
