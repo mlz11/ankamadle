@@ -71,7 +71,7 @@ describe("Header", () => {
 			renderHeader({}, { route: "/silhouette", gameMode: "silhouette" });
 			expect(
 				screen.getByText(
-					"Dofus Retro 1.29 - Trouve le monstre à partir de sa silhouette",
+					"Dofus Retro 1.29 - Devine le monstre à partir de sa silhouette",
 				),
 			).toBeVisible();
 		});
