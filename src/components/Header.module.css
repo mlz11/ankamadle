@@ -20,8 +20,10 @@
 	transition: transform 0.2s;
 }
 
-.homeLink:hover .logo {
-	transform: translateY(-4px);
+@media (hover: hover) {
+	.homeLink:hover .logo {
+		transform: translateY(-4px);
+	}
 }
 
 .subtitle {
