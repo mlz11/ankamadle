@@ -26,7 +26,7 @@ const monsters: Monster[] = [
 	{
 		id: 2,
 		name: "Tofu",
-		ecosystem: "Forêt d'Amakna",
+		ecosystem: "Foret d'Amakna",
 		race: "Tofus",
 		niveau_min: 1,
 		niveau_max: 5,
@@ -84,16 +84,12 @@ describe("SearchBar", () => {
 	});
 
 	describe("filtering", () => {
-		it("should show all monsters sorted by name when query is empty", async () => {
+		it("should not show dropdown when query is empty", async () => {
 			renderSearchBar();
 			await userEvent.click(
 				screen.getByPlaceholderText("Devine le monstre..."),
 			);
-			const items = screen.getAllByRole("listitem");
-			expect(items).toHaveLength(3);
-			expect(items[0]).toHaveTextContent("Arakne");
-			expect(items[1]).toHaveTextContent("Bouftou");
-			expect(items[2]).toHaveTextContent("Tofu");
+			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
 		});
 
 		it("should filter monsters by fuzzy search when typing", async () => {
@@ -109,24 +105,21 @@ describe("SearchBar", () => {
 
 		it("should exclude already-guessed monsters from results", async () => {
 			renderSearchBar({ usedIds: new Set([2]) });
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"Tofu",
 			);
-			const items = screen.getAllByRole("listitem");
-			expect(items).toHaveLength(2);
-			expect(items.map((i) => i.textContent)).not.toContain(
-				expect.stringContaining("Tofu"),
-			);
+			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
 		});
 	});
 
 	describe("dropdown", () => {
-		it("should open dropdown when input is focused", async () => {
+		it("should not open dropdown when input is focused with empty query", async () => {
 			renderSearchBar();
 			await userEvent.click(
 				screen.getByPlaceholderText("Devine le monstre..."),
 			);
-			expect(screen.getAllByRole("listitem")).toHaveLength(3);
+			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
 		});
 
 		it("should open dropdown when typing", async () => {
@@ -140,20 +133,22 @@ describe("SearchBar", () => {
 
 		it("should close dropdown when clicking outside", async () => {
 			renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"b",
 			);
-			expect(screen.getAllByRole("listitem")).toHaveLength(3);
+			expect(screen.getAllByRole("listitem").length).toBeGreaterThan(0);
 			await userEvent.click(document.body);
 			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
 		});
 
 		it("should close dropdown when pressing Escape", async () => {
 			renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"b",
 			);
-			expect(screen.getAllByRole("listitem")).toHaveLength(3);
+			expect(screen.getAllByRole("listitem").length).toBeGreaterThan(0);
 			await userEvent.keyboard("{Escape}");
 			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
 		});
@@ -166,13 +161,23 @@ describe("SearchBar", () => {
 			);
 			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
 		});
+
+		it("should close dropdown when clearing the input", async () => {
+			renderSearchBar();
+			const input = screen.getByPlaceholderText("Devine le monstre...");
+			await userEvent.type(input, "b");
+			expect(screen.getAllByRole("listitem").length).toBeGreaterThan(0);
+			await userEvent.clear(input);
+			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
+		});
 	});
 
 	describe("keyboard navigation", () => {
-		it("should highlight first item by default", async () => {
+		it("should highlight first item by default when dropdown opens", async () => {
 			renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"o",
 			);
 			const items = screen.getAllByRole("listitem");
 			expect(items[0]).toHaveClass(styles.highlighted);
@@ -180,8 +185,9 @@ describe("SearchBar", () => {
 
 		it("should move highlight down when pressing ArrowDown", async () => {
 			renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"o",
 			);
 			await userEvent.keyboard("{ArrowDown}");
 			const items = screen.getAllByRole("listitem");
@@ -190,18 +196,20 @@ describe("SearchBar", () => {
 
 		it("should move highlight up when pressing ArrowUp", async () => {
 			renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"o",
 			);
-			await userEvent.keyboard("{ArrowDown}{ArrowDown}{ArrowUp}");
+			await userEvent.keyboard("{ArrowDown}{ArrowUp}");
 			const items = screen.getAllByRole("listitem");
-			expect(items[1]).toHaveClass(styles.highlighted);
+			expect(items[0]).toHaveClass(styles.highlighted);
 		});
 
 		it("should not move highlight above first item", async () => {
 			renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"o",
 			);
 			await userEvent.keyboard("{ArrowUp}");
 			const items = screen.getAllByRole("listitem");
@@ -210,22 +218,26 @@ describe("SearchBar", () => {
 
 		it("should not move highlight below last item", async () => {
 			renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"o",
 			);
-			await userEvent.keyboard("{ArrowDown}{ArrowDown}{ArrowDown}{ArrowDown}");
 			const items = screen.getAllByRole("listitem");
-			expect(items[2]).toHaveClass(styles.highlighted);
+			const lastIndex = items.length - 1;
+			await userEvent.keyboard("{ArrowDown}".repeat(items.length + 2));
+			const updatedItems = screen.getAllByRole("listitem");
+			expect(updatedItems[lastIndex]).toHaveClass(styles.highlighted);
 		});
 
 		it("should select highlighted monster when pressing Enter", async () => {
 			const { onSelect } = renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"tof",
 			);
-			await userEvent.keyboard("{ArrowDown}{Enter}");
+			await userEvent.keyboard("{Enter}");
 			expect(onSelect).toHaveBeenCalledWith(
-				expect.objectContaining({ name: "Bouftou" }),
+				expect.objectContaining({ name: "Tofu" }),
 			);
 		});
 
@@ -245,8 +257,9 @@ describe("SearchBar", () => {
 	describe("selection", () => {
 		it("should select monster when clicking a dropdown item", async () => {
 			const { onSelect } = renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"Bouf",
 			);
 			await userEvent.click(screen.getByText("Bouftou"));
 			expect(onSelect).toHaveBeenCalledWith(
@@ -266,10 +279,10 @@ describe("SearchBar", () => {
 	describe("submit button", () => {
 		it("should select highlighted monster when dropdown is open", async () => {
 			const { onSelect } = renderSearchBar();
-			await userEvent.click(
+			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
+				"Bouf",
 			);
-			await userEvent.keyboard("{ArrowDown}");
 			await userEvent.click(screen.getByRole("button", { name: "Valider" }));
 			expect(onSelect).toHaveBeenCalledWith(
 				expect.objectContaining({ name: "Bouftou" }),
@@ -289,16 +302,9 @@ describe("SearchBar", () => {
 			);
 		});
 
-		it("should shake when submitting with empty query and dropdown closed", async () => {
+		it("should disable submit button when query is empty", () => {
 			renderSearchBar();
-			await userEvent.click(
-				screen.getByPlaceholderText("Devine le monstre..."),
-			);
-			await userEvent.keyboard("{Escape}");
-			await userEvent.click(screen.getByRole("button", { name: "Valider" }));
-			expect(document.querySelector(`.${styles.searchBar}`)).toHaveClass(
-				styles.shake,
-			);
+			expect(screen.getByRole("button", { name: "Valider" })).toBeDisabled();
 		});
 	});
 
@@ -315,12 +321,11 @@ describe("SearchBar", () => {
 			);
 		});
 
-		it("should shake when pressing Enter with multiple matches and dropdown closed", async () => {
+		it("should shake when pressing Enter with empty query", async () => {
 			renderSearchBar();
 			await userEvent.click(
 				screen.getByPlaceholderText("Devine le monstre..."),
 			);
-			await userEvent.keyboard("{Escape}");
 			await userEvent.keyboard("{Enter}");
 			expect(document.querySelector(`.${styles.searchBar}`)).toHaveClass(
 				styles.shake,
