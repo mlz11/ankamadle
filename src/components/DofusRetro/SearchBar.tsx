@@ -107,7 +107,7 @@ export default function SearchBar({
 		}
 	}
 
-	const canSubmit = !disabled && filtered.length > 0;
+	const canSubmit = !disabled && query.length > 0 && filtered.length > 0;
 
 	return (
 		<div
@@ -124,10 +124,11 @@ export default function SearchBar({
 					value={query}
 					disabled={disabled}
 					onChange={(e) => {
-						setQuery(e.target.value);
-						setShowDropdown(true);
+						const value = e.target.value;
+						setQuery(value);
+						setShowDropdown(value.length > 0);
 					}}
-					onFocus={() => setShowDropdown(true)}
+					onFocus={() => setShowDropdown(query.length > 0)}
 					onKeyDown={handleKeyDown}
 					autoComplete="off"
 				/>
@@ -159,7 +160,7 @@ export default function SearchBar({
 					</svg>
 				</button>
 			</div>
-			{showDropdown && filtered.length > 0 && (
+			{showDropdown && query.length > 0 && filtered.length > 0 && (
 				<ul className={styles.dropdown}>
 					{filtered.map((m, i) => (
 						<li
