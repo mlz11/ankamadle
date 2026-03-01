@@ -2,11 +2,6 @@ import type { DailyProgress, GameMode, GameStats } from "../types";
 import { parseDailyProgress, parseGameStats } from "../validation";
 import { getTodayKey, getYesterdayKey } from "./daily";
 
-// TODO(#71): Remove legacy keys and migrateIfNeeded() after March 2026
-const LEGACY_PROGRESS_KEY = "dofusdle-progress";
-const LEGACY_STATS_KEY = "dofusdle-stats";
-const LEGACY_TARGET_KEY = "dofusdle-target";
-
 function progressKey(mode: GameMode): string {
 	return `dofusdle-progress-${mode}`;
 }
@@ -17,34 +12,6 @@ function statsKey(mode: GameMode): string {
 
 function targetKey(mode: GameMode): string {
 	return `dofusdle-target-${mode}`;
-}
-
-function migrateIfNeeded(mode: GameMode): void {
-	if (mode !== "classique") return;
-
-	const legacyStats = localStorage.getItem(LEGACY_STATS_KEY);
-	if (legacyStats !== null) {
-		if (localStorage.getItem(statsKey(mode)) === null) {
-			localStorage.setItem(statsKey(mode), legacyStats);
-		}
-		localStorage.removeItem(LEGACY_STATS_KEY);
-	}
-
-	const legacyProgress = localStorage.getItem(LEGACY_PROGRESS_KEY);
-	if (legacyProgress !== null) {
-		if (localStorage.getItem(progressKey(mode)) === null) {
-			localStorage.setItem(progressKey(mode), legacyProgress);
-		}
-		localStorage.removeItem(LEGACY_PROGRESS_KEY);
-	}
-
-	const legacyTarget = localStorage.getItem(LEGACY_TARGET_KEY);
-	if (legacyTarget !== null) {
-		if (localStorage.getItem(targetKey(mode)) === null) {
-			localStorage.setItem(targetKey(mode), legacyTarget);
-		}
-		localStorage.removeItem(LEGACY_TARGET_KEY);
-	}
 }
 
 function defaultStats(): GameStats {
@@ -61,7 +28,6 @@ function defaultStats(): GameStats {
 export function loadProgress(mode: GameMode): DailyProgress | null {
 	if (typeof window === "undefined") return null;
 	try {
-		migrateIfNeeded(mode);
 		const raw = localStorage.getItem(progressKey(mode));
 		if (!raw) return null;
 		const progress = parseDailyProgress(JSON.parse(raw));
@@ -96,7 +62,6 @@ export function clearProgress(mode: GameMode): void {
 export function loadStats(mode: GameMode): GameStats {
 	if (typeof window === "undefined") return defaultStats();
 	try {
-		migrateIfNeeded(mode);
 		const raw = localStorage.getItem(statsKey(mode));
 		if (!raw) return defaultStats();
 		return parseGameStats(JSON.parse(raw)) ?? defaultStats();
@@ -126,7 +91,6 @@ export function loadTargetMonster(
 ): number | null {
 	if (typeof window === "undefined") return null;
 	try {
-		migrateIfNeeded(mode);
 		const raw = localStorage.getItem(targetKey(mode));
 		if (!raw) return null;
 		const data = JSON.parse(raw);
