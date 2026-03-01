@@ -182,8 +182,8 @@
 
 	.cardGreen {
 		background: linear-gradient(
-			to bottom,
-			rgba(30, 80, 45, 0.55),
+			to right,
+			rgba(198, 229, 124, 0.5),
 			rgba(26, 23, 37, 0.9)
 		);
 	}
@@ -194,11 +194,7 @@
 		inset: 0;
 		border-radius: 14px;
 		padding: 2px;
-		background: linear-gradient(
-			to bottom,
-			rgba(61, 174, 96, 0.35),
-			rgba(26, 23, 37, 0.9)
-		);
+		background: rgba(198, 229, 124, 0.4);
 		mask:
 			linear-gradient(#fff 0 0) content-box,
 			linear-gradient(#fff 0 0);
@@ -208,8 +204,8 @@
 
 	.cardOrange {
 		background: linear-gradient(
-			to bottom,
-			rgba(120, 55, 15, 0.55),
+			to right,
+			rgba(210, 120, 40, 0.5),
 			rgba(26, 23, 37, 0.9)
 		);
 	}
@@ -220,11 +216,7 @@
 		inset: 0;
 		border-radius: 14px;
 		padding: 2px;
-		background: linear-gradient(
-			to bottom,
-			rgba(210, 120, 40, 0.35),
-			rgba(26, 23, 37, 0.9)
-		);
+		background: rgba(210, 120, 40, 0.4);
 		mask:
 			linear-gradient(#fff 0 0) content-box,
 			linear-gradient(#fff 0 0);
