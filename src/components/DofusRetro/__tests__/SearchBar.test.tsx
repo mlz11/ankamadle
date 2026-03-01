@@ -49,6 +49,19 @@ const monsters: Monster[] = [
 		image: "/img/monsters/3.svg",
 		availableFrom: "2025-1-1",
 	},
+	{
+		id: 4,
+		name: "Bwork",
+		ecosystem: "Terres de Bwork",
+		race: "Bworks",
+		niveau_min: 5,
+		niveau_max: 15,
+		pv_min: 20,
+		pv_max: 60,
+		couleur: "Vert",
+		image: "/img/monsters/4.svg",
+		availableFrom: "2025-1-1",
+	},
 ];
 
 const defaults = {
@@ -92,7 +105,7 @@ describe("SearchBar", () => {
 			expect(screen.queryAllByRole("listitem")).toHaveLength(0);
 		});
 
-		it("should filter monsters by fuzzy search when typing", async () => {
+		it("should filter monsters by starts-with matching when typing", async () => {
 			renderSearchBar();
 			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
@@ -177,7 +190,7 @@ describe("SearchBar", () => {
 			renderSearchBar();
 			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
-				"o",
+				"b",
 			);
 			const items = screen.getAllByRole("listitem");
 			expect(items[0]).toHaveClass(styles.highlighted);
@@ -187,7 +200,7 @@ describe("SearchBar", () => {
 			renderSearchBar();
 			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
-				"o",
+				"b",
 			);
 			await userEvent.keyboard("{ArrowDown}");
 			const items = screen.getAllByRole("listitem");
@@ -198,7 +211,7 @@ describe("SearchBar", () => {
 			renderSearchBar();
 			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
-				"o",
+				"b",
 			);
 			await userEvent.keyboard("{ArrowDown}{ArrowUp}");
 			const items = screen.getAllByRole("listitem");
@@ -209,7 +222,7 @@ describe("SearchBar", () => {
 			renderSearchBar();
 			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
-				"o",
+				"b",
 			);
 			await userEvent.keyboard("{ArrowUp}");
 			const items = screen.getAllByRole("listitem");
@@ -220,7 +233,7 @@ describe("SearchBar", () => {
 			renderSearchBar();
 			await userEvent.type(
 				screen.getByPlaceholderText("Devine le monstre..."),
-				"o",
+				"b",
 			);
 			const items = screen.getAllByRole("listitem");
 			const lastIndex = items.length - 1;

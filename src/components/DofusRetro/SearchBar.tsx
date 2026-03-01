@@ -1,5 +1,4 @@
-import { Fzf } from "fzf";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Monster } from "../../types";
 import styles from "./SearchBar.module.css";
 
@@ -41,17 +40,12 @@ export default function SearchBar({
 		.filter((m) => !usedIds.has(m.id))
 		.sort((a, b) => a.name.localeCompare(b.name));
 
-	const fzf = useMemo(
-		() =>
-			new Fzf(available, {
-				selector: (m) => m.name,
-				casing: "case-insensitive",
-			}),
-		[available],
-	);
-
 	const filtered =
-		query.length > 0 ? fzf.find(query).map((r) => r.item) : available;
+		query.length > 0
+			? available.filter((m) =>
+					m.name.toLowerCase().startsWith(query.toLowerCase()),
+				)
+			: available;
 
 	useEffect(() => {
 		setHighlightIndex(0);
