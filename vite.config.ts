@@ -71,6 +71,43 @@ function removePrerenderChunk(): Plugin {
 	};
 }
 
+const ROUTE_THEME: Record<string, string> = {
+	"/classique": "theme-classique",
+	"/silhouette": "theme-silhouette",
+};
+
+/**
+ * Adds the correct theme class to <body> in each prerendered HTML page so the
+ * browser applies game-mode colours and background before React hydrates.
+ */
+function injectThemeClass(): Plugin {
+	return {
+		name: "inject-theme-class",
+		apply: "build",
+		enforce: "post",
+		generateBundle(_, bundle) {
+			for (const key of Object.keys(bundle)) {
+				const asset = bundle[key];
+				if (
+					!key.endsWith(".html") ||
+					asset.type !== "asset" ||
+					typeof asset.source !== "string"
+				)
+					continue;
+
+				const route = htmlKeyToRoute(key);
+				const theme = ROUTE_THEME[route];
+				if (!theme) continue;
+
+				asset.source = asset.source.replace(
+					"<body>",
+					`<body class="${theme}">`,
+				);
+			}
+		},
+	};
+}
+
 const ROUTE_META: Record<
 	string,
 	{ title: string; description: string; url: string }
@@ -203,6 +240,7 @@ export default defineConfig(({ mode }) => {
 				prerenderScript: "src/prerender.tsx",
 			}),
 			removePrerenderChunk(),
+			injectThemeClass(),
 			injectRouteMeta(),
 			mode === "production" &&
 				sentryVitePlugin({

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useLayoutEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import type { GameMode, GameStats } from "../types";
 import { loadStats } from "../utils/storage";
@@ -27,7 +27,7 @@ function AppContent() {
 	const location = useLocation();
 	const activeMode = MODE_BY_PATH[location.pathname] ?? null;
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		document.body.classList.toggle(
 			"theme-classique",
 			location.pathname === "/classique",
