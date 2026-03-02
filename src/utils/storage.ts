@@ -14,7 +14,7 @@ function targetKey(mode: GameMode): string {
 	return `dofusdle-target-${mode}`;
 }
 
-function defaultStats(): GameStats {
+export function defaultStats(): GameStats {
 	return {
 		gamesPlayed: 0,
 		gamesWon: 0,

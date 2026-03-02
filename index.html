@@ -48,6 +48,11 @@
     <title>Dofusdle - Le jeu de devinettes Dofus Retro</title>
   </head>
   <body>
+    <script>
+      var p=location.pathname;if(p.length>1)p=p.replace(/\/$/,"");
+      if(p==="/classique")document.body.classList.add("theme-classique");
+      else if(p==="/silhouette")document.body.classList.add("theme-silhouette");
+    </script>
     <div id="root"></div>
     <noscript>
       <h1>Dofusdle</h1>

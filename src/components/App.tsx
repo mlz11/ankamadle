@@ -1,7 +1,7 @@
-import { useCallback, useLayoutEffect, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import type { GameMode, GameStats } from "../types";
-import { loadStats } from "../utils/storage";
+import { defaultStats, loadStats } from "../utils/storage";
 import styles from "./App.module.css";
 import ClassiqueGame from "./DofusRetro/Game";
 import ErrorBoundary from "./ErrorBoundary";
@@ -23,30 +23,43 @@ const MODE_BY_PATH: Record<string, GameMode> = {
 	"/silhouette": "silhouette",
 };
 
+const THEME_CLASSES = Object.entries(MODE_BY_PATH).map(
+	([route, mode]) => [route, `theme-${mode}`] as const,
+);
+
+function normalizePath(pathname: string): string {
+	return pathname.length > 1 && pathname.endsWith("/")
+		? pathname.slice(0, -1)
+		: pathname;
+}
+
 function AppContent() {
 	const location = useLocation();
-	const activeMode = MODE_BY_PATH[location.pathname] ?? null;
+	const path = normalizePath(location.pathname);
+	const activeMode = MODE_BY_PATH[path] ?? null;
 
 	useLayoutEffect(() => {
-		document.body.classList.toggle(
-			"theme-classique",
-			location.pathname === "/classique",
-		);
-		document.body.classList.toggle(
-			"theme-silhouette",
-			location.pathname === "/silhouette",
-		);
+		for (const [route, cls] of THEME_CLASSES) {
+			document.body.classList.toggle(cls, path === route);
+		}
 		return () => {
-			document.body.classList.remove("theme-classique", "theme-silhouette");
+			for (const [, cls] of THEME_CLASSES) {
+				document.body.classList.remove(cls);
+			}
 		};
-	}, [location.pathname]);
+	}, [path]);
 
-	const [statsByMode, setStatsByMode] = useState<Record<GameMode, GameStats>>(
-		() => ({
+	const [statsByMode, setStatsByMode] = useState<Record<GameMode, GameStats>>({
+		classique: defaultStats(),
+		silhouette: defaultStats(),
+	});
+
+	useEffect(() => {
+		setStatsByMode({
 			classique: loadStats("classique"),
 			silhouette: loadStats("silhouette"),
-		}),
-	);
+		});
+	}, []);
 
 	const handleStatsChange = useCallback((mode: GameMode, stats: GameStats) => {
 		setStatsByMode((prev) => ({ ...prev, [mode]: stats }));
