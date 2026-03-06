@@ -25,6 +25,7 @@ export default function SearchBar({
 	const [shaking, setShaking] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);
 	const wrapperRef = useRef<HTMLDivElement>(null);
+	const isKeyboardNav = useRef(false);
 
 	useEffect(() => {
 		if (!showDropdown) return;
@@ -95,9 +96,11 @@ export default function SearchBar({
 		}
 		if (e.key === "ArrowDown") {
 			e.preventDefault();
+			isKeyboardNav.current = true;
 			setHighlightIndex((i) => Math.min(i + 1, filtered.length - 1));
 		} else if (e.key === "ArrowUp") {
 			e.preventDefault();
+			isKeyboardNav.current = true;
 			setHighlightIndex((i) => Math.max(i - 1, 0));
 		} else if (e.key === "Enter") {
 			e.preventDefault();
@@ -177,9 +180,18 @@ export default function SearchBar({
 					{filtered.map((m, i) => (
 						<li
 							key={m.id}
+							ref={(el) => {
+								if (i === highlightIndex)
+									el?.scrollIntoView({ block: "nearest" });
+							}}
 							className={i === highlightIndex ? styles.highlighted : ""}
 							onMouseDown={() => handleSelect(m)}
-							onMouseEnter={() => setHighlightIndex(i)}
+							onMouseMove={() => {
+								isKeyboardNav.current = false;
+							}}
+							onMouseEnter={() => {
+								if (!isKeyboardNav.current) setHighlightIndex(i);
+							}}
 						>
 							{m.image && (
 								<img src={m.image} alt="" className={styles.dropdownImg} />

@@ -110,12 +110,7 @@
 	border-radius: 6px;
 }
 
-.dropdown li:hover,
 .dropdown li.highlighted {
-	background: var(--highlight);
-}
-
-.highlighted {
 	background: var(--highlight);
 }
 
