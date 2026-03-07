@@ -218,7 +218,6 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 			game_mode: gameMode,
 			guess_number: newResults.length,
 			is_correct: isWin,
-			monster_guessed: monster.name,
 		});
 
 		if (isWin) {

@@ -86,7 +86,6 @@ export default function Victory({
 		posthog?.capture("result_shared", {
 			game_mode: "classique",
 			guess_count: results.length,
-			hints_used: hintsUsed,
 		});
 	}
 

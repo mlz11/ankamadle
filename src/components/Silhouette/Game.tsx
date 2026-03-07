@@ -165,7 +165,6 @@ export default function Game({ gameMode, stats, onStatsChange }: Props) {
 			game_mode: gameMode,
 			guess_number: totalGuesses + 1,
 			is_correct: isWin,
-			monster_guessed: monster.name,
 		});
 
 		if (isWin) {
